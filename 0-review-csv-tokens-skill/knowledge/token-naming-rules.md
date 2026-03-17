@@ -96,7 +96,7 @@ Bracketed segments are optional and may be omitted when not applicable.
 
 - **Purpose:** The specific property being tokenized; depends on **Foundation**.
 - **Allowed:**
-  - **Color:** `text`, `icon`, `fill`, `bg`, `border`, `outline`, `shadow`, `gradient_start`, `gradient_end`, `opacity`
+  - **Color:** `text`, `icon`, `fill`, `bg`, `border`, `outline`, `shadow`, `gradient_start`, `gradient_end`, `opacity`, `indicator`
   - **Size:** `height`, `width`, `min_width`, `max_width`, `min_height`, `max_height`, `all` (use `all` when element has 1:1 aspect ratio instead of separate height/width)
   - **Spacing:** `padding`, `padding_x`, `padding_y`, `padding_top`, `padding_right`, `padding_bottom`, `padding_left`, `margin`, `margin_x`, `margin_y`, `margin_top`, `margin_left`, `margin_right`, `margin_bottom`, `inset`, `offset`, `gap`, `gap_x`, `gap_y`
   - **Radius:** `all`, `top_left`, `top_right`, `bottom_left`, `bottom_right`, `top`, `left`, `bottom`, `right`

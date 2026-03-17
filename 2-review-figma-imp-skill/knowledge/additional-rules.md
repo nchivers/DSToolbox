@@ -30,9 +30,9 @@ When reporting, note which nested instances were classified as owned subcomponen
 
 ## Typography selection
 
-**Rule:** All typography used in components must come from the **`affirm.typography/component/`** set. Typography style names (or their path/identifier) must **begin with** `affirm.typography/component/`. Any typography that does not begin with that name is out of scope and should be considered an issue.
+**Rule:** All typography used in components must come from the **`typography/component/`** set. Typography style names (or their path/identifier) must **begin with** `typography/component/`. Any typography that does not begin with that name is out of scope and should be considered an issue.
 
-**Effect on review:** When evaluating **typography** (Check 3), in addition to requiring that text uses defined library styles, require that the style name or path **starts with** `affirm.typography/component/`. For each text node or typography style that does **not** begin with `affirm.typography/component/`, report it as an **issue** (e.g. "Typography style [name] is not from affirm.typography/component/ set"). Include the actual style name and, if available, the node or layer it applies to.
+**Effect on review:** When evaluating **typography** (Check 3), in addition to requiring that text uses defined library styles, require that the style name or path **starts with** `typography/component/`. For each text node or typography style that does **not** begin with `typography/component/`, report it as an **issue** (e.g. "Typography style [name] is not from affirm.typography/component/ set"). Include the actual style name and, if available, the node or layer it applies to.
 
 ---
 
