@@ -1,10 +1,11 @@
 {
-  "componentName": "putComponentNameHerePlease",
-  "componentUrl": "https://www.figma.com/design/blahblahblah",
+  "componentName": "componentName",
+  "componentUrl": "https://www.figma.com/design/FileKey/...?node-id=NODE_ID",
+  "pullRequestUrl": "https://github.com/ORG/REPO/pull/NUMBER",
   "subcomponents": [
-    { 
-      "name": "UserSuppliedName", 
-      "subcomponentUrl": "https://www.figma.com/design/FILE_KEY/...?node-id=NODE_ID" 
+    {
+      "name": "UserSuppliedName",
+      "subcomponentUrl": "https://www.figma.com/design/FILE_KEY/...?node-id=NODE_ID"
     }
   ]
 }
