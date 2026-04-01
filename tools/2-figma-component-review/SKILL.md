@@ -24,8 +24,8 @@ All other inputs use **fixed paths** (workspace root):
 | Path | Purpose |
 |------|--------|
 | `inputs/mapped-component-tokens.csv` | **Required.** CSV of tokens associated with this component (e.g. output from 1-review skill); used to verify "all tokens applied" and map token → variable ID. First column = CSV token name, second column = Figma token name, and third column = Figma variable ID. |
-| `2-review-figma-imp-skill/knowledge/naming-rules.md` | Rules for component property naming (variant, boolean, content swap, text). |
-| `2-review-figma-imp-skill/knowledge/additional-rules.md` | Optional. Interpretive rules and exceptions (e.g. exclude position tokens from "unused token" reporting). If present, read and apply every rule during the review. |
+| `tools/2-figma-component-review/knowledge/naming-rules.md` | Rules for component property naming (variant, boolean, content swap, text). |
+| `tools/2-figma-component-review/knowledge/additional-rules.md` | Optional. Interpretive rules and exceptions (e.g. exclude position tokens from "unused token" reporting). If present, read and apply every rule during the review. |
 
 ---
 
@@ -47,10 +47,12 @@ All other inputs use **fixed paths** (workspace root):
    - Call **get_variable_defs(fileKey, nodeId)**, and optionally **get_design_context(fileKey, nodeId)** and **get_metadata(fileKey, nodeId)** for that node. Merge the returned data into the review scope.
    - **Match to the main component:** Call **get_metadata(fileKey, rootNodeId)** for the root so the response includes the full tree. Parse for **INSTANCE** nodes and each instance's main component reference (e.g. `mainComponent`, `componentId`, or top-level map with `file_key` and `node_id`). For each user-supplied subcomponent, the **(fileKey, nodeId)** from its URL should match one of those main-component references. Use the **name** from **subcomponents** when labeling findings (e.g. "Subcomponent [UserSuppliedName]: …"). Run all review criteria on the root **and** each subcomponent from inputs.json; label each finding by component.
 
-4. **Owned subcomponents (additional-rules.md only):** If **additional-rules.md** defines owned subcomponents and **subcomponents** is not in inputs.json (or you need more subcomponents not listed there), **get the full context for each owned subcomponent’s component set** and include it in the review. Use **[reference.md](reference.md)#resolving-owned-subcomponent-node-ids-for-mcp** to resolve each subcomponent’s **(fileKey, nodeId)** from the root metadata:
-   - Call **get_metadata(fileKey, rootNodeId)** (and optionally get_design_context) for the **root** so the response includes the full tree. Parse it for **INSTANCE** nodes and any property that references the main component (e.g. `mainComponent`, `componentId`, or a top-level `components`/`componentSets` map with `node_id` and `file_key`). If you only have **variant** node IDs (sibling COMPONENT nodes), the **component set node ID is their parent**’s id—use that.
-   - **Node ID format:** Use the format the MCP expects (often colon, e.g. `3672:742`; try hyphen `3672-742` if needed).
-   - For each owned subcomponent, once you have the **component set** (fileKey, nodeId), call **get_variable_defs(fileKey, nodeId)**, **get_design_context(fileKey, nodeId)**, and **get_metadata(fileKey, nodeId)**. Merge the returned data into the review scope and run all review criteria on the root **and** each owned subcomponent. In the results, label issues by component (e.g. "Root component: …" or "Subcomponent [name]: …").
+4. **Owned subcomponents (additional-rules.md only):** If **additional-rules.md** defines owned subcomponents and **subcomponents** is not in inputs.json (or you need more subcomponents not listed there), **get the full context for each owned subcomponent’s component set** and include it in the review. Resolve each subcomponent’s **(fileKey, nodeId)** from the root metadata as follows:
+   - **Node ID format:** Figma often uses **colon** in API responses (e.g. `3672:742`); URLs use **hyphen** (e.g. `node-id=3672-742`). When calling MCP, use the format the tool expects—try colon first, then hyphen if needed.
+   - Call **get_metadata(fileKey, rootNodeId)** (and optionally **get_design_context**) for the **root** so the response includes the full tree of descendants (depth/scope that includes nested instances).
+   - Parse for **INSTANCE** nodes. For each owned subcomponent instance, get the **main component** (component set) it references—via instance fields like `mainComponent`, `componentId`, `componentKey`, or `componentSetId` (object with `file_key` / `node_id`), or a top-level `components` / `componentSets` map keyed by id.
+   - **If you only have variant node IDs** (sibling COMPONENT nodes): the **component set** is the **parent** of those variants; use that parent’s `id` as the component set node ID for **get_variable_defs** / **get_design_context** / **get_metadata**.
+   - Once you have **(fileKey, nodeId)** for the subcomponent’s **component set**, call **get_variable_defs**, **get_design_context**, and **get_metadata** for that node. Merge into the review scope; label findings by subcomponent name.
 
 5. **If Figma MCP is not available:** Inform the user that the Figma MCP server must be configured to run this review; component data is obtained only via Figma MCP.
 

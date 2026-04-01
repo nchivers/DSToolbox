@@ -1,13 +1,15 @@
 ---
 name: code-qa
-description: QA review of component code on a GitHub PR branch against inputs/component-tokens.csv—token coverage, name and value alignment, and no raw hex/sizing/spacing/radius/typography in component styling. Requires the GitHub MCP server; use when validating a PR implements design tokens correctly for a named component.
+description: QA review of component code on a GitHub PR branch against inputs/component-tokens.csv—token coverage, name and value alignment, and no raw hex/sizing/spacing/radius/typography in component styling. Prefers the GitHub MCP server; falls back to the GitHub CLI (gh) if MCP is unavailable or errors. Use when validating a PR implements design tokens correctly for a named component.
 ---
 
 # Component Code QA (PR + CSV)
 
 Review implementation code on a **GitHub pull request branch** against the canonical token list in **inputs/component-tokens.csv**. Confirm every listed token is defined and used correctly in code, and that component styling does not rely on hard-coded visual primitives. Write findings to a single results file.
 
-**GitHub MCP is required.** Obtain **all** pull-request metadata, changed-file lists, diffs, and file contents through the **GitHub MCP server** configured in the user’s environment. Do **not** substitute the GitHub CLI (`gh`), raw REST API calls from the terminal, or local `git fetch` / `git diff` / workspace-only reads as the source of truth for what is on the PR branch—those bypass the intended review path. If the GitHub MCP server is not available or authenticated, **stop** and tell the user to configure GitHub MCP (token/scopes) before continuing; do not silently fall back to CLI/git.
+**Primary path: GitHub MCP.** Prefer obtaining pull-request metadata, changed-file lists, diffs, and file contents through the **GitHub MCP server** configured in the user’s environment.
+
+**Fallback: GitHub CLI (`gh`).** If GitHub MCP is **missing**, **misconfigured**, **returns an error**, **times out**, or **cannot complete** any required step (auth, rate limits, tool failure, etc.), use the **`gh` CLI** for the same data. Do **not** use raw `curl` to the REST API or workspace-only `git diff` as the primary source unless you are also unable to run `gh`—in that case, **stop** and tell the user to fix MCP or install/authenticate `gh` (`gh auth login`). When using `gh`, still treat the **PR head SHA** as the source of truth for file contents (fetch blobs at that ref; do not assume the local workspace matches the PR head unless verified).
 
 ---
 
@@ -35,23 +37,34 @@ Fixed paths:
 
 ---
 
-## Resolving the PR and code to review (GitHub MCP only)
+## Resolving the PR and code to review (MCP first, then `gh`)
 
-1. **Parse `pullRequestUrl`** — Accept standard GitHub forms: `https://github.com/{owner}/{repo}/pull/{number}` (query strings may be present; strip them before calling MCP). Extract **owner**, **repo**, and **PR number**.
+1. **Parse `pullRequestUrl`** — Accept standard GitHub forms: `https://github.com/{owner}/{repo}/pull/{number}` (query strings may be present; strip them before calling MCP or `gh`). Extract **owner**, **repo**, and **PR number**.
 
-2. **Fetch PR and changes via GitHub MCP** — Use the **GitHub MCP** tools exposed in the environment (names vary by server; common capabilities include pull-request details, listing changed files, PR diff, and file/blob contents at a ref). You must:
+2. **Fetch PR and changes** — Try **GitHub MCP** first. Use the tools exposed in the environment (names vary by server; common capabilities include pull-request details, listing changed files, PR diff, and file/blob contents at a ref).
+
+   **If MCP fails or is incomplete**, use **`gh`** (run from a shell; ensure `gh auth status` succeeds). Equivalent capabilities:
+
+   | Need | Typical `gh` approach |
+   |------|------------------------|
+   | Head ref + head SHA | `gh pr view <number> --repo owner/repo --json headRefOid,headRefName` (or pass the full PR URL to `gh pr view` where supported). |
+   | Changed file list | `gh pr diff <number> --repo owner/repo --name-only` |
+   | Unified diff | `gh pr diff <number> --repo owner/repo` |
+   | Full file at head SHA | `gh api repos/OWNER/REPO/contents/PATH?ref=HEAD_SHA` (URL-encode `PATH`; decode `content` from base64), or `gh api repos/OWNER/REPO/git/blobs/BLOB_SHA` after resolving the blob if needed. |
+
+   You must:
    - Retrieve the PR’s **head** ref and **head SHA** (merge commit is not a substitute for reviewing the PR head).
    - Retrieve the **list of changed files** for the PR.
    - Retrieve the **unified diff** (or per-file patches) for the PR so you can see line-level edits.
-   - For any file needed for token or style checks that is not fully visible in the diff, retrieve **full file contents at the head SHA** via MCP (e.g. repository content / blob tools), not by opening only the local workspace copy unless it is known to match that SHA.
+   - For any file needed for token or style checks that is not fully visible in the diff, retrieve **full file contents at the head SHA** via MCP or `gh api`, not by opening only the local workspace copy unless it is known to match that SHA.
 
-3. **Scope “component” files** — From the PR’s changed files (and, when needed, related paths fetched at head SHA via MCP), select files that implement **`componentName`**:
+3. **Scope “component” files** — From the PR’s changed files (and, when needed, related paths fetched at head SHA via MCP or `gh`), select files that implement **`componentName`**:
    - Match folder/file names (case-insensitive, hyphen/underscore/space variants).
    - Include style modules colocated with the component (e.g. `*.css`, `*.scss`, `*.module.css`, styled-components, tokens map files **only if** they are clearly dedicated to this component).
    - Exclude unrelated files (tests-only can be included for token checks but raw-style rules should focus on **component implementation and its styling entrypoints**).
    - If scope is ambiguous, prefer the smallest set that contains the component export and its styles; note in the report which paths were included.
 
-4. **Source of truth** — All checks below apply to the **PR head** as returned by GitHub MCP (head SHA), not to uncommitted local edits or an arbitrary local branch unless they match that SHA.
+4. **Source of truth** — All checks below apply to the **PR head** as returned by GitHub MCP or `gh` (head SHA), not to uncommitted local edits or an arbitrary local branch unless they match that SHA.
 
 ---
 
@@ -100,7 +113,7 @@ Write exactly one file:
 
 **Contents:**
 
-1. **Inputs used** — `pullRequestUrl`, `componentName`, path to `inputs/component-tokens.csv`; state explicitly that **PR and file data were loaded via GitHub MCP**; PR head ref/SHA and **list of file paths** included in the component scope.
+1. **Inputs used** — `pullRequestUrl`, `componentName`, path to `inputs/component-tokens.csv`; state explicitly whether **PR and file data were loaded via GitHub MCP** or **GitHub CLI (`gh`)** (including if MCP was attempted first and `gh` was used as fallback); PR head ref/SHA and **list of file paths** included in the component scope.
 2. **1. Token coverage** — Missing tokens; optionally unexpected token references. Use “None” / “No issues” if clear.
 3. **2. Token naming** — Mismatches vs CSV names; file/location for each.
 4. **3. Token values** — Mismatches vs CSV expected aliases/values per mode; file/location for each.
@@ -115,8 +128,8 @@ Use clear headings and bullet lists. **Do not** modify `inputs/component-tokens.
 
 1. Read **inputs/inputs.json** — require **`pullRequestUrl`** and **`componentName`** for this QA run.
 2. Load **`inputs/component-tokens.csv`** and build the list of token identifiers and any expected per-mode values.
-3. **Using GitHub MCP only:** resolve the PR from `pullRequestUrl`, pull head SHA, changed files, diff, and full file contents as needed; determine **component-scoped** source paths.
+3. **Resolve the PR:** use **GitHub MCP** first. If MCP fails for any reason, use **`gh`** as described in **Resolving the PR and code to review** to obtain head SHA, changed files, diff, and full file contents as needed; determine **component-scoped** source paths.
 4. Run checks **1–4**; collect findings with paths and line references.
 5. Write **`outputs/3-code-qa/YYYY-MM-DD-HH-MM-{componentName}-code-qa.md`** using today’s date/time for the prefix.
 
-**Note:** The **GitHub MCP server** is required. If MCP is missing, misconfigured, or returns auth errors, **do not** substitute `gh`/git/API curl—report the failure in **`outputs/3-code-qa/...`** (or inform the user if you cannot write the file) and list steps to enable GitHub MCP (PAT with appropriate repo scopes, MCP config in Cursor).
+**Note:** If **both** GitHub MCP and **`gh`** are unavailable or fail (auth, network, etc.), report the failure in **`outputs/3-code-qa/...`** (or inform the user if you cannot write the file) and list remediation: MCP config/PAT scopes, `gh auth login`, and repo access.

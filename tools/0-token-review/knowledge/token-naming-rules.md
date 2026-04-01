@@ -147,7 +147,7 @@ The reviewer should validate tokens against these patterns. Segments in square b
 
 - **Color:** `affirm.color.{component}[...][.{part}][.{part-variant}][.{subpart}].shadow[.{state}][.{interaction}]` — `shadow` is the property.
 - **Position (shadow offset):** `affirm.shadow.{component}[...].shadow[.{part-variant}][.{subpart}].offset_x` (and `offset_y`) — first `shadow` is foundation, second is part/subpart; property is `offset_x` or `offset_y`.
-- **Size:** `affirm.size.{component}[...].shadow[.{part-variant}][.{subpart}].blur` or `.spread` — `shadow` is part/subpart; property is `blur` or `spread`.
+- **Size:** `affirm.shadow.{component}[...].shadow[.{part-variant}][.{subpart}].blur` or `.spread` — first `shadow` is foundation, second is part/subpart; property is `blur` or `spread`.
 - **Shadow composite:** `affirm.shadow.{component}[...][.{part}][.{part-variant}][.{subpart}].composite[.{state}][.{interaction}]` — foundation is `shadow`; property is `composite`.
 
 ### Opacity

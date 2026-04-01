@@ -6,7 +6,8 @@ Read the input files from this workspace (paths relative to workspace root):
   - inputs/inputs.json (componentName for output file names)
   - inputs/component-tokens.csv
   - inputs/figma-variables.json
-  - 1-review-figma-tokens-skill/knowledge/scoping-rules.md (scoping validation rules for Task 2)
+  - tools/1-figma-variables-review/knowledge/scoping-rules.md (scoping validation rules for Task 2)
+  - tools/1-figma-variables-review/knowledge/additional-rules.md (optional; interpretive rules and exceptions — read if present and apply throughout)
 ---
 
 # Figma Variables Review
@@ -29,16 +30,19 @@ You are reviewing Figma design tokens. Perform the following two checks and writ
 - **Scoping rules:** `1-review-figma-tokens-skill/knowledge/scoping-rules.md`  
   Rules that define required `scopes` and `hiddenFromPublishing` by token name patterns.
 
+- **Additional rules:** `tools/1-figma-variables-review/knowledge/additional-rules.md`  
+  **Optional.** Interpretive rules and exceptions (e.g. composite token types excluded from missing-in-Figma check, component segment scoping for Extra in Figma). If present, read it before running any task and apply every rule throughout the review.
+
 ---
 
 ## Task 1: CSV vs Figma comparison (CSV is source of truth)
 
-Compare tokens in the CSV to tokens in the Figma JSON. Report:
+Compare tokens in the CSV to tokens in the Figma JSON. If **additional-rules.md** is loaded, apply its rules before reporting any finding. Report:
 
-1. **Missing in Figma:** Token names listed in the CSV that do not exist in the Figma variables (by exact `name` match).
-2. **Extra in Figma:** Token names present in the Figma variables that are not listed in the CSV (only if the CSV has at least one row; otherwise skip this to avoid noise).
+1. **Missing in Figma:** Token names listed in the CSV that do not exist in the Figma variables (by exact `name` match). If additional-rules.md defines any token foundations (e.g. `shadow`, `gradient`) that are implemented as Figma styles rather than variables, exclude those tokens from this check and note the exclusion in the results.
+2. **Extra in Figma:** Token names present in the Figma variables that are not listed in the CSV (only if the CSV has at least one row; otherwise skip this to avoid noise). If additional-rules.md defines a component segment scoping rule, only consider Figma variables whose **component segment** (third `/`-delimited path segment) matches the component being reviewed — variables from other components that share the name in a deeper segment must be excluded entirely.
 3. **Naming discrepancies:** Any case, spacing, or segment differences for the same logical token (e.g. CSV has `color/button/primary` but Figma has `color/Button/Primary`).
-4. **Assignment discrepancies:** For CSV rows that define `expected_alias` or `expected_value`, check the Figma variable’s `valuesByMode`. For aliases, resolve or compare the alias target name; for primitives, compare value. Report any mismatch.
+4. **Assignment discrepancies:** For CSV rows that define `expected_alias` or `expected_value`, check the Figma variable's `valuesByMode`. For aliases, resolve or compare the alias target name; for primitives, compare value. Report any mismatch.
 
 Normalize comparison by trimming whitespace and comparing token paths in a case-sensitive way unless the rules specify otherwise.
 
@@ -46,40 +50,41 @@ Normalize comparison by trimming whitespace and comparing token paths in a case-
 
 ## Task 2: Scoping rules evaluation
 
-**Scope:** Evaluate scoping rules only for the tokens that were compared in Task 1. That is, consider only Figma variables whose `name` appears in (or aligns with) the CSV—i.e. the set of tokens from the source of truth. Do not evaluate every variable in `inputs/figma-variables.json`; only those that correspond to tokens in `inputs/component-tokens.csv`.
+**Scope:** Evaluate scoping rules only for the tokens that were compared in Task 1. That is, consider only Figma variables whose `name` appears in (or aligns with) the CSV — i.e. the set of tokens from the source of truth. Do not evaluate every variable in `inputs/figma-variables.json`; only those that correspond to tokens in `inputs/component-tokens.csv`. If additional-rules.md defines a component segment scoping rule, apply the same constraint here: only evaluate variables whose component segment matches the component being reviewed.
 
 Using **only** the rules in `1-review-figma-tokens-skill/knowledge/scoping-rules.md`:
 
 - For each such variable (aligned with the CSV), determine which rule(s) apply based on `name`, `collection`, and any other conditions in the rules.
 - For each applicable rule, check:
-  - **scopes:** Required scope set (e.g. `["TEXT_FILL"]`). “must include” means the variable’s `scopes` must contain the listed scope(s); “must equal” means exact match (order-independent).
+  - **scopes:** Required scope set (e.g. `["TEXT_FILL"]`). "must include" means the variable's `scopes` must contain the listed scope(s); "must equal" means exact match (order-independent).
   - **hiddenFromPublishing:** Must match the value required by the rule (true/false).
 
 Report every variable in this set where the actual `scopes` or `hiddenFromPublishing` does not match the rule. Include variable `name`, the rule that was applied, and what was expected vs actual.
 
-Variables that do not match any rule in the scoping-rules file do not need to be reported for Task 2 (no “unmatched rule” required).
+Variables that do not match any rule in the scoping-rules file do not need to be reported for Task 2 (no "unmatched rule" required).
 
 ---
 
 ## Output
 
-Read `componentName` from `inputs/inputs.json`. Turn it into a safe filename segment (lowercase, spaces/slashes → hyphens; if missing or empty use `component`). Use today’s date in ISO format (YYYY-MM-DD-HH-MM). Write the following to the **outputs/1-review** folder:
+Read `componentName` from `inputs/inputs.json`. Turn it into a safe filename segment (lowercase, spaces/slashes → hyphens; if missing or empty use `component`). Use today's date in ISO format (YYYY-MM-DD-HH-MM). Write the following to the **outputs/1-review** folder:
 
 ### 1. Review report: `outputs/1-review/YYYY-MM-DD-HH-MM-{componentName}-figma-token-review.md`
 
 Example: if componentName is `merchant_tile`, use `outputs/1-review/2026-02-26-08-53-merchant_tile-figma-token-review.md` (keep underscores if present; only spaces/slashes become hyphens).
 
 **Contents:**
-1. **Task 1: CSV vs Figma**
-   - Missing in Figma
-   - Extra in Figma (if CSV has data)
+1. **Inputs used** — componentName; whether additional-rules.md was present and applied; any exclusions made per its rules.
+2. **Task 1: CSV vs Figma**
+   - Missing in Figma (note any tokens excluded per additional-rules.md)
+   - Extra in Figma (if CSV has data; note any variables excluded per component segment scoping rule)
    - Naming discrepancies
    - Assignment discrepancies
-2. **Task 2: Scoping rule violations**
+3. **Task 2: Scoping rule violations**
    - List each violation with variable name, rule, expected vs actual.
-3. **Token mapping:** State that the full CSV mapping is in `outputs/1-review/YYYY-MM-DD-HH-MM-{componentName}-figma-token-mapping.csv` and in `inputs/mapped-component-tokens.csv`.
+4. **Token mapping:** State that the full CSV mapping is in `outputs/1-review/YYYY-MM-DD-HH-MM-{componentName}-figma-token-mapping.csv` and in `inputs/mapped-component-tokens.csv`.
 
-If a section has no findings, say “None” or “No issues” for that subsection. Use clear headings and bullet lists so the file is easy to scan.
+If a section has no findings, say "None" or "No issues" for that subsection. Use clear headings and bullet lists so the file is easy to scan.
 
 ### 2. Token mapping CSV (dated): `outputs/1-review/YYYY-MM-DD-HH-MM-{componentName}-figma-token-mapping.csv`
 
@@ -93,6 +98,6 @@ Include one row per CSV token, in the same order as the CSV. For tokens that are
 
 ### 3. Token mapping CSV (inputs): `inputs/mapped-component-tokens.csv`
 
-Write the **same** token mapping CSV as above to this path. **Fully overwrite** the file each time; do not append or ask for permission—overwriting `inputs/mapped-component-tokens.csv` is intentional and required by this skill.
+Write the **same** token mapping CSV as above to this path. **Fully overwrite** the file each time; do not append or ask for permission — overwriting `inputs/mapped-component-tokens.csv` is intentional and required by this skill.
 
 Do not modify any other files in `inputs/` (e.g. `inputs.json`, `component-tokens.csv`, `figma-variables.json`), or the scoping-rules file; only write the three outputs above (two in **outputs/1-review**, one in **inputs**).
