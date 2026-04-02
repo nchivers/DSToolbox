@@ -6,6 +6,7 @@ Read the input files from this workspace (paths relative to workspace root):
   - inputs/inputs.json (componentName)
   - inputs/component-tokens.csv (source of truth for all tasks)
   - inputs/figma-variables.json
+  - tools/knowledge/figma-base-variables.csv (base token name → variable ID lookup)
 
 ---
 
@@ -26,6 +27,9 @@ You are generating a plan to bring Figma variables in sync with a component toke
 - **Figma variables:** `inputs/figma-variables.json`
   JSON array of variable objects. Each has: `id`, `name`, `collection`, `resolvedType`, `valuesByMode`, `hiddenFromPublishing`, `scopes`. The `valuesByMode` map uses Figma mode IDs as keys; use the mode names in context (e.g. "All Modes", "Light", "Dark") to align with the CSV columns when comparing values.
 
+- **Base variable lookup:** `tools/knowledge/figma-base-variables.csv`
+  CSV with columns `name`, `value`, `id`. Maps every base token name (using `/` delimiters, e.g. `base/color/red/500`) to its Figma variable ID. Use this to resolve the variable ID for any required value when planning updates or additions.
+
 ---
 
 ## Component scoping — Figma variables
@@ -44,6 +48,21 @@ The CSV and Figma use different naming conventions. Before any comparison, norma
 **Example:** `affirm.color.top_nav_bar.main.container.bg` → `color/top_nav_bar/main/container/bg`
 
 Use the normalized form only for matching. Always display original names (CSV format and Figma format) in the output.
+
+---
+
+## Base token value lookup
+
+CSV token values reference base tokens using dot notation (e.g. `base.color.red.500`). To resolve a variable ID for any required value in a planned UPDATE or ADD:
+
+1. Normalize the CSV value the same way as token names: replace `.` with `/` (no prefix to strip — base token values have no `affirm.` prefix).
+   **Example:** `base.color.red.500` → `base/color/red/500`
+2. Look up the normalized value in `tools/knowledge/figma-base-variables.csv` by matching the `name` column.
+3. Use the `id` column value as the variable ID for that value.
+
+If a value cannot be found in the lookup CSV (e.g. it is a raw primitive like `#FFFFFF` rather than an alias), note it as "no alias found" and include the raw value instead.
+
+Always include the resolved variable ID alongside every required value in UPDATE and ADD plans.
 
 ---
 
@@ -123,9 +142,9 @@ Use the structure below. If a section has no items, write "None." so reviewers c
 
 ## Task 1 — Normalized exact matches (value updates only)
 
-| CSV name | Figma name | Figma ID | Mode | Current value | Required value |
-|----------|------------|----------|------|---------------|----------------|
-| ...      | ...        | ...      | ...  | ...           | ...            |
+| CSV name | Figma name | Figma ID | Mode | Current value | Required value | Required value ID |
+|----------|------------|----------|------|---------------|----------------|-------------------|
+| ...      | ...        | ...      | ...  | ...           | ...            | ...               |
 
 ---
 
@@ -138,9 +157,9 @@ Use the structure below. If a section has no items, write "None." so reviewers c
 **Confidence:** High / Medium / Low — _rationale_
 **Planned actions:**
 - RENAME: `figma-variable-name` → `csv-token-name`
-- UPDATE All Modes: `current` → `required`
-- UPDATE Light Mode: `current` → `required`
-- UPDATE Dark Mode: `current` → `required`
+- UPDATE All Modes: `current` → `required` (`VariableID:...`)
+- UPDATE Light Mode: `current` → `required` (`VariableID:...`)
+- UPDATE Dark Mode: `current` → `required` (`VariableID:...`)
 
 ---
 
@@ -154,9 +173,9 @@ Use the structure below. If a section has no items, write "None." so reviewers c
 
 ## Task 4 — Additions
 
-| CSV token name | All Modes | Light Mode | Dark Mode | Action |
-|----------------|-----------|------------|-----------|--------|
-| ...            | ...       | ...        | ...       | ADD    |
+| CSV token name | All Modes | All Modes ID | Light Mode | Light Mode ID | Dark Mode | Dark Mode ID | Action |
+|----------------|-----------|--------------|------------|---------------|-----------|--------------|--------|
+| ...            | ...       | ...          | ...        | ...           | ...       | ...          | ADD    |
 
 ---
 
