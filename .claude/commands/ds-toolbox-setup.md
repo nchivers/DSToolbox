@@ -55,18 +55,28 @@ Run `which gh` to check if the GitHub CLI is installed.
 
 Run `claude mcp list` to check whether a Figma MCP server is already registered for this project.
 
-**If already registered:** Confirm to the user and move on.
+**If already registered:**
+- Run `claude mcp list` and check for a `figma` entry with status `connected`. If it's listed and connected, confirm and move on.
+- If it's listed but not yet authenticated, skip to the **Authenticate** step below.
 
 **If not registered:**
-- Explain that this will add the Figma MCP server to Claude CLI at the project level, making it available to all Claude commands in this repo.
+- Explain that this will add the Figma MCP server using HTTP transport.
 - Ask for permission, then run:
   ```
-  claude mcp add --scope project figma -- npx -y figma-developer-mcp --stdio
+  claude mcp add --transport http figma https://mcp.figma.com/mcp
   ```
 - Confirm it was added by running `claude mcp list` again and checking for the `figma` entry.
 
-**Authenticate Figma MCP:**
-- Use your MCP tool to connect to the Figma MCP server and run its **authenticate** option so the user can complete authentication via the browser.
+**Restart required:**
+- Explain to the user that Claude must be fully restarted before the new MCP server is loaded — it won't be active in the current session.
+- Ask them to quit and reopen Claude, then re-run `/ds-toolbox-setup` to continue.
+- Once they confirm they've restarted and are back, proceed to the step below.
+
+**Authenticate:**
+- After restart, the Figma MCP will be registered but needs a one-time browser sign-in.
+- Explain that `/mcp` is a Claude slash command (not a shell command), so the user needs to run it themselves.
+- Ask them to type `/mcp` in the chat input, find the `figma` entry, and click **Authenticate** to open the browser authentication flow and complete the Figma sign-in.
+- Once they confirm authentication is done, run `claude mcp list` to verify the `figma` entry shows as connected.
 
 ---
 
