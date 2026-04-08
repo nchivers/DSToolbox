@@ -8,6 +8,18 @@ Read the input files from this workspace (paths relative to workspace root):
   - inputs/figma-variables.json
   - tools/knowledge/figma-base-variables.csv (base token name → variable ID lookup)
 
+**Before running any tasks**, sync `tools/knowledge/figma-base-variables.csv` against the live DS Base Library using Figma MCP (see "Sync base variable lookup" section below).
+
+After completing all tasks, determine a suggested branch name for the `build-figma-variables` skill using these rules (applied to the plan summary counts):
+
+| Plan content | Branch name pattern |
+|---|---|
+| Additions > 0, Deletes = 0, Renames = 0, Value updates = 0 | `[componentName]: Add` |
+| Deletes > 0, Additions = 0, Renames = 0, Value updates = 0 | `[componentName]: Remove` |
+| Any other combination | `[componentName]: Update - [brief description ≤ 5 words summarising the dominant change]` |
+
+Use `componentName` from `inputs/inputs.json` as `[componentName]`. Include the suggested branch name in the output file header (see Output section).
+
 ---
 
 # Figma Token Update Plan
@@ -66,9 +78,38 @@ Always include the resolved variable ID alongside every required value in UPDATE
 
 ---
 
+## Sync base variable lookup
+
+Run this before any tasks. Use Figma MCP to fetch all local variables from the DS Base Library and update `tools/knowledge/figma-base-variables.csv` to match.
+
+**DS Base Library:**
+- File key: `Sj1A24j9ANkav6SG2pHbop`
+- URL: `https://www.figma.com/design/Sj1A24j9ANkav6SG2pHbop/%F0%9F%8E%A8--R--DS-Base-Library?node-id=4718-7648&t=8gY2lycibW7oZ1wz-11`
+
+Call `get_variable_defs(fileKey)` to retrieve all variables. The CSV has columns `name`, `value`, `id`. For each variable returned by Figma MCP:
+
+- **name**: the variable's path name using `/` delimiters (e.g. `base/color/red/500`)
+- **value**: the resolved primitive value or alias name
+- **id**: the Figma variable ID (e.g. `VariableID:4360:1126027`)
+
+Compare the full set of variables from Figma against every row in the CSV and apply these changes directly to `tools/knowledge/figma-base-variables.csv`:
+
+| Condition | Action |
+|---|---|
+| Variable exists in Figma but not in CSV | **Add** a new row |
+| Variable exists in CSV but not in Figma | **Delete** the row |
+| Variable exists in both but `id` or `value` differs | **Update** the row |
+| Variable exists in both and all columns match | No change |
+
+**Fully overwrite** `tools/knowledge/figma-base-variables.csv` with the updated content. Use the updated CSV for all base token lookups in the tasks below.
+
+If the Figma MCP server is not available, skip this sync step, use the existing CSV as-is, and note in the output that the base variable lookup was not validated against the live library.
+
+---
+
 ## Tasks
 
-Work through the tasks in order. Tokens resolved in an earlier task must not appear as candidates in later tasks.
+Work through the tasks in order. **Every token and every Figma variable must appear in exactly one task** — once placed, it must not appear as a candidate in any later task, regardless of confidence level.
 
 ### Task 1 — Normalized exact matches: identify value updates
 
@@ -93,17 +134,17 @@ For each potential match:
 - Plan an **UPDATE** for any mode value discrepancies
 - Assign a confidence level (High / Medium / Low) with a one-line rationale
 
-Low-confidence pairs should be flagged for human review before acting.
+**Every token paired here — regardless of confidence level — is consumed by Task 2 and must not appear in Task 3 or Task 4.** Low-confidence pairs are flagged for the user to review and adjust in the plan before the build step runs.
 
 ### Task 3 — Deletes
 
-In-scope Figma variables that were **not** matched in Task 1 or Task 2 (at High or Medium confidence) have no corresponding token in the CSV and should be removed from Figma.
+In-scope Figma variables that were **not** matched in Task 1 or Task 2 have no corresponding token in the CSV and should be removed from Figma.
 
 For each, plan a **DELETE** and list the variable name and id.
 
 ### Task 4 — Additions
 
-CSV tokens that were **not** matched in Task 1 or Task 2 (at High or Medium confidence) do not yet exist in Figma and need to be created.
+CSV tokens that were **not** matched in Task 1 or Task 2 do not yet exist in Figma and need to be created.
 
 For each, plan an **ADD** and include the token name and the values from the CSV (`All Modes`, `Light Mode`, `Dark Mode`).
 
@@ -113,7 +154,9 @@ For each, plan an **ADD** and include the token name and the values from the CSV
 
 Read `componentName` from `inputs/inputs.json`. Turn it into a safe filename segment (lowercase, spaces and slashes → hyphens; use `component` as fallback if missing). Use today's date and time: `YYYY-MM-DD-HH-MM`.
 
-Write the plan to: `outputs/1-token-prep/YYYY-MM-DD-HH-MM-{componentName}-token-update-plan.md`
+Write the plan to **two locations** with identical content:
+1. `outputs/1-token-prep/YYYY-MM-DD-HH-MM-{componentName}-token-update-plan.md` — dated record
+2. `inputs/build-figma-variables-plan.md` — working plan for the next skill (**fully overwrite**)
 
 Use the structure below. If a section has no items, write "None." so reviewers can confirm the check ran cleanly.
 
@@ -125,6 +168,7 @@ Use the structure below. If a section has no items, write "None." so reviewers c
 **Generated:** YYYY-MM-DD HH:MM
 **Source of truth:** inputs/component-tokens.csv
 **Figma variables file:** inputs/figma-variables.json
+**Suggested branch name:** {branch name determined above}
 
 ---
 
@@ -188,4 +232,4 @@ Use the structure below. If a section has no items, write "None." so reviewers c
 
 ---
 
-Do not modify any file in `inputs/`. Write only the plan file described above.
+Do not modify any file in `inputs/` (e.g. `inputs.json`, `component-tokens.csv`, `figma-variables.json`). Write only the two plan files and, if the Figma MCP sync ran, the updated `tools/knowledge/figma-base-variables.csv`.

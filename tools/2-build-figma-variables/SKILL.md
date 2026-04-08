@@ -4,7 +4,7 @@ description: Creates a Figma library branch and implements variable changes from
 ---
 
 Read these input files (paths relative to workspace root):
-- `inputs/inputs.json` — `libraryUrl` (Figma library file URL) and `componentName`
+- `inputs/inputs.json` — `libraryBranchUrl` (Figma branch URL) and `componentName`
 - `inputs/build-figma-variables-plan.md` — Variable changes to implement (adds, updates, renames, deletes)
 
 ---
@@ -18,46 +18,28 @@ You are implementing variable changes in a Figma library branch using the Figma 
 ## Step 1 — Read inputs
 
 Read `inputs/inputs.json`:
-- `componentName` — used to name the branch and output file
-- `libraryUrl` — Figma library URL. Parse to get the **fileKey**: the first path segment after `/design/` (e.g. from `.../design/yvoTWRBHHMvvVdTphS2UpN/...` → `yvoTWRBHHMvvVdTphS2UpN`). Ignore any `branch/...` segment when extracting the key.
+- `componentName` — used to name the output file
+- `libraryBranchUrl` — Figma branch URL the user has already created. Parse to get the **fileKey**: the first path segment after `/design/` (e.g. from `.../design/yvoTWRBHHMvvVdTphS2UpN/...` → `yvoTWRBHHMvvVdTphS2UpN`).
 
-Read `inputs/build-figma-variables-plan.md` in full to understand what changes are needed.
-
----
-
-## Step 2 — Determine branch name
-
-Analyze the plan to classify the type of change, then construct the branch name:
-
-| Plan content | Pattern | Example |
-|---|---|---|
-| Additions only | `[componentName]: Add` | `Tag: Add` |
-| Additions of a specific variant | `[componentName]: Add - [variant description]` | `Tag: Add - Icon on right variant` |
-| Deletions only | `[componentName]: Remove` | `Tag: Remove` |
-| Deletion of a specific variant | `[componentName]: Remove - [variant description]` | `Radio button: Remove - Error variants` |
-| Updates or mixed changes | `[componentName]: Update - [brief description]` | `Row: Update - Refactor with new CS tokens` |
-
-Use `componentName` from `inputs/inputs.json` as `[componentName]`. For Update branches, derive a short description (≤ 5 words) from the plan's stated purpose or the nature of the changes.
-
----
-
-## Step 3 — Create the Figma branch
-
-If the Figma MCP server is available:
-
-1. Use the Figma MCP branch creation tool with:
-   - **fileKey**: parsed from `libraryUrl` in Step 1
-   - **branchName**: determined in Step 2
-
-2. Record the **branch file key** returned by the MCP — all subsequent MCP calls must use this branch file key, not the original file key.
+Read `inputs/build-figma-variables-plan.md` in full. Note the **Suggested branch name** from the plan header.
 
 If the Figma MCP server is not available, stop and inform the user that it must be configured to run this skill.
 
 ---
 
-## Step 4 — Implement changes from the plan
+## Step 2 — Confirm branch
 
-The plan follows the output structure from the `figma-token-update-plan` skill. It contains up to five tasks. Read each task and execute as described below. Work through tasks in this order: **Task 2 renames → Task 1 & 2 updates → Task 3 deletes → Task 4 additions**. Skip Task 5 (in sync — no action needed).
+Inform the user of the plan's suggested branch name and ask them to confirm the linked branch is correct before any changes are made:
+
+> The plan suggests changes should be applied to a branch named **"{suggested branch name}"**. Please confirm that the branch linked in `libraryBranchUrl` is the correct branch. Would you like to proceed?
+
+If the user confirms, proceed. If they do not confirm, exit without making any Figma changes.
+
+---
+
+## Step 3 — Implement changes from the plan
+
+The plan (`inputs/build-figma-variables-plan.md`) follows the output structure from the `figma-token-update-plan` skill. It contains up to five tasks. Read each task and execute as described below. Work through tasks in this order: **Task 2 renames → Task 1 & 2 updates → Task 3 deletes → Task 4 additions**. Skip Task 5 (in sync — no action needed).
 
 Using the **branch file key** for all Figma MCP calls.
 
@@ -134,7 +116,7 @@ If any step fails, note the failure and continue with remaining changes.
 
 ---
 
-## Step 5 — Write summary
+## Step 4 — Write summary
 
 After completing all changes, write a summary to:
 
@@ -146,7 +128,7 @@ Sanitize `componentName` for filenames (lowercase, spaces/slashes → hyphens; u
 # Figma Variables Build Summary — {componentName}
 
 **Generated:** YYYY-MM-DD HH:MM
-**Library:** {libraryUrl}
+**Library branch:** {libraryBranchUrl}
 **Branch:** {branchName}
 **Branch file key:** {branchFileKey}
 

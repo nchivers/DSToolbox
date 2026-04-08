@@ -24,7 +24,7 @@ All other inputs use **fixed paths** (workspace root):
 | Path | Purpose |
 |------|--------|
 | `inputs/mapped-component-tokens.csv` | **Required.** CSV of tokens associated with this component (e.g. output from 1-review skill); used to verify "all tokens applied" and map token → variable ID. First column = CSV token name, second column = Figma token name, and third column = Figma variable ID. |
-| `tools/2-figma-component-review/knowledge/naming-rules.md` | Rules for component property naming (variant, boolean, content swap, text). |
+| `tools/knowledge/component-property-naming-rules.md` | Rules for component property naming (variant, boolean, content swap, text). |
 | `tools/2-figma-component-review/knowledge/additional-rules.md` | Optional. Interpretive rules and exceptions (e.g. exclude position tokens from "unused token" reporting). If present, read and apply every rule during the review. |
 
 ---
@@ -82,7 +82,7 @@ Perform these checks and report every finding. If an input file is missing, note
 
 ### 4. Component property naming (variant, boolean, content swap, text)
 
-- **When:** `2-review-figma-imp-skill/knowledge/naming-rules.md` exists and is readable.
+- **When:** `tools/knowledge/component-property-naming-rules.md` exists and is readable.
 - **Check:** Apply the rules in that file **only** to component set properties: **variant** (e.g. Interaction with values Resting, Hover, Focus-Visible, Pressed, Disabled), **boolean**, **content swap**, and **text** properties. Verify property names and their values match the defined rules. Do not use this check for variable/token names or token usage—those are covered by checks 1 and 2.
 - **Report:** List each violation with: **layer/component name** (if the violation applies to a specific instance or subcomponent), component property name, actual value(s), the rule that was broken, and expected name or value. Mark as **issue**.
 
@@ -94,7 +94,7 @@ Write exactly one results file:
 
 - **Path:** `outputs/2-review/YYYY-MM-DD-HH-MM-{componentName}-figma-imp-review.md`. Use `componentName` from **inputs/inputs.json** if present; sanitize for filenames (lowercase, replace spaces and invalid chars with hyphens, e.g. "Merchant Tile" → `merchant-tile`). If `componentName` is missing, use `component`. Use today’s date in ISO format for YYYY-MM-DD-HH-MM.
 - **Contents:**
-  1. **Inputs used** – componentName (if set); componentUrl; **subcomponents** from inputs.json (if present) with names and URLs; that component data came from Figma MCP; which of the fixed-path inputs were present (mapped-component-tokens.csv, naming-rules.md, additional-rules.md). If subcomponents were in scope (from inputs.json or additional-rules.md), list them and confirm their context was fetched and included.
+  1. **Inputs used** – componentName (if set); componentUrl; **subcomponents** from inputs.json (if present) with names and URLs; that component data came from Figma MCP; which of the fixed-path inputs were present (mapped-component-tokens.csv, component-property-naming-rules.md, additional-rules.md). If subcomponents were in scope (from inputs.json or additional-rules.md), list them and confirm their context was fetched and included.
   2. **1. Token coverage** – Tokens not used (from mapped-component-tokens.csv), with **layer name(s)** where applicable; or note that the CSV was missing.
   3. **2. Raw values and direct base tokens** – For each issue: **layer name**, property, and the raw value or base variable name (include node ID if helpful).
   4. **3. Typography** – For each issue: **layer name** of the text node and the problem (e.g. no library style).
@@ -109,7 +109,7 @@ Use clear headings and bullet lists. **Include the layer name for every issue** 
 
 1. Read **inputs/inputs.json** for **componentName**, **componentUrl**, and **subcomponents** (optional array of `{ "name", "subcomponentUrl" }`). Require **componentUrl**. If **2-review-figma-imp-skill/knowledge/additional-rules.md** exists, load it and apply its rules throughout the review.
 2. **Get component data:** If the Figma MCP server is available, parse **componentUrl** for fileKey and nodeId, then call **get_variable_defs**, **get_design_context**, and **get_metadata** so you have layer names for the output. Use the responses as component data and to include **layer name** with every issue in the results file. If **inputs.json** has a **subcomponents** array, for each entry parse **subcomponentUrl** for fileKey and nodeId, call **get_variable_defs** (and optionally **get_design_context**, **get_metadata**) for that node, and merge the data into the review scope; match each to INSTANCEs in the main component by (fileKey, nodeId) and use the supplied **name** when labeling findings. If **subcomponents** is not present and **additional-rules.md** defines owned subcomponents, identify each owned subcomponent and **get the full context** (get_variable_defs, get_design_context, get_metadata) for each one’s component set and include it in the data used for the review. If the Figma MCP server is not available, inform the user that it must be configured to run this review.
-3. Load other inputs at their fixed paths (mapped-component-tokens.csv, naming-rules.md, additional-rules.md).
+3. Load other inputs at their fixed paths (mapped-component-tokens.csv, component-property-naming-rules.md, additional-rules.md).
 4. Run each applicable check (1–4) using the component data and collect issues.
 5. Write **outputs/2-review/YYYY-MM-DD-HH-MM-{componentName}-figma-imp-review.md** with all findings (componentName from inputs.json, sanitized; date = today).
 

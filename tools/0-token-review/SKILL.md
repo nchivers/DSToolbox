@@ -18,7 +18,7 @@ Review a CSV of component tokens against naming rules, assignment completeness, 
 |--------|--------|
 | **inputs/inputs.json** | **Required.** Must include `componentName` (e.g. `link`, `button`). Used in the results filename. |
 | **inputs/component-tokens.csv** | **Required.** CSV with one row per token. **One column per name segment** (no dot-separated full token). Segment columns plus assignment columns. |
-| **tools/0-token-review/knowledge/token-naming-rules.md** | **Required for naming check.** Defines each segment's purpose, allowed values/patterns, and token-building examples. Path is relative to workspace root. |
+| **tools/knowledge/token-naming-rules.md** | **Required for naming check.** Defines each segment's purpose, allowed values/patterns, and token-building examples. Path is relative to workspace root. |
 | **tools/0-token-review/knowledge/additional-rules.md** | **Optional.** Interpretive rules and exceptions (e.g. composite token types excluded from assignment check). If present, read and apply every rule during the review. Path is relative to workspace root. |
 
 ### CSV structure
@@ -79,7 +79,7 @@ Use clear headings and bullet or table lists. If a section has no findings, writ
 
 1. Read **inputs/inputs.json** (workspace root) and get `componentName`.
 2. Read **inputs/component-tokens.csv** (workspace root). Identify segment columns (by header name or position per token-naming-rules.md) and assignment columns (All Modes, Light Mode, Dark Mode) by header name.
-3. Read **0-review-csv-tokens-skill/knowledge/token-naming-rules.md** to load segment definitions, allowed values, and token-building examples.
+3. Read **tools/knowledge/token-naming-rules.md** to load segment definitions, allowed values, and token-building examples.
 4. If **tools/0-token-review/knowledge/additional-rules.md** exists, read it and note all rules and exceptions to apply during the review.
 5. Run **Check 1 (naming):** For each row, read segment values from the segment columns. Validate each segment against the rules; record violations. Reconstruct token name from segments (e.g. for reporting) by joining non-empty segments with `.`.
 6. Run **Check 2 (assignments):** For each row, read Foundation from the foundation segment column. Apply single-mode vs dual-mode rule; if additional-rules.md defines any foundation values excluded from this check, skip those tokens instead of flagging them. Record tokens missing required assignments.

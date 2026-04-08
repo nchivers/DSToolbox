@@ -16,10 +16,6 @@ IF name startsWith "color/bg/" OR name startsWith "color/fill/"
   → scopes must equal ["FRAME_FILL","SHAPE_FILL"]
   → hiddenFromPublishing must equal false  
 
-IF name startsWith "color/divider/"  
-  → scopes must equal ["STROKE_COLOR"]
-  → hiddenFromPublishing must equal false 
-
 IF name startsWith "color/border/"  
   → scopes must equal ["STROKE_COLOR"]
   → hiddenFromPublishing must equal false  
@@ -52,6 +48,10 @@ IF name matches "^color/{component}/" AND name contains "/outline/"
   → scopes must equal ["STROKE_COLOR"]  
   → hiddenFromPublishing must equal true 
 
+IF name startsWith "color/divider/"  
+  → scopes must equal ["STROKE_COLOR"]
+  → hiddenFromPublishing must equal true 
+  
 ---
 
 ## SPACING

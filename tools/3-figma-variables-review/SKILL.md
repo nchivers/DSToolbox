@@ -6,7 +6,7 @@ Read the input files from this workspace (paths relative to workspace root):
   - inputs/inputs.json (componentName for output file names)
   - inputs/component-tokens.csv
   - inputs/figma-variables.json
-  - tools/1-figma-variables-review/knowledge/scoping-rules.md (scoping validation rules for Task 2)
+  - tools/knowledge/figma-variable-scoping-rules.md (scoping validation rules for Task 2)
   - tools/1-figma-variables-review/knowledge/additional-rules.md (optional; interpretive rules and exceptions — read if present and apply throughout)
 ---
 
@@ -27,7 +27,7 @@ You are reviewing Figma design tokens. Perform the following two checks and writ
 - **Figma variables:** `inputs/figma-variables.json`  
   JSON array of variable objects. Each has: `id`, `name`, `collection`, `resolvedType`, `valuesByMode`, `hiddenFromPublishing`, `scopes`.
 
-- **Scoping rules:** `1-review-figma-tokens-skill/knowledge/scoping-rules.md`  
+- **Scoping rules:** `tools/knowledge/figma-variable-scoping-rules.md`  
   Rules that define required `scopes` and `hiddenFromPublishing` by token name patterns.
 
 - **Additional rules:** `tools/1-figma-variables-review/knowledge/additional-rules.md`  
@@ -52,7 +52,7 @@ Normalize comparison by trimming whitespace and comparing token paths in a case-
 
 **Scope:** Evaluate scoping rules only for the tokens that were compared in Task 1. That is, consider only Figma variables whose `name` appears in (or aligns with) the CSV — i.e. the set of tokens from the source of truth. Do not evaluate every variable in `inputs/figma-variables.json`; only those that correspond to tokens in `inputs/component-tokens.csv`. If additional-rules.md defines a component segment scoping rule, apply the same constraint here: only evaluate variables whose component segment matches the component being reviewed.
 
-Using **only** the rules in `1-review-figma-tokens-skill/knowledge/scoping-rules.md`:
+Using **only** the rules in `tools/knowledge/figma-variable-scoping-rules.md`:
 
 - For each such variable (aligned with the CSV), determine which rule(s) apply based on `name`, `collection`, and any other conditions in the rules.
 - For each applicable rule, check:

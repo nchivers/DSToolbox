@@ -1,5 +1,2 @@
-<<<<<<< HEAD
 outputs/*/*
-=======
-outputs/*/*
->>>>>>> Add-Token-Prep-Skill
+!.claude/settings.local.json
