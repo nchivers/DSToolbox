@@ -1,8 +1,0 @@
-csv_token,figma_name,figma_id
-affirm.color.divider.primary.fill,color/divider/primary/fill,VariableID:210:23107
-affirm.color.divider.primary.inverse.fill,color/divider/primary/inverse/fill,VariableID:210:23117
-affirm.color.divider.secondary.fill,color/divider/secondary/fill,VariableID:210:23108
-affirm.color.divider.secondary.inverse.fill,color/divider/secondary/inverse/fill,VariableID:210:23118
-affirm.color.divider.tertiary.fill,color/divider/tertiary/fill,VariableID:210:23109
-affirm.color.divider.tertiary.inverse.fill,color/divider/tertiary/inverse/fill,VariableID:210:23119
-affirm.size.divider.thickness,size/divider/thickness,VariableID:9860:374

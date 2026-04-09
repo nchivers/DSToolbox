@@ -29,11 +29,16 @@ If the Figma MCP server is not available, stop and inform the user that it must 
 
 ## Step 2 — Confirm branch
 
-Inform the user of the plan's suggested branch name and ask them to confirm the linked branch is correct before any changes are made:
+Check whether `libraryBranchUrl` from `inputs/inputs.json` contains `/branch/` in the URL path.
 
-> The plan suggests changes should be applied to a branch named **"{suggested branch name}"**. Please confirm that the branch linked in `libraryBranchUrl` is the correct branch. Would you like to proceed?
+**If `/branch/` is present:** proceed directly to Step 3 without asking the user for confirmation.
 
-If the user confirms, proceed. If they do not confirm, exit without making any Figma changes.
+**If `/branch/` is not present:** alert the user:
+
+> ⚠️ The `libraryBranchUrl` in `inputs/inputs.json` does not appear to be a branch link — it does not contain `/branch/` in the URL. Please confirm: is this link correct and intentional?
+
+- If the user confirms it is correct, proceed to Step 3.
+- If the user says it is not correct, let them know they should update `inputs/inputs.json` with the correct branch URL, and exit without making any Figma changes.
 
 ---
 

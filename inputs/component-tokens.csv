@@ -1,8 +1,0 @@
-namespace,foundation,component,variant (opt),size_variant (opt),context (opt),polarity (opt),persistence (opt),part (opt),part_variant (opt),subpart (opt),property,state (opt),interaction (opt),,All Modes,Light Mode,Dark Mode,,Full Token
-affirm,color,divider,primary,,,,,,,,fill,,,,,base.color.gray.100,base.color.gray.700,,affirm.color.divider.primary.fill
-affirm,color,divider,primary,,,inverse,,,,,fill,,,,,base.color.gray.700,base.color.gray.100,,affirm.color.divider.primary.inverse.fill
-affirm,color,divider,secondary,,,,,,,,fill,,,,,base.color.gray.150,base.color.gray.650,,affirm.color.divider.secondary.fill
-affirm,color,divider,secondary,,,inverse,,,,,fill,,,,,base.color.gray.650,base.color.gray.150,,affirm.color.divider.secondary.inverse.fill
-affirm,color,divider,tertiary,,,,,,,,fill,,,,,base.color.gray.150,base.color.gray.650,,affirm.color.divider.tertiary.fill
-affirm,color,divider,tertiary,,,inverse,,,,,fill,,,,,base.color.gray.650,base.color.gray.150,,affirm.color.divider.tertiary.inverse.fill
-affirm,size,divider,,,,,,,,,thickness,,,,size.013,,,,affirm.size.divider.thickness
