@@ -165,7 +165,7 @@ Focus-visible often uses a color change plus a visible **outline** (not `border`
 
 ### Transparent backgrounds
 
-- Use the base token **`opacity.000`** for transparent backgrounds, not a color base token with alpha (e.g. not a color with `.a00`).
+- Use the base token **`base.color.opacity.transparent`** for transparent backgrounds, not a color base token with alpha (e.g. not a color with `.a00`).
 
 ---
 
