@@ -14,6 +14,7 @@
       "Bash(xcodes:*)",
       "Bash(pnpm:*)",
       "Bash(asdf:*)",
+      "Bash(gh:*)",
       "Read(**)",
       "Write(**)",
       "Edit(**)",
@@ -25,7 +26,12 @@
       "Bash(split:*)",
       "mcp__figma__use_figma",
       "Bash(cp outputs/1-token-prep/** inputs/build-figma-variables-plan.md)",
-      "Bash(rm tools/1-token-prep/_compare.py)"
+      "Bash(rm tools/1-token-prep/_compare.py)",
+      "Bash(watchman *)",
+      "Bash(ruby --version)",
+      "Bash(java --version)",
+      "Bash(turbo *)",
+      "Bash(env)"
     ]
   }
 }
