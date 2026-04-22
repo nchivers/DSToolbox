@@ -65,6 +65,7 @@ base/color/gray/800,#262830,VariableID:4360:1126016
 base/color/gray/850,#1F2128,VariableID:4360:1126017
 base/color/gray/900,#191A21,VariableID:4360:1126018
 base/color/gray/950,#121319,VariableID:4360:1126019
+base/color/gray/950 • a00,#12131900,VariableID:4742:5
 base/color/gray/950 • a25,#12131940,VariableID:4712:7648
 base/color/gray/980,#0C0D12,VariableID:4360:1126020
 base/color/gray/black,#000000,VariableID:4360:1126021
