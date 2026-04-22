@@ -1,0 +1,365 @@
+@use '../../tokens/component-type' as typography;
+
+// ---------------------------------------------------------------------------
+// Private palette mixin — maps public token vars to private intermediaries
+// $p: token path segment for the emphasis+variant combo (e.g. 'primary-inverse')
+// $emphasis: base emphasis for border-width lookup (e.g. 'primary')
+// ---------------------------------------------------------------------------
+@mixin _palette($p, $emphasis) {
+  --_bg: var(--affirm-color-button-#{$p}-bg-resting);
+  --_bg-hover: var(--affirm-color-button-#{$p}-bg-hover);
+  --_bg-pressed: var(--affirm-color-button-#{$p}-bg-pressed);
+  --_bg-focus: var(--affirm-color-button-#{$p}-bg-focus-visible);
+  --_bg-disabled: var(--affirm-color-button-#{$p}-bg-disabled);
+  --_bg-loading: var(--affirm-color-button-#{$p}-bg-loading);
+  --_border: var(--affirm-color-button-#{$p}-border-resting);
+  --_border-hover: var(--affirm-color-button-#{$p}-border-hover);
+  --_border-pressed: var(--affirm-color-button-#{$p}-border-pressed);
+  --_border-focus: var(--affirm-color-button-#{$p}-border-focus-visible);
+  --_border-disabled: var(--affirm-color-button-#{$p}-border-disabled);
+  --_border-loading: var(--affirm-color-button-#{$p}-border-loading);
+  --_text: var(--affirm-color-button-#{$p}-text-resting);
+  --_text-hover: var(--affirm-color-button-#{$p}-text-hover);
+  --_text-pressed: var(--affirm-color-button-#{$p}-text-pressed);
+  --_text-focus: var(--affirm-color-button-#{$p}-text-focus-visible);
+  --_text-disabled: var(--affirm-color-button-#{$p}-text-disabled);
+  --_text-loading: var(--affirm-color-button-#{$p}-text-loading);
+  --_icon: var(--affirm-color-button-#{$p}-icon-resting);
+  --_icon-hover: var(--affirm-color-button-#{$p}-icon-hover);
+  --_icon-pressed: var(--affirm-color-button-#{$p}-icon-pressed);
+  --_icon-focus: var(--affirm-color-button-#{$p}-icon-focus-visible);
+  --_icon-disabled: var(--affirm-color-button-#{$p}-icon-disabled);
+  --_border-width: var(--affirm-size-button-#{$emphasis}-border-width);
+}
+
+// ---------------------------------------------------------------------------
+// Block
+// ---------------------------------------------------------------------------
+.affirm-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-style: solid;
+  border-width: var(--_border-width);
+  border-radius: var(--_radius);
+  min-width: var(--_min-width);
+  padding: var(--_padding-y) var(--_padding-x);
+  gap: var(--_gap);
+  background: var(--_bg);
+  border-color: var(--_border);
+  color: var(--_text);
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+  // =========================================================================
+  // Elements
+  // =========================================================================
+
+  &__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--_icon-size);
+    height: var(--_icon-size);
+    color: var(--_icon);
+    transition: color 0.15s ease;
+
+    > * {
+      width: 100%;
+      height: 100%;
+    }
+
+    .affirm-icon {
+      color: inherit;
+    }
+  }
+
+  &__label {
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  &__loading-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--_loading-icon-size);
+    height: var(--_loading-icon-size);
+  }
+
+  &__tooltip {
+    position: absolute;
+    bottom: calc(100% + var(--affirm-position-button-icon-only-tooltip-top-resting));
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    pointer-events: none;
+    background: var(--affirm-color-button-icon-only-tooltip-bg);
+    color: var(--affirm-color-button-icon-only-tooltip-text);
+    border-radius: var(--affirm-radius-button-icon-only-tooltip-all);
+    padding: var(--affirm-spacing-button-icon-only-tooltip-padding-y)
+      var(--affirm-spacing-button-icon-only-tooltip-padding-x);
+    opacity: var(--affirm-opacity-button-icon-only-tooltip-container-resting);
+    transition: opacity 0.15s ease, bottom 0.15s ease;
+    @include typography.component-singleline-small;
+  }
+
+  // =========================================================================
+  // Interaction states
+  // =========================================================================
+
+  &:hover:not(&--disabled):not(&--loading) {
+    background: var(--_bg-hover);
+    border-color: var(--_border-hover);
+    color: var(--_text-hover);
+  }
+
+  &:hover:not(&--disabled):not(&--loading) &__icon {
+    color: var(--_icon-hover);
+  }
+
+  &:hover:not(&--disabled):not(&--loading) &__tooltip {
+    opacity: var(--affirm-opacity-button-icon-only-tooltip-container-hover);
+    bottom: calc(100% + var(--affirm-position-button-icon-only-tooltip-top-hover));
+  }
+
+  &:active:not(&--disabled):not(&--loading) {
+    background: var(--_bg-pressed);
+    border-color: var(--_border-pressed);
+    color: var(--_text-pressed);
+  }
+
+  &:active:not(&--disabled):not(&--loading) &__icon {
+    color: var(--_icon-pressed);
+  }
+
+  &:active:not(&--disabled):not(&--loading) &__tooltip {
+    opacity: var(--affirm-opacity-button-icon-only-tooltip-container-pressed);
+    bottom: calc(100% + var(--affirm-position-button-icon-only-tooltip-top-pressed));
+  }
+
+  &:focus-visible {
+    outline: var(--affirm-size-button-outline-width-focus-visible) solid
+      var(--affirm-color-button-primary-medium-outline-focus-visible);
+    outline-offset: var(--affirm-spacing-button-outline-offset-focus-visible);
+    background: var(--_bg-focus);
+    border-color: var(--_border-focus);
+    color: var(--_text-focus);
+  }
+
+  &:focus-visible &__icon {
+    color: var(--_icon-focus);
+  }
+
+  &:focus-visible &__tooltip {
+    opacity: var(--affirm-opacity-button-icon-only-tooltip-container-focus-visible);
+    bottom: calc(100% + var(--affirm-position-button-icon-only-tooltip-top-focus-visible));
+  }
+
+  // =========================================================================
+  // Disabled
+  // =========================================================================
+
+  &--disabled {
+    background: var(--_bg-disabled);
+    border-color: var(--_border-disabled);
+    color: var(--_text-disabled);
+    cursor: not-allowed;
+  }
+
+  &--disabled &__icon {
+    color: var(--_icon-disabled);
+  }
+
+  &--disabled &__tooltip {
+    opacity: var(--affirm-opacity-button-icon-only-tooltip-container-disabled);
+  }
+
+  &--disabled:hover,
+  &--disabled:active {
+    background: var(--_bg-disabled);
+    border-color: var(--_border-disabled);
+    color: var(--_text-disabled);
+  }
+
+  // =========================================================================
+  // Loading
+  // =========================================================================
+
+  &--loading {
+    background: var(--_bg-loading);
+    border-color: var(--_border-loading);
+    color: var(--_text-loading);
+    cursor: default;
+    pointer-events: none;
+  }
+
+  // =========================================================================
+  // Emphasis + Variant palettes (24 combinations)
+  // =========================================================================
+
+  // --- Primary ---
+  &--primary                    { @include _palette('primary', 'primary'); }
+  &--primary-inverse            { @include _palette('primary-inverse', 'primary'); }
+  &--primary-neutral            { @include _palette('primary-neutral', 'primary'); }
+  &--primary-neutral-inverse    { @include _palette('primary-neutral-inverse', 'primary'); }
+  &--primary-static             { @include _palette('primary-static', 'primary'); }
+  &--primary-inverse-static     { @include _palette('primary-inverse-static', 'primary'); }
+  &--primary-destructive        { @include _palette('primary-destructive', 'primary'); }
+  &--primary-destructive-inverse { @include _palette('primary-destructive-inverse', 'primary'); }
+
+  // --- Secondary ---
+  &--secondary                    { @include _palette('secondary', 'secondary'); }
+  &--secondary-inverse            { @include _palette('secondary-inverse', 'secondary'); }
+  &--secondary-neutral            { @include _palette('secondary-neutral', 'secondary'); }
+  &--secondary-neutral-inverse    { @include _palette('secondary-neutral-inverse', 'secondary'); }
+  &--secondary-static             { @include _palette('secondary-static', 'secondary'); }
+  &--secondary-inverse-static     { @include _palette('secondary-inverse-static', 'secondary'); }
+  &--secondary-destructive        { @include _palette('secondary-destructive', 'secondary'); }
+  &--secondary-destructive-inverse { @include _palette('secondary-destructive-inverse', 'secondary'); }
+
+  // --- Tertiary ---
+  &--tertiary                    { @include _palette('tertiary', 'tertiary'); }
+  &--tertiary-inverse            { @include _palette('tertiary-inverse', 'tertiary'); }
+  &--tertiary-neutral            { @include _palette('tertiary-neutral', 'tertiary'); }
+  &--tertiary-neutral-inverse    { @include _palette('tertiary-neutral-inverse', 'tertiary'); }
+  &--tertiary-static             { @include _palette('tertiary-static', 'tertiary'); }
+  &--tertiary-inverse-static     { @include _palette('tertiary-inverse-static', 'tertiary'); }
+  &--tertiary-destructive        { @include _palette('tertiary-destructive', 'tertiary'); }
+  &--tertiary-destructive-inverse { @include _palette('tertiary-destructive-inverse', 'tertiary'); }
+
+  // =========================================================================
+  // Size modifiers
+  // =========================================================================
+
+  &--large {
+    --_radius: var(--affirm-radius-button-large-all);
+    --_min-width: var(--affirm-size-button-large-min-width);
+    --_icon-size: var(--affirm-size-button-large-icon-all);
+    --_loading-icon-size: var(--affirm-size-button-large-loading-icon-all);
+  }
+
+  &--medium {
+    --_radius: var(--affirm-radius-button-medium-all);
+    --_min-width: var(--affirm-size-button-medium-min-width);
+    --_icon-size: var(--affirm-size-button-medium-icon-all);
+    --_loading-icon-size: var(--affirm-size-button-medium-loading-icon-all);
+  }
+
+  &--small {
+    --_radius: var(--affirm-radius-button-small-all);
+    --_min-width: var(--affirm-size-button-small-min-width);
+    --_icon-size: var(--affirm-size-button-small-icon-all);
+    --_loading-icon-size: var(--affirm-size-button-small-loading-icon-all);
+  }
+
+  // =========================================================================
+  // Typography per size
+  // =========================================================================
+
+  &--large &__label  { @include typography.component-singleline-large-mid-imp; }
+  &--medium &__label { @include typography.component-singleline-medium-mid-imp; }
+  &--small &__label  { @include typography.component-singleline-small-mid-imp; }
+
+  // =========================================================================
+  // Emphasis × Size spacing
+  // =========================================================================
+
+  &--emphasis-primary#{&}--large {
+    --_padding-x: var(--affirm-spacing-button-primary-large-padding-x);
+    --_padding-y: var(--affirm-spacing-button-primary-large-padding-y);
+    --_gap: var(--affirm-spacing-button-primary-large-gap-x);
+  }
+
+  &--emphasis-primary#{&}--medium {
+    --_padding-x: var(--affirm-spacing-button-primary-medium-padding-x);
+    --_padding-y: var(--affirm-spacing-button-primary-medium-padding-y);
+    --_gap: var(--affirm-spacing-button-primary-medium-gap-x);
+  }
+
+  &--emphasis-primary#{&}--small {
+    --_padding-x: var(--affirm-spacing-button-primary-small-padding-x);
+    --_padding-y: var(--affirm-spacing-button-primary-small-padding-y);
+    --_gap: var(--affirm-spacing-button-primary-small-gap-x);
+  }
+
+  &--emphasis-secondary#{&}--large {
+    --_padding-x: var(--affirm-spacing-button-secondary-large-padding-x);
+    --_padding-y: var(--affirm-spacing-button-secondary-large-padding-y);
+    --_gap: var(--affirm-spacing-button-secondary-large-gap-x);
+  }
+
+  &--emphasis-secondary#{&}--medium {
+    --_padding-x: var(--affirm-spacing-button-secondary-medium-padding-x);
+    --_padding-y: var(--affirm-spacing-button-secondary-medium-padding-y);
+    --_gap: var(--affirm-spacing-button-secondary-medium-gap-x);
+  }
+
+  &--emphasis-secondary#{&}--small {
+    --_padding-x: var(--affirm-spacing-button-secondary-small-padding-x);
+    --_padding-y: var(--affirm-spacing-button-secondary-small-padding-y);
+    --_gap: var(--affirm-spacing-button-secondary-small-gap-x);
+  }
+
+  &--emphasis-tertiary#{&}--large {
+    --_padding-x: var(--affirm-spacing-button-tertiary-large-padding-x);
+    --_padding-y: var(--affirm-spacing-button-tertiary-large-padding-y);
+    --_gap: var(--affirm-spacing-button-tertiary-large-gap-x);
+  }
+
+  &--emphasis-tertiary#{&}--medium {
+    --_padding-x: var(--affirm-spacing-button-tertiary-medium-padding-x);
+    --_padding-y: var(--affirm-spacing-button-tertiary-medium-padding-y);
+    --_gap: var(--affirm-spacing-button-tertiary-medium-gap-x);
+  }
+
+  &--emphasis-tertiary#{&}--small {
+    --_padding-x: var(--affirm-spacing-button-tertiary-small-padding-x);
+    --_padding-y: var(--affirm-spacing-button-tertiary-small-padding-y);
+    --_gap: var(--affirm-spacing-button-tertiary-small-gap-x);
+  }
+
+  // =========================================================================
+  // Icon position modifiers
+  // =========================================================================
+
+  &--icon-end {
+    flex-direction: row-reverse;
+  }
+
+  &--icon-only {
+    --_min-width: auto;
+    --_gap: 0;
+  }
+
+  &--icon-only#{&}--large {
+    --_padding-x: var(--affirm-spacing-button-primary-icon-only-large-padding-x);
+    --_padding-y: var(--affirm-spacing-button-primary-icon-only-large-padding-y);
+  }
+
+  &--icon-only#{&}--medium {
+    --_padding-x: var(--affirm-spacing-button-primary-icon-only-medium-padding-x);
+    --_padding-y: var(--affirm-spacing-button-primary-icon-only-medium-padding-y);
+  }
+
+  &--icon-only#{&}--small {
+    --_padding-x: var(--affirm-spacing-button-primary-icon-only-small-padding-x);
+    --_padding-y: var(--affirm-spacing-button-primary-icon-only-small-padding-y);
+  }
+
+  &--icon-only &__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}

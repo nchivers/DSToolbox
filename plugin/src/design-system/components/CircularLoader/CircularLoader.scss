@@ -1,0 +1,41 @@
+@keyframes affirm-circular-loader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.affirm-circular-loader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--affirm-size-circular-loader-large-all);
+  height: var(--affirm-size-circular-loader-large-all);
+
+  &--small {
+    width: var(--affirm-size-circular-loader-small-all);
+    height: var(--affirm-size-circular-loader-small-all);
+  }
+
+  &__spinner {
+    width: 100%;
+    height: 100%;
+    animation: affirm-circular-loader-spin 1s linear infinite;
+    transform-origin: center;
+  }
+
+  &__arc {
+    fill: none;
+    stroke: var(--affirm-color-circular-loader-border);
+    stroke-width: var(--affirm-size-circular-loader-border-width);
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+  &--inverse &__arc {
+    stroke: var(--affirm-color-circular-loader-inverse-border);
+  }
+}

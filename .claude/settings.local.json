@@ -21,7 +21,9 @@
       "mcp__figma__use_figma",
       "Bash(cp outputs/1-token-prep/** inputs/build-figma-variables-plan.md)",
       "Bash(rm tools/1-token-prep/_compare.py)",
-      "mcp__figma__whoami"
+      "mcp__figma__whoami",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)"
     ]
   }
 }

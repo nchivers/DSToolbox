@@ -1,0 +1,168 @@
+@use 'sass:map';
+@use 'base-colors' as *;
+
+// ---------------------------------------------------------------------------
+// Light defaults
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // Background
+  --affirm-color-bg-primary: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-bg-primary-brand: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-bg-primary-inverse: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-bg-primary-on-dark-static: #{map.get($base-colors, 'gray-white-a10')};
+  --affirm-color-bg-secondary: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-bg-secondary-brand: #{map.get($base-colors, 'spruce-100')};
+  --affirm-color-bg-secondary-inverse: #{map.get($base-colors, 'gray-900')};
+  --affirm-color-bg-tertiary: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-bg-tertiary-inverse: #{map.get($base-colors, 'gray-800')};
+
+  // Border
+  --affirm-color-border-emphasis-on-dark-static: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-border-primary: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-border-primary-inverse: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-border-secondary: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-border-secondary-inverse: #{map.get($base-colors, 'gray-700')};
+  --affirm-color-border-separation-primary: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-border-separation-primary-inverse: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-border-separation-secondary: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-border-separation-secondary-inverse: #{map.get($base-colors, 'gray-900')};
+  --affirm-color-border-separation-tertiary: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-border-separation-tertiary-inverse: #{map.get($base-colors, 'gray-800')};
+
+  // Fill
+  --affirm-color-fill-accent-series-a: #{map.get($base-colors, 'green-400')};
+  --affirm-color-fill-accent-series-a-high: #{map.get($base-colors, 'green-800')};
+  --affirm-color-fill-accent-series-b: #{map.get($base-colors, 'yellow-400')};
+  --affirm-color-fill-accent-series-b-high: #{map.get($base-colors, 'yellow-800')};
+  --affirm-color-fill-accent-series-c: #{map.get($base-colors, 'blue-400')};
+  --affirm-color-fill-accent-series-c-high: #{map.get($base-colors, 'blue-800')};
+  --affirm-color-fill-accent-series-d: #{map.get($base-colors, 'red-400')};
+  --affirm-color-fill-accent-series-d-high: #{map.get($base-colors, 'red-800')};
+  --affirm-color-fill-neutral: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-fill-neutral-decorative: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-fill-neutral-decorative-inverse: #{map.get($base-colors, 'gray-750')};
+  --affirm-color-fill-neutral-inverse: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-fill-primary-brand: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-fill-secondary-brand: #{map.get($base-colors, 'spruce-500')};
+
+  // Icon
+  --affirm-color-icon-critical: #{map.get($base-colors, 'red-500')};
+  --affirm-color-icon-info: #{map.get($base-colors, 'blue-500')};
+  --affirm-color-icon-link: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-icon-link-inverse: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-icon-link-on-dark-static: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-icon-link-on-light-static: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-icon-primary: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-icon-primary-brand: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-icon-primary-brand-on-dark-static: #{map.get($base-colors, 'indigo-300')};
+  --affirm-color-icon-primary-brand-on-light-static: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-icon-primary-inverse: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-icon-primary-on-dark-static: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-icon-primary-on-light-static: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-icon-secondary: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-icon-secondary-brand: #{map.get($base-colors, 'spruce-500')};
+  --affirm-color-icon-secondary-inverse: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-icon-success: #{map.get($base-colors, 'green-500')};
+  --affirm-color-icon-warning: #{map.get($base-colors, 'yellow-500')};
+
+  // Text
+  --affirm-color-text-critical: #{map.get($base-colors, 'red-500')};
+  --affirm-color-text-info: #{map.get($base-colors, 'blue-500')};
+  --affirm-color-text-link: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-text-link-inverse: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-text-link-on-dark-static: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-text-link-on-light-static: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-text-primary: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-text-primary-brand: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-text-primary-inverse: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-text-primary-on-dark-static: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-text-primary-on-light-static: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-text-secondary: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-text-secondary-brand: #{map.get($base-colors, 'spruce-500')};
+  --affirm-color-text-secondary-inverse: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-text-success: #{map.get($base-colors, 'green-500')};
+  --affirm-color-text-warning: #{map.get($base-colors, 'yellow-500')};
+}
+
+// ---------------------------------------------------------------------------
+// Dark defaults
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // Background
+  --affirm-color-bg-primary: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-bg-primary-brand: #{map.get($base-colors, 'indigo-600')};
+  --affirm-color-bg-primary-inverse: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-bg-primary-on-dark-static: #{map.get($base-colors, 'gray-white-a10')};
+  --affirm-color-bg-secondary: #{map.get($base-colors, 'gray-900')};
+  --affirm-color-bg-secondary-brand: #{map.get($base-colors, 'spruce-600')};
+  --affirm-color-bg-secondary-inverse: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-bg-tertiary: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-bg-tertiary-inverse: #{map.get($base-colors, 'gray-050')};
+
+  // Border
+  --affirm-color-border-emphasis-on-dark-static: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-border-primary: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-border-primary-inverse: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-border-secondary: #{map.get($base-colors, 'gray-700')};
+  --affirm-color-border-secondary-inverse: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-border-separation-primary: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-border-separation-primary-inverse: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-border-separation-secondary: #{map.get($base-colors, 'gray-900')};
+  --affirm-color-border-separation-secondary-inverse: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-border-separation-tertiary: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-border-separation-tertiary-inverse: #{map.get($base-colors, 'gray-050')};
+
+  // Fill
+  --affirm-color-fill-accent-series-a: #{map.get($base-colors, 'green-400')};
+  --affirm-color-fill-accent-series-a-high: #{map.get($base-colors, 'green-050')};
+  --affirm-color-fill-accent-series-b: #{map.get($base-colors, 'yellow-400')};
+  --affirm-color-fill-accent-series-b-high: #{map.get($base-colors, 'yellow-050')};
+  --affirm-color-fill-accent-series-c: #{map.get($base-colors, 'blue-400')};
+  --affirm-color-fill-accent-series-c-high: #{map.get($base-colors, 'blue-050')};
+  --affirm-color-fill-accent-series-d: #{map.get($base-colors, 'red-400')};
+  --affirm-color-fill-accent-series-d-high: #{map.get($base-colors, 'red-050')};
+  --affirm-color-fill-neutral: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-fill-neutral-decorative: #{map.get($base-colors, 'gray-750')};
+  --affirm-color-fill-neutral-decorative-inverse: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-fill-neutral-inverse: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-fill-primary-brand: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-fill-secondary-brand: #{map.get($base-colors, 'spruce-500')};
+
+  // Icon
+  --affirm-color-icon-critical: #{map.get($base-colors, 'red-300')};
+  --affirm-color-icon-info: #{map.get($base-colors, 'blue-300')};
+  --affirm-color-icon-link: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-icon-link-inverse: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-icon-link-on-dark-static: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-icon-link-on-light-static: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-icon-primary: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-icon-primary-brand: #{map.get($base-colors, 'indigo-300')};
+  --affirm-color-icon-primary-brand-on-dark-static: #{map.get($base-colors, 'indigo-300')};
+  --affirm-color-icon-primary-brand-on-light-static: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-icon-primary-inverse: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-icon-primary-on-dark-static: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-icon-primary-on-light-static: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-icon-secondary: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-icon-secondary-brand: #{map.get($base-colors, 'spruce-300')};
+  --affirm-color-icon-secondary-inverse: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-icon-success: #{map.get($base-colors, 'green-300')};
+  --affirm-color-icon-warning: #{map.get($base-colors, 'yellow-300')};
+
+  // Text
+  --affirm-color-text-critical: #{map.get($base-colors, 'red-300')};
+  --affirm-color-text-info: #{map.get($base-colors, 'blue-300')};
+  --affirm-color-text-link: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-text-link-inverse: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-text-link-on-dark-static: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-text-link-on-light-static: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-text-primary: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-text-primary-brand: #{map.get($base-colors, 'indigo-300')};
+  --affirm-color-text-primary-inverse: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-text-primary-on-dark-static: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-text-primary-on-light-static: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-text-secondary: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-text-secondary-brand: #{map.get($base-colors, 'spruce-300')};
+  --affirm-color-text-secondary-inverse: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-text-success: #{map.get($base-colors, 'green-300')};
+  --affirm-color-text-warning: #{map.get($base-colors, 'yellow-300')};
+}

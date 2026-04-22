@@ -1,0 +1,329 @@
+@use '../../tokens/component-type' as typography;
+
+.affirm-checkbox {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--affirm-size-checkbox-container-min-height);
+  border-radius: var(--affirm-radius-checkbox-container-all);
+  position: relative;
+  cursor: pointer;
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &__inner-container {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--affirm-spacing-checkbox-gap-x);
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  &__indicator {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    position: relative;
+    width: var(--affirm-size-checkbox-indicator-all);
+    height: var(--affirm-size-checkbox-indicator-all);
+    border-radius: var(--affirm-radius-checkbox-indicator-container-all);
+    margin-top: var(--affirm-spacing-checkbox-indicator-margin-top);
+    background: var(--affirm-color-checkbox-indicator-bg-unselected-resting);
+    border: var(--affirm-size-checkbox-indicator-border-width-unselected-resting) solid
+      var(--affirm-color-checkbox-indicator-border-unselected-resting);
+    transition: background 0.15s ease, border-color 0.15s ease;
+
+    &-icon {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      color: var(--affirm-color-checkbox-indicator-icon-unselected-resting);
+    }
+  }
+
+  &__label {
+    @include typography.component-paragraph-large;
+    color: var(--affirm-color-checkbox-label-text-unselected-resting);
+    user-select: none;
+    text-align: left;
+  }
+
+  // ===================================================================
+  // UNSELECTED
+  // ===================================================================
+
+  &:hover &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-unselected-hover);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-unselected-hover);
+    border-color: var(--affirm-color-checkbox-indicator-border-unselected-hover);
+  }
+
+  &:hover &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-unselected-hover);
+  }
+
+  &:hover &__label {
+    color: var(--affirm-color-checkbox-label-text-unselected-hover);
+  }
+
+  &:active &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-unselected-pressed);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-unselected-pressed);
+    border-color: var(--affirm-color-checkbox-indicator-border-unselected-pressed);
+  }
+
+  &:active &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-unselected-pressed);
+  }
+
+  &:active &__label {
+    color: var(--affirm-color-checkbox-label-text-unselected-pressed);
+  }
+
+  &:has(&__input:focus-visible) {
+    outline: var(--affirm-size-checkbox-outline-width-focus-visible) solid
+      var(--affirm-color-checkbox-container-outline-focus-visible);
+    outline-offset: var(--affirm-spacing-checkbox-container-outline-offset-focus-visible);
+  }
+
+  &:has(&__input:focus-visible) &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-unselected-focus-visible);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-unselected-focus-visible);
+    border-color: var(--affirm-color-checkbox-indicator-border-unselected-focus-visible);
+  }
+
+  &:has(&__input:focus-visible) &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-unselected-focus-visible);
+  }
+
+  &:has(&__input:focus-visible) &__label {
+    color: var(--affirm-color-checkbox-label-text-unselected-focus-visible);
+  }
+
+  // ===================================================================
+  // SELECTED
+  // ===================================================================
+
+  &--selected &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-selected-resting);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-selected-resting);
+    border-color: var(--affirm-color-checkbox-indicator-border-selected-resting);
+  }
+
+  &--selected &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-selected-resting);
+  }
+
+  &--selected &__label {
+    color: var(--affirm-color-checkbox-label-text-selected-resting);
+  }
+
+  &--selected:hover &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-selected-hover);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-selected-hover);
+    border-color: var(--affirm-color-checkbox-indicator-border-selected-hover);
+  }
+
+  &--selected:hover &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-selected-hover);
+  }
+
+  &--selected:hover &__label {
+    color: var(--affirm-color-checkbox-label-text-selected-hover);
+  }
+
+  &--selected:active &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-selected-pressed);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-selected-pressed);
+    border-color: var(--affirm-color-checkbox-indicator-border-selected-pressed);
+  }
+
+  &--selected:active &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-selected-pressed);
+  }
+
+  &--selected:active &__label {
+    color: var(--affirm-color-checkbox-label-text-selected-pressed);
+  }
+
+  &--selected:has(.affirm-checkbox__input:focus-visible) &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-selected-focus-visible);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-selected-focus-visible);
+    border-color: var(--affirm-color-checkbox-indicator-border-selected-focus-visible);
+  }
+
+  &--selected:has(.affirm-checkbox__input:focus-visible) &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-selected-focus-visible);
+  }
+
+  &--selected:has(.affirm-checkbox__input:focus-visible) &__label {
+    color: var(--affirm-color-checkbox-label-text-selected-focus-visible);
+  }
+
+  // ===================================================================
+  // ERROR (unselected)
+  // ===================================================================
+
+  &--error &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-error-unselected-resting);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-error-unselected-resting);
+    border-color: var(--affirm-color-checkbox-indicator-border-error-unselected-resting);
+  }
+
+  &--error &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-error-unselected-resting);
+  }
+
+  &--error &__label {
+    color: var(--affirm-color-checkbox-label-text-error-unselected-resting);
+  }
+
+  &--error:hover &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-error-unselected-hover);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-error-unselected-hover);
+    border-color: var(--affirm-color-checkbox-indicator-border-error-unselected-hover);
+  }
+
+  &--error:hover &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-error-unselected-hover);
+  }
+
+  &--error:hover &__label {
+    color: var(--affirm-color-checkbox-label-text-error-unselected-hover);
+  }
+
+  &--error:active &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-error-unselected-pressed);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-error-unselected-pressed);
+    border-color: var(--affirm-color-checkbox-indicator-border-error-unselected-pressed);
+  }
+
+  &--error:active &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-error-unselected-pressed);
+  }
+
+  &--error:active &__label {
+    color: var(--affirm-color-checkbox-label-text-error-unselected-pressed);
+  }
+
+  &--error:has(.affirm-checkbox__input:focus-visible) &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-error-unselected-focus-visible);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-error-unselected-focus-visible);
+    border-color: var(--affirm-color-checkbox-indicator-border-error-unselected-focus-visible);
+  }
+
+  &--error:has(.affirm-checkbox__input:focus-visible) &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-error-unselected-focus-visible);
+  }
+
+  &--error:has(.affirm-checkbox__input:focus-visible) &__label {
+    color: var(--affirm-color-checkbox-label-text-error-unselected-focus-visible);
+  }
+
+  // ===================================================================
+  // ERROR + SELECTED
+  // ===================================================================
+
+  &--error#{&}--selected &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-error-selected-resting);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-error-selected-resting);
+    border-color: var(--affirm-color-checkbox-indicator-border-error-selected-resting);
+  }
+
+  &--error#{&}--selected &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-error-selected-resting);
+  }
+
+  &--error#{&}--selected &__label {
+    color: var(--affirm-color-checkbox-label-text-error-selected-resting);
+  }
+
+  &--error#{&}--selected:hover &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-error-selected-hover);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-error-selected-hover);
+    border-color: var(--affirm-color-checkbox-indicator-border-error-selected-hover);
+  }
+
+  &--error#{&}--selected:hover &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-error-selected-hover);
+  }
+
+  &--error#{&}--selected:hover &__label {
+    color: var(--affirm-color-checkbox-label-text-error-selected-hover);
+  }
+
+  &--error#{&}--selected:active &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-error-selected-pressed);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-error-selected-pressed);
+    border-color: var(--affirm-color-checkbox-indicator-border-error-selected-pressed);
+  }
+
+  &--error#{&}--selected:active &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-error-selected-pressed);
+  }
+
+  &--error#{&}--selected:active &__label {
+    color: var(--affirm-color-checkbox-label-text-error-selected-pressed);
+  }
+
+  &--error#{&}--selected:has(.affirm-checkbox__input:focus-visible) &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-error-selected-focus-visible);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-error-selected-focus-visible);
+    border-color: var(--affirm-color-checkbox-indicator-border-error-selected-focus-visible);
+  }
+
+  &--error#{&}--selected:has(.affirm-checkbox__input:focus-visible) &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-error-selected-focus-visible);
+  }
+
+  &--error#{&}--selected:has(.affirm-checkbox__input:focus-visible) &__label {
+    color: var(--affirm-color-checkbox-label-text-error-selected-focus-visible);
+  }
+
+  // ===================================================================
+  // DISABLED
+  // ===================================================================
+
+  &--disabled &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-unselected-disabled);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-unselected-disabled);
+    border-color: var(--affirm-color-checkbox-indicator-border-unselected-disabled);
+  }
+
+  &--disabled &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-unselected-disabled);
+  }
+
+  &--disabled &__label {
+    color: var(--affirm-color-checkbox-label-text-disabled);
+  }
+
+  &--disabled#{&}--selected &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-selected-disabled);
+    border-width: var(--affirm-size-checkbox-indicator-border-width-selected-disabled);
+    border-color: var(--affirm-color-checkbox-indicator-border-selected-disabled);
+  }
+
+  &--disabled#{&}--selected &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-selected-disabled);
+  }
+
+  &--disabled:hover &__indicator,
+  &--disabled:active &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-unselected-disabled);
+    border-color: var(--affirm-color-checkbox-indicator-border-unselected-disabled);
+  }
+
+  &--disabled#{&}--selected:hover &__indicator,
+  &--disabled#{&}--selected:active &__indicator {
+    background: var(--affirm-color-checkbox-indicator-bg-selected-disabled);
+    border-color: var(--affirm-color-checkbox-indicator-border-selected-disabled);
+  }
+}

@@ -80,8 +80,23 @@ Run `claude mcp list` to check whether a Figma MCP server is already registered 
 
 ---
 
+## Step 4 — Build the Figma Plugin
+
+The Figma plugin source lives in the `plugin/` directory and must be compiled before it can be loaded into Figma.
+
+**Install dependencies:**
+- Run `npm install` inside the `plugin/` directory.
+- If the install succeeds, move on. If it fails, surface the error to the user.
+
+**Build the plugin:**
+- Run `npm run build` inside the `plugin/` directory.
+- If the build succeeds, confirm to the user that the plugin is ready.
+- If it fails, surface the error and work with the user to resolve it.
+
+---
+
 ## Completion
 
-Once all three steps are confirmed:
+Once all four steps are confirmed:
 - Let the user know the environment is fully set up.
 - Tell them they can now run the `ds-toolbox` command with a review type (e.g. `/ds-toolbox token review`) to start using the toolbox.

@@ -1,0 +1,18 @@
+.affirm-page-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--affirm-spacing-page-header-gap-y);
+    margin-bottom: var(--affirm-spacing-page-header-margin-bottom);
+
+    &__start-action {
+        position: absolute;
+        left: 16px;
+        top: 16px;
+    }
+
+    &__end-action {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+    }
+}

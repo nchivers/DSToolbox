@@ -1,0 +1,7 @@
+@use 'sass:map';
+@use '../../tokens/base-sizes' as *;
+
+:root {
+  --affirm-spacing-page-footer-padding-top: #{map.get($base-sizes, '200')};
+  --affirm-spacing-page-footer-padding-bottom: #{map.get($base-sizes, '000')};
+}

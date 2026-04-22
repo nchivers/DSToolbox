@@ -1,0 +1,27 @@
+.affirm-divider {
+  border: none;
+  border-bottom: var(--affirm-size-divider-thickness) solid
+    var(--affirm-color-divider-primary-fill);
+  margin: 0;
+  width: 100%;
+
+  &--secondary {
+    border-bottom-color: var(--affirm-color-divider-secondary-fill);
+  }
+
+  &--tertiary {
+    border-bottom-color: var(--affirm-color-divider-tertiary-fill);
+  }
+
+  &--primary-inverse {
+    border-bottom-color: var(--affirm-color-divider-primary-inverse-fill);
+  }
+
+  &--secondary-inverse {
+    border-bottom-color: var(--affirm-color-divider-secondary-inverse-fill);
+  }
+
+  &--tertiary-inverse {
+    border-bottom-color: var(--affirm-color-divider-tertiary-inverse-fill);
+  }
+}

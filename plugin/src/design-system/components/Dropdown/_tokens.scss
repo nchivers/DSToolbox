@@ -1,0 +1,680 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ===========================================================================
+// Mode-independent (sizes, radius, spacing)
+// ===========================================================================
+:root {
+  // --- Dropdown radius ---
+  --affirm-radius-dropdown-input-all: #{map.get($base-sizes, '100')};
+
+  // --- Listbox radius ---
+  --affirm-radius-listbox-container-all: #{map.get($base-sizes, '100')};
+  --affirm-radius-listbox-list-item-start-bottom: #{map.get($base-sizes, '000')};
+  --affirm-radius-listbox-list-item-middle-bottom: #{map.get($base-sizes, '000')};
+  --affirm-radius-listbox-list-item-end-bottom: #{map.get($base-sizes, '075')};
+  --affirm-radius-listbox-list-item-start-top: #{map.get($base-sizes, '075')};
+  --affirm-radius-listbox-list-item-middle-top: #{map.get($base-sizes, '000')};
+  --affirm-radius-listbox-list-item-end-top: #{map.get($base-sizes, '000')};
+  --affirm-radius-listbox-scroll-bar-handle-all: #{map.get($base-sizes, '100')};
+
+  // --- Dropdown sizes ---
+  --affirm-size-dropdown-input-icon-all: #{map.get($base-sizes, '300')};
+  --affirm-size-dropdown-input-min-height: #{map.get($base-sizes, '700')};
+  --affirm-size-dropdown-input-outline-width-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-size-dropdown-input-border-width-empty-resting: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-empty-hover: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-empty-pressed: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-empty-focus-visible: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-empty-disabled: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-empty-resting: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-empty-hover: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-empty-pressed: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-empty-focus-visible: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-open-empty-resting: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-open-empty-hover: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-open-empty-pressed: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-open-empty-focus-visible: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-open-empty-resting: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-open-empty-hover: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-open-empty-pressed: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-open-empty-focus-visible: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-filled-resting: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-filled-hover: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-filled-pressed: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-filled-focus-visible: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-filled-disabled: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-filled-resting: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-filled-hover: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-filled-pressed: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-filled-focus-visible: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-open-filled-resting: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-open-filled-hover: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-open-filled-pressed: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-open-filled-focus-visible: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-open-filled-resting: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-open-filled-hover: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-open-filled-pressed: #{map.get($base-sizes, '013')};
+  --affirm-size-dropdown-input-border-width-error-open-filled-focus-visible: #{map.get($base-sizes, '013')};
+
+  // --- Listbox sizes ---
+  --affirm-size-listbox-container-border-width: #{map.get($base-sizes, '013')};
+  --affirm-size-listbox-list-item-selected-icon-all: #{map.get($base-sizes, '300')};
+  --affirm-size-listbox-list-item-icon-all: #{map.get($base-sizes, '300')};
+  --affirm-size-listbox-list-item-min-height: #{map.get($base-sizes, '600')};
+  --affirm-size-listbox-list-item-outline-width-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-size-listbox-list-item-border-width-resting: #{map.get($base-sizes, '000')};
+  --affirm-size-listbox-list-item-border-width-hover: #{map.get($base-sizes, '000')};
+  --affirm-size-listbox-list-item-border-width-pressed: #{map.get($base-sizes, '000')};
+  --affirm-size-listbox-list-item-border-width-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-size-listbox-list-item-border-width-disabled: #{map.get($base-sizes, '000')};
+  --affirm-size-listbox-scroll-bar-border-width: #{map.get($base-sizes, '013')};
+
+  // --- Dropdown spacing ---
+  --affirm-spacing-dropdown-gap-y: #{map.get($base-sizes, '100')};
+  --affirm-spacing-dropdown-input-gap-x: #{map.get($base-sizes, '150')};
+  --affirm-spacing-dropdown-input-label-value-gap-y: #{map.get($base-sizes, '025')};
+  --affirm-spacing-dropdown-input-outline-offset-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-spacing-dropdown-input-padding-x: #{map.get($base-sizes, '200')};
+  --affirm-spacing-dropdown-input-padding-y-empty: #{map.get($base-sizes, '200')};
+  --affirm-spacing-dropdown-input-padding-y-filled: #{map.get($base-sizes, '100')};
+
+  // --- Listbox spacing ---
+  --affirm-spacing-listbox-container-gap-y: #{map.get($base-sizes, '000')};
+  --affirm-spacing-listbox-list-item-gap-x: #{map.get($base-sizes, '200')};
+  --affirm-spacing-listbox-list-item-label-gap-x: #{map.get($base-sizes, '200')};
+  --affirm-spacing-listbox-list-item-outline-offset-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-spacing-listbox-list-item-padding-x: #{map.get($base-sizes, '300')};
+  --affirm-spacing-listbox-list-item-padding-y: #{map.get($base-sizes, '200')};
+  --affirm-spacing-listbox-scroll-bar-padding-x: #{map.get($base-sizes, '050')};
+  --affirm-spacing-listbox-scroll-bar-padding-y: #{map.get($base-sizes, '100')};
+}
+
+// ===========================================================================
+// Light mode colors
+// ===========================================================================
+[data-mode='light'] {
+  // --- Listbox container ---
+  --affirm-color-listbox-container-bg: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-listbox-container-border: #{map.get($base-colors, 'gray-400')};
+
+  // --- Dropdown error message ---
+  --affirm-color-dropdown-error-message-text-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-error-message-text-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-error-message-text-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-error-message-text-focus-visible: #{map.get($base-colors, 'red-600')};
+
+  // --- Dropdown message ---
+  --affirm-color-dropdown-message-text-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-message-text-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-message-text-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-dropdown-message-text-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-message-text-focus-visible: #{map.get($base-colors, 'gray-500')};
+
+  // --- Dropdown input bg ---
+  --affirm-color-dropdown-input-bg-empty-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-bg-empty-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-dropdown-input-bg-empty-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-dropdown-input-bg-empty-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-dropdown-input-bg-empty-disabled: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-dropdown-input-bg-error-empty-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-bg-error-empty-hover: #{map.get($base-colors, 'red-050')};
+  --affirm-color-dropdown-input-bg-error-empty-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-dropdown-input-bg-error-empty-focus-visible: #{map.get($base-colors, 'red-050')};
+  --affirm-color-dropdown-input-bg-open-empty-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-bg-open-empty-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-dropdown-input-bg-open-empty-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-dropdown-input-bg-open-empty-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-dropdown-input-bg-error-open-empty-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-bg-error-open-empty-hover: #{map.get($base-colors, 'red-050')};
+  --affirm-color-dropdown-input-bg-error-open-empty-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-dropdown-input-bg-error-open-empty-focus-visible: #{map.get($base-colors, 'red-050')};
+  --affirm-color-dropdown-input-bg-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-bg-filled-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-dropdown-input-bg-filled-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-dropdown-input-bg-filled-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-dropdown-input-bg-filled-disabled: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-dropdown-input-bg-error-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-bg-error-filled-hover: #{map.get($base-colors, 'red-050')};
+  --affirm-color-dropdown-input-bg-error-filled-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-dropdown-input-bg-error-filled-focus-visible: #{map.get($base-colors, 'red-050')};
+  --affirm-color-dropdown-input-bg-open-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-bg-open-filled-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-dropdown-input-bg-open-filled-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-dropdown-input-bg-open-filled-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-dropdown-input-bg-error-open-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-bg-error-open-filled-hover: #{map.get($base-colors, 'red-050')};
+  --affirm-color-dropdown-input-bg-error-open-filled-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-dropdown-input-bg-error-open-filled-focus-visible: #{map.get($base-colors, 'red-050')};
+
+  // --- Dropdown input border ---
+  --affirm-color-dropdown-input-border-empty-resting: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-empty-hover: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-empty-pressed: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-empty-focus-visible: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-empty-disabled: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-dropdown-input-border-error-empty-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-error-empty-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-error-empty-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-error-empty-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-open-empty-resting: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-open-empty-hover: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-open-empty-pressed: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-open-empty-focus-visible: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-error-open-empty-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-error-open-empty-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-error-open-empty-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-error-open-empty-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-filled-resting: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-filled-hover: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-filled-pressed: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-filled-focus-visible: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-filled-disabled: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-dropdown-input-border-error-filled-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-error-filled-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-error-filled-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-error-filled-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-open-filled-resting: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-open-filled-hover: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-open-filled-pressed: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-open-filled-focus-visible: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-dropdown-input-border-error-open-filled-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-error-open-filled-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-error-open-filled-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-border-error-open-filled-focus-visible: #{map.get($base-colors, 'red-600')};
+
+  // --- Dropdown input icon ---
+  --affirm-color-dropdown-input-icon-empty-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-icon-empty-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-icon-empty-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-icon-empty-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-icon-empty-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-dropdown-input-icon-error-empty-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-error-empty-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-error-empty-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-error-empty-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-open-empty-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-icon-open-empty-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-icon-open-empty-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-icon-open-empty-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-icon-error-open-empty-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-error-open-empty-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-error-open-empty-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-error-open-empty-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-icon-filled-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-icon-filled-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-icon-filled-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-icon-filled-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-dropdown-input-icon-error-filled-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-error-filled-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-error-filled-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-error-filled-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-open-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-icon-open-filled-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-icon-open-filled-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-icon-open-filled-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-icon-error-open-filled-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-error-open-filled-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-error-open-filled-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-icon-error-open-filled-focus-visible: #{map.get($base-colors, 'red-600')};
+
+  // --- Dropdown input indicator ---
+  --affirm-color-dropdown-input-indicator-empty-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-empty-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-empty-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-empty-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-empty-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-dropdown-input-indicator-error-empty-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-error-empty-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-error-empty-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-error-empty-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-open-empty-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-open-empty-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-open-empty-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-open-empty-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-error-open-empty-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-error-open-empty-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-error-open-empty-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-error-open-empty-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-filled-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-filled-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-filled-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-filled-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-filled-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-dropdown-input-indicator-error-filled-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-error-filled-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-error-filled-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-error-filled-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-open-filled-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-open-filled-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-open-filled-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-open-filled-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-error-open-filled-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-error-open-filled-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-error-open-filled-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-indicator-error-open-filled-focus-visible: #{map.get($base-colors, 'red-600')};
+
+  // --- Dropdown input outline (focus-visible only) ---
+  --affirm-color-dropdown-input-outline-empty-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-filled-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-open-empty-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-open-filled-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-error-empty-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-error-filled-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-error-open-empty-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-error-open-filled-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // --- Dropdown input label text ---
+  --affirm-color-dropdown-input-label-text-empty-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-empty-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-empty-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-empty-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-empty-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-dropdown-input-label-text-error-empty-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-error-empty-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-error-empty-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-error-empty-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-open-empty-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-open-empty-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-open-empty-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-open-empty-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-error-open-empty-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-error-open-empty-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-error-open-empty-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-error-open-empty-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-filled-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-filled-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-filled-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-filled-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-filled-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-dropdown-input-label-text-error-filled-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-error-filled-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-error-filled-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-error-filled-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-open-filled-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-open-filled-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-open-filled-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-open-filled-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-error-open-filled-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-error-open-filled-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-error-open-filled-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-dropdown-input-label-text-error-open-filled-focus-visible: #{map.get($base-colors, 'red-600')};
+
+  // --- Dropdown input value text ---
+  --affirm-color-dropdown-input-value-text-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-filled-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-filled-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-filled-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-filled-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-dropdown-input-value-text-error-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-error-filled-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-error-filled-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-error-filled-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-open-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-open-filled-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-open-filled-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-open-filled-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-error-open-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-error-open-filled-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-error-open-filled-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-value-text-error-open-filled-focus-visible: #{map.get($base-colors, 'gray-950')};
+
+  // --- Listbox list item bg ---
+  --affirm-color-listbox-list-item-bg-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-bg-unselected-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-listbox-list-item-bg-unselected-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-listbox-list-item-bg-unselected-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-listbox-list-item-bg-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-bg-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-bg-selected-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-listbox-list-item-bg-selected-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-listbox-list-item-bg-selected-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-listbox-list-item-bg-selected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // --- Listbox list item border ---
+  --affirm-color-listbox-list-item-border-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-selected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // --- Listbox list item icon ---
+  --affirm-color-listbox-list-item-icon-unselected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-listbox-list-item-icon-unselected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-listbox-list-item-icon-unselected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-listbox-list-item-icon-unselected-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-listbox-list-item-icon-unselected-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-listbox-list-item-icon-selected-resting: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-listbox-list-item-icon-selected-hover: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-listbox-list-item-icon-selected-focus-visible: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-listbox-list-item-icon-selected-pressed: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-listbox-list-item-icon-selected-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // --- Listbox list item selected icon ---
+  --affirm-color-listbox-list-item-selected-icon-icon-resting: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-listbox-list-item-selected-icon-icon-hover: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-listbox-list-item-selected-icon-icon-focus-visible: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-listbox-list-item-selected-icon-icon-pressed: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-listbox-list-item-selected-icon-icon-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // --- Listbox list item outline ---
+  --affirm-color-listbox-list-item-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // --- Listbox list item label text ---
+  --affirm-color-listbox-list-item-label-text-unselected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-listbox-list-item-label-text-unselected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-listbox-list-item-label-text-unselected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-listbox-list-item-label-text-unselected-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-listbox-list-item-label-text-unselected-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-listbox-list-item-label-text-selected-resting: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-listbox-list-item-label-text-selected-hover: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-listbox-list-item-label-text-selected-focus-visible: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-listbox-list-item-label-text-selected-pressed: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-listbox-list-item-label-text-selected-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // --- Listbox scroll bar ---
+  --affirm-color-listbox-scroll-bar-track-bg: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-listbox-scroll-bar-track-border: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-listbox-scroll-bar-handle-fill: #{map.get($base-colors, 'gray-250')};
+}
+
+// ===========================================================================
+// Dark mode colors
+// ===========================================================================
+[data-mode='dark'] {
+  // --- Listbox container ---
+  --affirm-color-listbox-container-bg: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-listbox-container-border: #{map.get($base-colors, 'gray-450')};
+
+  // --- Dropdown error message ---
+  --affirm-color-dropdown-error-message-text-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-error-message-text-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-error-message-text-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-error-message-text-focus-visible: #{map.get($base-colors, 'red-300')};
+
+  // --- Dropdown message ---
+  --affirm-color-dropdown-message-text-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-message-text-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-message-text-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-message-text-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-message-text-focus-visible: #{map.get($base-colors, 'gray-350')};
+
+  // --- Dropdown input bg ---
+  --affirm-color-dropdown-input-bg-empty-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-bg-empty-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-empty-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-dropdown-input-bg-empty-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-empty-disabled: #{map.get($base-colors, 'gray-750')};
+  --affirm-color-dropdown-input-bg-error-empty-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-bg-error-empty-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-error-empty-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-dropdown-input-bg-error-empty-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-open-empty-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-bg-open-empty-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-open-empty-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-dropdown-input-bg-open-empty-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-error-open-empty-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-bg-error-open-empty-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-error-open-empty-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-dropdown-input-bg-error-open-empty-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-bg-filled-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-filled-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-dropdown-input-bg-filled-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-filled-disabled: #{map.get($base-colors, 'gray-750')};
+  --affirm-color-dropdown-input-bg-error-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-bg-error-filled-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-error-filled-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-dropdown-input-bg-error-filled-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-open-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-bg-open-filled-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-open-filled-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-dropdown-input-bg-open-filled-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-error-open-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-dropdown-input-bg-error-open-filled-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-dropdown-input-bg-error-open-filled-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-dropdown-input-bg-error-open-filled-focus-visible: #{map.get($base-colors, 'gray-850')};
+
+  // --- Dropdown input border ---
+  --affirm-color-dropdown-input-border-empty-resting: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-empty-hover: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-empty-pressed: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-empty-focus-visible: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-empty-disabled: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-dropdown-input-border-error-empty-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-error-empty-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-error-empty-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-error-empty-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-open-empty-resting: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-open-empty-hover: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-open-empty-pressed: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-open-empty-focus-visible: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-error-open-empty-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-error-open-empty-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-error-open-empty-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-error-open-empty-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-filled-resting: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-filled-hover: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-filled-pressed: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-filled-focus-visible: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-filled-disabled: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-dropdown-input-border-error-filled-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-error-filled-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-error-filled-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-error-filled-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-open-filled-resting: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-open-filled-hover: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-open-filled-pressed: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-open-filled-focus-visible: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-dropdown-input-border-error-open-filled-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-error-open-filled-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-error-open-filled-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-border-error-open-filled-focus-visible: #{map.get($base-colors, 'red-300')};
+
+  // --- Dropdown input icon ---
+  --affirm-color-dropdown-input-icon-empty-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-icon-empty-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-icon-empty-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-icon-empty-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-icon-empty-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-icon-error-empty-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-error-empty-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-error-empty-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-error-empty-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-open-empty-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-icon-open-empty-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-icon-open-empty-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-icon-open-empty-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-icon-error-open-empty-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-error-open-empty-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-error-open-empty-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-error-open-empty-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-icon-filled-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-icon-filled-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-icon-filled-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-icon-filled-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-icon-error-filled-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-error-filled-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-error-filled-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-error-filled-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-open-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-icon-open-filled-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-icon-open-filled-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-icon-open-filled-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-icon-error-open-filled-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-error-open-filled-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-error-open-filled-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-icon-error-open-filled-focus-visible: #{map.get($base-colors, 'red-300')};
+
+  // --- Dropdown input indicator ---
+  --affirm-color-dropdown-input-indicator-empty-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-empty-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-empty-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-empty-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-empty-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-error-empty-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-error-empty-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-error-empty-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-error-empty-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-open-empty-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-open-empty-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-open-empty-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-open-empty-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-error-open-empty-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-error-open-empty-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-error-open-empty-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-error-open-empty-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-filled-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-filled-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-filled-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-filled-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-filled-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-indicator-error-filled-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-error-filled-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-error-filled-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-error-filled-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-open-filled-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-open-filled-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-open-filled-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-open-filled-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-indicator-error-open-filled-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-error-open-filled-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-error-open-filled-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-indicator-error-open-filled-focus-visible: #{map.get($base-colors, 'red-300')};
+
+  // --- Dropdown input outline (focus-visible only) ---
+  --affirm-color-dropdown-input-outline-empty-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-filled-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-open-empty-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-open-filled-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-error-empty-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-error-filled-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-error-open-empty-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-dropdown-input-outline-error-open-filled-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // --- Dropdown input label text ---
+  --affirm-color-dropdown-input-label-text-empty-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-empty-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-empty-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-empty-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-empty-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-error-empty-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-error-empty-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-error-empty-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-error-empty-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-open-empty-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-open-empty-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-open-empty-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-open-empty-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-error-open-empty-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-error-open-empty-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-error-open-empty-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-error-open-empty-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-filled-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-filled-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-filled-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-filled-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-filled-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-label-text-error-filled-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-error-filled-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-error-filled-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-error-filled-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-open-filled-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-open-filled-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-open-filled-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-open-filled-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-dropdown-input-label-text-error-open-filled-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-error-open-filled-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-error-open-filled-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-dropdown-input-label-text-error-open-filled-focus-visible: #{map.get($base-colors, 'red-300')};
+
+  // --- Dropdown input value text ---
+  --affirm-color-dropdown-input-value-text-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-filled-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-filled-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-filled-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-filled-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-dropdown-input-value-text-error-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-error-filled-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-error-filled-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-error-filled-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-open-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-open-filled-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-open-filled-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-open-filled-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-error-open-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-error-open-filled-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-error-open-filled-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-dropdown-input-value-text-error-open-filled-focus-visible: #{map.get($base-colors, 'gray-white')};
+
+  // --- Listbox list item bg ---
+  --affirm-color-listbox-list-item-bg-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-bg-unselected-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-listbox-list-item-bg-unselected-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-listbox-list-item-bg-unselected-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-listbox-list-item-bg-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-bg-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-bg-selected-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-listbox-list-item-bg-selected-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-listbox-list-item-bg-selected-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-listbox-list-item-bg-selected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // --- Listbox list item border ---
+  --affirm-color-listbox-list-item-border-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-listbox-list-item-border-selected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // --- Listbox list item icon ---
+  --affirm-color-listbox-list-item-icon-unselected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-listbox-list-item-icon-unselected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-listbox-list-item-icon-unselected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-listbox-list-item-icon-unselected-pressed: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-icon-unselected-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-listbox-list-item-icon-selected-resting: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-icon-selected-hover: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-icon-selected-focus-visible: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-icon-selected-pressed: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-icon-selected-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // --- Listbox list item selected icon ---
+  --affirm-color-listbox-list-item-selected-icon-icon-resting: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-selected-icon-icon-hover: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-selected-icon-icon-focus-visible: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-selected-icon-icon-pressed: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-selected-icon-icon-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // --- Listbox list item outline ---
+  --affirm-color-listbox-list-item-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // --- Listbox list item label text ---
+  --affirm-color-listbox-list-item-label-text-unselected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-listbox-list-item-label-text-unselected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-listbox-list-item-label-text-unselected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-listbox-list-item-label-text-unselected-pressed: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-label-text-unselected-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-listbox-list-item-label-text-selected-resting: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-label-text-selected-hover: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-label-text-selected-focus-visible: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-label-text-selected-pressed: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-listbox-list-item-label-text-selected-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // --- Listbox scroll bar ---
+  --affirm-color-listbox-scroll-bar-track-bg: #{map.get($base-colors, 'gray-750')};
+  --affirm-color-listbox-scroll-bar-track-border: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-listbox-scroll-bar-handle-fill: #{map.get($base-colors, 'gray-500')};
+}

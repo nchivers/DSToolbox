@@ -1,0 +1,146 @@
+:root {
+  // ---------------------------------------------------------------------------
+  // Semantic: Font families
+  // ---------------------------------------------------------------------------
+  --affirm-semantic-font-family-headline: 'Axiforma for Affirm', sans-serif;
+  --affirm-semantic-font-family-body: Calibre, sans-serif;
+
+  // ---------------------------------------------------------------------------
+  // Semantic: Weights (generic)
+  // ---------------------------------------------------------------------------
+  --affirm-semantic-weight-default: 400;
+  --affirm-semantic-weight-mid-imp: 500;
+  --affirm-semantic-weight-high-imp: 600;
+  --affirm-semantic-weight-highest-imp: 700;
+
+  // ---------------------------------------------------------------------------
+  // Semantic: Weights (body-specific)
+  // ---------------------------------------------------------------------------
+  --affirm-semantic-weight-body-default: 400;
+  --affirm-semantic-weight-body-high-imp: 600;
+
+  // ---------------------------------------------------------------------------
+  // Semantic: Weights (headline per-size)
+  // ---------------------------------------------------------------------------
+  --affirm-semantic-weight-headline-xxlarge: 500;
+  --affirm-semantic-weight-headline-xlarge: 500;
+  --affirm-semantic-weight-headline-large: 600;
+  --affirm-semantic-weight-headline-medium: 600;
+  --affirm-semantic-weight-headline-small: 700;
+
+  // ---------------------------------------------------------------------------
+  // Semantic: Sizes (body)
+  // ---------------------------------------------------------------------------
+  --affirm-semantic-size-body-xlarge: 20px;
+  --affirm-semantic-size-body-large: 18px;
+  --affirm-semantic-size-body-medium: 16px;
+  --affirm-semantic-size-body-small: 14px;
+
+  // ---------------------------------------------------------------------------
+  // Semantic: Sizes (headline)
+  // ---------------------------------------------------------------------------
+  --affirm-semantic-size-headline-xxlarge: 52px;
+  --affirm-semantic-size-headline-xlarge: 40px;
+  --affirm-semantic-size-headline-large: 32px;
+  --affirm-semantic-size-headline-medium: 24px;
+  --affirm-semantic-size-headline-small: 18px;
+
+  // ---------------------------------------------------------------------------
+  // Semantic: Line heights (body)
+  // ---------------------------------------------------------------------------
+  --affirm-semantic-line-height-body-xlarge: 30px;
+  --affirm-semantic-line-height-body-large: 27px;
+  --affirm-semantic-line-height-body-medium: 24px;
+  --affirm-semantic-line-height-body-small: 21px;
+
+  // ---------------------------------------------------------------------------
+  // Semantic: Line heights (headline)
+  // ---------------------------------------------------------------------------
+  --affirm-semantic-line-height-headline-xxlarge: 70px;
+  --affirm-semantic-line-height-headline-xlarge: 54px;
+  --affirm-semantic-line-height-headline-large: 44px;
+  --affirm-semantic-line-height-headline-medium: 32px;
+  --affirm-semantic-line-height-headline-small: 24px;
+
+  // ---------------------------------------------------------------------------
+  // Semantic: Letter spacing (body)
+  // ---------------------------------------------------------------------------
+  --affirm-semantic-letter-spacing-body-xlarge: 0px;
+  --affirm-semantic-letter-spacing-body-large: 0px;
+  --affirm-semantic-letter-spacing-body-medium: 0px;
+  --affirm-semantic-letter-spacing-body-small: 0px;
+
+  // ---------------------------------------------------------------------------
+  // Semantic: Letter spacing (headline)
+  // ---------------------------------------------------------------------------
+  --affirm-semantic-letter-spacing-headline-xxlarge: -1px;
+  --affirm-semantic-letter-spacing-headline-xlarge: -1px;
+  --affirm-semantic-letter-spacing-headline-large: -0.5px;
+  --affirm-semantic-letter-spacing-headline-medium: -0.25px;
+  --affirm-semantic-letter-spacing-headline-small: 0px;
+
+  // ---------------------------------------------------------------------------
+  // Semantic: Paragraph spacing (body)
+  // ---------------------------------------------------------------------------
+  --affirm-semantic-paragraph-body-xlarge: 20px;
+  --affirm-semantic-paragraph-body-large: 18px;
+  --affirm-semantic-paragraph-body-medium: 16px;
+  --affirm-semantic-paragraph-body-small: 14px;
+
+  // ---------------------------------------------------------------------------
+  // Component: Font family
+  // ---------------------------------------------------------------------------
+  --affirm-component-font-family: Calibre, sans-serif;
+
+  // ---------------------------------------------------------------------------
+  // Component: Weights
+  // ---------------------------------------------------------------------------
+  --affirm-component-weight-default: 400;
+  --affirm-component-weight-mid-imp: 500;
+  --affirm-component-weight-high-imp: 600;
+
+  // ---------------------------------------------------------------------------
+  // Component: Sizes
+  // ---------------------------------------------------------------------------
+  --affirm-component-size-xlarge: 20px;
+  --affirm-component-size-large: 18px;
+  --affirm-component-size-medium: 16px;
+  --affirm-component-size-small: 14px;
+  --affirm-component-size-xsmall: 12px;
+
+  // ---------------------------------------------------------------------------
+  // Component: Letter spacing
+  // ---------------------------------------------------------------------------
+  --affirm-component-letter-spacing-xlarge: 0px;
+  --affirm-component-letter-spacing-large: 0px;
+  --affirm-component-letter-spacing-medium: 0px;
+  --affirm-component-letter-spacing-small: 0px;
+  --affirm-component-letter-spacing-xsmall: 0px;
+
+  // ---------------------------------------------------------------------------
+  // Component: Line heights (singleline — single-line / compact UI)
+  // ---------------------------------------------------------------------------
+  --affirm-component-line-height-xlarge-singleline: 28px;
+  --affirm-component-line-height-large-singleline: 24px;
+  --affirm-component-line-height-medium-singleline: 20px;
+  --affirm-component-line-height-small-singleline: 18px;
+  --affirm-component-line-height-xsmall-singleline: 16px;
+
+  // ---------------------------------------------------------------------------
+  // Component: Line heights (paragraph — multi-line)
+  // ---------------------------------------------------------------------------
+  --affirm-component-line-height-xlarge-paragraph: 30px;
+  --affirm-component-line-height-large-paragraph: 27px;
+  --affirm-component-line-height-medium-paragraph: 24px;
+  --affirm-component-line-height-small-paragraph: 21px;
+  --affirm-component-line-height-xsmall-paragraph: 18px;
+
+  // ---------------------------------------------------------------------------
+  // Component: Paragraph spacing
+  // ---------------------------------------------------------------------------
+  --affirm-component-paragraph-xlarge: 20px;
+  --affirm-component-paragraph-large: 18px;
+  --affirm-component-paragraph-medium: 16px;
+  --affirm-component-paragraph-small: 14px;
+  --affirm-component-paragraph-xsmall: 12px;
+}

@@ -1,0 +1,58 @@
+@use 'design-system/tokens/index';
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--affirm-color-bg-primary);
+  color: var(--affirm-color-text-primary);
+  padding: var(--affirm-spacing-lg) var(--affirm-spacing-md) var(--affirm-spacing-xs);
+  box-sizing: border-box;
+}
+
+#react-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.affirm-page-footer {
+  margin-top: auto;
+}
+
+.affirm-actions {
+  display: flex;
+  flex-direction: row;
+  gap: var(--affirm-spacing-xs);
+  margin-bottom: var(--affirm-spacing-md);
+}
+
+.affirm-output {
+  margin-bottom: var(--affirm-spacing-sm);
+
+  textarea {
+    min-height: 240px;
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    line-height: 1.4;
+    resize: vertical;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+}
+
+.affirm-status {
+  margin-bottom: var(--affirm-spacing-md);
+}

@@ -1,10 +1,10 @@
 {
   "name": "Export Variables to JSON",
-  "id": "variable-export-json",
+  "id": "1628907178600484615",
   "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
   "editorType": ["figma"],
-  "main": "code.js",
-  "ui": "ui.html",
   "documentAccess": "dynamic-page",
   "networkAccess": {
     "allowedDomains": ["none"]

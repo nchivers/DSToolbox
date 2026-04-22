@@ -1,0 +1,215 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent defaults (from "All Modes" column)
+// ---------------------------------------------------------------------------
+:root {
+  // Radius
+  --affirm-radius-checkbox-container-all: #{map.get($base-sizes, '100')};
+  --affirm-radius-checkbox-indicator-container-all: #{map.get($base-sizes, '050')};
+
+  // Size
+  --affirm-size-checkbox-container-min-height: #{map.get($base-sizes, '600')};
+  --affirm-size-checkbox-indicator-all: #{map.get($base-sizes, '250')};
+  --affirm-size-checkbox-indicator-icon-all: #{map.get($base-sizes, '250')};
+  --affirm-size-checkbox-indicator-border-width-selected-resting: #{map.get($base-sizes, '000')};
+  --affirm-size-checkbox-indicator-border-width-selected-hover: #{map.get($base-sizes, '000')};
+  --affirm-size-checkbox-indicator-border-width-selected-pressed: #{map.get($base-sizes, '000')};
+  --affirm-size-checkbox-indicator-border-width-selected-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-size-checkbox-indicator-border-width-selected-disabled: #{map.get($base-sizes, '000')};
+  --affirm-size-checkbox-indicator-border-width-unselected-resting: #{map.get($base-sizes, '025')};
+  --affirm-size-checkbox-indicator-border-width-unselected-hover: #{map.get($base-sizes, '025')};
+  --affirm-size-checkbox-indicator-border-width-unselected-pressed: #{map.get($base-sizes, '025')};
+  --affirm-size-checkbox-indicator-border-width-unselected-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-size-checkbox-indicator-border-width-unselected-disabled: #{map.get($base-sizes, '025')};
+  --affirm-size-checkbox-indicator-border-width-error-selected-resting: #{map.get($base-sizes, '000')};
+  --affirm-size-checkbox-indicator-border-width-error-selected-hover: #{map.get($base-sizes, '000')};
+  --affirm-size-checkbox-indicator-border-width-error-selected-pressed: #{map.get($base-sizes, '000')};
+  --affirm-size-checkbox-indicator-border-width-error-selected-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-size-checkbox-indicator-border-width-error-unselected-resting: #{map.get($base-sizes, '025')};
+  --affirm-size-checkbox-indicator-border-width-error-unselected-hover: #{map.get($base-sizes, '025')};
+  --affirm-size-checkbox-indicator-border-width-error-unselected-pressed: #{map.get($base-sizes, '025')};
+  --affirm-size-checkbox-indicator-border-width-error-unselected-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-size-checkbox-outline-width-focus-visible: #{map.get($base-sizes, '025')};
+
+  // Spacing
+  --affirm-spacing-checkbox-container-outline-offset-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-spacing-checkbox-indicator-margin-top: #{map.get($base-sizes, '050')};
+  --affirm-spacing-checkbox-gap-x: #{map.get($base-sizes, '100')};
+}
+
+// ---------------------------------------------------------------------------
+// Light defaults (from "Light Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // Container
+  --affirm-color-checkbox-container-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // Indicator — bg
+  --affirm-color-checkbox-indicator-bg-selected-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-checkbox-indicator-bg-selected-hover: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-checkbox-indicator-bg-selected-pressed: #{map.get($base-colors, 'indigo-600')};
+  --affirm-color-checkbox-indicator-bg-selected-focus-visible: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-checkbox-indicator-bg-selected-disabled: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-checkbox-indicator-bg-unselected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-indicator-bg-unselected-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-checkbox-indicator-bg-unselected-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-checkbox-indicator-bg-unselected-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-checkbox-indicator-bg-unselected-disabled: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-checkbox-indicator-bg-error-selected-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-checkbox-indicator-bg-error-selected-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-checkbox-indicator-bg-error-selected-pressed: #{map.get($base-colors, 'red-500')};
+  --affirm-color-checkbox-indicator-bg-error-selected-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-checkbox-indicator-bg-error-unselected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-indicator-bg-error-unselected-hover: #{map.get($base-colors, 'red-050')};
+  --affirm-color-checkbox-indicator-bg-error-unselected-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-checkbox-indicator-bg-error-unselected-focus-visible: #{map.get($base-colors, 'red-050')};
+
+  // Indicator — border
+  --affirm-color-checkbox-indicator-border-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-selected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-unselected-resting: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-checkbox-indicator-border-unselected-hover: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-checkbox-indicator-border-unselected-pressed: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-checkbox-indicator-border-unselected-focus-visible: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-checkbox-indicator-border-unselected-disabled: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-checkbox-indicator-border-error-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-error-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-error-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-error-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-error-unselected-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-checkbox-indicator-border-error-unselected-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-checkbox-indicator-border-error-unselected-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-checkbox-indicator-border-error-unselected-focus-visible: #{map.get($base-colors, 'red-600')};
+
+  // Indicator — icon
+  --affirm-color-checkbox-indicator-icon-selected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-indicator-icon-selected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-indicator-icon-selected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-indicator-icon-selected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-indicator-icon-selected-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-checkbox-indicator-icon-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-error-selected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-indicator-icon-error-selected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-indicator-icon-error-selected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-indicator-icon-error-selected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-indicator-icon-error-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-error-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-error-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-error-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Label
+  --affirm-color-checkbox-label-text-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-checkbox-label-text-selected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-selected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-selected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-selected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-unselected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-unselected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-unselected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-unselected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-error-selected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-error-selected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-error-selected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-error-selected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-error-unselected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-error-unselected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-error-unselected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-label-text-error-unselected-focus-visible: #{map.get($base-colors, 'gray-950')};
+}
+
+// ---------------------------------------------------------------------------
+// Dark defaults (from "Dark Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // Container
+  --affirm-color-checkbox-container-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // Indicator — bg
+  --affirm-color-checkbox-indicator-bg-selected-resting: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-checkbox-indicator-bg-selected-hover: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-checkbox-indicator-bg-selected-pressed: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-checkbox-indicator-bg-selected-focus-visible: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-checkbox-indicator-bg-selected-disabled: #{map.get($base-colors, 'gray-750')};
+  --affirm-color-checkbox-indicator-bg-unselected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-indicator-bg-unselected-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-checkbox-indicator-bg-unselected-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-checkbox-indicator-bg-unselected-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-checkbox-indicator-bg-unselected-disabled: #{map.get($base-colors, 'gray-750')};
+  --affirm-color-checkbox-indicator-bg-error-selected-resting: #{map.get($base-colors, 'red-100')};
+  --affirm-color-checkbox-indicator-bg-error-selected-hover: #{map.get($base-colors, 'red-200')};
+  --affirm-color-checkbox-indicator-bg-error-selected-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-checkbox-indicator-bg-error-selected-focus-visible: #{map.get($base-colors, 'red-200')};
+  --affirm-color-checkbox-indicator-bg-error-unselected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-indicator-bg-error-unselected-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-checkbox-indicator-bg-error-unselected-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-checkbox-indicator-bg-error-unselected-focus-visible: #{map.get($base-colors, 'gray-850')};
+
+  // Indicator — border
+  --affirm-color-checkbox-indicator-border-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-selected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-unselected-resting: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-checkbox-indicator-border-unselected-hover: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-checkbox-indicator-border-unselected-pressed: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-checkbox-indicator-border-unselected-focus-visible: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-checkbox-indicator-border-unselected-disabled: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-checkbox-indicator-border-error-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-error-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-error-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-error-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-border-error-unselected-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-checkbox-indicator-border-error-unselected-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-checkbox-indicator-border-error-unselected-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-checkbox-indicator-border-error-unselected-focus-visible: #{map.get($base-colors, 'red-300')};
+
+  // Indicator — icon
+  --affirm-color-checkbox-indicator-icon-selected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-indicator-icon-selected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-indicator-icon-selected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-indicator-icon-selected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-indicator-icon-selected-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-checkbox-indicator-icon-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-error-selected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-indicator-icon-error-selected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-indicator-icon-error-selected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-indicator-icon-error-selected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-checkbox-indicator-icon-error-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-error-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-error-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-checkbox-indicator-icon-error-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Label
+  --affirm-color-checkbox-label-text-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-checkbox-label-text-selected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-selected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-selected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-selected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-unselected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-unselected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-unselected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-unselected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-error-selected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-error-selected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-error-selected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-error-selected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-error-unselected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-error-unselected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-error-unselected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-checkbox-label-text-error-unselected-focus-visible: #{map.get($base-colors, 'gray-white')};
+}

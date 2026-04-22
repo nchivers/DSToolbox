@@ -1,0 +1,12 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent defaults
+// ---------------------------------------------------------------------------
+:root {
+    // Spacing
+    --affirm-spacing-page-header-gap-y: #{map.get($base-sizes, '050')};
+    --affirm-spacing-page-header-margin-bottom: #{map.get($base-sizes, '300')};
+}

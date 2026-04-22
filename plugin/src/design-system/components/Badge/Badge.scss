@@ -1,0 +1,372 @@
+@use '../../tokens/component-type' as typography;
+
+.affirm-badge {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: var(--_badge-radius);
+  padding: var(--_badge-padding-top) var(--_badge-padding-right)
+    var(--_badge-padding-bottom) var(--_badge-padding-left);
+  gap: var(--_badge-gap);
+  background: var(--_badge-bg);
+  border: var(--affirm-size-badge-border-width) solid var(--_badge-border);
+
+  // ===================================================================
+  // SIZE MODIFIERS
+  // ===================================================================
+
+  &--small {
+    --_badge-radius: var(--affirm-radius-badge-small-all);
+    --_badge-gap: var(--affirm-spacing-badge-small-gap-x);
+    --_badge-padding-top: var(--affirm-spacing-badge-small-padding-top);
+    --_badge-padding-bottom: var(--affirm-spacing-badge-small-padding-bottom);
+    --_badge-padding-left: var(--affirm-spacing-badge-small-padding-left);
+    --_badge-padding-right: var(--affirm-spacing-badge-small-padding-right);
+  }
+
+  &--medium {
+    --_badge-radius: var(--affirm-radius-badge-medium-all);
+    --_badge-gap: var(--affirm-spacing-badge-medium-gap-x);
+    --_badge-padding-top: var(--affirm-spacing-badge-medium-padding-top);
+    --_badge-padding-bottom: var(--affirm-spacing-badge-medium-padding-bottom);
+    --_badge-padding-left: var(--affirm-spacing-badge-medium-padding-left);
+    --_badge-padding-right: var(--affirm-spacing-badge-medium-padding-right);
+  }
+
+  &--large {
+    --_badge-radius: var(--affirm-radius-badge-large-all);
+    --_badge-gap: var(--affirm-spacing-badge-large-gap-x);
+    --_badge-padding-top: var(--affirm-spacing-badge-large-padding-top);
+    --_badge-padding-bottom: var(--affirm-spacing-badge-large-padding-bottom);
+    --_badge-padding-left: var(--affirm-spacing-badge-large-padding-left);
+    --_badge-padding-right: var(--affirm-spacing-badge-large-padding-right);
+  }
+
+  // ===================================================================
+  // ELEMENTS
+  // ===================================================================
+
+  &__text {
+    color: var(--_badge-text);
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--_badge-icon);
+
+    > * {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // ===================================================================
+  // SIZE-SPECIFIC ICON DIMENSIONS & TYPOGRAPHY
+  // ===================================================================
+
+  &--small &__icon {
+    width: var(--affirm-size-badge-small-icon-all);
+    height: var(--affirm-size-badge-small-icon-all);
+  }
+
+  &--small &__text {
+    @include typography.component-singleline-small-mid-imp;
+  }
+
+  &--medium &__icon {
+    width: var(--affirm-size-badge-medium-icon-all);
+    height: var(--affirm-size-badge-medium-icon-all);
+  }
+
+  &--medium &__text {
+    @include typography.component-singleline-medium-mid-imp;
+  }
+
+  &--large &__icon {
+    width: var(--affirm-size-badge-large-icon-all);
+    height: var(--affirm-size-badge-large-icon-all);
+  }
+
+  &--large &__text {
+    @include typography.component-singleline-large-mid-imp;
+  }
+
+  // ===================================================================
+  // CATEGORY + CONTEXT COLOR MODIFIERS
+  // Each block resolves --_badge-bg, --_badge-border, --_badge-icon,
+  // --_badge-text from the public token layer.
+  // ===================================================================
+
+  // --- Brand Featured (has mode-dependent default) -------------------
+
+  &--brand-featured {
+    --_badge-bg: var(--affirm-color-badge-brand-featured-bg);
+    --_badge-border: var(--affirm-color-badge-brand-featured-border);
+    --_badge-icon: var(--affirm-color-badge-brand-featured-icon);
+    --_badge-text: var(--affirm-color-badge-brand-featured-text);
+  }
+
+  &--brand-featured#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-brand-featured-static-bg);
+    --_badge-border: var(--affirm-color-badge-brand-featured-static-border);
+    --_badge-icon: var(--affirm-color-badge-brand-featured-static-icon);
+    --_badge-text: var(--affirm-color-badge-brand-featured-static-text);
+  }
+
+  &--brand-featured#{&}--inverse {
+    --_badge-bg: var(--affirm-color-badge-brand-featured-inverse-bg);
+    --_badge-border: var(--affirm-color-badge-brand-featured-inverse-border);
+    --_badge-icon: var(--affirm-color-badge-brand-featured-inverse-icon);
+    --_badge-text: var(--affirm-color-badge-brand-featured-inverse-text);
+  }
+
+  &--brand-featured#{&}--inverse#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-brand-featured-inverse-static-bg);
+    --_badge-border: var(--affirm-color-badge-brand-featured-inverse-static-border);
+    --_badge-icon: var(--affirm-color-badge-brand-featured-inverse-static-icon);
+    --_badge-text: var(--affirm-color-badge-brand-featured-inverse-static-text);
+  }
+
+  // --- Brand Primary (default = static fallback) ---------------------
+
+  &--brand-primary {
+    --_badge-bg: var(--affirm-color-badge-brand-primary-static-bg);
+    --_badge-border: var(--affirm-color-badge-brand-primary-static-border);
+    --_badge-icon: var(--affirm-color-badge-brand-primary-static-icon);
+    --_badge-text: var(--affirm-color-badge-brand-primary-static-text);
+  }
+
+  &--brand-primary#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-brand-primary-static-bg);
+    --_badge-border: var(--affirm-color-badge-brand-primary-static-border);
+    --_badge-icon: var(--affirm-color-badge-brand-primary-static-icon);
+    --_badge-text: var(--affirm-color-badge-brand-primary-static-text);
+  }
+
+  &--brand-primary#{&}--inverse {
+    --_badge-bg: var(--affirm-color-badge-brand-primary-inverse-bg);
+    --_badge-border: var(--affirm-color-badge-brand-primary-inverse-border);
+    --_badge-icon: var(--affirm-color-badge-brand-primary-inverse-icon);
+    --_badge-text: var(--affirm-color-badge-brand-primary-inverse-text);
+  }
+
+  &--brand-primary#{&}--inverse#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-brand-primary-inverse-static-bg);
+    --_badge-border: var(--affirm-color-badge-brand-primary-inverse-static-border);
+    --_badge-icon: var(--affirm-color-badge-brand-primary-inverse-static-icon);
+    --_badge-text: var(--affirm-color-badge-brand-primary-inverse-static-text);
+  }
+
+  // --- Brand Secondary (default = static fallback) -------------------
+
+  &--brand-secondary {
+    --_badge-bg: var(--affirm-color-badge-brand-secondary-static-bg);
+    --_badge-border: var(--affirm-color-badge-brand-secondary-static-border);
+    --_badge-icon: var(--affirm-color-badge-brand-secondary-static-icon);
+    --_badge-text: var(--affirm-color-badge-brand-secondary-static-text);
+  }
+
+  &--brand-secondary#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-brand-secondary-static-bg);
+    --_badge-border: var(--affirm-color-badge-brand-secondary-static-border);
+    --_badge-icon: var(--affirm-color-badge-brand-secondary-static-icon);
+    --_badge-text: var(--affirm-color-badge-brand-secondary-static-text);
+  }
+
+  &--brand-secondary#{&}--inverse {
+    --_badge-bg: var(--affirm-color-badge-brand-secondary-inverse-bg);
+    --_badge-border: var(--affirm-color-badge-brand-secondary-inverse-border);
+    --_badge-icon: var(--affirm-color-badge-brand-secondary-inverse-icon);
+    --_badge-text: var(--affirm-color-badge-brand-secondary-inverse-text);
+  }
+
+  &--brand-secondary#{&}--inverse#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-brand-secondary-inverse-static-bg);
+    --_badge-border: var(--affirm-color-badge-brand-secondary-inverse-static-border);
+    --_badge-icon: var(--affirm-color-badge-brand-secondary-inverse-static-icon);
+    --_badge-text: var(--affirm-color-badge-brand-secondary-inverse-static-text);
+  }
+
+  // --- Brand Tertiary (has mode-dependent default) -------------------
+
+  &--brand-tertiary {
+    --_badge-bg: var(--affirm-color-badge-brand-tertiary-bg);
+    --_badge-border: var(--affirm-color-badge-brand-tertiary-border);
+    --_badge-icon: var(--affirm-color-badge-brand-tertiary-icon);
+    --_badge-text: var(--affirm-color-badge-brand-tertiary-text);
+  }
+
+  &--brand-tertiary#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-brand-tertiary-static-bg);
+    --_badge-border: var(--affirm-color-badge-brand-tertiary-static-border);
+    --_badge-icon: var(--affirm-color-badge-brand-tertiary-static-icon);
+    --_badge-text: var(--affirm-color-badge-brand-tertiary-static-text);
+  }
+
+  &--brand-tertiary#{&}--inverse {
+    --_badge-bg: var(--affirm-color-badge-brand-tertiary-inverse-bg);
+    --_badge-border: var(--affirm-color-badge-brand-tertiary-inverse-border);
+    --_badge-icon: var(--affirm-color-badge-brand-tertiary-inverse-icon);
+    --_badge-text: var(--affirm-color-badge-brand-tertiary-inverse-text);
+  }
+
+  &--brand-tertiary#{&}--inverse#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-brand-tertiary-inverse-static-bg);
+    --_badge-border: var(--affirm-color-badge-brand-tertiary-inverse-static-border);
+    --_badge-icon: var(--affirm-color-badge-brand-tertiary-inverse-static-icon);
+    --_badge-text: var(--affirm-color-badge-brand-tertiary-inverse-static-text);
+  }
+
+  // --- Default (default = static fallback) ---------------------------
+
+  &--default {
+    --_badge-bg: var(--affirm-color-badge-default-static-bg);
+    --_badge-border: var(--affirm-color-badge-default-static-border);
+    --_badge-icon: var(--affirm-color-badge-default-static-icon);
+    --_badge-text: var(--affirm-color-badge-default-static-text);
+  }
+
+  &--default#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-default-static-bg);
+    --_badge-border: var(--affirm-color-badge-default-static-border);
+    --_badge-icon: var(--affirm-color-badge-default-static-icon);
+    --_badge-text: var(--affirm-color-badge-default-static-text);
+  }
+
+  &--default#{&}--inverse {
+    --_badge-bg: var(--affirm-color-badge-default-inverse-bg);
+    --_badge-border: var(--affirm-color-badge-default-inverse-border);
+    --_badge-icon: var(--affirm-color-badge-default-inverse-icon);
+    --_badge-text: var(--affirm-color-badge-default-inverse-text);
+  }
+
+  &--default#{&}--inverse#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-default-inverse-static-bg);
+    --_badge-border: var(--affirm-color-badge-default-inverse-static-border);
+    --_badge-icon: var(--affirm-color-badge-default-inverse-static-icon);
+    --_badge-text: var(--affirm-color-badge-default-inverse-static-text);
+  }
+
+  // --- Error (default = static fallback) -----------------------------
+
+  &--error {
+    --_badge-bg: var(--affirm-color-badge-error-static-bg);
+    --_badge-border: var(--affirm-color-badge-error-static-border);
+    --_badge-icon: var(--affirm-color-badge-error-static-icon);
+    --_badge-text: var(--affirm-color-badge-error-static-text);
+  }
+
+  &--error#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-error-static-bg);
+    --_badge-border: var(--affirm-color-badge-error-static-border);
+    --_badge-icon: var(--affirm-color-badge-error-static-icon);
+    --_badge-text: var(--affirm-color-badge-error-static-text);
+  }
+
+  &--error#{&}--inverse {
+    --_badge-bg: var(--affirm-color-badge-error-inverse-bg);
+    --_badge-border: var(--affirm-color-badge-error-inverse-border);
+    --_badge-icon: var(--affirm-color-badge-error-inverse-icon);
+    --_badge-text: var(--affirm-color-badge-error-inverse-text);
+  }
+
+  &--error#{&}--inverse#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-error-inverse-static-bg);
+    --_badge-border: var(--affirm-color-badge-error-inverse-static-border);
+    --_badge-icon: var(--affirm-color-badge-error-inverse-static-icon);
+    --_badge-text: var(--affirm-color-badge-error-inverse-static-text);
+  }
+
+  // --- Info (has mode-dependent default) -----------------------------
+
+  &--info {
+    --_badge-bg: var(--affirm-color-badge-info-bg);
+    --_badge-border: var(--affirm-color-badge-info-border);
+    --_badge-icon: var(--affirm-color-badge-info-icon);
+    --_badge-text: var(--affirm-color-badge-info-text);
+  }
+
+  &--info#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-info-static-bg);
+    --_badge-border: var(--affirm-color-badge-info-static-border);
+    --_badge-icon: var(--affirm-color-badge-info-static-icon);
+    --_badge-text: var(--affirm-color-badge-info-static-text);
+  }
+
+  &--info#{&}--inverse {
+    --_badge-bg: var(--affirm-color-badge-info-inverse-bg);
+    --_badge-border: var(--affirm-color-badge-info-inverse-border);
+    --_badge-icon: var(--affirm-color-badge-info-inverse-icon);
+    --_badge-text: var(--affirm-color-badge-info-inverse-text);
+  }
+
+  &--info#{&}--inverse#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-info-inverse-static-bg);
+    --_badge-border: var(--affirm-color-badge-info-inverse-static-border);
+    --_badge-icon: var(--affirm-color-badge-info-inverse-static-icon);
+    --_badge-text: var(--affirm-color-badge-info-inverse-static-text);
+  }
+
+  // --- Success (default = static fallback) ---------------------------
+
+  &--success {
+    --_badge-bg: var(--affirm-color-badge-success-static-bg);
+    --_badge-border: var(--affirm-color-badge-success-static-border);
+    --_badge-icon: var(--affirm-color-badge-success-static-icon);
+    --_badge-text: var(--affirm-color-badge-success-static-text);
+  }
+
+  &--success#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-success-static-bg);
+    --_badge-border: var(--affirm-color-badge-success-static-border);
+    --_badge-icon: var(--affirm-color-badge-success-static-icon);
+    --_badge-text: var(--affirm-color-badge-success-static-text);
+  }
+
+  &--success#{&}--inverse {
+    --_badge-bg: var(--affirm-color-badge-success-inverse-bg);
+    --_badge-border: var(--affirm-color-badge-success-inverse-border);
+    --_badge-icon: var(--affirm-color-badge-success-inverse-icon);
+    --_badge-text: var(--affirm-color-badge-success-inverse-text);
+  }
+
+  &--success#{&}--inverse#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-success-inverse-static-bg);
+    --_badge-border: var(--affirm-color-badge-success-inverse-static-border);
+    --_badge-icon: var(--affirm-color-badge-success-inverse-static-icon);
+    --_badge-text: var(--affirm-color-badge-success-inverse-static-text);
+  }
+
+  // --- Warning (has mode-dependent default) --------------------------
+
+  &--warning {
+    --_badge-bg: var(--affirm-color-badge-warning-bg);
+    --_badge-border: var(--affirm-color-badge-warning-border);
+    --_badge-icon: var(--affirm-color-badge-warning-icon);
+    --_badge-text: var(--affirm-color-badge-warning-text);
+  }
+
+  &--warning#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-warning-static-bg);
+    --_badge-border: var(--affirm-color-badge-warning-static-border);
+    --_badge-icon: var(--affirm-color-badge-warning-static-icon);
+    --_badge-text: var(--affirm-color-badge-warning-static-text);
+  }
+
+  &--warning#{&}--inverse {
+    --_badge-bg: var(--affirm-color-badge-warning-inverse-bg);
+    --_badge-border: var(--affirm-color-badge-warning-inverse-border);
+    --_badge-icon: var(--affirm-color-badge-warning-inverse-icon);
+    --_badge-text: var(--affirm-color-badge-warning-inverse-text);
+  }
+
+  &--warning#{&}--inverse#{&}--static {
+    --_badge-bg: var(--affirm-color-badge-warning-inverse-static-bg);
+    --_badge-border: var(--affirm-color-badge-warning-inverse-static-border);
+    --_badge-icon: var(--affirm-color-badge-warning-inverse-static-icon);
+    --_badge-text: var(--affirm-color-badge-warning-inverse-static-text);
+  }
+}

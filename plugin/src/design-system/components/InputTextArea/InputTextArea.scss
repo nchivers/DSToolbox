@@ -1,0 +1,545 @@
+@use '../../tokens/component-type' as typography;
+
+$block: '.affirm-input-text-area';
+
+#{$block} {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--affirm-spacing-text-area-gap-y);
+  width: 100%;
+
+  // ===================================================================
+  // INPUT BOX (the bordered container)
+  // ===================================================================
+
+  &__input {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--affirm-spacing-text-area-input-gap-x);
+    box-sizing: border-box;
+    width: 100%;
+    min-height: var(--affirm-size-text-area-input-min-height);
+    height: var(--affirm-size-text-area-input-min-height);
+    padding: var(--affirm-spacing-text-area-input-padding-y-empty) var(--affirm-spacing-text-area-input-padding-x);
+    border-radius: var(--affirm-radius-text-area-input-all);
+    border: var(--affirm-size-text-area-input-border-width-empty-resting) solid
+      var(--affirm-color-text-area-input-border-empty-resting);
+    background: var(--affirm-color-text-area-input-bg-empty-resting);
+    cursor: text;
+    position: relative;
+    outline: none;
+    resize: vertical;
+    overflow: hidden;
+  }
+
+  // ===================================================================
+  // ICON SLOTS
+  // ===================================================================
+
+  &__icon-start,
+  &__icon-end {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--affirm-size-text-area-icon-all);
+    height: var(--affirm-size-text-area-icon-all);
+    color: var(--affirm-color-text-area-input-icon-empty-resting);
+    overflow: clip;
+    padding-top: var(--affirm-spacing-text-area-input-icon-margin-top-empty);
+  }
+
+  // ===================================================================
+  // FIELD WRAPPER ("Label & Value" in Figma)
+  // ===================================================================
+
+  &__field-wrapper {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 1px;
+    height: 100%;
+  }
+
+  // ===================================================================
+  // LABEL (floating)
+  // ===================================================================
+
+  &__label {
+    @include typography.component-singleline-large;
+    color: var(--affirm-color-text-area-input-label-text-empty-resting);
+    width: 100%;
+    user-select: none;
+    text-align: left;
+  }
+
+  // ===================================================================
+  // NATIVE TEXTAREA
+  // ===================================================================
+
+  &__field {
+    @include typography.component-paragraph-large;
+    color: var(--affirm-color-text-area-input-value-text-filled-resting);
+    width: 100%;
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    resize: none;
+    caret-color: var(--affirm-color-text-area-input-cursor-fill-empty-focus);
+    height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    opacity: 0;
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  // ===================================================================
+  // MESSAGE / ERROR MESSAGE
+  // ===================================================================
+
+  &__message {
+    @include typography.component-paragraph-medium;
+    color: var(--affirm-color-text-area-message-text-resting);
+    width: 100%;
+    margin: 0;
+  }
+
+  &__error-message {
+    @include typography.component-paragraph-medium;
+    color: var(--affirm-color-text-area-error-message-text-resting);
+    width: 100%;
+    margin: 0;
+  }
+
+  // ===================================================================
+  // FLOATED STATE (filled or focused)
+  // When the textarea has a value OR is focused, the label shrinks and
+  // the textarea field becomes visible.
+  // ===================================================================
+
+  &--filled &__input,
+  &:focus-within &__input {
+    padding-top: var(--affirm-spacing-text-area-input-padding-y-filled);
+    padding-bottom: var(--affirm-spacing-text-area-input-padding-y-filled);
+  }
+
+  &--filled &__field-wrapper,
+  &:focus-within &__field-wrapper {
+    gap: var(--affirm-spacing-text-area-input-gap-y);
+  }
+
+  &--filled &__label,
+  &:focus-within &__label {
+    @include typography.component-singleline-small-mid-imp;
+  }
+
+  &--filled &__field,
+  &:focus-within &__field {
+    height: auto;
+    opacity: 1;
+  }
+
+  &--filled &__icon-start,
+  &--filled &__icon-end,
+  &:focus-within &__icon-start,
+  &:focus-within &__icon-end {
+    padding-top: var(--affirm-spacing-text-area-input-icon-margin-top-filled);
+  }
+
+  // ===================================================================
+  // EMPTY (default) — INTERACTION STATES
+  // ===================================================================
+
+  &:hover &__input {
+    background: var(--affirm-color-text-area-input-bg-empty-hover);
+    border-color: var(--affirm-color-text-area-input-border-empty-hover);
+    border-width: var(--affirm-size-text-area-input-border-width-empty-hover);
+  }
+
+  &:hover &__label {
+    color: var(--affirm-color-text-area-input-label-text-empty-hover);
+  }
+
+  &:hover &__icon-start,
+  &:hover &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-empty-hover);
+  }
+
+  &:hover &__message {
+    color: var(--affirm-color-text-area-message-text-hover);
+  }
+
+  &:hover &__error-message {
+    color: var(--affirm-color-text-area-error-message-text-hover);
+  }
+
+  &:active &__input {
+    background: var(--affirm-color-text-area-input-bg-empty-pressed);
+    border-color: var(--affirm-color-text-area-input-border-empty-pressed);
+    border-width: var(--affirm-size-text-area-input-border-width-empty-pressed);
+  }
+
+  &:active &__label {
+    color: var(--affirm-color-text-area-input-label-text-empty-pressed);
+  }
+
+  &:active &__icon-start,
+  &:active &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-empty-pressed);
+  }
+
+  &:active &__message {
+    color: var(--affirm-color-text-area-message-text-pressed);
+  }
+
+  &:active &__error-message {
+    color: var(--affirm-color-text-area-error-message-text-pressed);
+  }
+
+  // Focus (mouse/touch — NOT focus-visible)
+  &:focus-within &__input {
+    background: var(--affirm-color-text-area-input-bg-empty-focus);
+    border-color: var(--affirm-color-text-area-input-border-empty-focus);
+    border-width: var(--affirm-size-text-area-input-border-width-empty-focus);
+  }
+
+  &:focus-within &__label {
+    color: var(--affirm-color-text-area-input-label-text-empty-focus);
+  }
+
+  &:focus-within &__icon-start,
+  &:focus-within &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-empty-focus);
+  }
+
+  &:focus-within &__field {
+    caret-color: var(--affirm-color-text-area-input-cursor-fill-empty-focus);
+  }
+
+  &:focus-within &__message {
+    color: var(--affirm-color-text-area-message-text-focus);
+  }
+
+  &:focus-within &__error-message {
+    color: var(--affirm-color-text-area-error-message-text-focus);
+  }
+
+  // Focus-visible (keyboard)
+  &:has(#{$block}__field[data-focus-visible]) &__input {
+    outline: var(--affirm-size-text-area-input-outline-width-focus-visible) solid
+      var(--affirm-color-text-area-input-outline-empty-focus-visible);
+    outline-offset: var(--affirm-spacing-text-area-input-outline-offset-focus-visible);
+  }
+
+  // ===================================================================
+  // FILLED — INTERACTION STATES
+  // ===================================================================
+
+  &--filled &__input {
+    background: var(--affirm-color-text-area-input-bg-filled-resting);
+    border-color: var(--affirm-color-text-area-input-border-filled-resting);
+    border-width: var(--affirm-size-text-area-input-border-width-filled-resting);
+  }
+
+  &--filled &__label {
+    color: var(--affirm-color-text-area-input-label-text-filled-resting);
+  }
+
+  &--filled &__field {
+    color: var(--affirm-color-text-area-input-value-text-filled-resting);
+  }
+
+  &--filled &__icon-start,
+  &--filled &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-filled-resting);
+  }
+
+  &--filled:hover &__input {
+    background: var(--affirm-color-text-area-input-bg-filled-hover);
+    border-color: var(--affirm-color-text-area-input-border-filled-hover);
+    border-width: var(--affirm-size-text-area-input-border-width-filled-hover);
+  }
+
+  &--filled:hover &__label {
+    color: var(--affirm-color-text-area-input-label-text-filled-hover);
+  }
+
+  &--filled:hover &__field {
+    color: var(--affirm-color-text-area-input-value-text-filled-hover);
+  }
+
+  &--filled:hover &__icon-start,
+  &--filled:hover &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-filled-hover);
+  }
+
+  &--filled:active &__input {
+    background: var(--affirm-color-text-area-input-bg-filled-pressed);
+    border-color: var(--affirm-color-text-area-input-border-filled-pressed);
+    border-width: var(--affirm-size-text-area-input-border-width-filled-pressed);
+  }
+
+  &--filled:active &__label {
+    color: var(--affirm-color-text-area-input-label-text-filled-pressed);
+  }
+
+  &--filled:active &__field {
+    color: var(--affirm-color-text-area-input-value-text-filled-pressed);
+  }
+
+  &--filled:active &__icon-start,
+  &--filled:active &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-filled-pressed);
+  }
+
+  &--filled:focus-within &__input {
+    background: var(--affirm-color-text-area-input-bg-filled-focus);
+    border-color: var(--affirm-color-text-area-input-border-filled-focus);
+    border-width: var(--affirm-size-text-area-input-border-width-filled-focus);
+  }
+
+  &--filled:focus-within &__label {
+    color: var(--affirm-color-text-area-input-label-text-filled-focus);
+  }
+
+  &--filled:focus-within &__field {
+    color: var(--affirm-color-text-area-input-value-text-filled-focus);
+    caret-color: var(--affirm-color-text-area-input-cursor-fill-filled-focus);
+  }
+
+  &--filled:focus-within &__icon-start,
+  &--filled:focus-within &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-filled-focus);
+  }
+
+  &--filled:has(#{$block}__field[data-focus-visible]) &__input {
+    outline: var(--affirm-size-text-area-input-outline-width-focus-visible) solid
+      var(--affirm-color-text-area-input-outline-filled-focus-visible);
+    outline-offset: var(--affirm-spacing-text-area-input-outline-offset-focus-visible);
+  }
+
+  // ===================================================================
+  // ERROR + EMPTY — INTERACTION STATES
+  // ===================================================================
+
+  &--error &__input {
+    background: var(--affirm-color-text-area-input-bg-error-empty-resting);
+    border-color: var(--affirm-color-text-area-input-border-error-empty-resting);
+    border-width: var(--affirm-size-text-area-input-border-width-error-empty-resting);
+  }
+
+  &--error &__label {
+    color: var(--affirm-color-text-area-input-label-text-error-empty-resting);
+  }
+
+  &--error &__icon-start,
+  &--error &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-error-empty-resting);
+  }
+
+  &--error:hover &__input {
+    background: var(--affirm-color-text-area-input-bg-error-empty-hover);
+    border-color: var(--affirm-color-text-area-input-border-error-empty-hover);
+    border-width: var(--affirm-size-text-area-input-border-width-error-empty-hover);
+  }
+
+  &--error:hover &__label {
+    color: var(--affirm-color-text-area-input-label-text-error-empty-hover);
+  }
+
+  &--error:hover &__icon-start,
+  &--error:hover &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-error-empty-hover);
+  }
+
+  &--error:active &__input {
+    background: var(--affirm-color-text-area-input-bg-error-empty-pressed);
+    border-color: var(--affirm-color-text-area-input-border-error-empty-pressed);
+    border-width: var(--affirm-size-text-area-input-border-width-error-empty-pressed);
+  }
+
+  &--error:active &__label {
+    color: var(--affirm-color-text-area-input-label-text-error-empty-pressed);
+  }
+
+  &--error:active &__icon-start,
+  &--error:active &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-error-empty-pressed);
+  }
+
+  &--error:focus-within &__input {
+    background: var(--affirm-color-text-area-input-bg-error-empty-focus);
+    border-color: var(--affirm-color-text-area-input-border-error-empty-focus);
+    border-width: var(--affirm-size-text-area-input-border-width-error-empty-focus);
+  }
+
+  &--error:focus-within &__label {
+    color: var(--affirm-color-text-area-input-label-text-error-empty-focus);
+  }
+
+  &--error:focus-within &__icon-start,
+  &--error:focus-within &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-error-empty-focus);
+  }
+
+  &--error:focus-within &__field {
+    caret-color: var(--affirm-color-text-area-input-cursor-fill-error-empty-focus);
+  }
+
+  &--error:has(#{$block}__field[data-focus-visible]) &__input {
+    outline: var(--affirm-size-text-area-input-outline-width-focus-visible) solid
+      var(--affirm-color-text-area-input-outline-error-empty-focus-visible);
+    outline-offset: var(--affirm-spacing-text-area-input-outline-offset-focus-visible);
+  }
+
+  // ===================================================================
+  // ERROR + FILLED — INTERACTION STATES
+  // ===================================================================
+
+  &--error#{&}--filled &__input {
+    background: var(--affirm-color-text-area-input-bg-error-filled-resting);
+    border-color: var(--affirm-color-text-area-input-border-error-filled-resting);
+    border-width: var(--affirm-size-text-area-input-border-width-error-filled-resting);
+  }
+
+  &--error#{&}--filled &__label {
+    color: var(--affirm-color-text-area-input-label-text-error-filled-resting);
+  }
+
+  &--error#{&}--filled &__field {
+    color: var(--affirm-color-text-area-input-value-text-error-filled-resting);
+  }
+
+  &--error#{&}--filled &__icon-start,
+  &--error#{&}--filled &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-error-filled-resting);
+  }
+
+  &--error#{&}--filled:hover &__input {
+    background: var(--affirm-color-text-area-input-bg-error-filled-hover);
+    border-color: var(--affirm-color-text-area-input-border-error-filled-hover);
+    border-width: var(--affirm-size-text-area-input-border-width-error-filled-hover);
+  }
+
+  &--error#{&}--filled:hover &__label {
+    color: var(--affirm-color-text-area-input-label-text-error-filled-hover);
+  }
+
+  &--error#{&}--filled:hover &__field {
+    color: var(--affirm-color-text-area-input-value-text-error-filled-hover);
+  }
+
+  &--error#{&}--filled:hover &__icon-start,
+  &--error#{&}--filled:hover &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-error-filled-hover);
+  }
+
+  &--error#{&}--filled:active &__input {
+    background: var(--affirm-color-text-area-input-bg-error-filled-pressed);
+    border-color: var(--affirm-color-text-area-input-border-error-filled-pressed);
+    border-width: var(--affirm-size-text-area-input-border-width-error-filled-pressed);
+  }
+
+  &--error#{&}--filled:active &__label {
+    color: var(--affirm-color-text-area-input-label-text-error-filled-pressed);
+  }
+
+  &--error#{&}--filled:active &__field {
+    color: var(--affirm-color-text-area-input-value-text-error-filled-pressed);
+  }
+
+  &--error#{&}--filled:active &__icon-start,
+  &--error#{&}--filled:active &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-error-filled-pressed);
+  }
+
+  &--error#{&}--filled:focus-within &__input {
+    background: var(--affirm-color-text-area-input-bg-error-filled-focus);
+    border-color: var(--affirm-color-text-area-input-border-error-filled-focus);
+    border-width: var(--affirm-size-text-area-input-border-width-error-filled-focus);
+  }
+
+  &--error#{&}--filled:focus-within &__label {
+    color: var(--affirm-color-text-area-input-label-text-error-filled-focus);
+  }
+
+  &--error#{&}--filled:focus-within &__field {
+    color: var(--affirm-color-text-area-input-value-text-error-filled-focus);
+    caret-color: var(--affirm-color-text-area-input-cursor-fill-error-filled-focus);
+  }
+
+  &--error#{&}--filled:focus-within &__icon-start,
+  &--error#{&}--filled:focus-within &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-error-filled-focus);
+  }
+
+  &--error#{&}--filled:has(#{$block}__field[data-focus-visible]) &__input {
+    outline: var(--affirm-size-text-area-input-outline-width-focus-visible) solid
+      var(--affirm-color-text-area-input-outline-error-filled-focus-visible);
+    outline-offset: var(--affirm-spacing-text-area-input-outline-offset-focus-visible);
+  }
+
+  // ===================================================================
+  // DISABLED
+  // ===================================================================
+
+  &--disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &--disabled &__input {
+    background: var(--affirm-color-text-area-input-bg-empty-disabled);
+    border-color: var(--affirm-color-text-area-input-border-empty-disabled);
+    border-width: var(--affirm-size-text-area-input-border-width-empty-disabled);
+    cursor: not-allowed;
+    resize: none;
+  }
+
+  &--disabled &__label {
+    color: var(--affirm-color-text-area-input-label-text-empty-disabled);
+  }
+
+  &--disabled &__field {
+    color: var(--affirm-color-text-area-input-value-text-filled-disabled);
+    cursor: not-allowed;
+  }
+
+  &--disabled &__icon-start,
+  &--disabled &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-empty-disabled);
+  }
+
+  &--disabled &__message {
+    color: var(--affirm-color-text-area-message-text-disabled);
+  }
+
+  &--disabled#{&}--filled &__input {
+    background: var(--affirm-color-text-area-input-bg-filled-disabled);
+    border-color: var(--affirm-color-text-area-input-border-filled-disabled);
+    border-width: var(--affirm-size-text-area-input-border-width-filled-disabled);
+  }
+
+  &--disabled#{&}--filled &__label {
+    color: var(--affirm-color-text-area-input-label-text-filled-disabled);
+  }
+
+  &--disabled#{&}--filled &__icon-start,
+  &--disabled#{&}--filled &__icon-end {
+    color: var(--affirm-color-text-area-input-icon-filled-disabled);
+  }
+}

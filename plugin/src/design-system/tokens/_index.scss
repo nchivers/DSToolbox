@@ -1,0 +1,22 @@
+// Global semantic defaults
+@use 'global';
+@use 'semantic';
+@use 'typography';
+@use 'link';
+
+// Component default tokens (load first — lowest specificity)
+@use '../components/Badge/tokens' as badge-tokens;
+@use '../components/Button/tokens' as button-tokens;
+@use '../components/Checkbox/tokens' as checkbox-tokens;
+@use '../components/CircularLoader/tokens' as circular-loader-tokens;
+@use '../components/Divider/tokens' as divider-tokens;
+@use '../components/Dropdown/tokens' as dropdown-tokens;
+@use '../components/InputText/tokens' as input-text-tokens;
+@use '../components/InputTextArea/tokens' as input-text-area-tokens;
+@use '../components/Link/tokens' as link-tokens;
+@use '../components/PageFooter/tokens' as page-footer-tokens;
+@use '../components/Switch/tokens' as switch-tokens;
+@use '../components/PageHeader/tokens' as page-header-tokens;
+
+// Theme overrides (load second — higher specificity via compound selectors)
+// @use 'themes/rufus';

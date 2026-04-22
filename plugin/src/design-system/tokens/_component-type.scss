@@ -1,0 +1,49 @@
+@mixin _base($density, $size, $weight: default) {
+  font-family: var(--affirm-component-font-family);
+  font-weight: var(--affirm-component-weight-#{$weight});
+  font-size: var(--affirm-component-size-#{$size});
+  line-height: var(--affirm-component-line-height-#{$size}-#{$density});
+  letter-spacing: var(--affirm-component-letter-spacing-#{$size});
+}
+
+// --- Singleline (default weight) ---
+@mixin component-singleline-xlarge            { @include _base(singleline, xlarge); }
+@mixin component-singleline-large             { @include _base(singleline, large); }
+@mixin component-singleline-medium            { @include _base(singleline, medium); }
+@mixin component-singleline-small             { @include _base(singleline, small); }
+@mixin component-singleline-xsmall            { @include _base(singleline, xsmall); }
+
+// --- Singleline (MidImp) ---
+@mixin component-singleline-xlarge-mid-imp    { @include _base(singleline, xlarge, mid-imp); }
+@mixin component-singleline-large-mid-imp     { @include _base(singleline, large, mid-imp); }
+@mixin component-singleline-medium-mid-imp    { @include _base(singleline, medium, mid-imp); }
+@mixin component-singleline-small-mid-imp     { @include _base(singleline, small, mid-imp); }
+@mixin component-singleline-xsmall-mid-imp    { @include _base(singleline, xsmall, mid-imp); }
+
+// --- Singleline (HighImp) ---
+@mixin component-singleline-xlarge-high-imp   { @include _base(singleline, xlarge, high-imp); }
+@mixin component-singleline-large-high-imp    { @include _base(singleline, large, high-imp); }
+@mixin component-singleline-medium-high-imp   { @include _base(singleline, medium, high-imp); }
+@mixin component-singleline-small-high-imp    { @include _base(singleline, small, high-imp); }
+@mixin component-singleline-xsmall-high-imp   { @include _base(singleline, xsmall, high-imp); }
+
+// --- Paragraph (default weight) ---
+@mixin component-paragraph-xlarge             { @include _base(paragraph, xlarge); }
+@mixin component-paragraph-large              { @include _base(paragraph, large); }
+@mixin component-paragraph-medium             { @include _base(paragraph, medium); }
+@mixin component-paragraph-small              { @include _base(paragraph, small); }
+@mixin component-paragraph-xsmall             { @include _base(paragraph, xsmall); }
+
+// --- Paragraph (MidImp) ---
+@mixin component-paragraph-xlarge-mid-imp     { @include _base(paragraph, xlarge, mid-imp); }
+@mixin component-paragraph-large-mid-imp      { @include _base(paragraph, large, mid-imp); }
+@mixin component-paragraph-medium-mid-imp     { @include _base(paragraph, medium, mid-imp); }
+@mixin component-paragraph-small-mid-imp      { @include _base(paragraph, small, mid-imp); }
+@mixin component-paragraph-xsmall-mid-imp     { @include _base(paragraph, xsmall, mid-imp); }
+
+// --- Paragraph (HighImp) ---
+@mixin component-paragraph-xlarge-high-imp    { @include _base(paragraph, xlarge, high-imp); }
+@mixin component-paragraph-large-high-imp     { @include _base(paragraph, large, high-imp); }
+@mixin component-paragraph-medium-high-imp    { @include _base(paragraph, medium, high-imp); }
+@mixin component-paragraph-small-high-imp     { @include _base(paragraph, small, high-imp); }
+@mixin component-paragraph-xsmall-high-imp    { @include _base(paragraph, xsmall, high-imp); }
