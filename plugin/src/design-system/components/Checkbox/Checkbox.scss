@@ -321,9 +321,24 @@
     border-color: var(--affirm-color-checkbox-indicator-border-unselected-disabled);
   }
 
+  &--disabled:hover &__indicator-icon,
+  &--disabled:active &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-unselected-disabled);
+  }
+
+  &--disabled:hover &__label,
+  &--disabled:active &__label {
+    color: var(--affirm-color-checkbox-label-text-disabled);
+  }
+
   &--disabled#{&}--selected:hover &__indicator,
   &--disabled#{&}--selected:active &__indicator {
     background: var(--affirm-color-checkbox-indicator-bg-selected-disabled);
     border-color: var(--affirm-color-checkbox-indicator-border-selected-disabled);
+  }
+
+  &--disabled#{&}--selected:hover &__indicator-icon,
+  &--disabled#{&}--selected:active &__indicator-icon {
+    color: var(--affirm-color-checkbox-indicator-icon-selected-disabled);
   }
 }

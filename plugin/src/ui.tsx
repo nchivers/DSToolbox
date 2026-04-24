@@ -6,6 +6,7 @@ import {
   InputTextArea,
   PageHeader,
   PageFooter,
+  SectionHeader,
 } from "./design-system/components";
 import "./ui.scss";
 
@@ -89,7 +90,13 @@ function App() {
     <main>
       <PageHeader
         title="Export Variables to JSON"
-        description="Exports id, name, collection, resolvedType, valuesByMode, hiddenFromPublishing, and scopes from this file."
+        description="This plugin exports variables from the current file to JSON for use in the DS-Toolbox."
+      />
+
+      <SectionHeader
+        title="Instructions"
+        body="Click the 'Export variables' button to generate JSON. Click the 'Copy JSON' button to copy the JSON to your clipboard."
+        className="affirm-instructions"
       />
 
       <section className="affirm-actions">

@@ -22,3 +22,7 @@ export { PageFooter } from './components';
 export type { PageFooterProps } from './components';
 export { PageHeader } from './components';
 export type { PageHeaderProps } from './components';
+export { SectionHeader } from './components';
+export type { SectionHeaderProps } from './components';
+export { Tabs, Tab } from './components';
+export type { TabsProps, TabProps, TabsAlignment } from './components';

@@ -8,5 +8,7 @@
 :root {
     // Spacing
     --affirm-spacing-page-header-gap-y: #{map.get($base-sizes, '050')};
+    --affirm-spacing-page-header-secondary-gap-y: #{map.get($base-sizes, '100')};
     --affirm-spacing-page-header-margin-bottom: #{map.get($base-sizes, '300')};
+    --affirm-spacing-page-header-secondary-margin-top: #{map.get($base-sizes, '050')};
 }

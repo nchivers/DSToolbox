@@ -93,9 +93,10 @@
 
   &__tooltip {
     position: absolute;
-    bottom: calc(100% + var(--affirm-position-button-icon-only-tooltip-top-resting));
+    bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
+    translate: 0 calc(-1 * var(--affirm-position-button-icon-only-tooltip-top-resting));
     white-space: nowrap;
     pointer-events: none;
     background: var(--affirm-color-button-icon-only-tooltip-bg);
@@ -104,7 +105,9 @@
     padding: var(--affirm-spacing-button-icon-only-tooltip-padding-y)
       var(--affirm-spacing-button-icon-only-tooltip-padding-x);
     opacity: var(--affirm-opacity-button-icon-only-tooltip-container-resting);
-    transition: opacity 0.15s ease, bottom 0.15s ease;
+    transition:
+      opacity 0.1875s linear .0625s,
+      translate 0.25s ease-in 0s;
     @include typography.component-singleline-small;
   }
 
@@ -124,7 +127,10 @@
 
   &:hover:not(&--disabled):not(&--loading) &__tooltip {
     opacity: var(--affirm-opacity-button-icon-only-tooltip-container-hover);
-    bottom: calc(100% + var(--affirm-position-button-icon-only-tooltip-top-hover));
+    translate: 0 calc(-1 * var(--affirm-position-button-icon-only-tooltip-top-hover));
+    transition:
+      opacity 0.1875s linear,
+      translate 0.25s ease-out;
   }
 
   &:active:not(&--disabled):not(&--loading) {
@@ -139,7 +145,7 @@
 
   &:active:not(&--disabled):not(&--loading) &__tooltip {
     opacity: var(--affirm-opacity-button-icon-only-tooltip-container-pressed);
-    bottom: calc(100% + var(--affirm-position-button-icon-only-tooltip-top-pressed));
+    translate: 0 calc(-1 * var(--affirm-position-button-icon-only-tooltip-top-pressed));
   }
 
   &:focus-visible {
@@ -157,7 +163,10 @@
 
   &:focus-visible &__tooltip {
     opacity: var(--affirm-opacity-button-icon-only-tooltip-container-focus-visible);
-    bottom: calc(100% + var(--affirm-position-button-icon-only-tooltip-top-focus-visible));
+    translate: 0 calc(-1 * var(--affirm-position-button-icon-only-tooltip-top-focus-visible));
+    transition:
+      opacity 0.1875s linear 0.0625s,
+      translate 0.1875s ease-out 0.0625s;
   }
 
   // =========================================================================

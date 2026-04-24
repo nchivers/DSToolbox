@@ -1,0 +1,650 @@
+@use 'sass:map';
+
+$nick-indigo: (
+  '050': #edf8f3,
+  '050-a00': #edf8f300,
+  '075': #d1eee0,
+  '100': #b5e5cf,
+  '200': #76d1ab,
+  '250': #66c9a1,
+  '300': #00bc88,
+  '400': #009d71,
+  '500': #007f5b,
+  '600': #006a4b,
+  '700': #004f37,
+  '800': #003423,
+  '900': #001e13,
+  '950': #00170e,
+  '950-a00': #00170e00,
+  '970': #000a05,
+);
+
+// ---------------------------------------------------------------------------
+// Light mode
+// ---------------------------------------------------------------------------
+[data-theme='nick'][data-mode='light'] {
+  // tokens/_global.scss
+  --affirm-bg-interactive: #{map.get($nick-indigo, '970')};
+  --affirm-bg-interactive-hover: #{map.get($nick-indigo, '800')};
+  --affirm-bg-interactive-pressed: #{map.get($nick-indigo, '900')};
+  --affirm-text-link: #{map.get($nick-indigo, '950')};
+  --affirm-border-interactive: #{map.get($nick-indigo, '970')};
+  --affirm-content-interactive: #{map.get($nick-indigo, '950')};
+
+  // tokens/_semantic.scss
+  --affirm-color-bg-primary-brand: #{map.get($nick-indigo, '100')};
+  --affirm-color-fill-primary-brand: #{map.get($nick-indigo, '500')};
+  --affirm-color-icon-link: #{map.get($nick-indigo, '800')};
+  --affirm-color-icon-link-inverse: #{map.get($nick-indigo, '050')};
+  --affirm-color-icon-link-on-dark-static: #{map.get($nick-indigo, '050')};
+  --affirm-color-icon-link-on-light-static: #{map.get($nick-indigo, '800')};
+  --affirm-color-icon-primary-brand: #{map.get($nick-indigo, '500')};
+  --affirm-color-icon-primary-brand-on-dark-static: #{map.get($nick-indigo, '300')};
+  --affirm-color-icon-primary-brand-on-light-static: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-link: #{map.get($nick-indigo, '800')};
+  --affirm-color-text-link-inverse: #{map.get($nick-indigo, '050')};
+  --affirm-color-text-link-on-dark-static: #{map.get($nick-indigo, '050')};
+  --affirm-color-text-link-on-light-static: #{map.get($nick-indigo, '800')};
+  --affirm-color-text-primary-brand: #{map.get($nick-indigo, '500')};
+
+  // components/Badge/_tokens.scss
+  --affirm-color-badge-brand-featured-bg: #{map.get($nick-indigo, '800')};
+  --affirm-color-badge-brand-featured-static-bg: #{map.get($nick-indigo, '800')};
+  --affirm-color-badge-brand-featured-inverse-bg: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-featured-inverse-static-bg: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-featured-icon: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-featured-static-icon: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-featured-inverse-icon: #{map.get($nick-indigo, '800')};
+  --affirm-color-badge-brand-featured-inverse-static-icon: #{map.get($nick-indigo, '800')};
+  --affirm-color-badge-brand-featured-text: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-featured-static-text: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-featured-inverse-text: #{map.get($nick-indigo, '800')};
+  --affirm-color-badge-brand-featured-inverse-static-text: #{map.get($nick-indigo, '800')};
+  --affirm-color-badge-brand-primary-static-bg: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-primary-inverse-bg: #{map.get($nick-indigo, '600')};
+  --affirm-color-badge-brand-primary-inverse-static-bg: #{map.get($nick-indigo, '600')};
+  --affirm-color-badge-brand-primary-static-icon: #{map.get($nick-indigo, '600')};
+  --affirm-color-badge-brand-primary-inverse-icon: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-primary-inverse-static-icon: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-primary-static-text: #{map.get($nick-indigo, '600')};
+  --affirm-color-badge-brand-primary-inverse-text: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-primary-inverse-static-text: #{map.get($nick-indigo, '100')};
+
+  // components/Button/_tokens.scss
+  --affirm-color-button-primary-bg-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-bg-hover: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-primary-bg-focus-visible: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-primary-bg-pressed: #{map.get($nick-indigo, '800')};
+  --affirm-color-button-primary-inverse-bg-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-primary-inverse-bg-hover: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-primary-inverse-bg-focus-visible: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-primary-inverse-bg-pressed: #{map.get($nick-indigo, '100')};
+  --affirm-color-button-primary-static-bg-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-static-bg-hover: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-primary-static-bg-focus-visible: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-primary-static-bg-pressed: #{map.get($nick-indigo, '800')};
+  --affirm-color-button-primary-inverse-static-bg-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-primary-inverse-static-bg-hover: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-primary-inverse-static-bg-focus-visible: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-primary-inverse-static-bg-pressed: #{map.get($nick-indigo, '100')};
+  --affirm-color-button-primary-inverse-icon-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-icon-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-icon-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-icon-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-icon-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-icon-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-icon-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-icon-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-small-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-primary-medium-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-primary-large-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-primary-inverse-text-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-text-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-text-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-text-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-text-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-text-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-text-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-text-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-destructive-small-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-primary-destructive-medium-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-primary-destructive-large-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-secondary-bg-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-bg-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-bg-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-secondary-static-bg-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-static-bg-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-static-bg-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-secondary-border-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-border-hover: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-secondary-border-focus-visible: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-secondary-border-pressed: #{map.get($nick-indigo, '800')};
+  --affirm-color-button-secondary-inverse-border-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-border-hover: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-secondary-inverse-border-focus-visible: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-secondary-inverse-border-pressed: #{map.get($nick-indigo, '100')};
+  --affirm-color-button-secondary-static-border-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-border-hover: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-secondary-static-border-focus-visible: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-secondary-static-border-pressed: #{map.get($nick-indigo, '800')};
+  --affirm-color-button-secondary-inverse-static-border-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-border-hover: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-secondary-inverse-static-border-focus-visible: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-secondary-inverse-static-border-pressed: #{map.get($nick-indigo, '100')};
+  --affirm-color-button-secondary-icon-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-icon-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-icon-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-icon-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-inverse-icon-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-icon-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-icon-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-icon-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-static-icon-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-icon-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-icon-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-icon-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-inverse-static-icon-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-icon-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-icon-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-icon-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-small-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-secondary-medium-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-secondary-large-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-secondary-text-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-text-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-text-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-text-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-inverse-text-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-text-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-text-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-text-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-static-text-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-text-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-text-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-text-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-inverse-static-text-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-text-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-text-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-text-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-destructive-small-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-secondary-destructive-medium-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-secondary-destructive-large-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-tertiary-bg-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-bg-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-bg-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-tertiary-static-bg-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-static-bg-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-static-bg-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-tertiary-icon-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-icon-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-icon-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-icon-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-inverse-icon-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-icon-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-icon-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-icon-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-static-icon-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-icon-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-icon-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-icon-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-inverse-static-icon-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-static-icon-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-static-icon-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-static-icon-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-small-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-tertiary-medium-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-tertiary-large-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-tertiary-text-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-text-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-text-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-text-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-inverse-text-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-text-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-text-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-text-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-static-text-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-text-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-text-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-text-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-inverse-static-text-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-static-text-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-static-text-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-static-text-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-destructive-small-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-tertiary-destructive-medium-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-tertiary-destructive-large-outline-focus-visible: #{map.get($nick-indigo, '500')};
+
+  // components/Checkbox/_tokens.scss
+  --affirm-color-checkbox-container-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-checkbox-indicator-bg-selected-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-checkbox-indicator-bg-selected-hover: #{map.get($nick-indigo, '700')};
+  --affirm-color-checkbox-indicator-bg-selected-pressed: #{map.get($nick-indigo, '600')};
+  --affirm-color-checkbox-indicator-bg-selected-focus-visible: #{map.get($nick-indigo, '700')};
+  --affirm-color-checkbox-indicator-bg-unselected-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-checkbox-indicator-bg-unselected-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-checkbox-indicator-bg-unselected-focus-visible: #{map.get($nick-indigo, '050')};
+
+  // components/CircularLoader/_tokens.scss
+  --affirm-color-circular-loader-border: #{map.get($nick-indigo, '950')};
+
+  // components/Dropdown/_tokens.scss
+  --affirm-color-dropdown-input-bg-empty-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-dropdown-input-bg-empty-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-dropdown-input-bg-empty-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-dropdown-input-bg-open-empty-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-dropdown-input-bg-open-empty-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-dropdown-input-bg-open-empty-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-dropdown-input-bg-filled-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-dropdown-input-bg-filled-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-dropdown-input-bg-filled-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-dropdown-input-bg-open-filled-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-dropdown-input-bg-open-filled-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-dropdown-input-bg-open-filled-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-dropdown-input-outline-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-open-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-open-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-error-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-error-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-error-open-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-error-open-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-listbox-list-item-bg-unselected-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-listbox-list-item-bg-unselected-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-listbox-list-item-bg-unselected-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-listbox-list-item-bg-selected-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-listbox-list-item-bg-selected-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-listbox-list-item-bg-selected-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-listbox-list-item-icon-unselected-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-listbox-list-item-icon-selected-resting: #{map.get($nick-indigo, '900')};
+  --affirm-color-listbox-list-item-icon-selected-hover: #{map.get($nick-indigo, '900')};
+  --affirm-color-listbox-list-item-icon-selected-focus-visible: #{map.get($nick-indigo, '900')};
+  --affirm-color-listbox-list-item-icon-selected-pressed: #{map.get($nick-indigo, '900')};
+  --affirm-color-listbox-list-item-selected-icon-icon-resting: #{map.get($nick-indigo, '900')};
+  --affirm-color-listbox-list-item-selected-icon-icon-hover: #{map.get($nick-indigo, '900')};
+  --affirm-color-listbox-list-item-selected-icon-icon-focus-visible: #{map.get($nick-indigo, '900')};
+  --affirm-color-listbox-list-item-selected-icon-icon-pressed: #{map.get($nick-indigo, '900')};
+  --affirm-color-listbox-list-item-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-listbox-list-item-label-text-unselected-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-listbox-list-item-label-text-selected-resting: #{map.get($nick-indigo, '900')};
+  --affirm-color-listbox-list-item-label-text-selected-hover: #{map.get($nick-indigo, '900')};
+  --affirm-color-listbox-list-item-label-text-selected-focus-visible: #{map.get($nick-indigo, '900')};
+  --affirm-color-listbox-list-item-label-text-selected-pressed: #{map.get($nick-indigo, '900')};
+
+  // components/InputText/_tokens.scss
+  --affirm-color-input-text-input-bg-empty-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-input-text-input-bg-empty-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-input-text-input-bg-empty-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-input-text-input-bg-filled-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-input-text-input-bg-filled-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-input-text-input-bg-filled-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-input-text-input-border-empty-focus: #{map.get($nick-indigo, '900')};
+  --affirm-color-input-text-input-border-filled-focus: #{map.get($nick-indigo, '900')};
+  --affirm-color-input-text-input-cursor-fill-empty-focus: #{map.get($nick-indigo, '500')};
+  --affirm-color-input-text-input-cursor-fill-filled-focus: #{map.get($nick-indigo, '500')};
+  --affirm-color-input-text-input-icon-empty-focus: #{map.get($nick-indigo, '900')};
+  --affirm-color-input-text-input-icon-filled-focus: #{map.get($nick-indigo, '900')};
+  --affirm-color-input-text-input-outline-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-input-text-input-outline-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-input-text-input-outline-error-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-input-text-input-outline-error-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-input-text-input-label-text-empty-focus: #{map.get($nick-indigo, '900')};
+  --affirm-color-input-text-input-label-text-filled-focus: #{map.get($nick-indigo, '900')};
+
+  // components/InputTextArea/_tokens.scss
+  --affirm-color-text-area-input-bg-empty-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-text-area-input-bg-empty-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-text-area-input-bg-empty-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-text-area-input-bg-filled-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-text-area-input-bg-filled-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-text-area-input-bg-filled-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-text-area-input-border-empty-pressed: #{map.get($nick-indigo, '900')};
+  --affirm-color-text-area-input-border-empty-focus: #{map.get($nick-indigo, '900')};
+  --affirm-color-text-area-input-border-filled-pressed: #{map.get($nick-indigo, '900')};
+  --affirm-color-text-area-input-border-filled-focus: #{map.get($nick-indigo, '900')};
+  --affirm-color-text-area-input-cursor-fill-empty-focus: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-area-input-cursor-fill-filled-focus: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-area-input-icon-empty-focus: #{map.get($nick-indigo, '900')};
+  --affirm-color-text-area-input-icon-filled-focus: #{map.get($nick-indigo, '900')};
+  --affirm-color-text-area-input-outline-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-area-input-outline-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-area-input-outline-error-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-area-input-outline-error-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-area-input-label-text-empty-focus: #{map.get($nick-indigo, '900')};
+  --affirm-color-text-area-input-label-text-filled-focus: #{map.get($nick-indigo, '900')};
+
+  // components/Link/_tokens.scss
+  --affirm-color-link-container-bg-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-link-container-bg-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-link-container-bg-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-link-text-resting: #{map.get($nick-indigo, '900')};
+  --affirm-color-link-text-hover: #{map.get($nick-indigo, '900')};
+  --affirm-color-link-text-pressed: #{map.get($nick-indigo, '900')};
+  --affirm-color-link-text-focus-visible: #{map.get($nick-indigo, '900')};
+  --affirm-color-link-icon-resting: #{map.get($nick-indigo, '900')};
+  --affirm-color-link-icon-hover: #{map.get($nick-indigo, '900')};
+  --affirm-color-link-icon-pressed: #{map.get($nick-indigo, '900')};
+  --affirm-color-link-icon-focus-visible: #{map.get($nick-indigo, '900')};
+  --affirm-color-link-outline-focus-visible: #{map.get($nick-indigo, '500')};
+
+  // components/Switch/_tokens.scss
+  --affirm-color-switch-container-outline-unselected-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-switch-container-outline-selected-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-switch-container-outline-error-unselected-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-switch-container-outline-error-selected-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-switch-track-bg-selected-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-switch-track-bg-selected-hover: #{map.get($nick-indigo, '700')};
+  --affirm-color-switch-track-bg-selected-pressed: #{map.get($nick-indigo, '800')};
+  --affirm-color-switch-track-bg-selected-focus-visible: #{map.get($nick-indigo, '700')};
+  --affirm-color-switch-track-bg-unselected-hover: #{map.get($nick-indigo, '700')};
+  --affirm-color-switch-track-bg-unselected-pressed: #{map.get($nick-indigo, '800')};
+  --affirm-color-switch-track-bg-unselected-focus-visible: #{map.get($nick-indigo, '700')};
+
+  // components/Tabs/_tokens.scss
+  --affirm-color-tabs-tab-content-container-bg-unselected-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-tabs-tab-content-container-bg-unselected-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-tabs-tab-content-container-bg-unselected-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-tabs-tab-content-container-bg-selected-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-tabs-tab-content-container-bg-selected-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-tabs-tab-content-container-bg-selected-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-tabs-tab-indicator-fill-selected-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-tabs-tab-indicator-fill-selected-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-tabs-tab-indicator-fill-selected-pressed: #{map.get($nick-indigo, '600')};
+  --affirm-color-tabs-tab-indicator-fill-selected-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-tabs-tab-indicator-fill-unselected-pressed: #{map.get($nick-indigo, '600')};
+  --affirm-color-tabs-tab-outline-focus-visible: #{map.get($nick-indigo, '500')};
+
+}
+
+// ---------------------------------------------------------------------------
+// Dark mode
+// ---------------------------------------------------------------------------
+[data-theme='nick'][data-mode='dark'] {
+  // tokens/_global.scss
+  --affirm-bg-interactive: #{map.get($nick-indigo, '300')};
+  --affirm-bg-interactive-hover: #{map.get($nick-indigo, '200')};
+  --affirm-bg-interactive-pressed: #{map.get($nick-indigo, '400')};
+  --affirm-text-link: #{map.get($nick-indigo, '300')};
+  --affirm-border-interactive: #{map.get($nick-indigo, '300')};
+  --affirm-content-interactive: #{map.get($nick-indigo, '300')};
+
+  // tokens/_semantic.scss
+  --affirm-color-bg-primary-brand: #{map.get($nick-indigo, '600')};
+  --affirm-color-fill-primary-brand: #{map.get($nick-indigo, '500')};
+  --affirm-color-icon-link: #{map.get($nick-indigo, '050')};
+  --affirm-color-icon-link-inverse: #{map.get($nick-indigo, '800')};
+  --affirm-color-icon-link-on-dark-static: #{map.get($nick-indigo, '050')};
+  --affirm-color-icon-link-on-light-static: #{map.get($nick-indigo, '800')};
+  --affirm-color-icon-primary-brand: #{map.get($nick-indigo, '300')};
+  --affirm-color-icon-primary-brand-on-dark-static: #{map.get($nick-indigo, '300')};
+  --affirm-color-icon-primary-brand-on-light-static: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-link: #{map.get($nick-indigo, '050')};
+  --affirm-color-text-link-inverse: #{map.get($nick-indigo, '800')};
+  --affirm-color-text-link-on-dark-static: #{map.get($nick-indigo, '050')};
+  --affirm-color-text-link-on-light-static: #{map.get($nick-indigo, '800')};
+  --affirm-color-text-primary-brand: #{map.get($nick-indigo, '300')};
+
+  // components/Badge/_tokens.scss
+  --affirm-color-badge-brand-featured-bg: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-featured-static-bg: #{map.get($nick-indigo, '800')};
+  --affirm-color-badge-brand-featured-inverse-bg: #{map.get($nick-indigo, '800')};
+  --affirm-color-badge-brand-featured-inverse-static-bg: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-featured-icon: #{map.get($nick-indigo, '800')};
+  --affirm-color-badge-brand-featured-static-icon: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-featured-inverse-icon: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-featured-inverse-static-icon: #{map.get($nick-indigo, '800')};
+  --affirm-color-badge-brand-featured-text: #{map.get($nick-indigo, '800')};
+  --affirm-color-badge-brand-featured-static-text: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-featured-inverse-text: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-featured-inverse-static-text: #{map.get($nick-indigo, '800')};
+  --affirm-color-badge-brand-primary-static-bg: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-primary-inverse-bg: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-primary-inverse-static-bg: #{map.get($nick-indigo, '600')};
+  --affirm-color-badge-brand-primary-static-icon: #{map.get($nick-indigo, '600')};
+  --affirm-color-badge-brand-primary-inverse-icon: #{map.get($nick-indigo, '600')};
+  --affirm-color-badge-brand-primary-inverse-static-icon: #{map.get($nick-indigo, '100')};
+  --affirm-color-badge-brand-primary-static-text: #{map.get($nick-indigo, '600')};
+  --affirm-color-badge-brand-primary-inverse-text: #{map.get($nick-indigo, '600')};
+  --affirm-color-badge-brand-primary-inverse-static-text: #{map.get($nick-indigo, '100')};
+
+  // components/Button/_tokens.scss
+  --affirm-color-button-primary-bg-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-primary-bg-hover: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-primary-bg-focus-visible: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-primary-bg-pressed: #{map.get($nick-indigo, '100')};
+  --affirm-color-button-primary-inverse-bg-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-bg-hover: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-primary-inverse-bg-focus-visible: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-primary-inverse-bg-pressed: #{map.get($nick-indigo, '800')};
+  --affirm-color-button-primary-static-bg-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-static-bg-hover: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-primary-static-bg-focus-visible: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-primary-static-bg-pressed: #{map.get($nick-indigo, '800')};
+  --affirm-color-button-primary-inverse-static-bg-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-primary-inverse-static-bg-hover: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-primary-inverse-static-bg-focus-visible: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-primary-inverse-static-bg-pressed: #{map.get($nick-indigo, '100')};
+  --affirm-color-button-primary-icon-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-icon-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-icon-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-icon-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-icon-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-icon-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-icon-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-icon-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-small-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-primary-medium-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-primary-large-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-primary-text-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-text-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-text-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-text-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-text-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-text-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-text-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-inverse-static-text-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-primary-destructive-small-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-primary-destructive-medium-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-primary-destructive-large-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-secondary-inverse-bg-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-bg-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-bg-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-secondary-static-bg-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-static-bg-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-static-bg-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-secondary-border-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-border-hover: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-secondary-border-focus-visible: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-secondary-border-pressed: #{map.get($nick-indigo, '100')};
+  --affirm-color-button-secondary-inverse-border-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-inverse-border-hover: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-secondary-inverse-border-focus-visible: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-secondary-inverse-border-pressed: #{map.get($nick-indigo, '800')};
+  --affirm-color-button-secondary-static-border-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-border-hover: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-secondary-static-border-focus-visible: #{map.get($nick-indigo, '700')};
+  --affirm-color-button-secondary-static-border-pressed: #{map.get($nick-indigo, '800')};
+  --affirm-color-button-secondary-inverse-static-border-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-border-hover: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-secondary-inverse-static-border-focus-visible: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-secondary-inverse-static-border-pressed: #{map.get($nick-indigo, '100')};
+  --affirm-color-button-secondary-icon-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-icon-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-icon-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-icon-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-icon-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-inverse-icon-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-inverse-icon-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-inverse-icon-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-icon-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-icon-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-icon-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-icon-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-inverse-static-icon-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-icon-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-icon-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-icon-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-small-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-secondary-medium-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-secondary-large-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-secondary-text-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-text-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-text-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-text-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-text-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-inverse-text-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-inverse-text-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-inverse-text-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-text-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-text-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-text-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-static-text-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-secondary-inverse-static-text-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-text-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-text-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-inverse-static-text-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-secondary-destructive-small-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-secondary-destructive-medium-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-secondary-destructive-large-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-tertiary-inverse-bg-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-bg-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-bg-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-tertiary-static-bg-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-static-bg-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-static-bg-pressed: #{map.get($nick-indigo, '075')};
+  --affirm-color-button-tertiary-icon-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-icon-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-icon-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-icon-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-icon-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-inverse-icon-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-inverse-icon-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-inverse-icon-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-icon-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-icon-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-icon-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-icon-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-inverse-static-icon-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-static-icon-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-static-icon-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-static-icon-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-small-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-tertiary-medium-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-tertiary-large-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-tertiary-text-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-text-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-text-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-text-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-text-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-inverse-text-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-inverse-text-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-inverse-text-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-text-resting: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-text-hover: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-text-focus-visible: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-static-text-pressed: #{map.get($nick-indigo, '950')};
+  --affirm-color-button-tertiary-inverse-static-text-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-static-text-hover: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-static-text-focus-visible: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-inverse-static-text-pressed: #{map.get($nick-indigo, '050')};
+  --affirm-color-button-tertiary-destructive-small-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-tertiary-destructive-medium-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-button-tertiary-destructive-large-outline-focus-visible: #{map.get($nick-indigo, '500')};
+
+  // components/Checkbox/_tokens.scss
+  --affirm-color-checkbox-container-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-checkbox-indicator-bg-selected-resting: #{map.get($nick-indigo, '075')};
+  --affirm-color-checkbox-indicator-bg-selected-hover: #{map.get($nick-indigo, '100')};
+  --affirm-color-checkbox-indicator-bg-selected-pressed: #{map.get($nick-indigo, '250')};
+  --affirm-color-checkbox-indicator-bg-selected-focus-visible: #{map.get($nick-indigo, '100')};
+
+  // components/CircularLoader/_tokens.scss
+  --affirm-color-circular-loader-border: #{map.get($nick-indigo, '050')};
+
+  // components/Dropdown/_tokens.scss
+  --affirm-color-dropdown-input-outline-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-open-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-open-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-error-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-error-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-error-open-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-dropdown-input-outline-error-open-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-listbox-list-item-icon-unselected-pressed: #{map.get($nick-indigo, '250')};
+  --affirm-color-listbox-list-item-icon-selected-resting: #{map.get($nick-indigo, '250')};
+  --affirm-color-listbox-list-item-icon-selected-hover: #{map.get($nick-indigo, '250')};
+  --affirm-color-listbox-list-item-icon-selected-focus-visible: #{map.get($nick-indigo, '250')};
+  --affirm-color-listbox-list-item-icon-selected-pressed: #{map.get($nick-indigo, '250')};
+  --affirm-color-listbox-list-item-selected-icon-icon-resting: #{map.get($nick-indigo, '250')};
+  --affirm-color-listbox-list-item-selected-icon-icon-hover: #{map.get($nick-indigo, '250')};
+  --affirm-color-listbox-list-item-selected-icon-icon-focus-visible: #{map.get($nick-indigo, '250')};
+  --affirm-color-listbox-list-item-selected-icon-icon-pressed: #{map.get($nick-indigo, '250')};
+  --affirm-color-listbox-list-item-outline-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-listbox-list-item-label-text-unselected-pressed: #{map.get($nick-indigo, '250')};
+  --affirm-color-listbox-list-item-label-text-selected-resting: #{map.get($nick-indigo, '250')};
+  --affirm-color-listbox-list-item-label-text-selected-hover: #{map.get($nick-indigo, '250')};
+  --affirm-color-listbox-list-item-label-text-selected-focus-visible: #{map.get($nick-indigo, '250')};
+  --affirm-color-listbox-list-item-label-text-selected-pressed: #{map.get($nick-indigo, '250')};
+
+  // components/InputText/_tokens.scss
+  --affirm-color-input-text-input-border-empty-focus: #{map.get($nick-indigo, '200')};
+  --affirm-color-input-text-input-border-filled-focus: #{map.get($nick-indigo, '200')};
+  --affirm-color-input-text-input-cursor-fill-empty-focus: #{map.get($nick-indigo, '500')};
+  --affirm-color-input-text-input-cursor-fill-filled-focus: #{map.get($nick-indigo, '500')};
+  --affirm-color-input-text-input-icon-empty-focus: #{map.get($nick-indigo, '200')};
+  --affirm-color-input-text-input-icon-filled-focus: #{map.get($nick-indigo, '200')};
+  --affirm-color-input-text-input-outline-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-input-text-input-outline-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-input-text-input-outline-error-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-input-text-input-outline-error-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-input-text-input-label-text-empty-focus: #{map.get($nick-indigo, '200')};
+  --affirm-color-input-text-input-label-text-filled-focus: #{map.get($nick-indigo, '200')};
+
+  // components/InputTextArea/_tokens.scss
+  --affirm-color-text-area-input-border-empty-pressed: #{map.get($nick-indigo, '200')};
+  --affirm-color-text-area-input-border-empty-focus: #{map.get($nick-indigo, '200')};
+  --affirm-color-text-area-input-border-filled-pressed: #{map.get($nick-indigo, '200')};
+  --affirm-color-text-area-input-border-filled-focus: #{map.get($nick-indigo, '200')};
+  --affirm-color-text-area-input-cursor-fill-empty-focus: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-area-input-cursor-fill-filled-focus: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-area-input-icon-empty-focus: #{map.get($nick-indigo, '200')};
+  --affirm-color-text-area-input-icon-filled-focus: #{map.get($nick-indigo, '200')};
+  --affirm-color-text-area-input-outline-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-area-input-outline-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-area-input-outline-error-empty-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-area-input-outline-error-filled-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-text-area-input-label-text-empty-focus: #{map.get($nick-indigo, '200')};
+  --affirm-color-text-area-input-label-text-filled-focus: #{map.get($nick-indigo, '200')};
+
+  // components/Link/_tokens.scss
+  --affirm-color-link-text-resting: #{map.get($nick-indigo, '250')};
+  --affirm-color-link-text-hover: #{map.get($nick-indigo, '250')};
+  --affirm-color-link-text-pressed: #{map.get($nick-indigo, '250')};
+  --affirm-color-link-text-focus-visible: #{map.get($nick-indigo, '250')};
+  --affirm-color-link-icon-resting: #{map.get($nick-indigo, '250')};
+  --affirm-color-link-icon-hover: #{map.get($nick-indigo, '250')};
+  --affirm-color-link-icon-pressed: #{map.get($nick-indigo, '250')};
+  --affirm-color-link-icon-focus-visible: #{map.get($nick-indigo, '250')};
+  --affirm-color-link-outline-focus-visible: #{map.get($nick-indigo, '500')};
+
+  // components/Switch/_tokens.scss
+  --affirm-color-switch-container-outline-unselected-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-switch-container-outline-selected-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-switch-container-outline-error-unselected-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-switch-container-outline-error-selected-focus-visible: #{map.get($nick-indigo, '500')};
+  --affirm-color-switch-track-bg-selected-resting: #{map.get($nick-indigo, '050')};
+  --affirm-color-switch-track-bg-selected-hover: #{map.get($nick-indigo, '075')};
+  --affirm-color-switch-track-bg-selected-pressed: #{map.get($nick-indigo, '100')};
+  --affirm-color-switch-track-bg-selected-focus-visible: #{map.get($nick-indigo, '075')};
+  --affirm-color-switch-track-bg-unselected-hover: #{map.get($nick-indigo, '075')};
+  --affirm-color-switch-track-bg-unselected-pressed: #{map.get($nick-indigo, '100')};
+  --affirm-color-switch-track-bg-unselected-focus-visible: #{map.get($nick-indigo, '075')};
+
+  // components/Tabs/_tokens.scss
+  --affirm-color-tabs-tab-indicator-fill-selected-resting: #{map.get($nick-indigo, '250')};
+  --affirm-color-tabs-tab-indicator-fill-selected-hover: #{map.get($nick-indigo, '250')};
+  --affirm-color-tabs-tab-indicator-fill-selected-pressed: #{map.get($nick-indigo, '100')};
+  --affirm-color-tabs-tab-indicator-fill-selected-focus-visible: #{map.get($nick-indigo, '250')};
+  --affirm-color-tabs-tab-indicator-fill-unselected-pressed: #{map.get($nick-indigo, '100')};
+  --affirm-color-tabs-tab-outline-focus-visible: #{map.get($nick-indigo, '500')};
+
+}

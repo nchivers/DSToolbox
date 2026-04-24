@@ -131,7 +131,7 @@ async function exportVariablesToJson(): Promise<ExportedVariable[]> {
   );
 }
 
-figma.showUI(__html__, { themeColors: true, width: 390, height: 480 });
+figma.showUI(__html__, { themeColors: true, width: 390, height: 500 });
 
 figma.ui.onmessage = async (msg: { type: string }) => {
   if (msg.type === "export-variables") {

@@ -1,0 +1,246 @@
+@use '../../tokens/component-type' as typography;
+
+.affirm-tabs {
+  display: flex;
+  flex-direction: column;
+
+  &__tablist {
+    display: flex;
+    align-items: center;
+    border-bottom: var(--affirm-size-tabs-border-bottom-width) solid
+      var(--affirm-color-tabs-border);
+    gap: var(--affirm-spacing-tabs-left-aligned-gap-x);
+  }
+
+  &--center &__tablist {
+    gap: var(--affirm-spacing-tabs-centered-gap-x);
+  }
+
+  &--center &__tab {
+    flex: 1 0 0;
+    min-width: 1px;
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+    border: none;
+    background: none;
+    padding: 0;
+    margin-bottom: calc(-1 * var(--affirm-size-tabs-border-bottom-width));
+    cursor: pointer;
+    border-radius:
+      var(--affirm-radius-tabs-tab-container-top)
+      var(--affirm-radius-tabs-tab-container-top)
+      var(--affirm-radius-tabs-tab-container-bottom)
+      var(--affirm-radius-tabs-tab-container-bottom);
+    outline: none;
+
+    &:focus-visible {
+      outline: var(--affirm-size-tabs-tab-outline-width-focus-visible) solid
+        var(--affirm-color-tabs-tab-outline-focus-visible);
+      outline-offset: var(--affirm-spacing-tabs-tab-outline-offset-focus-visible);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    padding: var(--affirm-spacing-tabs-tab-padding-y) var(--affirm-spacing-tabs-tab-padding-x);
+    border-radius:
+      var(--affirm-radius-tabs-tab-content-container-top)
+      var(--affirm-radius-tabs-tab-content-container-top)
+      var(--affirm-radius-tabs-tab-content-container-bottom)
+      var(--affirm-radius-tabs-tab-content-container-bottom);
+    background: var(--affirm-color-tabs-tab-content-container-bg-unselected-resting);
+    transition: background 0.15s ease;
+  }
+
+  &__label {
+    @include typography.component-singleline-medium-mid-imp;
+    color: var(--affirm-color-tabs-tab-text-unselected-resting);
+    white-space: nowrap;
+    user-select: none;
+    transition: color 0.15s ease;
+  }
+
+  &__indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--affirm-size-tabs-tab-indicator-height-unselected);
+    border-radius: var(--affirm-radius-tabs-tab-indicator-all-unselected);
+    background: var(--affirm-color-tabs-tab-indicator-fill-unselected-resting);
+    transition: background 0.15s ease, height 0.15s ease;
+  }
+
+  &__panel {
+    outline: none;
+  }
+
+  // ===================================================================
+  // UNSELECTED — interaction states
+  // ===================================================================
+
+  &__tab:hover &__content {
+    background: var(--affirm-color-tabs-tab-content-container-bg-unselected-hover);
+  }
+
+  &__tab:hover &__label {
+    color: var(--affirm-color-tabs-tab-text-unselected-hover);
+  }
+
+  &__tab:hover &__indicator {
+    height: var(--affirm-size-tabs-tab-indicator-height-unselected);
+    background: var(--affirm-color-tabs-tab-indicator-fill-unselected-hover);
+  }
+
+  &__tab:active &__content {
+    background: var(--affirm-color-tabs-tab-content-container-bg-unselected-pressed);
+  }
+
+  &__tab:active &__label {
+    color: var(--affirm-color-tabs-tab-text-unselected-pressed);
+  }
+
+  &__tab:active &__indicator {
+    background: var(--affirm-color-tabs-tab-indicator-fill-unselected-pressed);
+  }
+
+  &__tab:focus-visible &__content {
+    background: var(--affirm-color-tabs-tab-content-container-bg-unselected-focus-visible);
+  }
+
+  &__tab:focus-visible &__label {
+    color: var(--affirm-color-tabs-tab-text-unselected-focus-visible);
+  }
+
+  &__tab:focus-visible &__indicator {
+    background: var(--affirm-color-tabs-tab-indicator-fill-unselected-focus-visible);
+  }
+
+  // ===================================================================
+  // SELECTED
+  // ===================================================================
+
+  &__tab--selected &__content {
+    background: var(--affirm-color-tabs-tab-content-container-bg-selected-resting);
+  }
+
+  &__tab--selected &__label {
+    @include typography.component-singleline-medium-high-imp;
+    color: var(--affirm-color-tabs-tab-text-selected-resting);
+  }
+
+  &__tab--selected &__indicator {
+    height: var(--affirm-size-tabs-tab-indicator-height-selected);
+    border-radius: var(--affirm-radius-tabs-tab-indicator-all-selected);
+    background: var(--affirm-color-tabs-tab-indicator-fill-selected-resting);
+  }
+
+  &__tab--selected:hover &__content {
+    background: var(--affirm-color-tabs-tab-content-container-bg-selected-hover);
+  }
+
+  &__tab--selected:hover &__label {
+    color: var(--affirm-color-tabs-tab-text-selected-hover);
+  }
+
+  &__tab--selected:hover &__indicator {
+    background: var(--affirm-color-tabs-tab-indicator-fill-selected-hover);
+  }
+
+  &__tab--selected:active &__content {
+    background: var(--affirm-color-tabs-tab-content-container-bg-selected-pressed);
+  }
+
+  &__tab--selected:active &__label {
+    color: var(--affirm-color-tabs-tab-text-selected-pressed);
+  }
+
+  &__tab--selected:active &__indicator {
+    background: var(--affirm-color-tabs-tab-indicator-fill-selected-pressed);
+  }
+
+  &__tab--selected:focus-visible &__content {
+    background: var(--affirm-color-tabs-tab-content-container-bg-selected-focus-visible);
+  }
+
+  &__tab--selected:focus-visible &__label {
+    color: var(--affirm-color-tabs-tab-text-selected-focus-visible);
+  }
+
+  &__tab--selected:focus-visible &__indicator {
+    background: var(--affirm-color-tabs-tab-indicator-fill-selected-focus-visible);
+  }
+
+  // ===================================================================
+  // DISABLED
+  // ===================================================================
+
+  &--disabled &__tab {
+    cursor: not-allowed;
+  }
+
+  &--disabled &__content {
+    background: var(--affirm-color-tabs-tab-content-container-bg-unselected-disabled);
+  }
+
+  &--disabled &__label {
+    color: var(--affirm-color-tabs-tab-text-unselected-disabled);
+  }
+
+  &--disabled &__indicator {
+    background: var(--affirm-color-tabs-tab-indicator-fill-unselected-disabled);
+  }
+
+  // Disabled + selected
+  &--disabled &__tab--selected &__content {
+    background: var(--affirm-color-tabs-tab-content-container-bg-selected-disabled);
+  }
+
+  &--disabled &__tab--selected &__label {
+    color: var(--affirm-color-tabs-tab-text-selected-disabled);
+  }
+
+  &--disabled &__tab--selected &__indicator {
+    background: var(--affirm-color-tabs-tab-indicator-fill-selected-disabled);
+  }
+
+  // Suppress hover/active when disabled
+  &--disabled &__tab:hover &__content,
+  &--disabled &__tab:active &__content {
+    background: var(--affirm-color-tabs-tab-content-container-bg-unselected-disabled);
+  }
+
+  &--disabled &__tab:hover &__label,
+  &--disabled &__tab:active &__label {
+    color: var(--affirm-color-tabs-tab-text-unselected-disabled);
+  }
+
+  &--disabled &__tab:hover &__indicator,
+  &--disabled &__tab:active &__indicator {
+    background: var(--affirm-color-tabs-tab-indicator-fill-unselected-disabled);
+  }
+
+  &--disabled &__tab--selected:hover &__content,
+  &--disabled &__tab--selected:active &__content {
+    background: var(--affirm-color-tabs-tab-content-container-bg-selected-disabled);
+  }
+
+  &--disabled &__tab--selected:hover &__label,
+  &--disabled &__tab--selected:active &__label {
+    color: var(--affirm-color-tabs-tab-text-selected-disabled);
+  }
+
+  &--disabled &__tab--selected:hover &__indicator,
+  &--disabled &__tab--selected:active &__indicator {
+    background: var(--affirm-color-tabs-tab-indicator-fill-selected-disabled);
+  }
+}

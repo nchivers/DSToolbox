@@ -1,0 +1,147 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent (sizes, radius, spacing)
+// ---------------------------------------------------------------------------
+:root {
+  // Radius — tab indicator
+  --affirm-radius-tabs-tab-indicator-all-unselected: #{map.get($base-sizes, '013')};
+  --affirm-radius-tabs-tab-indicator-all-selected: #{map.get($base-sizes, '025')};
+
+  // Radius — tab container
+  --affirm-radius-tabs-tab-container-bottom: #{map.get($base-sizes, '050')};
+  --affirm-radius-tabs-tab-container-top: #{map.get($base-sizes, '150')};
+
+  // Radius — tab content container
+  --affirm-radius-tabs-tab-content-container-bottom: #{map.get($base-sizes, '000')};
+  --affirm-radius-tabs-tab-content-container-top: #{map.get($base-sizes, '150')};
+
+  // Size — border
+  --affirm-size-tabs-border-bottom-width: #{map.get($base-sizes, '025')};
+
+  // Size — tab indicator
+  --affirm-size-tabs-tab-indicator-height-unselected: #{map.get($base-sizes, '013')};
+  --affirm-size-tabs-tab-indicator-height-selected: #{map.get($base-sizes, '025')};
+
+  // Size — tab outline
+  --affirm-size-tabs-tab-outline-width-focus-visible: #{map.get($base-sizes, '025')};
+
+  // Spacing — alignment gap
+  --affirm-spacing-tabs-centered-gap-x: #{map.get($base-sizes, '000')};
+  --affirm-spacing-tabs-left-aligned-gap-x: #{map.get($base-sizes, '600')};
+
+  // Spacing — tab outline
+  --affirm-spacing-tabs-tab-outline-offset-focus-visible: #{map.get($base-sizes, '000')};
+
+  // Spacing — tab padding
+  --affirm-spacing-tabs-tab-padding-x: #{map.get($base-sizes, '100')};
+  --affirm-spacing-tabs-tab-padding-y: #{map.get($base-sizes, '175')};
+}
+
+// ---------------------------------------------------------------------------
+// Light mode colors
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // Tab content container — bg — unselected
+  --affirm-color-tabs-tab-content-container-bg-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-tabs-tab-content-container-bg-unselected-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-tabs-tab-content-container-bg-unselected-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-tabs-tab-content-container-bg-unselected-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-tabs-tab-content-container-bg-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Tab content container — bg — selected
+  --affirm-color-tabs-tab-content-container-bg-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-tabs-tab-content-container-bg-selected-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-tabs-tab-content-container-bg-selected-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-tabs-tab-content-container-bg-selected-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-tabs-tab-content-container-bg-selected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Tab indicator — fill — selected
+  --affirm-color-tabs-tab-indicator-fill-selected-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-tabs-tab-indicator-fill-selected-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-tabs-tab-indicator-fill-selected-pressed: #{map.get($base-colors, 'indigo-600')};
+  --affirm-color-tabs-tab-indicator-fill-selected-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-tabs-tab-indicator-fill-selected-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // Tab indicator — fill — unselected
+  --affirm-color-tabs-tab-indicator-fill-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-tabs-tab-indicator-fill-unselected-hover: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-tabs-tab-indicator-fill-unselected-pressed: #{map.get($base-colors, 'indigo-600')};
+  --affirm-color-tabs-tab-indicator-fill-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-tabs-tab-indicator-fill-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Tab outline
+  --affirm-color-tabs-tab-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // Tab text — selected
+  --affirm-color-tabs-tab-text-selected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-tabs-tab-text-selected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-tabs-tab-text-selected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-tabs-tab-text-selected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-tabs-tab-text-selected-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // Tab text — unselected
+  --affirm-color-tabs-tab-text-unselected-resting: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-tabs-tab-text-unselected-hover: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-tabs-tab-text-unselected-pressed: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-tabs-tab-text-unselected-focus-visible: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-tabs-tab-text-unselected-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // Tabs border
+  --affirm-color-tabs-border: #{map.get($base-colors, 'gray-100')};
+}
+
+// ---------------------------------------------------------------------------
+// Dark mode colors
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // Tab content container — bg — unselected
+  --affirm-color-tabs-tab-content-container-bg-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-tabs-tab-content-container-bg-unselected-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-tabs-tab-content-container-bg-unselected-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-tabs-tab-content-container-bg-unselected-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-tabs-tab-content-container-bg-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Tab content container — bg — selected
+  --affirm-color-tabs-tab-content-container-bg-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-tabs-tab-content-container-bg-selected-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-tabs-tab-content-container-bg-selected-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-tabs-tab-content-container-bg-selected-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-tabs-tab-content-container-bg-selected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Tab indicator — fill — selected
+  --affirm-color-tabs-tab-indicator-fill-selected-resting: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-tabs-tab-indicator-fill-selected-hover: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-tabs-tab-indicator-fill-selected-pressed: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-tabs-tab-indicator-fill-selected-focus-visible: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-tabs-tab-indicator-fill-selected-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // Tab indicator — fill — unselected
+  --affirm-color-tabs-tab-indicator-fill-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-tabs-tab-indicator-fill-unselected-hover: #{map.get($base-colors, 'gray-250')};
+  --affirm-color-tabs-tab-indicator-fill-unselected-pressed: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-tabs-tab-indicator-fill-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-tabs-tab-indicator-fill-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Tab outline
+  --affirm-color-tabs-tab-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // Tab text — selected
+  --affirm-color-tabs-tab-text-selected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-tabs-tab-text-selected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-tabs-tab-text-selected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-tabs-tab-text-selected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-tabs-tab-text-selected-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // Tab text — unselected
+  --affirm-color-tabs-tab-text-unselected-resting: #{map.get($base-colors, 'gray-250')};
+  --affirm-color-tabs-tab-text-unselected-hover: #{map.get($base-colors, 'gray-250')};
+  --affirm-color-tabs-tab-text-unselected-pressed: #{map.get($base-colors, 'gray-250')};
+  --affirm-color-tabs-tab-text-unselected-focus-visible: #{map.get($base-colors, 'gray-250')};
+  --affirm-color-tabs-tab-text-unselected-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // Tabs border
+  --affirm-color-tabs-border: #{map.get($base-colors, 'gray-500')};
+}

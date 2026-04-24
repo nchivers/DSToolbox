@@ -15,4 +15,16 @@
         right: 16px;
         top: 16px;
     }
+
+    &--secondary {
+        display: flex;
+        flex-direction: column;
+        gap: var(--affirm-spacing-page-header-secondary-gap-y);
+        margin-top: var(--affirm-spacing-page-header-secondary-margin-top);
+        margin-bottom: var(--affirm-spacing-page-header-margin-bottom);
+
+        & h1 {
+            text-align: center;
+        }
+    }
 }

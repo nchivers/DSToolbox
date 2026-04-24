@@ -1,0 +1,31 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent defaults
+// ---------------------------------------------------------------------------
+:root {
+  // Size
+  --affirm-size-section-header-max-height: #{map.get($base-sizes, '300')};
+
+  // Spacing
+  --affirm-spacing-section-header-gap-x: #{map.get($base-sizes, '100')};
+  --affirm-spacing-section-header-gap-y: #{map.get($base-sizes, '050')};
+}
+
+// ---------------------------------------------------------------------------
+// Light mode
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // Headline
+  --affirm-color-section-header-headline-text: #{map.get($base-colors, 'gray-950')};
+}
+
+// ---------------------------------------------------------------------------
+// Dark mode
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // Headline
+  --affirm-color-section-header-headline-text: #{map.get($base-colors, 'gray-white')};
+}
