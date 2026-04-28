@@ -9,6 +9,13 @@
       "Bash(sh:*)",
       "Bash(chmod:*)",
       "Bash(mkdir:*)",
+      "Bash(brew:*)",
+      "Bash(cd:*)",
+      "Bash(cp:*)",
+      "Bash(xcodes:*)",
+      "Bash(pnpm:*)",
+      "Bash(asdf:*)",
+      "Bash(gh:*)",
       "Read(**)",
       "Write(**)",
       "Edit(**)",
@@ -23,7 +30,13 @@
       "Bash(rm tools/1-token-prep/_compare.py)",
       "mcp__figma__whoami",
       "Bash(npm install:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(watchman *)",
+      "Bash(ruby --version)",
+      "Bash(java --version)",
+      "Bash(turbo *)",
+      "Bash(env)",
+      "Read(../**)"
     ]
   }
 }
