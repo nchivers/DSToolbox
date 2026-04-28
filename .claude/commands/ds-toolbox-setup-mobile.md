@@ -70,4 +70,8 @@ Once all setup tasks from the guide are confirmed:
   - `pnpm --filter mobile ios` — build and run on iOS
   - `pnpm --filter mobile android` — build and run on Android
   - `pnpm --filter mobile dev` — start the Metro dev server (faster after first build)
-- Remind them that all build commands should be run from the UX repo at `../ux` relative to the DSToolbox workspace.
+- Open the UX repo in a new Cursor window by running:
+  ```
+  cursor ../ux
+  ```
+- Remind them that the new Cursor window is pointed at the UX repo, where all build commands should be run.
