@@ -53,37 +53,34 @@ git pull origin <branch>
 
 This ensures the local copy is fully up to date with the remote PR head.
 
-### 4. Clean dev build
+### 4. Ask the user which platform to launch
 
-Run the following as a single chained command in `../ux`:
-
-```
-pnpm i && pnpm --filter storybook prebuild:clean && pnpm --filter storybook dev
-```
-
-This command:
-1. Installs all monorepo dependencies.
-2. Runs a clean prebuild for the storybook package (generates native project files fresh).
-3. Starts the Storybook Expo dev server.
-
-The dev server is **long-running**. Start it with `block_until_ms: 0` (immediately background it), then monitor the terminal output for a line indicating the bundler is ready (e.g. a prompt showing available commands like `i` for iOS, `a` for Android, or a "Bundler ready" / "Metro waiting" message).
-
-### 5. Ask the user which platform to launch
-
-Once the dev server output confirms it is ready, use the **AskQuestion** tool to ask:
+Use the **AskQuestion** tool to ask:
 
 > Which platform would you like to open Storybook on?
 > - iOS Simulator
 > - Android Emulator
 
-### 6. Launch on device
+### 5. Clean build and launch on device
 
-Based on the user's choice, send the corresponding keystroke to the running dev server terminal:
+Run the following as a single chained command in `../ux`, substituting the platform based on the user's choice:
 
-- **iOS Simulator:** send `i`
-- **Android Emulator:** send `a`
+- **iOS Simulator:**
+```
+pnpm i && pnpm --filter storybook prebuild:clean && pnpm --filter storybook ios
+```
 
-The dev server will trigger the native build and open the app on the selected platform.
+- **Android Emulator:**
+```
+pnpm i && pnpm --filter storybook prebuild:clean && pnpm --filter storybook android
+```
+
+This command:
+1. Installs all monorepo dependencies.
+2. Runs a clean prebuild for the storybook package (generates native project files fresh).
+3. Builds and launches the Storybook app on the chosen platform (the platform command handles starting the simulator/emulator automatically).
+
+The build is **long-running**. Start it with `block_until_ms: 0` (immediately background it), then monitor the terminal output for build completion or errors.
 
 ---
 

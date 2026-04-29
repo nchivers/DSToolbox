@@ -39,6 +39,18 @@ Based on the environment setup guide you just read, create a numbered plan of ev
 - What command(s) you'll need to run
 - What checks you can do to see if it's already done
 
+**Additional task — idb (iOS Device Bridge):**
+If the environment setup guide does not already include installing `idb`, add it as a task in your plan. `idb` is Facebook's tool for automating iOS simulators and is required by DSToolbox skills that interact with the iOS simulator (e.g. taking screenshots, tapping elements).
+
+- **Check:** `which idb` and `idb --help`
+- **Install via Homebrew:**
+  ```
+  brew tap facebook/fb
+  brew install idb-companion
+  pip3 install fb-idb
+  ```
+- After installation, verify with `idb list-targets` to confirm it can see available simulators.
+
 Present this plan to the user and ask them to confirm before proceeding.
 
 ---
