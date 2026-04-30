@@ -165,9 +165,9 @@ The dev menu exposes "Show Element Inspector" / "Toggle Inspector". When it is o
 
 Open the menu:
 
-- **iOS Simulator:** `xcrun simctl io booted MotionInjection 'Hardware > Shake'` is unreliable. Prefer keyboard shortcut **Cmd+d** delivered to the focused Simulator window:
+- **iOS Simulator:** open the dev menu with **Cmd+D** delivered to the focused Simulator window:
   ```
-  osascript -e 'tell application "Simulator" to activate' -e 'tell application "System Events" to keystroke "m" using command down'
+  osascript -e 'tell application "Simulator" to activate' -e 'tell application "System Events" to keystroke "d" using command down'
   ```
 - **Android Emulator:**
   ```
@@ -251,6 +251,7 @@ Use clear headings and bullet lists / tables. Do **not** modify `inputs/inputs.j
 
 - **This skill produces an output file.** Path: `outputs/7-qa-storybook/YYYY-MM-DD-HH-MM-{componentName}-storybook-qa.md` (see step 15).
 - **Hover and focus-visible states are intentionally skipped** because a touch-driven simulator/emulator cannot reach them. They are still recorded in the report (under "Controls coverage → skipped states") so reviewers see they were considered.
+- **Confirm focus before `idb ui text` (iOS).** Whenever typing into a field on iOS — whether it's a Storybook search/filter field, a component text control on a story page, or any other text input — first tap the field, recapture, and verify the field is focused before invoking `idb ui text`. Focus indicators to look for in the recapture: the field shows a caret/cursor, the on-screen keyboard is visible, or the field's accessibility node reports `focused="true"` / `hasKeyboardFocus="true"`. If none of those are present, tap the field again and recapture. Only run `idb ui text "..."` once focus is confirmed — calling it without focus drops the keystrokes silently and produces a misleading run.
 - **Token resolution order:** Figma MCP first (`get_variable_defs`, `get_design_context`, `get_metadata` on `componentUrl` and each `subcomponentUrl`). When an alias chain is not fully resolved by MCP, walk `inputs/figma-variables.json` until you reach a base primitive. The dev-menu Element Inspector only reveals resolved primitives, so all comparisons happen at that level.
 - **Figma is the source of truth.** When the rendered value differs from the resolved Figma primitive (outside the tolerances in step 11), record it as a discrepancy, not as a Figma-side issue.
 - **Storybook Metro runs on port 8082**, not 8081. The mobile app uses 8081; do not confuse them.
