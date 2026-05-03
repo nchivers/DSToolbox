@@ -37,7 +37,10 @@
       "Bash(java --version)",
       "Bash(turbo *)",
       "Bash(env)",
-      "Read(../**)"
+      "Read(../**)",
+      "Bash(idb ui *)",
+      "Bash(/Users/nick.chivers/Projects/DSToolbox/tools/7-qa-storybook/utils/capture.sh ios *)",
+      "Bash(osascript -e 'tell application \"Simulator\" to activate' -e 'delay 0.5' -e 'tell application \"System Events\" to keystroke \"d\" using command down')"
     ]
   }
 }
