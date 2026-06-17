@@ -40,7 +40,13 @@
       "Read(../**)",
       "Bash(idb ui *)",
       "Bash(/Users/nick.chivers/Projects/DSToolbox/tools/7-qa-storybook/utils/capture.sh ios *)",
-      "Bash(osascript -e 'tell application \"Simulator\" to activate' -e 'delay 0.5' -e 'tell application \"System Events\" to keystroke \"d\" using command down')"
+      "Bash(osascript -e 'tell application \"Simulator\" to activate' -e 'delay 0.5' -e 'tell application \"System Events\" to keystroke \"d\" using command down')",
+      "Bash(:)",
+      "Bash(awk -F',' 'NR>1 {print $20}' inputs/component-tokens.csv)",
+      "Bash(grep -v '^$')",
+      "Bash(awk -F',' 'NR>1 {print $3\".\"$4}' inputs/component-tokens.csv)",
+      "Read(//tmp/**)",
+      "Bash(awk -F',' 'NR>1 && $20!=\"\" {sub\\(/^affirm\\\\./,\"\",$20\\); print $20}' inputs/component-tokens.csv)"
     ]
   }
 }
