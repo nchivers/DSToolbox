@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "lib": ["es2018", "dom"],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "typeRoots": ["./node_modules/@types", "./node_modules/@figma"]
+  },
+  "include": ["src/**/*.ts"]
+}

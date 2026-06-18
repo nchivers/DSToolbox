@@ -1,0 +1,14 @@
+{
+  "name": "DS Publish Prep Export",
+  "id": "1731552000000000001",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "permissions": ["teamlibrary"],
+  "networkAccess": {
+    "allowedDomains": ["https://api.figma.com"],
+    "reasoning": "Baseline export lists published style keys via the Figma REST API (GET /v1/files/:key/styles)."
+  }
+}

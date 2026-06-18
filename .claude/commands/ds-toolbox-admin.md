@@ -7,6 +7,7 @@ If $ACTION == "clean up" then
   "libraryBranchUrl": "https://www.figma.com/design/FileKey/branch/BranchKey/...?node-id=NODE_ID",
   "componentUrl": "https://www.figma.com/design/FileKey/...?node-id=NODE_ID",
   "pullRequestUrl": "https://github.com/ORG/REPO/pull/NUMBER",
+  "mainLibraryUrl": "https://www.figma.com/design/FileKey/...",
   "subcomponents": [
     {
       "name": "UserSuppliedName",
@@ -20,6 +21,8 @@ inputs/build-figma-variables-plan.md
 inputs/component-tokens.csv
 inputs/figma-variables.json
 inputs/mapped-component-tokens.csv
+inputs/library-current.json
+inputs/library-baseline.json
 
 IMPROTANT: Do not expend time or resources reading the files, just delete the contents of them.
 
