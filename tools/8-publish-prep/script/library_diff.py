@@ -36,6 +36,7 @@ CURRENT_PATH = os.path.join(INPUTS_DIR, "library-current.json")
 BASELINE_PATH = os.path.join(INPUTS_DIR, "library-baseline.json")
 INPUTS_JSON = os.path.join(INPUTS_DIR, "inputs.json")
 STYLE_EXCLUSIONS_PATH = os.path.join(KNOWLEDGE_DIR, "style-publish-exclusions.md")
+COMPONENT_EXCLUSIONS_PATH = os.path.join(KNOWLEDGE_DIR, "component-publish-exclusions.md")
 
 PRIVATE_PREFIXES = (".", "_")
 
@@ -102,16 +103,16 @@ def load_inputs_url():
     return (data.get("mainLibraryUrl") or "").strip()
 
 
-def load_exclusion_patterns():
-    """Read glob patterns from the style-publish-exclusions knowledge doc.
+def load_exclusion_patterns(path):
+    """Read glob patterns from a publish-exclusions knowledge doc.
 
     Patterns live inside fenced code blocks (``` ... ```). Blank lines and lines
     starting with `#` are ignored. Returns [] if the file is missing or empty so
     the diff behaves exactly as before when no exclusions are configured.
     """
-    if not os.path.exists(STYLE_EXCLUSIONS_PATH):
+    if not os.path.exists(path):
         return []
-    with open(STYLE_EXCLUSIONS_PATH) as f:
+    with open(path) as f:
         lines = f.read().splitlines()
 
     patterns = []
@@ -196,6 +197,22 @@ def style_changes(old, new):
     changes = deep_diff(style_props(old), style_props(new))
     if old.get("description") != new.get("description"):
         changes.append({"field": "description", "old": fmt(old.get("description")), "new": fmt(new.get("description"))})
+    return changes
+
+
+def component_props(comp):
+    return {
+        "componentProperties": normalize(comp.get("componentProperties") or {}),
+        "documentationLinks": normalize(comp.get("documentationLinks") or []),
+    }
+
+
+def component_changes(old, new):
+    changes = deep_diff(component_props(old), component_props(new))
+    if old.get("description") != new.get("description"):
+        changes.append({"field": "description", "old": fmt(old.get("description")), "new": fmt(new.get("description"))})
+    if old.get("type") != new.get("type"):
+        changes.append({"field": "type", "old": fmt(old.get("type")), "new": fmt(new.get("type"))})
     return changes
 
 
@@ -353,10 +370,13 @@ def main():
 
     cur_vars = current.get("variables", [])
     cur_styles = current.get("styles", [])
+    cur_components = current.get("components", [])
     base_vars = baseline.get("variables", [])
     base_styles = baseline.get("styles", [])
+    base_components = baseline.get("components", [])
 
-    exclusion_patterns = load_exclusion_patterns()
+    exclusion_patterns = load_exclusion_patterns(STYLE_EXCLUSIONS_PATH)
+    component_exclusion_patterns = load_exclusion_patterns(COMPONENT_EXCLUSIONS_PATH)
 
     var_diff = classify(
         cur_vars, base_vars,
@@ -367,6 +387,14 @@ def main():
         cur_styles, base_styles,
         lambda s: style_exclusion_reason(s, exclusion_patterns),
         style_changes,
+    )
+    # Components share the style exclusion logic (private `.`/`_` prefix + glob
+    # patterns); Figma's plugin API can't expose "hide from publishing" for
+    # components either, so patterns are the workaround.
+    component_diff = classify(
+        cur_components, base_components,
+        lambda c: style_exclusion_reason(c, component_exclusion_patterns),
+        component_changes,
     )
 
     ts = datetime.now().strftime("%Y-%m-%d-%H-%M")
@@ -381,14 +409,17 @@ def main():
             "baselineExportedAt": baseline.get("exportedAt"),
             "baselineLibraryName": baseline.get("libraryName"),
             "exclusionPatterns": exclusion_patterns,
+            "componentExclusionPatterns": component_exclusion_patterns,
             "counts": {
                 "currentVariables": len(cur_vars), "baselineVariables": len(base_vars),
                 "currentStyles": len(cur_styles), "baselineStyles": len(base_styles),
+                "currentComponents": len(cur_components), "baselineComponents": len(base_components),
             },
         },
         "warnings": warnings,
         "variables": var_diff,
         "styles": style_diff,
+        "components": component_diff,
     }
     with open(diff_path, "w") as f:
         json.dump(machine, f, indent=2)
@@ -410,10 +441,10 @@ def main():
 
     lines.append("## Inputs used")
     lines.append("")
-    lines.append("- Current (local) exported at: `{}` - {} variables, {} styles".format(
-        current.get("exportedAt"), len(cur_vars), len(cur_styles)))
-    lines.append("- Baseline (last published) exported at: `{}` - {} variables, {} styles".format(
-        baseline.get("exportedAt"), len(base_vars), len(base_styles)))
+    lines.append("- Current (local) exported at: `{}` - {} variables, {} styles, {} components".format(
+        current.get("exportedAt"), len(cur_vars), len(cur_styles), len(cur_components)))
+    lines.append("- Baseline (last published) exported at: `{}` - {} variables, {} styles, {} components".format(
+        baseline.get("exportedAt"), len(base_vars), len(base_styles), len(base_components)))
     lines.append("")
 
     lines.append("## Summary")
@@ -424,12 +455,15 @@ def main():
         len(var_diff["new"]), len(var_diff["changed"]), len(var_diff["removed"])))
     lines.append("| Styles | {} | {} | {} |".format(
         len(style_diff["new"]), len(style_diff["changed"]), len(style_diff["removed"])))
+    lines.append("| Components | {} | {} | {} |".format(
+        len(component_diff["new"]), len(component_diff["changed"]), len(component_diff["removed"])))
     lines.append("")
-    if var_diff["privateNew"] or style_diff["privateNew"]:
+    if var_diff["privateNew"] or style_diff["privateNew"] or component_diff["privateNew"]:
         lines.append("_Excluded as not-for-publish (hidden variables / `.`|`_` prefixed or "
-                     "exclusion-pattern styles): {} variable(s), {} style(s). See "
-                     "'Excluded from publish' below._".format(
-                         len(var_diff["privateNew"]), len(style_diff["privateNew"])))
+                     "exclusion-pattern styles & components): {} variable(s), {} style(s), "
+                     "{} component(s). See 'Excluded from publish' below._".format(
+                         len(var_diff["privateNew"]), len(style_diff["privateNew"]),
+                         len(component_diff["privateNew"])))
         lines.append("")
 
     lines.append("---")
@@ -463,6 +497,23 @@ def main():
     lines.append("")
     render_excluded_block(lines, style_diff["privateNew"])
 
+    lines.append("---")
+    lines.append("")
+    lines.append("## Components")
+    lines.append("")
+    lines.append("### New (publish-eligible)")
+    lines.append("")
+    render_list_block(lines, component_diff["new"])
+    lines.append("### Changed since last publish")
+    lines.append("")
+    render_changed_block(lines, component_diff["changed"], "component")
+    lines.append("### Removed on publish (in last published, missing now)")
+    lines.append("")
+    render_list_block(lines, component_diff["removed"])
+    lines.append("### Excluded from publish (patterns / prefixes)")
+    lines.append("")
+    render_excluded_block(lines, component_diff["privateNew"])
+
     with open(md_path, "w") as f:
         f.write("\n".join(lines))
 
@@ -470,6 +521,8 @@ def main():
         len(var_diff["new"]), len(var_diff["changed"]), len(var_diff["removed"]), len(var_diff["privateNew"])))
     print("Styles     - new: {}  changed: {}  removed: {}  (excluded: {})".format(
         len(style_diff["new"]), len(style_diff["changed"]), len(style_diff["removed"]), len(style_diff["privateNew"])))
+    print("Components - new: {}  changed: {}  removed: {}  (excluded: {})".format(
+        len(component_diff["new"]), len(component_diff["changed"]), len(component_diff["removed"]), len(component_diff["privateNew"])))
     if warnings:
         print("Warnings: {}".format("; ".join(warnings)))
     print("Diff JSON: {}".format(diff_path))

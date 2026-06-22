@@ -7,7 +7,7 @@ interface LibrariesMessage {
 
 interface ResultMessage {
   type: "result";
-  data: { variables: unknown[]; styles: unknown[] };
+  data: { variables: unknown[]; styles: unknown[]; components: unknown[] };
   warnings?: string[];
 }
 
@@ -108,7 +108,8 @@ window.onmessage = (event: MessageEvent) => {
     setBusy(false);
     const varCount = msg.data.variables.length;
     const styleCount = msg.data.styles.length;
-    let text = `Exported ${varCount} variable(s) and ${styleCount} style(s).`;
+    const componentCount = (msg.data.components || []).length;
+    let text = `Exported ${varCount} variable(s), ${styleCount} style(s), and ${componentCount} component(s).`;
     if (msg.warnings && msg.warnings.length) {
       text += ` ${msg.warnings.length} warning(s): ${msg.warnings.slice(0, 3).join("; ")}`;
       if (msg.warnings.length > 3) text += " \u2026";

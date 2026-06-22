@@ -1,7 +1,7 @@
 {
-    "schemaVersion": 1,
+    "schemaVersion": 2,
     "source": "baseline",
-    "exportedAt": "2026-06-18T14:55:13.887Z",
+    "exportedAt": "2026-06-22T15:04:37.178Z",
     "libraryName": "🎨 [R] DS Core Library",
     "variables": [
       {
@@ -7558,6 +7558,6834 @@
             "offset": 32
           }
         ]
+      }
+    ],
+    "components": [
+      {
+        "id": "9:365",
+        "key": "130f49f1cae4abee59e41c64d8eaf8dbe899871f",
+        "name": "icon_message_alert",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:376",
+        "key": "061c766f40be9870424e8804f2f44d16b77b7154",
+        "name": "icon_add",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:387",
+        "key": "9dd56ce0b9cec5a99c75654b75183a1210db3eb8",
+        "name": "icon_inbox",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:400",
+        "key": "20b1dedc193efd914d51a8c6aff17a7ad65dd731",
+        "name": "🎨 [R] Mastercard",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "With brand mark": {
+            "type": "VARIANT",
+            "default": "No",
+            "variantOptions": [
+              "No",
+              "Yes"
+            ]
+          },
+          "Background type": {
+            "type": "VARIANT",
+            "default": "Dark",
+            "variantOptions": [
+              "Light",
+              "Dark"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:435",
+        "key": "2bdd35ed0d49dde9032c6771980a228af606b769",
+        "name": "icon_new_window",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:446",
+        "key": "db53774cb6ceee350a4bcc8fdfafad7a26a3fa34",
+        "name": "🎨 [R] Visa",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "White",
+            "variantOptions": [
+              "White",
+              "Color gradient",
+              "Black",
+              "Color"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:455",
+        "key": "3246b90b39c106981f4bee46cce53ed2baaf18e0",
+        "name": "icon_doc_upload",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:466",
+        "key": "5e04c75e4938720ca379cb35113da98046ffc719",
+        "name": "🎨 [R] Diner's Club",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "color": {
+            "type": "VARIANT",
+            "default": "black",
+            "variantOptions": [
+              "black",
+              "white"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:549",
+        "key": "9db20bf29a72c4b744441638ac56c5ccf0885aea",
+        "name": "🎨 [R] Discover",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "black",
+            "variantOptions": [
+              "black",
+              "white"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:558",
+        "key": "1da5c624061f0df330e050798ac06c2d6ddaeb93",
+        "name": "icon_wallet",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:569",
+        "key": "76742c5f7f6317114ce0636a8cbbc1bf3daceb12",
+        "name": "euro_autopay",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:623",
+        "key": "f869262705e73dd0ba07195efe340275040bc7a2",
+        "name": "🎨 [R] Bank Logo (FPO)",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Bank": {
+            "type": "VARIANT",
+            "default": "Chase",
+            "variantOptions": [
+              "Ally",
+              "American Express",
+              "Bank of America",
+              "Capital One",
+              "Chase",
+              "Chime",
+              "Citi",
+              "Citizens Bank",
+              "Fifth Third",
+              "First Hawaiian Bank",
+              "Huntington Bank",
+              "Key Bank",
+              "M&T Bank",
+              "Navy Federal CU",
+              "PNC",
+              "TD Bank",
+              "UBS",
+              "US Bank",
+              "Wells Fargo",
+              "USAA"
+            ]
+          },
+          "Size": {
+            "type": "VARIANT",
+            "default": "XLarge (48px)",
+            "variantOptions": [
+              "XLarge (48px)",
+              "Large (36px)",
+              "Medium (32px)",
+              "Small (24px)",
+              "XSmall (16px)"
+            ]
+          },
+          "Has Border": {
+            "type": "VARIANT",
+            "default": "True",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:1854",
+        "key": "30260609c8e44fd8b0f139f499a030c76a985567",
+        "name": "icon_tag_filled",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:1865",
+        "key": "368dbf249eecb0762cda9e1fdbb961f14df3a08b",
+        "name": "icon_calendar_dates",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:1977",
+        "key": "2c7868ed67afcfc98edb70e3ff7dae63068c0ed5",
+        "name": "🎨 [R] Chip",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Label": {
+            "type": "TEXT",
+            "default": "Chip text"
+          },
+          "Swap Icon": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:1877",
+            "preferredValues": [
+              {
+                "type": "COMPONENT_SET",
+                "key": "2112099a6c428a544c811f63a579307f62123501"
+              }
+            ]
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Resting",
+              "Hover",
+              "Pressed",
+              "Focus-visible",
+              "Disabled"
+            ]
+          },
+          "Size": {
+            "type": "VARIANT",
+            "default": "Small",
+            "variantOptions": [
+              "Small",
+              "Medium",
+              "Large"
+            ]
+          },
+          "Icon": {
+            "type": "VARIANT",
+            "default": "None",
+            "variantOptions": [
+              "None",
+              "Start"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2119",
+        "key": "b03c3b5ad8cd33e716c346909f433cf67b1e18b1",
+        "name": "icon_delete",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2130",
+        "key": "338527ca27290aa3c5eaec886248d93c7b2089dc",
+        "name": "icon_checkmark_small",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2141",
+        "key": "4e2fab948cbf0016117bb41cf6f76e89c69c25cc",
+        "name": "🎨 [R] Visa",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "color",
+            "variantOptions": [
+              "color",
+              "white"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2208",
+        "key": "29d94e0b27cdebaa52d4b468bebc8aba11dcdd05",
+        "name": "🎨 [R] Inline Message",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Icon": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Message text": {
+            "type": "TEXT",
+            "default": "This is an Inline Message"
+          },
+          "Message type": {
+            "type": "VARIANT",
+            "default": "Critical",
+            "variantOptions": [
+              "Critical",
+              "Neutral",
+              "Positive",
+              "Attention"
+            ]
+          },
+          "Size": {
+            "type": "VARIANT",
+            "default": "Small",
+            "variantOptions": [
+              "Small",
+              "Medium",
+              "Large"
+            ]
+          }
+        },
+        "documentationLinks": [
+          "http://google.com"
+        ]
+      },
+      {
+        "id": "9:2257",
+        "key": "1438b982d412b4d38aa41e9bbd729a46c594d72c",
+        "name": "icon_indifferent",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2268",
+        "key": "502437a53999859d20a5b5ac97b257f390e9b7d7",
+        "name": "icon_legal",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2321",
+        "key": "c139864cab1098b01945999d2aa124bbd474c1c2",
+        "name": "🎨 [R] Avatar",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "type": {
+            "type": "VARIANT",
+            "default": "image",
+            "variantOptions": [
+              "image",
+              "initials",
+              "icon"
+            ]
+          },
+          "size": {
+            "type": "VARIANT",
+            "default": "small",
+            "variantOptions": [
+              "small",
+              "medium",
+              "large"
+            ]
+          }
+        },
+        "description": "Avatars are used to show a thumbnail of a user photo, organisation or a visual representation of other types of content"
+      },
+      {
+        "id": "9:2340",
+        "key": "1dd008bbc75e1c7cbfbb8459f736fb41715b18e5",
+        "name": "icon_cart",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2351",
+        "key": "0510f9ad519bb688bcef2c83097b4b2739dcf67a",
+        "name": "icon_calendar_add",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2362",
+        "key": "4cc3e21fa8481c477ca3537ae2bdb35dc6d80fef",
+        "name": "icon_upload",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2373",
+        "key": "81a053e6de412997a5a55e8ae5a2bf4cd6a0b6c8",
+        "name": "icon_calendar",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2384",
+        "key": "b017a0b5fdd4700016f2a9e5b98efe70d2243f88",
+        "name": "icon_travel",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2395",
+        "key": "8a7c59e6effc0655198eb7fe697508731fd2458f",
+        "name": "icon_disclosure_up",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "inverse",
+              "primary",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2451",
+        "key": "bcb7a34231ce204d90b1abea9d715b63d027e1cb",
+        "name": "🎨 [R] Icon Circled",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Size": {
+            "type": "VARIANT",
+            "default": "Small (16px)",
+            "variantOptions": [
+              "Small (16px)",
+              "Medium (24px)",
+              "Large (32px)",
+              "XLarge (36px)",
+              "XXLarge (48px)"
+            ]
+          },
+          "Colorway": {
+            "type": "VARIANT",
+            "default": "Primary",
+            "variantOptions": [
+              "Primary",
+              "Secondary",
+              "Brand_Primary",
+              "Brand_Secondary",
+              "Accent_Green"
+            ]
+          },
+          "Has Border": {
+            "type": "VARIANT",
+            "default": "True",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2512",
+        "key": "318d91fb4efc4b2154709ff04e9f9ac004dc77da",
+        "name": "icon_folder_delete",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:1876",
+        "key": "2112099a6c428a544c811f63a579307f62123501",
+        "name": "icon_happy",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2523",
+        "key": "29d4f436ffa997d8b9eda2c460ac4e18be8b41ec",
+        "name": "euro_autopay_left",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2574",
+        "key": "4a65369da47d0d32bf5d0b99af9da23bd00c0b02",
+        "name": "icon_dollar_bill_add",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2585",
+        "key": "f67113a21eaac2cdc4f2ee341e8f8859447b5f3e",
+        "name": "icon_arrow_left",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "inverse",
+              "primary",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2596",
+        "key": "2e4ad40b4cbe8b7d818d39643c57d2a4db9ad71d",
+        "name": "icon_download",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2607",
+        "key": "59e405347308cf545b5f9438ab224e47c194bee9",
+        "name": "icon_pin",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        },
+        "description": "pin, location, map"
+      },
+      {
+        "id": "9:2618",
+        "key": "7569c470ac1d26c89b08618cd5a42d3675fe2504",
+        "name": "icon_architecture",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "inverse",
+              "warning",
+              "primary"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2629",
+        "key": "8a714cb5015421408e1db9f5d5df5fc4fea25f61",
+        "name": "icon_zoom_in",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2640",
+        "key": "fc6a7efdf131e2bb8ab5cd98bfa6aae06856ff5e",
+        "name": "icon_globe",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2651",
+        "key": "fdfd4e749352a06c9b5cf93f9a8ef6cb960e2460",
+        "name": "icon_menu",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2662",
+        "key": "3cc65a8a91cfce988e49b52a12f1a45489d000d5",
+        "name": "icon_keyboard",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "warning",
+              "inverse"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2673",
+        "key": "be34fbd52c1d26b3bd7c4e2f01d3f5933ae8f179",
+        "name": "pound_autopay_left",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2714",
+        "key": "27258261da26aefac654f8f6599082e8763e90cb",
+        "name": "icon_interest",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2772",
+        "key": "539c8346ef7acd86f0e2e290c5c92a88f7da096a",
+        "name": "🎨 [R] Tooltip",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Caret": {
+            "type": "VARIANT",
+            "default": "no",
+            "variantOptions": [
+              "no",
+              "yes"
+            ]
+          },
+          "Mode": {
+            "type": "VARIANT",
+            "default": "dark",
+            "variantOptions": [
+              "dark",
+              "light"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2791",
+        "key": "dcb4cdba71465c347a76fa8d5304fa7165ce7cab",
+        "name": "icon_lock",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2976",
+        "key": "54be86dc57cfb54fdbd6edb6bf90f579012c19d2",
+        "name": "🎨 [R] Badge",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Value": {
+            "type": "TEXT",
+            "default": "Badge text"
+          },
+          "Swap Icon": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:1877",
+            "preferredValues": [
+              {
+                "type": "COMPONENT_SET",
+                "key": "2112099a6c428a544c811f63a579307f62123501"
+              }
+            ]
+          },
+          "Category": {
+            "type": "VARIANT",
+            "default": "Default",
+            "variantOptions": [
+              "Default",
+              "Brand Primary",
+              "Brand Secondary",
+              "Success",
+              "Error",
+              "Brand Featured",
+              "Brand Tertiary",
+              "Warning",
+              "Info"
+            ]
+          },
+          "Context": {
+            "type": "VARIANT",
+            "default": "Default",
+            "variantOptions": [
+              "Default",
+              "Default Static",
+              "Inverse",
+              "Inverse Static"
+            ]
+          },
+          "Size": {
+            "type": "VARIANT",
+            "default": "Small",
+            "variantOptions": [
+              "Small",
+              "Medium",
+              "Large"
+            ]
+          },
+          "Icon": {
+            "type": "VARIANT",
+            "default": "None",
+            "variantOptions": [
+              "None",
+              "Start",
+              "End"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:3841",
+        "key": "a9f88fbe0effa5ba1b6eab4b211e5b9254cc3b60",
+        "name": "icon_page",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:3852",
+        "key": "eb32bab26664e302defe88e7d1b9905037c22349",
+        "name": "icon_profile",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:3980",
+        "key": "49be233c3f61c4149b7c659a16d2dd3c773eb6d6",
+        "name": "🎨 [R] Table Header",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Header Content": {
+            "type": "VARIANT",
+            "default": "Text",
+            "variantOptions": [
+              "Checkbox",
+              "Text"
+            ]
+          },
+          "Sort": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2195",
+        "key": "0882e4ff5e1d21d5e3d80e1e7d0909d6859c3c7c",
+        "name": "icon_warning",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:3988",
+        "key": "f6d5fefabd388aa27893e370ad834833bde1124f",
+        "name": "icon_save",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:4015",
+        "key": "d6ff0ce5e267c6045bd17a2acd4fc368f9204c0f",
+        "name": "🎨 [R] Affirm logo",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Format": {
+            "type": "VARIANT",
+            "default": "Logo",
+            "variantOptions": [
+              "Logo",
+              "Logomark"
+            ]
+          },
+          "Color": {
+            "type": "VARIANT",
+            "default": "Multicolor",
+            "variantOptions": [
+              "Multicolor",
+              "Monocolor",
+              "Monocolor Static Light",
+              "Multicolor Inverse",
+              "Multicolor Static Light",
+              "Multicolor Static Dark",
+              "Monocolor Inverse",
+              "Monocolor Static Dark"
+            ]
+          },
+          "Has Clear Space": {
+            "type": "VARIANT",
+            "default": "True",
+            "variantOptions": [
+              "True",
+              "False"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:4144",
+        "key": "b6dcd1141a97e848fd88b6f57b145471242fa38a",
+        "name": "icon_more_vertical",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:4173",
+        "key": "3eb2b28e5518251236999ce11406da227333d41a",
+        "name": "🎨 [R] Progress",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Weight": {
+            "type": "VARIANT",
+            "default": "Thick",
+            "variantOptions": [
+              "Thick",
+              "Thin"
+            ]
+          },
+          "Value": {
+            "type": "VARIANT",
+            "default": "50%",
+            "variantOptions": [
+              "0",
+              "8.33% or 1 of 12",
+              "16.67% or 1 of 6",
+              "25%",
+              "33.33%",
+              "41.67% or 5 of 12",
+              "50%",
+              "58.33% or 7 of 12",
+              "66.67%",
+              "75%",
+              "83.33% or 5 of 6",
+              "97.67% or 11 of 12",
+              "100%"
+            ]
+          },
+          "Fill Color": {
+            "type": "VARIANT",
+            "default": "Brand.Primary",
+            "variantOptions": [
+              "Brand.Primary",
+              "Critical"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:4274",
+        "key": "36aed9ef0b4388be15995678ef862310df14e5f6",
+        "name": "🎨 [R] AffirmCard Mockups",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Property 1": {
+            "type": "VARIANT",
+            "default": "02",
+            "variantOptions": [
+              "01",
+              "02",
+              "03",
+              "05",
+              "06",
+              "07",
+              "08",
+              "09",
+              "10",
+              "11",
+              "12",
+              "14 1",
+              "15 2",
+              "Mask group"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:4485",
+        "key": "07f39c378d2196724a8d5f80a3a7d21b1791c295",
+        "name": "🎨 [R] Switch",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Has Label": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Label": {
+            "type": "TEXT",
+            "default": "Label"
+          },
+          "Selected": {
+            "type": "VARIANT",
+            "default": "True",
+            "variantOptions": [
+              "True",
+              "False"
+            ]
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Focus Visible",
+              "Pressed",
+              "Hover",
+              "Resting",
+              "Disabled"
+            ]
+          },
+          "Error": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:4616",
+        "key": "222ac6155b21c7de740f99996cb58fd55242a346",
+        "name": "icon_cooking",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:4627",
+        "key": "23c415df9052379ca44d0c0208a7a1b80498ae69",
+        "name": "icon_shoes",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:4638",
+        "key": "17334f1a38840c7363fb5d78fb286343e336d660",
+        "name": "pound",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:4825",
+        "key": "0526508d16411fc5f84e93caef8a41c980206105",
+        "name": "🎨 [R] Input: Text",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Error Message Text": {
+            "type": "TEXT",
+            "default": "Error text"
+          },
+          "Message Text": {
+            "type": "TEXT",
+            "default": "Message"
+          },
+          "Label": {
+            "type": "TEXT",
+            "default": "Label"
+          },
+          "Value": {
+            "type": "TEXT",
+            "default": "Value"
+          },
+          "Has End Icon": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Has Start Icon": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Has Message": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Swap Start Icon": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:4660",
+            "preferredValues": []
+          },
+          "Swap End Icon": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:4660",
+            "preferredValues": []
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Resting",
+              "Hover",
+              "Focus",
+              "Disabled",
+              "Pressed",
+              "Focus Visible"
+            ]
+          },
+          "Has Value": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          },
+          "Error": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:4994",
+        "key": "075b563518ca82f4499b2dbf306d8a66bebb636f",
+        "name": "dollar",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "Default",
+            "variantOptions": [
+              "Default",
+              "Variant2",
+              "Color3",
+              "Color4",
+              "Color5"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:5005",
+        "key": "097a73c5ed417fab502fe1f8500b1b9aa171b061",
+        "name": "icon_map",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:5016",
+        "key": "344bb0dcf68cbaff3dd0a5d61cff1225b4065edf",
+        "name": "icon_safe",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:11344",
+        "key": "3f8ea693a166d0e12be89db3512c715c81658406",
+        "name": "🎨 [R] Table Column",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Content": {
+            "type": "VARIANT",
+            "default": "Text",
+            "variantOptions": [
+              "Text",
+              "Icon+Text",
+              "Icon",
+              "Text (2 lines)",
+              "Icon + Text (2 lines)",
+              "Text (2 lines) + Icon",
+              "Number",
+              "Number (2 lines)",
+              "Badge",
+              "Button",
+              "More actions...",
+              "Checkbox",
+              "Blank",
+              "Input",
+              "Text+Icon",
+              "Toggle"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19060",
+        "key": "c34232df864f5a640a2313aec9fd96c96e31c9e1",
+        "name": "🎨 [R] AffirmCard",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Has Chip": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Has Affirm Logo": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Has Visa Logo": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Cardholder Name": {
+            "type": "TEXT",
+            "default": "Name Surname"
+          },
+          "Exp Date": {
+            "type": "TEXT",
+            "default": "07/28"
+          },
+          "CVV": {
+            "type": "TEXT",
+            "default": "899"
+          },
+          "Last Four": {
+            "type": "TEXT",
+            "default": "6829"
+          },
+          "Full Card Number": {
+            "type": "TEXT",
+            "default": "4466 4321 5678 6829"
+          },
+          "Card Type": {
+            "type": "VARIANT",
+            "default": "Affirm Virtual Card",
+            "variantOptions": [
+              "Affirm Virtual Card",
+              "1x Use Card"
+            ]
+          },
+          "Content State": {
+            "type": "VARIANT",
+            "default": "Promotional",
+            "variantOptions": [
+              "Promotional",
+              "Info Hidden",
+              "Info Shown",
+              "Loading",
+              "Plan Active Countdown",
+              "Hide Card",
+              "Show Card"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19056",
+        "key": "ebe0c4701a0c18779da3b0db13abf7137389efc3",
+        "name": "🎨 [R] Skeleton",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "State": {
+            "type": "VARIANT",
+            "default": "One",
+            "variantOptions": [
+              "Two",
+              "One"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19330",
+        "key": "e6aaaaa56692909adcfb67e19140d95bf3fd5890",
+        "name": "🎨 [R] Modal",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Content swap": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:19313",
+            "preferredValues": [
+              {
+                "type": "COMPONENT",
+                "key": "8ab4b4e78b0e4de17a65f0aca821b7512e44cb6a"
+              },
+              {
+                "type": "COMPONENT",
+                "key": "7517d107c8c1cc394db18435fb47617b60073473"
+              },
+              {
+                "type": "COMPONENT",
+                "key": "ef66f3c1845c6cedb8d2c3dadf888411f2bd2274"
+              },
+              {
+                "type": "COMPONENT",
+                "key": "88a03cf8d6eacc1c4f265bf642bf97ca8408e27d"
+              }
+            ]
+          },
+          "Size": {
+            "type": "VARIANT",
+            "default": "Small",
+            "variantOptions": [
+              "Small",
+              "Large"
+            ]
+          }
+        },
+        "description": "dialog, modal"
+      },
+      {
+        "id": "9:19337",
+        "key": "362e92ebf2e93471f62f360262f739091acda2c0",
+        "name": "icon_toolbox",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19348",
+        "key": "5ae8e4e34ace5cd4c4882ae5c8e958ea72c7a71a",
+        "name": "icon_autopay_left",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19359",
+        "key": "436701ea9ce5e1ac55b9da12f5c2857796d5e02a",
+        "name": "pound_credit",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19390",
+        "key": "534e149e3e3f057223950c5f1e70ae672b1b14a3",
+        "name": "euro_credit",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19431",
+        "key": "918b161766ac19b5439076922c3f433d08051866",
+        "name": "icon_affirm_purchase_protection",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "greyscale",
+            "variantOptions": [
+              "greyscale",
+              "warning",
+              "destructive",
+              "primary-dark",
+              "primary",
+              "inverse"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19474",
+        "key": "87107b961c6a023db06fbbd5560ba384c797fe23",
+        "name": "pound_loans_remove",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19510",
+        "key": "9409ac42a5ceb9fd1bc1f5a0da9a4ed2b73a267d",
+        "name": "euro_loans_add",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:4659",
+        "key": "b3caaed0279a15cec842e31e4df38a9bcbf1a417",
+        "name": "icon_missing",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "inverse",
+              "warning",
+              "primary"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19561",
+        "key": "d45a17a7de3bd349c38e591874db80e588dea330",
+        "name": "icon_contacts",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19572",
+        "key": "487e2054300935cc3457ecdd7b06d77623d0e8b4",
+        "name": "icon_future_pay",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19583",
+        "key": "667ccaafaaf39feaaac8528c262cebbc758d9f5b",
+        "name": "icon_bookmark",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19594",
+        "key": "7376b4bf577788a900b1cf2c54ea7f109218a3c3",
+        "name": "icon_filter",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19605",
+        "key": "af14b05e2b84b5e280b411fa2c160098d5c632f8",
+        "name": "icon_bolt",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19616",
+        "key": "bdfdb543cb35202209213a7aee27b2c12e3d710d",
+        "name": "icon_zoom_out",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19627",
+        "key": "a4495b5cdde697fbcff7570c1b39bc0d0a3148e9",
+        "name": "icon_outdoors",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19638",
+        "key": "ab40877c8750a91620892fec2d7a54722d5a071a",
+        "name": "icon_search",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19649",
+        "key": "dc01d6e8c80e007d8ce49e048819b7db467c56d0",
+        "name": "icon_jewelry",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19660",
+        "key": "13eef872534472379f0f9691d72c72d2b3975452",
+        "name": "icon_stopwatch",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19671",
+        "key": "31efe0da9de56ded58c34caf1c40a963ee532d80",
+        "name": "icon_fire",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19682",
+        "key": "322c596168cadf577d2f20bae79d8d910e8dc591",
+        "name": "icon_list",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19693",
+        "key": "6b76d54dc4956db2a0e829ad526a94b7eaacfc63",
+        "name": "icon_grid_dots",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19704",
+        "key": "71c4324172afadba926fab1900d1d4f4afc1f872",
+        "name": "icon_share",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19715",
+        "key": "5554309ff33ae36cb8cfb6404c91a3029a77dae1",
+        "name": "icon_sports",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19726",
+        "key": "9365b633031c7f054955a8dc530431aa5f2343ee",
+        "name": "icon_sign",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19737",
+        "key": "9701b9df943781802d6f22c332cc4f71b6233c55",
+        "name": "icon_grid",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19748",
+        "key": "9726b7bbfa2f3b9fd23a9777aa6d4021ad5ea871",
+        "name": "icon_lightbulb",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19015",
+        "key": "851453d07600ee0e13c53a92a38e368810a1e64a",
+        "name": "icon_shown",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19759",
+        "key": "fda447acf49039ac34220b5269c15a5ed0b27060",
+        "name": "icon_music",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19770",
+        "key": "d2fbd22e256eaa347bd625320f5d81148d9a9177",
+        "name": "icon_percent",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19781",
+        "key": "b2e7d9d25618ef54f1d1e10a3aa40dedf3e5dbd9",
+        "name": "icon_plug",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19792",
+        "key": "8d238f7e4c4e8fdf8998cb2ed7c95eb61038db09",
+        "name": "icon_printer",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19809",
+        "key": "5894cae3afff3903faa24a175b2da4aafb756f7a",
+        "name": "🎨 [R] Line Steps",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Steps": {
+            "type": "VARIANT",
+            "default": "2",
+            "variantOptions": [
+              "4",
+              "5",
+              "6",
+              "2",
+              "3",
+              "7"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:11299",
+        "key": "ce6f37ff65d1a8cc3087eaf7600f5c1c23644005",
+        "name": "🎨 [R] Table Cell",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Content": {
+            "type": "VARIANT",
+            "default": "Text",
+            "variantOptions": [
+              "Text",
+              "Icon+Text",
+              "Icon",
+              "Text (2 lines)",
+              "Icon + Text (2 lines)",
+              "Text+Icon",
+              "Text (2 lines) + Icon",
+              "Number",
+              "Number (2 lines)",
+              "Badge",
+              "Button",
+              "More actions...",
+              "Checkbox",
+              "Blank",
+              "Input",
+              "Toggle"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19843",
+        "key": "e4b5ff3f5ca0278136027f6635cfb4a0fa51d3c0",
+        "name": "icon_accessories",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19854",
+        "key": "e6362fa1c6af10d6d10cdea0ffe608bf88181774",
+        "name": "icon_terms",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19865",
+        "key": "b443cb0fd4d0640c339fd2c81a4a2f4c7e066907",
+        "name": "euro_promise_to_pay",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19906",
+        "key": "3dbf355d70f9135132ff5079908514837e5d7b95",
+        "name": "euro",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19937",
+        "key": "8685bf6c5e3c78061ea2a8c0c416ba95cbb2f34a",
+        "name": "pound_loans_add",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19978",
+        "key": "83a3e84c35a7350f94dbecf46fba5527668dda84",
+        "name": "icon_clipboard_checkmark",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:20601",
+        "key": "c56163c5aed460588138bd6f61aadd9f002ad33e",
+        "name": "🎨 [R] Banner",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Dismissible": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Background": {
+            "type": "VARIANT",
+            "default": "Default",
+            "variantOptions": [
+              "Default",
+              "Secondary",
+              "Tertiary",
+              "Brand Primary",
+              "Brand Secondary"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:20632",
+        "key": "e8c91e873f2fe762bc20556d2f51b25bbdefc212",
+        "name": "icon_withdraw",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:20643",
+        "key": "c7b1ca88626a0037e96b041e4fd7eb8e2ac98510",
+        "name": "icon_loans_remove",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "Colwarning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:20695",
+        "key": "f0e38df7fe0e72e5ae75c9b4321bc4bf242d11fd",
+        "name": "🎨 [R] Pagination",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "State": {
+            "type": "VARIANT",
+            "default": "first page",
+            "variantOptions": [
+              "in-between page",
+              "last page",
+              "first page"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:20726",
+        "key": "0e7f60da4f62b3f179accf2534ecbda394bc979b",
+        "name": "icon_heart_in_square",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:20737",
+        "key": "935d9518c383e274d7dbf5ff3c50d6e203086f91",
+        "name": "pound_promise_to_pay",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:20783",
+        "key": "e220f77b92e5765537c2432938061ea7533420bd",
+        "name": "icon_promise_to_pay",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:20908",
+        "key": "050d0ff2929e5a6fc9750645baa5d579db929a10",
+        "name": "🎨 [R] Full Screen Loading Overlay",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Breakpoint": {
+            "type": "VARIANT",
+            "default": "Mobile",
+            "variantOptions": [
+              "Mobile",
+              "Desktop"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:11890",
+        "key": "b483bc1f5c8cf1d74832bfce9342ee577cd1f8f7",
+        "name": "🎨 [R] Circular Loader",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color Border": {
+            "type": "VARIANT",
+            "default": "Default",
+            "variantOptions": [
+              "Default",
+              "Default Static",
+              "Inverse",
+              "Inverse Static"
+            ]
+          },
+          "Size": {
+            "type": "VARIANT",
+            "default": "Large",
+            "variantOptions": [
+              "Large",
+              "Small"
+            ]
+          },
+          "Step": {
+            "type": "VARIANT",
+            "default": "Start",
+            "variantOptions": [
+              "Start",
+              "2",
+              "3",
+              "4"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:21004",
+        "key": "3739ed5f11a3b9ebb4db34628123d24c8d86d103",
+        "name": "🎨 [R] Dialog",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          " ↳ Header Text": {
+            "type": "TEXT",
+            "default": "Header"
+          },
+          " ↳ Body Text": {
+            "type": "TEXT",
+            "default": "This is your content area. This is your content area. This is your content area. This is your content area. This is your content area. This is your content area. This is your content area. "
+          },
+          "Content Swap": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:19313",
+            "preferredValues": [
+              {
+                "type": "COMPONENT",
+                "key": "b5ae37ec252bf6f750a45ea582dd6216034351f4"
+              }
+            ]
+          },
+          "Has Icon": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Has Body Text": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Has Header": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          " ↳ Icon Swap": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:4660",
+            "preferredValues": []
+          },
+          "Footer": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Size": {
+            "type": "VARIANT",
+            "default": "Small",
+            "variantOptions": [
+              "Small",
+              "Large"
+            ]
+          },
+          "Content": {
+            "type": "VARIANT",
+            "default": "Simple",
+            "variantOptions": [
+              "Custom",
+              "Simple"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:21138",
+        "key": "28ca58458d1b6dd3c5a0929697dbb9c3d1c85833",
+        "name": "🎨 [R] Link - Stand Alone",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Has Icon": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Label": {
+            "type": "TEXT",
+            "default": "Label text"
+          },
+          "Size": {
+            "type": "VARIANT",
+            "default": "Extra Extra Large",
+            "variantOptions": [
+              "Extra Extra Large",
+              "Extra Large",
+              "Large"
+            ]
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Resting",
+              "Hover",
+              "Pressed",
+              "Focus Visible",
+              "Disabled"
+            ]
+          },
+          "Mode": {
+            "type": "VARIANT",
+            "default": "Default",
+            "variantOptions": [
+              "Default",
+              "Inverse Static",
+              "Inverse",
+              "Static"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:21553",
+        "key": "87cf297251c2040976a9da3df700ecec01db3f77",
+        "name": "🎨 [R] Datepicker",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Date Format": {
+            "type": "VARIANT",
+            "default": "Single Date",
+            "variantOptions": [
+              "Date Range",
+              "Single Date",
+              "Monthless Date"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:21697",
+        "key": "3e5ebc1fd5b200a84cee35bf5282c83c259db093",
+        "name": "🎨 [R] Body Panel",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Has Fixed Header": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Swap Fixed Header": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:21682",
+            "preferredValues": [
+              {
+                "type": "COMPONENT",
+                "key": "b0a878206e285d06ab8b0c0b9b4495e3779323df"
+              }
+            ]
+          },
+          "Swap Body": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:21682",
+            "preferredValues": [
+              {
+                "type": "COMPONENT",
+                "key": "b0a878206e285d06ab8b0c0b9b4495e3779323df"
+              }
+            ]
+          },
+          "State": {
+            "type": "VARIANT",
+            "default": "Minimized",
+            "variantOptions": [
+              "Minimized",
+              "Expanded"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:21818",
+        "key": "878315950604bc031ff6cf27e5d6a51e865ac995",
+        "name": "🎨 [R] Toggle Button",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Swap start icon": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:21712",
+            "preferredValues": [
+              {
+                "type": "COMPONENT_SET",
+                "key": "4519b3865c7bf5ab4a0939157d9dbab834844040"
+              }
+            ]
+          },
+          "Has start icon": {
+            "type": "BOOLEAN",
+            "default": false
+          },
+          "Has end icon": {
+            "type": "BOOLEAN",
+            "default": false
+          },
+          "Swap end icon": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:21712",
+            "preferredValues": [
+              {
+                "type": "COMPONENT_SET",
+                "key": "4519b3865c7bf5ab4a0939157d9dbab834844040"
+              }
+            ]
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Resting",
+              "Hover",
+              "Pressed",
+              "Focus visible",
+              "Disabled"
+            ]
+          },
+          "Size": {
+            "type": "VARIANT",
+            "default": "Small",
+            "variantOptions": [
+              "Small",
+              "Medium",
+              "Large"
+            ]
+          },
+          "Selected": {
+            "type": "VARIANT",
+            "default": "True",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          },
+          "Icon Only": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "True",
+              "False"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:30175",
+        "key": "27fd87c07feceab7d4990f1490d3f184adf78d1d",
+        "name": "🎨 [R] Bottom Sheet",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Has Button Group": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Has Visual": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "State": {
+            "type": "VARIANT",
+            "default": "Default",
+            "variantOptions": [
+              "Default",
+              "Expanded"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:30211",
+        "key": "33d0fe3b8860e90714b756826e5f86b74f869f25",
+        "name": "🎨 [R] Card Container",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Content swap": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:19313",
+            "preferredValues": []
+          },
+          "Placement": {
+            "type": "VARIANT",
+            "default": "OnPage.Default",
+            "variantOptions": [
+              "OnPage.Default",
+              "OnSurface.Default",
+              "OnSurface.Inset"
+            ]
+          },
+          "Color.BG": {
+            "type": "VARIANT",
+            "default": "Surface.Primary",
+            "variantOptions": [
+              "Surface.Primary",
+              "Surface.Secondary",
+              "Surface.Tertiary"
+            ]
+          }
+        },
+        "description": "OnPage.Default = a card placed on a page or in a modal, dialog, or bottom sheet.\n\nOnSurface.Default = a card placed within another card but only one level in from the page or modal, dialog, or bottom sheet.\n\nOnSurface.Inset = Any card placed within another card that is nested more than one level in from the page or modal, dialog, or bottom sheet."
+      },
+      {
+        "id": "9:30303",
+        "key": "1a6797c80970975ae1ec8881f36a24b13021d430",
+        "name": "🎨 [R] Message",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Has Icon": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Has Button": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Title Text": {
+            "type": "TEXT",
+            "default": "Brief title"
+          },
+          "Body Text": {
+            "type": "TEXT",
+            "default": "Plain message should be short and sweet."
+          },
+          "Attitude": {
+            "type": "VARIANT",
+            "default": "Neutral",
+            "variantOptions": [
+              "Neutral",
+              "Positive",
+              "Critical",
+              "Attention"
+            ]
+          },
+          "Has Title": {
+            "type": "VARIANT",
+            "default": "True",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:30422",
+        "key": "6b7b6dc50f20d2d4fa540813960bfdafbc722f45",
+        "name": "🎨 [R] Card Carousel",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Screen Width": {
+            "type": "VARIANT",
+            "default": "375",
+            "variantOptions": [
+              "390",
+              "375"
+            ]
+          },
+          "Item Showing": {
+            "type": "VARIANT",
+            "default": "One",
+            "variantOptions": [
+              "One",
+              "Two",
+              "Three"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:12598",
+        "key": "4564515b6447d2a21a0a16b3e776b00ca692f8eb",
+        "name": "🎨 [R] Button",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Has Tooltip": {
+            "type": "BOOLEAN",
+            "default": false
+          },
+          "Icon": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:1877",
+            "preferredValues": [
+              {
+                "type": "COMPONENT_SET",
+                "key": "6cc10873321f8adb8a06e7c723ca921c9d06d6f9"
+              },
+              {
+                "type": "COMPONENT_SET",
+                "key": "15400fba89095b24dbc3ef5af185e3dd36aa8724"
+              },
+              {
+                "type": "COMPONENT_SET",
+                "key": "c245d2dadc7371b23e1a57da856586b389813152"
+              },
+              {
+                "type": "COMPONENT_SET",
+                "key": "afee4098e9f8f5746503a71b54c39a3b258b2478"
+              },
+              {
+                "type": "COMPONENT_SET",
+                "key": "9401526ba5ba774bf6e380cd4d72f2f48145dda7"
+              },
+              {
+                "type": "COMPONENT_SET",
+                "key": "1f97fbd63a7441c48ab65af33e36b77de48bbaab"
+              },
+              {
+                "type": "COMPONENT_SET",
+                "key": "1409e46911a9756cda6538f951cc6e4806583db9"
+              },
+              {
+                "type": "COMPONENT_SET",
+                "key": "9969adb2cc5e818d0624abb6ec766ca62d87d47c"
+              },
+              {
+                "type": "COMPONENT_SET",
+                "key": "b19eee14a20ac95ff95714ff57f5756ead64ba59"
+              },
+              {
+                "type": "COMPONENT_SET",
+                "key": "17ecedc7b38d0e80b8c725d7bdd4a69e7897e5c7"
+              },
+              {
+                "type": "COMPONENT_SET",
+                "key": "0f003d282c148bc0749b45cd4da1a54016a2f874"
+              },
+              {
+                "type": "COMPONENT_SET",
+                "key": "8ea4ac5e94a6de68b373dd4eb4c546d91a63db2c"
+              },
+              {
+                "type": "COMPONENT_SET",
+                "key": "0f3311507c6b2e97d84d52b0fc1fc8dc82068596"
+              },
+              {
+                "type": "COMPONENT_SET",
+                "key": "af1f43c211dc74401b519405278fa91a0bded602"
+              }
+            ]
+          },
+          "Label": {
+            "type": "TEXT",
+            "default": "Button label"
+          },
+          "Emphasis": {
+            "type": "VARIANT",
+            "default": "Primary",
+            "variantOptions": [
+              "Primary",
+              "Secondary",
+              "Tertiary"
+            ]
+          },
+          "Size": {
+            "type": "VARIANT",
+            "default": "Medium",
+            "variantOptions": [
+              "Medium",
+              "Large",
+              "Small"
+            ]
+          },
+          "Icon Position": {
+            "type": "VARIANT",
+            "default": "None",
+            "variantOptions": [
+              "None",
+              "Start",
+              "End",
+              "Only"
+            ]
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Resting",
+              "Hover",
+              "Focus Visible",
+              "Pressed",
+              "Disabled",
+              "Loading"
+            ]
+          },
+          "Variant": {
+            "type": "VARIANT",
+            "default": "Default",
+            "variantOptions": [
+              "Default",
+              "Default Static Dark",
+              "Default Neutral",
+              "Default Neutral Inverse",
+              "Destructive",
+              "Destructive Inverse",
+              "Default Inverse",
+              "Default Static Light"
+            ]
+          }
+        },
+        "documentationLinks": [
+          "https://www.affirm.design/latest/components/button.html"
+        ]
+      },
+      {
+        "id": "9:31310",
+        "key": "572bb40684e009e6a14cb1fdd7693f96f72668b6",
+        "name": "🎨 [R] Dropdown",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Error Text": {
+            "type": "TEXT",
+            "default": "Error text"
+          },
+          "Value": {
+            "type": "TEXT",
+            "default": "Value"
+          },
+          "Label": {
+            "type": "TEXT",
+            "default": "Label"
+          },
+          "Has Message": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Helper Text": {
+            "type": "TEXT",
+            "default": "Message"
+          },
+          "Swap Start Icon": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:4660",
+            "preferredValues": [
+              {
+                "type": "COMPONENT_SET",
+                "key": "b3caaed0279a15cec842e31e4df38a9bcbf1a417"
+              }
+            ]
+          },
+          "Has Start Icon": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Resting",
+              "Disabled",
+              "Hover",
+              "Pressed",
+              "Focus Visible"
+            ]
+          },
+          "Open": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          },
+          "Has Value": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          },
+          "Error": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:31557",
+        "key": "2d42e4d3eada74314c3e10a412da11eea36f3196",
+        "name": "icon_briefcase",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:31568",
+        "key": "04f6809ba4bde3d0799afb968ff7f67609bac8fc",
+        "name": "icon_no",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:31579",
+        "key": "1164f2e3a695ebad88bb4256e6f811346b619814",
+        "name": "icon_chat_agent",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:31590",
+        "key": "18f855f670ac663caba6c290a08d9c6f4a0745cd",
+        "name": "icon_bitcoin_interest",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "inverse",
+              "destructive",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:31603",
+        "key": "1d9aca09485e50c363db2be3b426968d77bc9a87",
+        "name": "icon_mobile",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:31618",
+        "key": "20754d759a6e5fbb7cf50a281d337fe6ee24de1e",
+        "name": "icon_target",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:31629",
+        "key": "312e1beb144ebdbb49ad688b8b213604995547fb",
+        "name": "icon_gpay",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Property 1": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:31680",
+        "key": "03e75a2d470bb99f9ff44143fb0c386a8c5a4127",
+        "name": "icon_tag",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:31691",
+        "key": "23ce26e8ad675309e7c3412df56bcc4e03aec012",
+        "name": "🎨 [R] Country Icons",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Country": {
+            "type": "VARIANT",
+            "default": "US - United States",
+            "variantOptions": [
+              "CA - Canada",
+              "GB-UKM - United Kingdom",
+              "US - United States"
+            ]
+          },
+          "Size": {
+            "type": "VARIANT",
+            "default": "XLarge (48px)",
+            "variantOptions": [
+              "Small (24px)",
+              "Medium (32px)",
+              "Large (36px)",
+              "XLarge (48px)",
+              "XSmall (16px)"
+            ]
+          },
+          "Border": {
+            "type": "VARIANT",
+            "default": "True",
+            "variantOptions": [
+              "True",
+              "False"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32424",
+        "key": "2ed7572910bc00bc4c61e9c55232291b5ad0ff6b",
+        "name": "🎨 [R] Tabs",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Alignment": {
+            "type": "VARIANT",
+            "default": "Left",
+            "variantOptions": [
+              "Left",
+              "Center"
+            ]
+          },
+          "Tabs": {
+            "type": "VARIANT",
+            "default": "8",
+            "variantOptions": [
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32509",
+        "key": "627ff7be4ce0e1612c056e9ff62c21ca81d13f2f",
+        "name": "icon_arrow_up_left",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32520",
+        "key": "8909edaf42d48310adb6dbdd43f9995cf56e7238",
+        "name": "icon_attachment",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32531",
+        "key": "b20b6b9fcdb59230dfcbc1b023e6f3134e3a2fbb",
+        "name": "icon_levels",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32542",
+        "key": "0cba6e49706636b0bb90c8e266133f39ad3648e1",
+        "name": "icon_align_right",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32553",
+        "key": "1087c05d8b1548dcafada5dc0f8afa9db746e38c",
+        "name": "icon_microphone",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32564",
+        "key": "16483e8c1ccf0a627340779e50731df6817e9471",
+        "name": "icon_mail",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32575",
+        "key": "32214adbbe11792e0f4ed78593bd36f6750d72b5",
+        "name": "icon_clipboard",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32586",
+        "key": "3a293a8f4fbae5e0c9479bf4f4bccb3ebd431469",
+        "name": "icon_leaf",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32597",
+        "key": "03d0d01e0cfaddad4ff678cba3176a69f2627457",
+        "name": "icon_anchor",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32608",
+        "key": "1b807fd659eabf028f9ab38e1c02fb2070903e84",
+        "name": "icon_telesales",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32619",
+        "key": "365f13c664a753ff155b86d34f7163418cfcb0a8",
+        "name": "icon_id",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32630",
+        "key": "399fd3efb6bfbc8de013b5ce3f60098965a0d698",
+        "name": "icon_gift",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32862",
+        "key": "4b3c61de7044bbc9ffdff0b1e90946f9ba66a9ca",
+        "name": "🎨 [R] Row",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Swap Main Content": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:32749",
+            "preferredValues": [
+              {
+                "type": "COMPONENT",
+                "key": "22f379a1e8f250e3cf654340d509e1d097f0fc22"
+              }
+            ]
+          },
+          "Has Trailing Element": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Has Right Content": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Has Leading Graphic": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Stand Alone": {
+            "type": "VARIANT",
+            "default": "True",
+            "variantOptions": [
+              "True",
+              "False"
+            ]
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Resting",
+              "Hover",
+              "Pressed",
+              "Focus Visible",
+              "Disabled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32935",
+        "key": "4ef7c9f96d2781d8359ab5e8d968c9f000c7befd",
+        "name": "icon_divide",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32976",
+        "key": "5ad11974a2a6cb107f0a8b5a680eca52cbd96656",
+        "name": "🎨 [R] List of Rows",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Number of Rows": {
+            "type": "VARIANT",
+            "default": "06",
+            "variantOptions": [
+              "10",
+              "09",
+              "08",
+              "07",
+              "06",
+              "05",
+              "04",
+              "03",
+              "02"
+            ]
+          },
+          "Treatment": {
+            "type": "VARIANT",
+            "default": "All in one card",
+            "variantOptions": [
+              "All in one card",
+              "Individual containers",
+              "Uncontained & Divided",
+              "Uncontained & Undivided"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33373",
+        "key": "3239b37e794623b4e475e2c1f153ef15a34f0f27",
+        "name": "icon_dislike",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33387",
+        "key": "533b555bc9f7acae38b65fe0ffb418b8db311c2b",
+        "name": "icon_code",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33398",
+        "key": "537314c8b6fe7b360154cf228fda21302f9edcef",
+        "name": "icon_cycling",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33409",
+        "key": "644c2bf6f16f8e7c6cf35da09111f525ecf283ec",
+        "name": "icon_tickets",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33420",
+        "key": "684a4870797ee6aced1976157da4d83e412c7189",
+        "name": "icon_double_chevron_right",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33431",
+        "key": "6f9c953a9675ecd0133b8b44ce133b89e03573ea",
+        "name": "icon_arrow_up_down",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33442",
+        "key": "6f9eb6a7e5d730f891b4bf5f25bdb583108835e6",
+        "name": "icon_desktop",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:1956",
+        "key": "7237c7a1fae94d3ab4ca191048ceeb5269efb8be",
+        "name": "icon_disclosure_down",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "inverse",
+              "primary",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:1905",
+        "key": "99143d8204c7d96a581303a7499f2c81aa5ce4e9",
+        "name": "icon_disclosure_right",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        },
+        "description": "Chevron, Caret"
+      },
+      {
+        "id": "9:33456",
+        "key": "a508ae721f2cf29d26c24d9e24131c01d667cbbe",
+        "name": "icon_sad",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33467",
+        "key": "ac9da735c21b8fce511de87aae9915d1eead7bc0",
+        "name": "icon_expand",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:20659",
+        "key": "c80d674ab5d92584617a266baf86483d7ff0e3bb",
+        "name": "icon_disclosure_left",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "inverse",
+              "primary",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33478",
+        "key": "cba2c6763764e0bb9feea10711e663baba3578e9",
+        "name": "icon_arrow_up",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "inverse",
+              "primary",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33489",
+        "key": "cdad4a3b03b77de4981b6793bb27654e161950b7",
+        "name": "icon_beauty",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33500",
+        "key": "cf2e8722da5caf43c543e99e6b3a2be66063cb1a",
+        "name": "icon_collapse",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33515",
+        "key": "e1c8d5ab0792136fdedab789fd2eed6c3a7d72e4",
+        "name": "icon_fitness",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33526",
+        "key": "e27c3ddb05cd627bf4f5034fce48613b428383de",
+        "name": "icon_calendar_checkmark",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33537",
+        "key": "e62304040acf46f5ad0d9677298d5a7f4a86a309",
+        "name": "icon_tablet",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33552",
+        "key": "e7899a964cd5657836f145451ed8148cf35ad12d",
+        "name": "icon_kern",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33563",
+        "key": "e9617e5f9499e85c9d0773e355a2592b0bfb2326",
+        "name": "icon_bitcoin_sell",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "inverse",
+              "destructive",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33574",
+        "key": "ecdf07c6eb496e2d481115ebf39432397dfd649a",
+        "name": "icon_like",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33588",
+        "key": "ed606c0e6b18df1b036c73f53aff758d34e7a767",
+        "name": "icon_reposition",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Property 1": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33599",
+        "key": "f3256c5f1cc82cb81b87d1ab86918409dc843c23",
+        "name": "icon_alcohol",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33610",
+        "key": "23c013936aa580388fbeb61364912c8031789aec",
+        "name": "icon_bluetooth",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33621",
+        "key": "255bbabe27d21bfab9bd31a95d59e99091a891f2",
+        "name": "icon_refresh",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33632",
+        "key": "2df4cea5dca9aa5955163d4538e78d307abd2bc4",
+        "name": "icon_wrench",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33643",
+        "key": "45f47ddf941d8dcaeccc1afe7e3ce186f4d0d04c",
+        "name": "icon_power",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33654",
+        "key": "4ad971418c75e670db1fb093135422425dfc1ec2",
+        "name": "icon_add_card",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33665",
+        "key": "5d74a14f38064335b42e18e8be5ece1a68e234cb",
+        "name": "icon_dollar_bill",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33676",
+        "key": "6112cbfb1148ebaae308f6af9a98846bc49953a1",
+        "name": "icon_wheelchair",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:32778",
+        "key": "6591686517ec2df68aa3cd3d0df9fe82fd5152e2",
+        "name": "icon_accessibility",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33687",
+        "key": "75afe53439fd0c0ab297a975ffbf2040236fbcc7",
+        "name": "icon_activity",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33698",
+        "key": "78e130831d4901cda6ed50e1d94bf92206212aeb",
+        "name": "icon_wifi",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:30253",
+        "key": "982071c54171577377c17890edc0e89c72aea5b5",
+        "name": "icon_arrow_right",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "inverse",
+              "primary",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33749",
+        "key": "9b1c271c374f7b2821df39c16214df3d33d78387",
+        "name": "🎨 [R] Accordion",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Label": {
+            "type": "TEXT",
+            "default": "Accordion"
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Resting",
+              "Hover",
+              "Pressed",
+              "Focus Visible",
+              "Disabled"
+            ]
+          },
+          "Expanded": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "True",
+              "False"
+            ]
+          },
+          "Indicator": {
+            "type": "VARIANT",
+            "default": "Start",
+            "variantOptions": [
+              "Start",
+              "End"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33854",
+        "key": "9e35dfe59ba3cd99613c5eca443065abc80c4087",
+        "name": "icon_applepay",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Property 1": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33895",
+        "key": "b08ff7cb8e2f9b9195d223553896a2bf8f825b9d",
+        "name": "icon_credit_card",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33906",
+        "key": "b9ef6a65fce6ecf7468966194c6b14855ba62667",
+        "name": "icon_credit",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33917",
+        "key": "c6a2eaf8950472df4835d44c177e64e016b5a116",
+        "name": "icon_camera",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33928",
+        "key": "c86a8d14a87badbe2a272b136e47a6364686270c",
+        "name": "icon_notebook",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33939",
+        "key": "d56f15ebf6129a138309f70f89396c6cfd0bcfab",
+        "name": "icon_loading",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33950",
+        "key": "e7d4dc9c3be5333a5f30e0f22a742dbbdfd8b5be",
+        "name": "icon_deposit",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33961",
+        "key": "f08c605a05f1bae2f894336be324939aace4a000",
+        "name": "icon_flag",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33972",
+        "key": "f2df9580ac841eb1934bc62a829ec2305a59d175",
+        "name": "icon_autopay",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33983",
+        "key": "01a9b7e352e24db94b589952b1e6d36e5f9bde0c",
+        "name": "icon_trash",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:33994",
+        "key": "0fab901f5b5ab5f51739f419de6adfef76f4c2e0",
+        "name": "icon_video_camera",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34013",
+        "key": "0fb062575ae942222e044c5d39e119dd8aad57c5",
+        "name": "icon_compass",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34024",
+        "key": "13064033623561b8728b085d03691ea899a64c4c",
+        "name": "icon_photo",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34035",
+        "key": "2e7e301fecdd9e1af798e371a5d801b2e6c576ea",
+        "name": "icon_card_decline",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34046",
+        "key": "3940f7d55d3c871ba8dbe4c167d3a9d4b383b4aa",
+        "name": "icon_bitcoin_add",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "inverse",
+              "destructive",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34057",
+        "key": "54d807f624f1a145d8101b79b1e4f13557f94d6c",
+        "name": "icon_bolt_filled",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34068",
+        "key": "5e6ebd18afd359bd563249a0ab503f96ec156037",
+        "name": "icon_book",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34079",
+        "key": "69847c0ca8044ea43fc80319b913578c645d6c73",
+        "name": "icon_key",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34090",
+        "key": "75acd2f6cd5f08031adaa17021449c58a741bf3d",
+        "name": "icon_pin_filled",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "inverse",
+              "warning",
+              "primary"
+            ]
+          }
+        },
+        "description": "pin, location, map"
+      },
+      {
+        "id": "9:34101",
+        "key": "815faed4bcaf1df850087bb99a677468c6496887",
+        "name": "icon_directions",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34112",
+        "key": "84c9aa2bc2a9f93f5152aef01b550f3cfd1dfce0",
+        "name": "icon_alerts",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34123",
+        "key": "91f1b6cf1939d5dd19f5ce6136b1f250320defa9",
+        "name": "icon_send",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34134",
+        "key": "940ecbc49689c9be3413433b6279ee63c2dfab2b",
+        "name": "icon_unlock",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34145",
+        "key": "9d1a09bf7d90331328dbf0083d59aab449eeabc9",
+        "name": "icon_star",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34156",
+        "key": "a90c492465494a53f287c2e41e6e9f57016a478e",
+        "name": "icon_cone",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34167",
+        "key": "c5e3fafee6643c75cb7b6ab8ddacb4471ab172ed",
+        "name": "icon_heart",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34178",
+        "key": "f3c5e899107a13eb5c94145e9b11abc100fb465f",
+        "name": "icon_folder",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34189",
+        "key": "08a438e960077668c5edbcaa6eafe94b03c6da37",
+        "name": "icon_qr_code",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34200",
+        "key": "2165199fd4c96a30328221c25c1f846bd27273f0",
+        "name": "icon_video",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34211",
+        "key": "22a98721da8a234d2d81438e1386919cb557c206",
+        "name": "icon_calculator",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34222",
+        "key": "23ddee2d6b66ecd66cfcaee1b9c211897279cfc5",
+        "name": "icon_female",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34233",
+        "key": "2edaaadec1f860e6848342b67c33f5b7a3205888",
+        "name": "icon_sign_out",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2149",
+        "key": "34e2be23870d2bcaa024c0e12326644fba9c184f",
+        "name": "icon_circle_delete",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34244",
+        "key": "56068af040f28dd658d39daa6f70052ac564d935",
+        "name": "icon_nfc",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34255",
+        "key": "5f6b7c43f66609ff9cde1db3298bcf3465b84a56",
+        "name": "icon_phone",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34266",
+        "key": "85929e970b5a4f1276c230293b82d0406bea885b",
+        "name": "icon_home",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34277",
+        "key": "96bbbb543ca056f67cdeb9a70a4d87271a8d9dec",
+        "name": "icon_align_center",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34288",
+        "key": "a7aaf5ce7dad4d3d8539183dae5f5bcdb025179b",
+        "name": "icon_message",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34299",
+        "key": "ab4eb9cc229347f4ecd3cfc2943774d7d6d314fc",
+        "name": "icon_loans_add",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:4371",
+        "key": "ac05023eaf9ff37edee2d472fad64ac66296e354",
+        "name": "icon_checkmark",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34310",
+        "key": "b6d93b4366c343ed42ae4f8ed5d905164e029daf",
+        "name": "icon_signal",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34324",
+        "key": "d9cd01d9b0be4f0646a468ec9be0c63248edd538",
+        "name": "icon_tree",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:19038",
+        "key": "e4727e3559b46c92e66eb1a1324ac57820b5cb1d",
+        "name": "icon_hidden",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34335",
+        "key": "36b2676dfea224e34564eae79ce066516e613bfb",
+        "name": "icon_compose",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34346",
+        "key": "4629f9d0080da219bba39c614ace7b0d6b5c1a41",
+        "name": "icon_face_id",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34357",
+        "key": "47975c02fd119b49c8c719c03836335ced9c6a31",
+        "name": "icon_subtract",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34368",
+        "key": "48dd41e10da04c258fcc81ce49260ac8c50c1042",
+        "name": "icon_double_chevron_left",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34379",
+        "key": "59c18f6f0bff6ebb843609df9eb60989ecbce100",
+        "name": "icon_receipt",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34390",
+        "key": "5ab1244b33021636e626aa3dbba742f3832072ca",
+        "name": "icon_clock",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34401",
+        "key": "6b351dba2743f6610bb7c6eb51827afa14a3c4bc",
+        "name": "icon_profile_filled",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34412",
+        "key": "78415436ead34c18aa9a73dbcea32028e6c6ff21",
+        "name": "icon_auto",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34423",
+        "key": "94a4485e0645b1e9edf966ddc99a17948b7ef7c3",
+        "name": "icon_doc_download",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34434",
+        "key": "9bdc2e30ec09da2985a40b99a38a5cdcc4deffa4",
+        "name": "icon_database",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34445",
+        "key": "a39607401e3d188886c2ef4d0847e1e6b8480875",
+        "name": "icon_bug",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34456",
+        "key": "a592d6d6fceb1394a8d61768e6439cc2af6f29c0",
+        "name": "icon_scan_barcode",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:4328",
+        "key": "a8d3aa00c139c3bcd6436735ab78970a06fc3314",
+        "name": "icon_close",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34467",
+        "key": "b0df4766e1a52954f0f43df3d762da7779fea988",
+        "name": "icon_doc",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34478",
+        "key": "bc1c4ef79de0a83aa322bca0755919e1e9682388",
+        "name": "icon_friends",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34489",
+        "key": "c027b4b7c506ab311da1a2c336efce15b3ddda7b",
+        "name": "icon_graph",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34500",
+        "key": "ca8e841343771d438a1834b86fd3a3f512fa7f48",
+        "name": "icon_pages",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34511",
+        "key": "d6938a9ed9b72788b5b36b0566c3ab36d17cea68",
+        "name": "icon_shield",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning",
+              "destructive"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34526",
+        "key": "dbc320ae97628d6aa8f6cf4aead590b0a91aaf08",
+        "name": "icon_person",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:22389",
+        "key": "ed6adde8e76cb244039b5412891ea0338924ac21",
+        "name": "icon_photos",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34545",
+        "key": "eff249e3ed7edc2da3f8911104670c55be085cf4",
+        "name": "icon_purchase_protection",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "greyscale",
+            "variantOptions": [
+              "greyscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34581",
+        "key": "f6c6bf026a3c89bc76b2a794e87bd1c796a49dda",
+        "name": "icon_line_graph",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34592",
+        "key": "fbdd960dac1070d728d7eff8cf865b93d3c536f8",
+        "name": "icon_align_left",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34603",
+        "key": "a18a8f682b77480a01adef51baffb3b8350c2ff0",
+        "name": "icon_fingerprint",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34614",
+        "key": "b2c17750a83a0a48b2c3cad3ab72087f1796a33b",
+        "name": "icon_settings",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34625",
+        "key": "bea2966916a0903aa18adac211b29d69131ba002",
+        "name": "icon_bank",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34636",
+        "key": "cb62cf80731e49d5724c0e743c7bd785eb72c1ee",
+        "name": "icon_quote",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34679",
+        "key": "deeae5462e3fe8134304ffd877dd53567271f324",
+        "name": "🎨 [R] Link",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Is External Link": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Link Text": {
+            "type": "TEXT",
+            "default": "Inline link text"
+          },
+          "Size": {
+            "type": "VARIANT",
+            "default": "Large",
+            "variantOptions": [
+              "Large",
+              "Medium",
+              "Small"
+            ]
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Resting",
+              "Hover",
+              "Pressed",
+              "Focus Visible",
+              "Disabled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2169",
+        "key": "e67628fe4a5002b87f604a735dfcee3b81c8a99d",
+        "name": "icon_circle_info",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34740",
+        "key": "d153e21b6b6b3edfaac0c26f8f121b205292b835",
+        "name": "icon_edit",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34751",
+        "key": "d42a88c613ee684de3470d3da236b29c2fc88ef8",
+        "name": "icon_experiment",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34762",
+        "key": "d5d33412d00068f1bc647c2e7f8d0998118deff0",
+        "name": "icon_arrow_down",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34773",
+        "key": "82c1ce2be6894672d765945cd8bd3cc52b1321df",
+        "name": "euro_loans_remove",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34819",
+        "key": "c40aeb4cfa7430f574783ab1cfd76a224329ecc8",
+        "name": "pound_autopay",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34860",
+        "key": "e50b3e6e484b3a7222669d067f82a65554993536",
+        "name": "pound_credit_filled",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34896",
+        "key": "3ba57ed6ea0bca42c9435e35492ee3f3b021dcdb",
+        "name": "icon_furniture",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34907",
+        "key": "411dd7fba889014ad17a2cfc58699d116d3945fa",
+        "name": "icon_circle_plus",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34918",
+        "key": "5c77b3afccbba8652ba301d5b920db9d46208073",
+        "name": "icon_cloud",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:34929",
+        "key": "62c514966611cdc826ef6b53a601a1cfc8dee190",
+        "name": "icon_more_horizontal",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35251",
+        "key": "6a5e5f6be970c15fc77ea55258f11b4f7bd89566",
+        "name": "🎨 [R] Input: Search",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Value": {
+            "type": "TEXT",
+            "default": "[Search value]"
+          },
+          "Size": {
+            "type": "VARIANT",
+            "default": "Small",
+            "variantOptions": [
+              "Small",
+              "Medium"
+            ]
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Resting",
+              "Hover",
+              "Pressed",
+              "Focus",
+              "Focus Visible",
+              "Disabled"
+            ]
+          },
+          "Error": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          },
+          "Has Value": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35496",
+        "key": "7ce602bc012fb72279d09d921827d25a2c865fb6",
+        "name": "icon_bar_graph",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35507",
+        "key": "8a18794b797a8491feb085e2828876e87d673187",
+        "name": "icon_linked",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35520",
+        "key": "8eff24772d2ea9a0c9282011ac9e764986be7304",
+        "name": "icon_shop",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35531",
+        "key": "a716a2f59a23d49d73e43a0a2e906ff0409f70c6",
+        "name": "icon_circle_question",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35542",
+        "key": "bf7fa092c421b1c4238396faf60c030320d8b359",
+        "name": "icon_hourglass",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "inverse",
+              "warning",
+              "primary"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35553",
+        "key": "f654fcaf6bc82682ddc1976aebe33c239465f3f4",
+        "name": "icon_asterisk",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35564",
+        "key": "173bfe967cf16d3c18d9209d1271b9cc869d0a05",
+        "name": "icon_bitcoin",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "inverse",
+              "primary",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35575",
+        "key": "178766e2b7acb38944b6e3b02705a43f75430754",
+        "name": "icon_page_long",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35586",
+        "key": "28e98e5f17fa88e58ffd4f4fcac53b19e9b403be",
+        "name": "icon_apparel",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35597",
+        "key": "64e060979d2858eb177a3197c20992243286a14b",
+        "name": "icon_male",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35608",
+        "key": "6b49b28173af943c3a0b2537e30eb74c737f231f",
+        "name": "icon_bell",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35619",
+        "key": "6c557c234f9b8261af5e91956ee48c27c3a43e5f",
+        "name": "icon_folder_add",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35630",
+        "key": "6f2f7ea1518431bab5fda5ae9eeb4d50659f40a2",
+        "name": "icon_support",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:2182",
+        "key": "744040df94dfc7bef5e8820c155f4a9a32d92975",
+        "name": "icon_circle_checkmark",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35641",
+        "key": "9f436669fbbe7f63c2f5a37b3758d2902f7e1945",
+        "name": "icon_award",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35652",
+        "key": "a870e845a49966e280a397dfadc8a36b8e0eb244",
+        "name": "icon_bag",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35663",
+        "key": "a89a5377b7a5c4f155e5e685fb05752312c2c90e",
+        "name": "icon_arrow_left_right",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35676",
+        "key": "c08e62dc8164f31dc2a44cbd152d1dc654d93297",
+        "name": "icon_trophy",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35687",
+        "key": "c5aebdf7df876beaeccfbe59819157e3370a6e20",
+        "name": "icon_filter_alt",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35698",
+        "key": "d5a1d9f246e5139d7b19011b7aa97e0495349024",
+        "name": "icon_message_notification",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35709",
+        "key": "dad03584c82cd1fe705da6e77b63a716001b23d6",
+        "name": "icon_pie_chart",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35720",
+        "key": "e2f511dcee2265c921c92731d2b083771516904e",
+        "name": "icon_history",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "grayscale",
+              "primary",
+              "destructive",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35731",
+        "key": "e542337e27f48ac003313e49d22f9e18f93908f3",
+        "name": "icon_circle_subtract",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:11714",
+        "key": "f09e80dc7974825a7be3f65b814b96e707e24c5c",
+        "name": "icon_copy",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Color": {
+            "type": "VARIANT",
+            "default": "grayscale",
+            "variantOptions": [
+              "destructive",
+              "grayscale",
+              "primary",
+              "inverse",
+              "warning"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:35841",
+        "key": "639e7c6f57cbb9c3e7a90d078ac222c1b341a718",
+        "name": "🎨 [R] Checkbox",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Has Label": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Label": {
+            "type": "TEXT",
+            "default": "Label"
+          },
+          "Error": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          },
+          "Selected": {
+            "type": "VARIANT",
+            "default": "True",
+            "variantOptions": [
+              "True",
+              "False"
+            ]
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Resting",
+              "Focus Visible",
+              "Hover",
+              "Pressed",
+              "Disabled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:36076",
+        "key": "9d4ff5211a0fe45b13848548c09d60e6ca5a549f",
+        "name": "🎨 [R] Radio button",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Has Label": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Label": {
+            "type": "TEXT",
+            "default": "Label"
+          },
+          "Error": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          },
+          "Selected": {
+            "type": "VARIANT",
+            "default": "True",
+            "variantOptions": [
+              "True",
+              "False"
+            ]
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Resting",
+              "Hover",
+              "Pressed",
+              "Focus Visible",
+              "Disabled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:36431",
+        "key": "03c66459d8f8e65298e31b49f1e40f890b9d7a35",
+        "name": "🎨 [R] Slide Button",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Complete",
+              "Disabled",
+              "Dragged",
+              "Focus",
+              "Focus Visible",
+              "Hover",
+              "Loading",
+              "Pressed",
+              "Resting"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:20931",
+        "key": "e26785b29c09a1b66f9598963b76eb915d373514",
+        "name": "🎨 [R] Button Group",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Has Button 3": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Has Button 2": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Orientation": {
+            "type": "VARIANT",
+            "default": "Vertical",
+            "variantOptions": [
+              "Vertical",
+              "Horizontal"
+            ]
+          },
+          "Direction": {
+            "type": "VARIANT",
+            "default": "Default",
+            "variantOptions": [
+              "Default",
+              "Inverse"
+            ]
+          },
+          "Spacing": {
+            "type": "VARIANT",
+            "default": "Default",
+            "variantOptions": [
+              "Default",
+              "Tight"
+            ]
+          },
+          "Sticky": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "True",
+              "False"
+            ]
+          },
+          "BGColor (Sticky Only)": {
+            "type": "VARIANT",
+            "default": "None",
+            "variantOptions": [
+              "None",
+              "PagePrimary",
+              "PageSecondary"
+            ]
+          },
+          "Stretchy (Horizontal Only)": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:31063",
+        "key": "33942d9b3a62a5d67c59ac1d5a3eaeab0e46e568",
+        "name": "🎨 [R] Divider (HR)",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Variant": {
+            "type": "VARIANT",
+            "default": "Primary",
+            "variantOptions": [
+              "Primary",
+              "Secondary",
+              "Tertiary",
+              "Primary.Inverse",
+              "Secondary.Inverse",
+              "Tertiary.Inverse"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:36471",
+        "key": "3f7f1f3b7949f7063ac761aec4886c8a3c0b513b",
+        "name": "🎨 [R] Toggle Button Group",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Items": {
+            "type": "VARIANT",
+            "default": "7",
+            "variantOptions": [
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:20799",
+        "key": "b446b6c7faebda1bd48c562de9b04ced1a06436d",
+        "name": "🎨 [R] Overlay",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Device": {
+            "type": "VARIANT",
+            "default": "Mobile",
+            "variantOptions": [
+              "Mobile",
+              "Desktop"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:36725",
+        "key": "e98e95ab7c7105bc215b55f1ddc11d73a98aecec",
+        "name": "🎨 [R] Input: TextArea",
+        "type": "COMPONENT_SET",
+        "componentProperties": {
+          "Error Message Text": {
+            "type": "TEXT",
+            "default": "Error text"
+          },
+          "Message Text": {
+            "type": "TEXT",
+            "default": "Message"
+          },
+          "Label": {
+            "type": "TEXT",
+            "default": "Label"
+          },
+          "Value": {
+            "type": "TEXT",
+            "default": "Value"
+          },
+          "Has End Icon": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Has Start Icon": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Has Message": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Swap Start Icon": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:4660",
+            "preferredValues": []
+          },
+          "Swap End Icon": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:4660",
+            "preferredValues": []
+          },
+          "Interaction": {
+            "type": "VARIANT",
+            "default": "Resting",
+            "variantOptions": [
+              "Resting",
+              "Focus",
+              "Disabled",
+              "Hover",
+              "Pressed",
+              "Focus Visible"
+            ]
+          },
+          "Has Value": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          },
+          "Error": {
+            "type": "VARIANT",
+            "default": "False",
+            "variantOptions": [
+              "False",
+              "True"
+            ]
+          }
+        }
+      },
+      {
+        "id": "9:36961",
+        "key": "50ffc61b564cf35b5b2e9ce7edb0e43fd3b6fa6d",
+        "name": "🎨 [R] Mastercard",
+        "type": "COMPONENT",
+        "componentProperties": {}
+      },
+      {
+        "id": "9:36966",
+        "key": "86413518c1a07a4d1b22a3784750174460a6f5f9",
+        "name": "🎨 [R] JCB",
+        "type": "COMPONENT",
+        "componentProperties": {}
+      },
+      {
+        "id": "9:36977",
+        "key": "cde9b1d35410fe031e240572e4b617d01ca58792",
+        "name": "🎨 [R] Amex",
+        "type": "COMPONENT",
+        "componentProperties": {}
+      },
+      {
+        "id": "9:37012",
+        "key": "d61df16ad17ee851c09860fe45dc6b46f909b75c",
+        "name": "🎨 [R] Section Header",
+        "type": "COMPONENT",
+        "componentProperties": {
+          "Show CTA": {
+            "type": "BOOLEAN",
+            "default": true
+          },
+          "Section Title": {
+            "type": "TEXT",
+            "default": "Section title"
+          }
+        }
+      },
+      {
+        "id": "9:37042",
+        "key": "4c21e0e01755b38adb260d24dbd8d61c6eb5d70f",
+        "name": "🎨 [R] Snackbar",
+        "type": "COMPONENT",
+        "componentProperties": {
+          "Swap Content Section": {
+            "type": "INSTANCE_SWAP",
+            "default": "9:37019",
+            "preferredValues": [
+              {
+                "type": "COMPONENT",
+                "key": "82bd0e269ef6022485fd7a355100033af5c9b9c5"
+              }
+            ]
+          },
+          "Has Action Section": {
+            "type": "BOOLEAN",
+            "default": true
+          }
+        }
       }
     ]
   }

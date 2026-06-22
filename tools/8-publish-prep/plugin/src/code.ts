@@ -13,9 +13,11 @@
 //
 // The two snapshots are diffed by the DS Toolbox `library_diff.py` script.
 
-const SCHEMA_VERSION = 1;
+const SCHEMA_VERSION = 2;
 
 type StyleKind = "PAINT" | "TEXT" | "EFFECT" | "GRID";
+
+type ComponentKind = "COMPONENT" | "COMPONENT_SET";
 
 interface SerializedAlias {
   type: "VARIABLE_ALIAS";
@@ -66,6 +68,23 @@ interface ExportedStyle {
   grids?: unknown[];
 }
 
+interface ExportedComponentProperty {
+  type: string;
+  default: SerializedValue;
+  variantOptions?: string[];
+  preferredValues?: unknown[];
+}
+
+interface ExportedComponent {
+  id: string;
+  key: string;
+  name: string;
+  type: ComponentKind;
+  description?: string;
+  documentationLinks?: string[];
+  componentProperties: Record<string, ExportedComponentProperty>;
+}
+
 interface Snapshot {
   schemaVersion: number;
   source: "current" | "baseline";
@@ -73,6 +92,7 @@ interface Snapshot {
   libraryName?: string;
   variables: ExportedVariable[];
   styles: ExportedStyle[];
+  components: ExportedComponent[];
 }
 
 // ----------------------------------------------------------------------------
@@ -259,6 +279,51 @@ async function serializeStyle(style: BaseStyle): Promise<ExportedStyle> {
 }
 
 // ----------------------------------------------------------------------------
+// Component serialization (shared between current/local and baseline/remote)
+// ----------------------------------------------------------------------------
+
+// Figma appends a unique suffix (e.g. "Disabled#12:3") to non-variant property
+// names. The suffix is node-id based and differs between a local file and a
+// subscribed library, so it is stripped to keep the diff stable.
+function cleanPropertyName(name: string): string {
+  const hash = name.indexOf("#");
+  return hash === -1 ? name : name.slice(0, hash);
+}
+
+function serializeComponentProperties(
+  defs: ComponentPropertyDefinitions
+): Record<string, ExportedComponentProperty> {
+  const out: Record<string, ExportedComponentProperty> = {};
+  for (const [rawName, def] of Object.entries(defs)) {
+    const prop: ExportedComponentProperty = {
+      type: def.type,
+      default: def.defaultValue as SerializedValue,
+    };
+    if (def.variantOptions) prop.variantOptions = [...def.variantOptions];
+    if (def.preferredValues) prop.preferredValues = def.preferredValues as unknown[];
+    out[cleanPropertyName(rawName)] = prop;
+  }
+  return out;
+}
+
+function serializeComponent(
+  node: ComponentNode | ComponentSetNode
+): ExportedComponent {
+  const out: ExportedComponent = {
+    id: node.id,
+    key: node.key,
+    name: node.name,
+    type: node.type as ComponentKind,
+    componentProperties: serializeComponentProperties(node.componentPropertyDefinitions),
+  };
+  if (node.description) out.description = node.description;
+  if (node.documentationLinks && node.documentationLinks.length) {
+    out.documentationLinks = node.documentationLinks.map((l) => l.uri);
+  }
+  return out;
+}
+
+// ----------------------------------------------------------------------------
 // Current (local) export
 // ----------------------------------------------------------------------------
 
@@ -311,12 +376,28 @@ async function exportCurrent(): Promise<Snapshot> {
   ];
   const styles = await Promise.all(allStyles.map(serializeStyle));
 
+  // Components: load every page (required under documentAccess: "dynamic-page")
+  // then collect components and component sets. Variant components inside a set
+  // are dropped so each set is reported once at the set level.
+  await figma.loadAllPagesAsync();
+  const componentNodes = figma.root.findAllWithCriteria({
+    types: ["COMPONENT", "COMPONENT_SET"],
+  }) as Array<ComponentNode | ComponentSetNode>;
+  const components: ExportedComponent[] = [];
+  for (const node of componentNodes) {
+    if (node.type === "COMPONENT" && node.parent && node.parent.type === "COMPONENT_SET") {
+      continue;
+    }
+    components.push(serializeComponent(node));
+  }
+
   return {
     schemaVersion: SCHEMA_VERSION,
     source: "current",
     exportedAt: new Date().toISOString(),
     variables: exportedVariables,
     styles,
+    components,
   };
 }
 
@@ -353,6 +434,60 @@ async function fetchPublishedStyleKeys(
   const keys: string[] = [];
   for (const s of styles) if (s && s.key) keys.push(s.key);
   return keys;
+}
+
+interface PublishedComponent {
+  key?: string;
+  component_set_id?: string;
+  containing_frame?: { containingStateGroup?: { nodeId?: string } };
+}
+
+async function fetchJson<T>(url: string, token: string, label: string): Promise<T> {
+  const res = await fetch(url, { headers: { "X-Figma-Token": token } });
+  if (!res.ok) {
+    throw new Error(
+      `Figma REST ${label} request failed: ${res.status} ${res.statusText}. ` +
+        `Confirm the file key is the MAIN library file (not a branch) and the token has library_content:read + files:read.`
+    );
+  }
+  return (await res.json()) as T;
+}
+
+async function fetchPublishedComponentKeys(
+  fileKeyOrUrl: string,
+  token: string
+): Promise<{ componentKeys: string[]; componentSetKeys: string[] }> {
+  const fileKey = parseFileKey(fileKeyOrUrl);
+  if (!fileKey) throw new Error("A library main file key or URL is required.");
+  if (!token) throw new Error("A Figma personal access token is required.");
+
+  const setsJson = await fetchJson<{ meta?: { component_sets?: Array<{ key?: string }> } }>(
+    `https://api.figma.com/v1/files/${encodeURIComponent(fileKey)}/component_sets`,
+    token,
+    "component_sets"
+  );
+  const componentSetKeys: string[] = [];
+  for (const s of (setsJson.meta && setsJson.meta.component_sets) || []) {
+    if (s && s.key) componentSetKeys.push(s.key);
+  }
+
+  const compsJson = await fetchJson<{ meta?: { components?: PublishedComponent[] } }>(
+    `https://api.figma.com/v1/files/${encodeURIComponent(fileKey)}/components`,
+    token,
+    "components"
+  );
+  // Skip components that are variants inside a set; the set is imported instead.
+  const componentKeys: string[] = [];
+  for (const c of (compsJson.meta && compsJson.meta.components) || []) {
+    if (!c || !c.key) continue;
+    const inSet =
+      !!c.component_set_id ||
+      !!(c.containing_frame && c.containing_frame.containingStateGroup);
+    if (inSet) continue;
+    componentKeys.push(c.key);
+  }
+
+  return { componentKeys, componentSetKeys };
 }
 
 async function exportBaseline(
@@ -446,6 +581,29 @@ async function exportBaseline(
     }
   }
 
+  // --- Components via REST key list + importComponent[Set]ByKeyAsync ---
+  const components: ExportedComponent[] = [];
+  const { componentKeys, componentSetKeys } = await fetchPublishedComponentKeys(
+    fileKeyOrUrl,
+    token
+  );
+  for (const key of componentSetKeys) {
+    try {
+      const set = await figma.importComponentSetByKeyAsync(key);
+      components.push(serializeComponent(set));
+    } catch (e) {
+      warnings.push(`Failed to import component set (key ${key}): ${errMessage(e)}`);
+    }
+  }
+  for (const key of componentKeys) {
+    try {
+      const comp = await figma.importComponentByKeyAsync(key);
+      components.push(serializeComponent(comp));
+    } catch (e) {
+      warnings.push(`Failed to import component (key ${key}): ${errMessage(e)}`);
+    }
+  }
+
   return {
     snapshot: {
       schemaVersion: SCHEMA_VERSION,
@@ -454,6 +612,7 @@ async function exportBaseline(
       libraryName: libraryName || undefined,
       variables: exportedVariables,
       styles,
+      components,
     },
     warnings,
   };

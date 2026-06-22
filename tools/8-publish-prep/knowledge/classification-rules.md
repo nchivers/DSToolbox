@@ -36,19 +36,20 @@ never-published local item has no counterpart in the baseline, so it is treated 
   variables, so a new hidden variable is excluded; a previously published variable
   that is now hidden is reported under "changed" with a `hiddenFromPublishing`
   change and flagged as "will be removed on publish."
-- **Styles (and components, later):** name starts with `.` or `_`. Figma treats these
+- **Styles and components:** name starts with `.` or `_`. Figma treats these
   as private and does not publish them. Adding a `.`/`_` prefix to a previously
-  published style unpublishes it on next publish; this surfaces as a rename plus a
-  "will be removed on publish" flag.
-- **Styles matched by an exclusion pattern.** Figma's right-click "Hide from
-  publishing" state is **not exposed to plugins** for styles (only variables have
-  `hiddenFromPublishing`), so those styles cannot be detected from the export. To
-  cover them, `knowledge/style-publish-exclusions.md` holds glob patterns (e.g.
-  `typography/DEPRICATING/*`). Any current style whose full path name matches a
-  pattern is treated exactly like a `.`/`_`-prefixed style: excluded from the "new"
+  published style/component unpublishes it on next publish; this surfaces as a rename
+  plus a "will be removed on publish" flag.
+- **Styles or components matched by an exclusion pattern.** Figma's right-click "Hide
+  from publishing" state is **not exposed to plugins** for styles or components (only
+  variables have `hiddenFromPublishing`), so those items cannot be detected from the
+  export. To cover them, `knowledge/style-publish-exclusions.md` (styles) and
+  `knowledge/component-publish-exclusions.md` (components) hold glob patterns (e.g.
+  `typography/DEPRICATING/*`, `wip/*`). Any current item whose full path name matches a
+  pattern is treated exactly like a `.`/`_`-prefixed item: excluded from the "new"
   list if it has no baseline match, or flagged "will be removed on publish" if it was
-  previously published. Matching is `fnmatch`-style and `*` spans `/`. Keep this list
-  in sync with the styles hidden in Figma.
+  previously published. Matching is `fnmatch`-style and `*` spans `/`. Keep these lists
+  in sync with the items hidden in Figma.
 
 ## Classification buckets (per asset type)
 
@@ -70,6 +71,14 @@ variable aliases reduced to `@name`, and variable mode values compared by
   gradient stops, bound variables), TEXT typography props + bound variables, EFFECT
   `effects` (type, color, offset, radius, spread, bound variables), GRID layout grids,
   plus `description`. Style `id` is intentionally ignored.
+- **Components:** the publishable API surface only - `componentProperties` (each
+  property's `type`, `default`, and `variantOptions`/`preferredValues`), plus
+  `documentationLinks`, `description`, and `type` (COMPONENT vs COMPONENT_SET).
+  Internal layer structure, fills, sizes, and bound variables are **not** diffed
+  (too noisy and not deterministic across a local file vs a subscribed library).
+  Component `id` and the Figma `#nodeId` suffix on non-variant property names are
+  intentionally ignored (the suffix is stripped on export). Variant components inside
+  a component set are reported once at the set level, not individually.
 
 ## Tunables
 

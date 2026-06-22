@@ -450,7 +450,7 @@ Once happy with the result, you're ready to sign off on QA.
 
 ## Publish Prep
 
-**Purpose:** Before publishing the DS library, see exactly what a publish would change — which published variables and styles changed since the last publish, which are new, and which would be removed — so you can review what's ready and write the library update note for the design team.
+**Purpose:** Before publishing the DS library, see exactly what a publish would change — which published variables, styles, and components changed since the last publish, which are new, and which would be removed — so you can review what's ready and write the library update note for the design team. For components, "changed" covers the publishable API surface (component properties, variant options, description), not internal layer structure.
 
 **When to run:** When you are preparing to publish library changes.
 
@@ -464,7 +464,7 @@ Once happy with the result, you're ready to sign off on QA.
 
 2. **Create a Baselining File.** Make a new, empty Figma design file (name it e.g. "DS Baselining File"). Open **Assets → Libraries** and enable the published DS library in it. This file's subscribed assets represent the last-published state.
 
-3. **Get a Figma token.** You need a Figma personal access token with `library_content:read` and `files:read` scopes (used to list published style keys).
+3. **Get a Figma token.** You need a Figma personal access token with `library_content:read` and `files:read` scopes (used to list published style and component keys).
 
 ### Steps
 
@@ -493,7 +493,7 @@ Once happy with the result, you're ready to sign off on QA.
 
 9. Use the per-item summaries to decide what's ready to publish and to write the library update note for the design team.
 
-> **Note:** This version covers variables and styles. Components and component sets are not yet included.
+> **Note:** This covers variables, styles, and components/component sets. For components, the diff reports metadata and component property changes (variant options, boolean/text/instance-swap properties, defaults, description) — it does not diff internal layer structure or visual styling.
 
 ---
 

@@ -9,6 +9,6 @@
   "permissions": ["teamlibrary"],
   "networkAccess": {
     "allowedDomains": ["https://api.figma.com"],
-    "reasoning": "Baseline export lists published style keys via the Figma REST API (GET /v1/files/:key/styles)."
+    "reasoning": "Baseline export lists published style and component keys via the Figma REST API (GET /v1/files/:key/styles, /components, /component_sets)."
   }
 }
