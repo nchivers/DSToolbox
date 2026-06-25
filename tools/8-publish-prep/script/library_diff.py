@@ -512,8 +512,9 @@ def main():
     lines.append("")
     lines.append("## Slack announcement (copy/paste)")
     lines.append("")
-    lines.append("_To be completed by the publish-prep skill. Replace [Library Name]; add "
-                 "native-mobile/web categories before sending._")
+    lines.append("_To be completed by the publish-prep skill. Fill [Library Name] from the "
+                 "baseline library name (`{}`); add native-mobile/web categories before "
+                 "sending._".format(baseline.get("libraryName") or "unknown"))
     lines.append("")
 
     lines.append("---")

@@ -122,7 +122,8 @@ block (so it copies cleanly) using the structured diff, then add the reminder no
 it. Only include publish-eligible items (the diff's `new` and `changed` buckets) - never
 list anything in `privateNew`/excluded, removed, or `willUnpublish`.
 
-Use this exact wording for the intro and outro, with the body in between:
+Use this exact wording for the intro and outro, with the body in between. Replace
+`[Library Name]` with the actual library name (see Body rules below):
 
 ```
 Hey everyone! We just pushed an update to our Design System libraries. Unless otherwise noted, everything has been implemented and QA'ed with engineering.
@@ -138,14 +139,19 @@ Let us know via the #ask-design-system channel if you run into any questions or 
 ```
 
 Body rules:
-- Keep `[Library Name]` as a literal placeholder - do not guess the marketing name.
-- Under `[Library Name]`, write a **flat** `- [Component]: [summary]` list (one line per
+- Replace `[Library Name]` with the library name from the diff JSON's
+  `inputs.baselineLibraryName` field (sourced from `libraryName` in
+  `inputs/library-baseline.json`). Strip any leading status decoration such as a `🎨`
+  emoji or a `[R]`/work-in-progress tag, but otherwise use the name verbatim - do not
+  guess or invent a marketing name. If `baselineLibraryName` is missing or empty, fall
+  back to the literal `[Library Name]` placeholder and note it in the reminder below.
+- Under the library name, write a **flat** `- [Component]: [summary]` list (one line per
   new/changed component). Do **not** group by platform: the exports cannot tell whether a
   component is native-mobile, web, or both, so do not categorize.
 - Add the `Tokens & styles:` group only when there are notable new/changed variables or
   styles; drop the whole group if there are none. Keep these lines short too.
-- After the fenced block, add a one-line reminder, e.g.: "_Before sending: replace
-  [Library Name] and, if you want the platform breakdown from the usual template, sort
+- After the fenced block, add a one-line reminder, e.g.: "_Before sending: confirm the
+  library name and, if you want the platform breakdown from the usual template, sort
   each line under native-mobile-only / native-mobile-&-web / web-only._"
 
 Writing the `[Component]: [summary]` lines:
