@@ -207,12 +207,57 @@ def component_props(comp):
     }
 
 
+def layers_by_path(layers):
+    out = {}
+    for layer in (layers or []):
+        path = layer.get("path")
+        if path is not None:
+            out[path] = layer
+    return out
+
+
+def layer_changes(old, new):
+    """Diff a component's internal layer tree by name-path.
+
+    Layers are matched by their stable `path` (node IDs differ between a local
+    file and a subscribed library), so reordering or insertion is reported per
+    layer rather than cascading. Only runs when BOTH sides captured `layers`
+    (schema v3+); a stale baseline lacking layers skips this and is warned about
+    at the top level so visual changes are never silently dropped or flooded as
+    "added".
+    """
+    old_layers, new_layers = old.get("layers"), new.get("layers")
+    if not isinstance(old_layers, list) or not isinstance(new_layers, list):
+        return []
+
+    old_map, new_map = layers_by_path(old_layers), layers_by_path(new_layers)
+    changes = []
+    for path in sorted(set(old_map) | set(new_map)):
+        o, n = old_map.get(path), new_map.get(path)
+        if o is None:
+            changes.append({"field": "layer `{}` (added)".format(path),
+                            "old": "(none)", "new": fmt(n.get("type"))})
+            continue
+        if n is None:
+            changes.append({"field": "layer `{}` (removed)".format(path),
+                            "old": fmt(o.get("type")), "new": "(none)"})
+            continue
+        if o.get("type") != n.get("type"):
+            changes.append({"field": "layer `{}` type".format(path),
+                            "old": fmt(o.get("type")), "new": fmt(n.get("type"))})
+        for pd in deep_diff(normalize(o.get("props") or {}), normalize(n.get("props") or {})):
+            changes.append({"field": "layer `{}` {}".format(path, pd["field"]),
+                            "old": pd["old"], "new": pd["new"]})
+    return changes
+
+
 def component_changes(old, new):
     changes = deep_diff(component_props(old), component_props(new))
     if old.get("description") != new.get("description"):
         changes.append({"field": "description", "old": fmt(old.get("description")), "new": fmt(new.get("description"))})
     if old.get("type") != new.get("type"):
         changes.append({"field": "type", "old": fmt(old.get("type")), "new": fmt(new.get("type"))})
+    changes += layer_changes(old, new)
     return changes
 
 
@@ -375,6 +420,23 @@ def main():
     base_styles = baseline.get("styles", [])
     base_components = baseline.get("components", [])
 
+    # Component layer/visual diffing requires both snapshots to carry `layers`
+    # (plugin schema v3+). If only one side has them, layer diffing is skipped
+    # (layer_changes guards per pair); warn so the gap is visible.
+    def _any_layers(items):
+        return any(isinstance(c.get("layers"), list) for c in items)
+
+    cur_has_layers, base_has_layers = _any_layers(cur_components), _any_layers(base_components)
+    if cur_has_layers and not base_has_layers:
+        warnings.append("Baseline snapshot has no component layer data (exported with an older "
+                        "plugin). Component visual/layer changes were NOT diffed - re-export the "
+                        "baseline with the updated plugin (schema v3+) to capture stroke/padding/"
+                        "fill/radius/effect changes.")
+    elif base_has_layers and not cur_has_layers:
+        warnings.append("Current snapshot has no component layer data (exported with an older "
+                        "plugin). Component visual/layer changes were NOT diffed - re-export the "
+                        "current library with the updated plugin (schema v3+).")
+
     exclusion_patterns = load_exclusion_patterns(STYLE_EXCLUSIONS_PATH)
     component_exclusion_patterns = load_exclusion_patterns(COMPONENT_EXCLUSIONS_PATH)
 
@@ -439,7 +501,27 @@ def main():
             lines.append("> - {}".format(w))
         lines.append("")
 
-    lines.append("## Inputs used")
+    # Top of report: agent-authored summary + Slack draft go here. The script
+    # only writes placeholders; the publish-prep skill replaces them using the
+    # structured diff JSON. All deterministic machine output lives under
+    # "## Details" below so the human-readable summary always leads.
+    lines.append("## Summary")
+    lines.append("")
+    lines.append("_To be completed by the publish-prep skill from the structured diff "
+                 "(see Details below)._")
+    lines.append("")
+    lines.append("## Slack announcement (copy/paste)")
+    lines.append("")
+    lines.append("_To be completed by the publish-prep skill. Replace [Library Name]; add "
+                 "native-mobile/web categories before sending._")
+    lines.append("")
+
+    lines.append("---")
+    lines.append("")
+    lines.append("## Details")
+    lines.append("")
+
+    lines.append("### Inputs used")
     lines.append("")
     lines.append("- Current (local) exported at: `{}` - {} variables, {} styles, {} components".format(
         current.get("exportedAt"), len(cur_vars), len(cur_styles), len(cur_components)))
@@ -447,7 +529,7 @@ def main():
         baseline.get("exportedAt"), len(base_vars), len(base_styles), len(base_components)))
     lines.append("")
 
-    lines.append("## Summary")
+    lines.append("### Counts")
     lines.append("")
     lines.append("| Category | New | Changed | Removed |")
     lines.append("|---|---|---|---|")
@@ -468,49 +550,49 @@ def main():
 
     lines.append("---")
     lines.append("")
-    lines.append("## Variables")
+    lines.append("### Variables")
     lines.append("")
-    lines.append("### New (publish-eligible)")
+    lines.append("#### New (publish-eligible)")
     lines.append("")
     render_list_block(lines, var_diff["new"])
-    lines.append("### Changed since last publish")
+    lines.append("#### Changed since last publish")
     lines.append("")
     render_changed_block(lines, var_diff["changed"], "variable")
-    lines.append("### Removed on publish (in last published, missing now)")
+    lines.append("#### Removed on publish (in last published, missing now)")
     lines.append("")
     render_list_block(lines, var_diff["removed"])
 
     lines.append("---")
     lines.append("")
-    lines.append("## Styles")
+    lines.append("### Styles")
     lines.append("")
-    lines.append("### New (publish-eligible)")
+    lines.append("#### New (publish-eligible)")
     lines.append("")
     render_list_block(lines, style_diff["new"])
-    lines.append("### Changed since last publish")
+    lines.append("#### Changed since last publish")
     lines.append("")
     render_changed_block(lines, style_diff["changed"], "style")
-    lines.append("### Removed on publish (in last published, missing now)")
+    lines.append("#### Removed on publish (in last published, missing now)")
     lines.append("")
     render_list_block(lines, style_diff["removed"])
-    lines.append("### Excluded from publish (patterns / prefixes)")
+    lines.append("#### Excluded from publish (patterns / prefixes)")
     lines.append("")
     render_excluded_block(lines, style_diff["privateNew"])
 
     lines.append("---")
     lines.append("")
-    lines.append("## Components")
+    lines.append("### Components")
     lines.append("")
-    lines.append("### New (publish-eligible)")
+    lines.append("#### New (publish-eligible)")
     lines.append("")
     render_list_block(lines, component_diff["new"])
-    lines.append("### Changed since last publish")
+    lines.append("#### Changed since last publish")
     lines.append("")
     render_changed_block(lines, component_diff["changed"], "component")
-    lines.append("### Removed on publish (in last published, missing now)")
+    lines.append("#### Removed on publish (in last published, missing now)")
     lines.append("")
     render_list_block(lines, component_diff["removed"])
-    lines.append("### Excluded from publish (patterns / prefixes)")
+    lines.append("#### Excluded from publish (patterns / prefixes)")
     lines.append("")
     render_excluded_block(lines, component_diff["privateNew"])
 

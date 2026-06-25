@@ -13,7 +13,12 @@
 //
 // The two snapshots are diffed by the DS Toolbox `library_diff.py` script.
 
-const SCHEMA_VERSION = 2;
+const SCHEMA_VERSION = 3;
+
+// Guards against pathological component trees. Instances are not recursed into
+// (their internals belong to the instance's own published main component), so
+// real depth is usually shallow; this is a safety net only.
+const MAX_LAYER_DEPTH = 12;
 
 type StyleKind = "PAINT" | "TEXT" | "EFFECT" | "GRID";
 
@@ -75,6 +80,16 @@ interface ExportedComponentProperty {
   preferredValues?: unknown[];
 }
 
+// One node in a component's internal layer tree. Captured as a flat list (the
+// `path` carries hierarchy) so the diff can match layers by name-path across a
+// local file and a subscribed library, where node IDs differ. Only a curated
+// set of visual props is recorded; geometry (x/y/w/h/rotation) is excluded.
+interface ExportedLayer {
+  path: string;
+  type: string;
+  props: Record<string, unknown>;
+}
+
 interface ExportedComponent {
   id: string;
   key: string;
@@ -83,6 +98,7 @@ interface ExportedComponent {
   description?: string;
   documentationLinks?: string[];
   componentProperties: Record<string, ExportedComponentProperty>;
+  layers: ExportedLayer[];
 }
 
 interface Snapshot {
@@ -290,14 +306,34 @@ function cleanPropertyName(name: string): string {
   return hash === -1 ? name : name.slice(0, hash);
 }
 
-function serializeComponentProperties(
+// An INSTANCE_SWAP property's default is a component node ID, which differs
+// between a local file and a subscribed library (false positives like
+// "9:32749 -> 3664:16255"). Resolve it to a stable "key:name" reference.
+async function resolveComponentRef(id: unknown): Promise<SerializedValue> {
+  if (typeof id !== "string" || !id) return (id as SerializedValue) ?? null;
+  try {
+    const node = await figma.getNodeByIdAsync(id);
+    if (node && (node.type === "COMPONENT" || node.type === "COMPONENT_SET")) {
+      const c = node as ComponentNode | ComponentSetNode;
+      return c.key ? `${c.key}` : c.name;
+    }
+  } catch (e) {
+    // fall through to raw id
+  }
+  return id;
+}
+
+async function serializeComponentProperties(
   defs: ComponentPropertyDefinitions
-): Record<string, ExportedComponentProperty> {
+): Promise<Record<string, ExportedComponentProperty>> {
   const out: Record<string, ExportedComponentProperty> = {};
   for (const [rawName, def] of Object.entries(defs)) {
     const prop: ExportedComponentProperty = {
       type: def.type,
-      default: def.defaultValue as SerializedValue,
+      default:
+        def.type === "INSTANCE_SWAP"
+          ? await resolveComponentRef(def.defaultValue)
+          : (def.defaultValue as SerializedValue),
     };
     if (def.variantOptions) prop.variantOptions = [...def.variantOptions];
     if (def.preferredValues) prop.preferredValues = def.preferredValues as unknown[];
@@ -306,15 +342,159 @@ function serializeComponentProperties(
   return out;
 }
 
-function serializeComponent(
+// ----------------------------------------------------------------------------
+// Layer (internal structure) serialization
+//
+// Walks a component's child layers and records a curated set of *visual* props
+// per layer, keyed by a stable name-path. Node IDs are intentionally omitted
+// (they differ local vs remote); geometry (x/y/w/h/rotation) is excluded to
+// avoid noise. Instances are NOT recursed into - their internals belong to
+// their own published main component, which is diffed separately.
+// ----------------------------------------------------------------------------
+
+function isMixed(value: unknown): boolean {
+  return value === figma.mixed;
+}
+
+async function serializeLayerProps(
+  node: SceneNode
+): Promise<Record<string, unknown>> {
+  const out: Record<string, unknown> = {};
+  const any = node as unknown as Record<string, unknown>;
+
+  if (node.visible === false) out.visible = false;
+  if (typeof any.opacity === "number" && any.opacity < 1) out.opacity = any.opacity;
+
+  // Fills
+  if ("fills" in node && Array.isArray((node as GeometryMixin).fills)) {
+    const fills = (node as GeometryMixin).fills as Paint[];
+    if (fills.length) out.fills = await Promise.all(fills.map(serializePaint));
+  }
+
+  // Strokes (+ weight/align only when there are strokes)
+  if ("strokes" in node && Array.isArray((node as GeometryMixin).strokes)) {
+    const strokes = (node as GeometryMixin).strokes as Paint[];
+    if (strokes.length) {
+      out.strokes = await Promise.all(strokes.map(serializePaint));
+      const sw = (node as MinimalStrokesMixin).strokeWeight;
+      if (typeof sw === "number") {
+        out.strokeWeight = sw;
+      } else {
+        const sides: Record<string, unknown> = {};
+        for (const side of ["strokeTopWeight", "strokeRightWeight", "strokeBottomWeight", "strokeLeftWeight"]) {
+          if (typeof any[side] === "number") sides[side] = any[side];
+        }
+        if (Object.keys(sides).length) out.strokeWeight = sides;
+      }
+      if (typeof any.strokeAlign === "string") out.strokeAlign = any.strokeAlign;
+    }
+  }
+
+  // Corner radius (uniform or per-corner)
+  if ("cornerRadius" in node) {
+    const cr = (node as { cornerRadius: number | symbol }).cornerRadius;
+    if (typeof cr === "number" && cr > 0) {
+      out.cornerRadius = cr;
+    } else if (isMixed(cr)) {
+      const corners: Record<string, unknown> = {};
+      for (const c of ["topLeftRadius", "topRightRadius", "bottomRightRadius", "bottomLeftRadius"]) {
+        if (typeof any[c] === "number" && (any[c] as number) > 0) corners[c] = any[c];
+      }
+      if (Object.keys(corners).length) out.cornerRadius = corners;
+    }
+  }
+
+  // Auto-layout: padding, spacing, alignment (only when layout is active)
+  if ("layoutMode" in node && (node as BaseFrameMixin).layoutMode !== "NONE") {
+    const frame = node as BaseFrameMixin;
+    out.layoutMode = frame.layoutMode;
+    for (const p of ["paddingTop", "paddingRight", "paddingBottom", "paddingLeft", "itemSpacing"]) {
+      if (typeof any[p] === "number" && (any[p] as number) !== 0) out[p] = any[p];
+    }
+    if (typeof any.primaryAxisAlignItems === "string" && any.primaryAxisAlignItems !== "MIN") {
+      out.primaryAxisAlignItems = any.primaryAxisAlignItems;
+    }
+    if (typeof any.counterAxisAlignItems === "string" && any.counterAxisAlignItems !== "MIN") {
+      out.counterAxisAlignItems = any.counterAxisAlignItems;
+    }
+  }
+
+  // Effects
+  if ("effects" in node && Array.isArray((node as BlendMixin).effects)) {
+    const effects = (node as BlendMixin).effects as Effect[];
+    if (effects.length) out.effects = await Promise.all(effects.map(serializeEffect));
+  }
+
+  // Variable bindings on the layer (padding, radius, stroke weight, fills, etc.)
+  const bound = await serializeBoundVariables(any.boundVariables);
+  if (bound) out.boundVariables = bound;
+
+  // Instances: record the swapped main component (stable across files) so a
+  // changed/swapped nested component is detected without recursing internals.
+  if (node.type === "INSTANCE") {
+    try {
+      const main = await (node as InstanceNode).getMainComponentAsync();
+      if (main) out.mainComponent = main.key || main.name;
+    } catch (e) {
+      // ignore
+    }
+  }
+
+  return out;
+}
+
+async function serializeLayerTree(
+  parent: SceneNode & ChildrenMixin,
+  parentPath: string,
+  depth: number,
+  acc: ExportedLayer[]
+): Promise<void> {
+  if (depth > MAX_LAYER_DEPTH) return;
+  const nameCounts = new Map<string, number>();
+  for (const child of parent.children) {
+    const baseName = child.name;
+    const seen = nameCounts.get(baseName) || 0;
+    nameCounts.set(baseName, seen + 1);
+    const segment = seen === 0 ? baseName : `${baseName}#${seen + 1}`;
+    const path = parentPath ? `${parentPath}/${segment}` : segment;
+
+    acc.push({
+      path,
+      type: child.type,
+      props: await serializeLayerProps(child),
+    });
+
+    // Do not recurse into instances (internals belong to their main component).
+    if (
+      child.type !== "INSTANCE" &&
+      "children" in child &&
+      Array.isArray((child as ChildrenMixin).children)
+    ) {
+      await serializeLayerTree(child as SceneNode & ChildrenMixin, path, depth + 1, acc);
+    }
+  }
+}
+
+async function serializeComponentLayers(
   node: ComponentNode | ComponentSetNode
-): ExportedComponent {
+): Promise<ExportedLayer[]> {
+  const layers: ExportedLayer[] = [];
+  if ("children" in node) {
+    await serializeLayerTree(node, "", 0, layers);
+  }
+  return layers;
+}
+
+async function serializeComponent(
+  node: ComponentNode | ComponentSetNode
+): Promise<ExportedComponent> {
   const out: ExportedComponent = {
     id: node.id,
     key: node.key,
     name: node.name,
     type: node.type as ComponentKind,
-    componentProperties: serializeComponentProperties(node.componentPropertyDefinitions),
+    componentProperties: await serializeComponentProperties(node.componentPropertyDefinitions),
+    layers: await serializeComponentLayers(node),
   };
   if (node.description) out.description = node.description;
   if (node.documentationLinks && node.documentationLinks.length) {
@@ -388,7 +568,7 @@ async function exportCurrent(): Promise<Snapshot> {
     if (node.type === "COMPONENT" && node.parent && node.parent.type === "COMPONENT_SET") {
       continue;
     }
-    components.push(serializeComponent(node));
+    components.push(await serializeComponent(node));
   }
 
   return {
@@ -590,7 +770,7 @@ async function exportBaseline(
   for (const key of componentSetKeys) {
     try {
       const set = await figma.importComponentSetByKeyAsync(key);
-      components.push(serializeComponent(set));
+      components.push(await serializeComponent(set));
     } catch (e) {
       warnings.push(`Failed to import component set (key ${key}): ${errMessage(e)}`);
     }
@@ -598,7 +778,7 @@ async function exportBaseline(
   for (const key of componentKeys) {
     try {
       const comp = await figma.importComponentByKeyAsync(key);
-      components.push(serializeComponent(comp));
+      components.push(await serializeComponent(comp));
     } catch (e) {
       warnings.push(`Failed to import component (key ${key}): ${errMessage(e)}`);
     }

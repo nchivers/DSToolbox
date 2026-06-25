@@ -71,14 +71,34 @@ variable aliases reduced to `@name`, and variable mode values compared by
   gradient stops, bound variables), TEXT typography props + bound variables, EFFECT
   `effects` (type, color, offset, radius, spread, bound variables), GRID layout grids,
   plus `description`. Style `id` is intentionally ignored.
-- **Components:** the publishable API surface only - `componentProperties` (each
-  property's `type`, `default`, and `variantOptions`/`preferredValues`), plus
-  `documentationLinks`, `description`, and `type` (COMPONENT vs COMPONENT_SET).
-  Internal layer structure, fills, sizes, and bound variables are **not** diffed
-  (too noisy and not deterministic across a local file vs a subscribed library).
-  Component `id` and the Figma `#nodeId` suffix on non-variant property names are
-  intentionally ignored (the suffix is stripped on export). Variant components inside
-  a component set are reported once at the set level, not individually.
+- **Components:** the publishable API surface plus a curated set of internal layer
+  visuals.
+  - **API surface:** `componentProperties` (each property's `type`, `default`, and
+    `variantOptions`/`preferredValues`), plus `documentationLinks`, `description`, and
+    `type` (COMPONENT vs COMPONENT_SET). `INSTANCE_SWAP` defaults are resolved on
+    export to the target component's `key` (or name) instead of a raw node ID, so a
+    swapped-instance default no longer false-positives as a change between a local
+    file and a subscribed library.
+  - **Layer visuals (schema v3+):** the plugin serializes each component's child layer
+    tree as a flat list keyed by a stable name-path (e.g. `Button/Background`). For
+    each layer the diff compares `type`, `visible`, `opacity`, `fills`, `strokes`,
+    `strokeWeight`/`strokeAlign`, `cornerRadius` (uniform or per-corner), auto-layout
+    `layoutMode`/padding/`itemSpacing`/axis alignment, `effects`, and layer-level
+    variable `boundVariables`. Layers are **matched by name-path**, not node ID (IDs
+    differ local vs remote). Geometry (x/y/width/height/rotation) is intentionally
+    **excluded** to avoid noise. Renaming a layer surfaces as a remove + add at the
+    old/new path. `INSTANCE` layers are **not recursed into** - their internals belong
+    to their own published main component (diffed separately); instead the instance's
+    `mainComponent` key is captured so a swap is still detected.
+  - **Backward compatibility:** layer diffing only runs when BOTH snapshots carry
+    `layers` (schema v3+). If the baseline (or current) was exported with an older
+    plugin, layer diffing is skipped for safety and a top-level warning is emitted
+    telling the user to re-export with the updated plugin - it never floods every
+    layer as "added."
+  - Component `id` and the Figma `#nodeId` suffix on non-variant property names are
+    intentionally ignored (the suffix is stripped on export). Variant components inside
+    a component set are reported once at the set level (the set's variant children and
+    their layers are all walked).
 
 ## Tunables
 

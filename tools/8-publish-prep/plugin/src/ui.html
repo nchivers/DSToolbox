@@ -94,7 +94,8 @@
         background: var(--figma-color-bg-brand, #0d99ff);
         color: var(--figma-color-text-onbrand, #fff);
       }
-      button#copy {
+      button#copy,
+      button#download {
         background: var(--figma-color-bg-secondary, #f5f5f5);
         color: var(--figma-color-text, #1a1a1a);
         border-color: var(--figma-color-border, #e6e6e6);
@@ -119,10 +120,12 @@
     <main>
       <h1>DS Publish Prep Export</h1>
       <p class="desc">
-        Export the library's variables and styles to JSON for the DS Toolbox Publish
-        Prep tool. Use <strong>Export Current</strong> in the library file or branch,
-        and <strong>Export Baseline</strong> in a Baselining File that subscribes to the
-        published library.
+        Export the library's variables, styles, and components (including component
+        layer visuals) to JSON for the DS Toolbox Publish Prep tool. Use
+        <strong>Export Current</strong> in the library file or branch, and
+        <strong>Export Baseline</strong> in a Baselining File that subscribes to the
+        published library. The component layer data makes the output large - prefer
+        <strong>Download JSON</strong> over Copy.
       </p>
 
       <fieldset>
@@ -159,6 +162,7 @@
 
       <div class="actions">
         <button id="export">Export</button>
+        <button id="download" disabled>Download JSON</button>
         <button id="copy" disabled>Copy JSON</button>
       </div>
 

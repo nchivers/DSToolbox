@@ -48,5 +48,9 @@
       "Read(//tmp/**)",
       "Bash(awk -F',' 'NR>1 && $20!=\"\" {sub\\(/^affirm\\\\./,\"\",$20\\); print $20}' inputs/component-tokens.csv)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "finout"
+  ],
+  "enableAllProjectMcpServers": true
 }

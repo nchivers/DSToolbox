@@ -43,6 +43,22 @@ function setBusy(busy: boolean): void {
   byId<HTMLButtonElement>("export").disabled = busy;
 }
 
+// Component layer data makes exports large (often many MB). Keep the full JSON
+// in memory and only render it into the textarea when small - selecting and
+// copying a huge textarea is what freezes the plugin iframe. Download is the
+// robust path for large payloads.
+let lastJson = "";
+let lastMode: "current" | "baseline" = "current";
+let pendingMode: "current" | "baseline" = "current";
+
+const TEXTAREA_PREVIEW_LIMIT = 1_000_000; // ~1 MB of characters
+
+function formatBytes(chars: number): string {
+  const mb = chars / (1024 * 1024);
+  if (mb >= 1) return mb.toFixed(1) + " MB";
+  return Math.max(1, Math.round(chars / 1024)) + " KB";
+}
+
 function updateModeUI(): void {
   const isBaseline = selectedMode() === "baseline";
   byId<HTMLElement>("baseline-fields").hidden = !isBaseline;
@@ -56,6 +72,8 @@ byId<HTMLButtonElement>("export").addEventListener("click", () => {
   const mode = selectedMode();
   setStatus("Exporting\u2026", false);
   setBusy(true);
+
+  pendingMode = mode;
 
   if (mode === "current") {
     post({ type: "export", mode: "current" });
@@ -73,9 +91,42 @@ byId<HTMLButtonElement>("export").addEventListener("click", () => {
   post({ type: "export", mode: "baseline", libraryName, fileKey, token });
 });
 
-byId<HTMLButtonElement>("copy").addEventListener("click", () => {
+byId<HTMLButtonElement>("download").addEventListener("click", () => {
+  if (!lastJson) return;
+  const filename = `library-${lastMode}.json`;
+  const blob = new Blob([lastJson], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  // Revoke after a tick so the download has a chance to start.
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  setStatus(`Downloaded ${filename}. Save it as inputs/${filename}.`, false);
+});
+
+byId<HTMLButtonElement>("copy").addEventListener("click", async () => {
+  if (!lastJson) return;
+  // Clipboard API copies from the JS string directly (no DOM selection), so it
+  // does not freeze on large payloads the way textarea select + execCommand can.
+  try {
+    await navigator.clipboard.writeText(lastJson);
+    setStatus("Copied to clipboard.", false);
+    return;
+  } catch (e) {
+    // Figma's iframe may block the async clipboard API; fall back to execCommand
+    // only when the payload is small enough that selection won't freeze.
+  }
   const ta = byId<HTMLTextAreaElement>("output");
-  if (!ta.value) return;
+  if (lastJson.length > TEXTAREA_PREVIEW_LIMIT || ta.value !== lastJson) {
+    setStatus(
+      `Output is ${formatBytes(lastJson.length)} - too large to copy reliably. Use Download JSON instead.`,
+      true
+    );
+    return;
+  }
   ta.select();
   document.execCommand("copy");
   setStatus("Copied to clipboard.", false);
@@ -103,13 +154,27 @@ window.onmessage = (event: MessageEvent) => {
 
   if (msg.type === "result") {
     const json = JSON.stringify(msg.data, null, 2);
-    byId<HTMLTextAreaElement>("output").value = json;
+    lastJson = json;
+    lastMode = pendingMode;
+
+    const ta = byId<HTMLTextAreaElement>("output");
+    if (json.length > TEXTAREA_PREVIEW_LIMIT) {
+      // Avoid rendering many MB into the textarea (sluggish DOM + freezes on
+      // select). Show a short notice; the full JSON is held in memory.
+      ta.value =
+        `Output is ${formatBytes(json.length)} (${json.length.toLocaleString()} chars).\n` +
+        `Too large to preview here - use "Download JSON" to save it, then place it at inputs/library-${lastMode}.json.`;
+    } else {
+      ta.value = json;
+    }
+
+    byId<HTMLButtonElement>("download").disabled = false;
     byId<HTMLButtonElement>("copy").disabled = false;
     setBusy(false);
     const varCount = msg.data.variables.length;
     const styleCount = msg.data.styles.length;
     const componentCount = (msg.data.components || []).length;
-    let text = `Exported ${varCount} variable(s), ${styleCount} style(s), and ${componentCount} component(s).`;
+    let text = `Exported ${varCount} variable(s), ${styleCount} style(s), and ${componentCount} component(s) - ${formatBytes(json.length)}.`;
     if (msg.warnings && msg.warnings.length) {
       text += ` ${msg.warnings.length} warning(s): ${msg.warnings.slice(0, 3).join("; ")}`;
       if (msg.warnings.length > 3) text += " \u2026";
