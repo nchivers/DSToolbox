@@ -1,0 +1,239 @@
+@use '../../tokens/component-type' as typography;
+
+.affirm-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  padding: var(--_tap-padding-y) 0;
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-fill-color: currentColor;
+
+  &:focus {
+    outline: none;
+  }
+
+  // =========================================================================
+  // Elements
+  // =========================================================================
+
+  &__container {
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: var(--affirm-size-chip-border-width);
+    border-radius: var(--_radius);
+    border-color: var(--affirm-color-chip-container-border-resting);
+    background: var(--affirm-color-chip-container-bg-resting);
+    gap: var(--_gap);
+    padding: var(--_padding-top) var(--_padding-right) var(--_padding-bottom) var(--_padding-left);
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--_icon-size);
+    height: var(--_icon-size);
+    color: var(--affirm-color-chip-icon-resting);
+    transition: color 0.15s ease;
+
+    > .affirm-icon {
+      width: 100%;
+      height: 100%;
+      color: inherit;
+    }
+  }
+
+  &__label {
+    user-select: none;
+    white-space: nowrap;
+    color: var(--affirm-color-chip-text-resting);
+    transition: color 0.15s ease;
+  }
+
+  &__indicator {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--_indicator-size);
+    height: var(--_indicator-size);
+    color: var(--affirm-color-chip-indicator-resting);
+    transition: color 0.15s ease;
+
+    > .affirm-icon {
+      width: 100%;
+      height: 100%;
+      color: inherit;
+    }
+  }
+
+  // =========================================================================
+  // Size modifiers
+  // =========================================================================
+
+  &--large {
+    --_tap-padding-y: var(--affirm-spacing-chip-large-tap-target-padding-y);
+    --_radius: var(--affirm-radius-chip-large-all);
+    --_gap: var(--affirm-spacing-chip-large-gap-x);
+    --_padding-top: var(--affirm-spacing-chip-large-padding-top);
+    --_padding-bottom: var(--affirm-spacing-chip-large-padding-bottom);
+    --_padding-left: var(--affirm-spacing-chip-large-padding-left);
+    --_padding-right: var(--affirm-spacing-chip-large-padding-right);
+    --_icon-size: var(--affirm-size-chip-large-icon-all);
+    --_indicator-size: var(--affirm-size-chip-large-indicator-all);
+  }
+
+  &--medium {
+    --_tap-padding-y: var(--affirm-spacing-chip-medium-tap-target-padding-y);
+    --_radius: var(--affirm-radius-chip-medium-all);
+    --_gap: var(--affirm-spacing-chip-medium-gap-x);
+    --_padding-top: var(--affirm-spacing-chip-medium-padding-top);
+    --_padding-bottom: var(--affirm-spacing-chip-medium-padding-bottom);
+    --_padding-left: var(--affirm-spacing-chip-medium-padding-left);
+    --_padding-right: var(--affirm-spacing-chip-medium-padding-right);
+    --_icon-size: var(--affirm-size-chip-medium-icon-all);
+    --_indicator-size: var(--affirm-size-chip-medium-indicator-all);
+  }
+
+  &--small {
+    --_tap-padding-y: var(--affirm-spacing-chip-small-tap-target-padding-y);
+    --_radius: var(--affirm-radius-chip-small-all);
+    --_gap: var(--affirm-spacing-chip-small-gap-x);
+    --_padding-top: var(--affirm-spacing-chip-small-padding-top);
+    --_padding-bottom: var(--affirm-spacing-chip-small-padding-bottom);
+    --_padding-left: var(--affirm-spacing-chip-small-padding-left);
+    --_padding-right: var(--affirm-spacing-chip-small-padding-right);
+    --_icon-size: var(--affirm-size-chip-small-icon-all);
+    --_indicator-size: var(--affirm-size-chip-small-indicator-all);
+  }
+
+  // =========================================================================
+  // Typography per size
+  // =========================================================================
+
+  &--large &__label {
+    @include typography.component-singleline-large-mid-imp;
+  }
+
+  &--medium &__label {
+    @include typography.component-singleline-medium-mid-imp;
+  }
+
+  &--small &__label {
+    @include typography.component-singleline-small-mid-imp;
+  }
+
+  // =========================================================================
+  // Interaction states
+  // =========================================================================
+
+  &:hover:not(&--disabled) &__container {
+    background: var(--affirm-color-chip-container-bg-hover);
+    border-color: var(--affirm-color-chip-container-border-hover);
+  }
+
+  &:hover:not(&--disabled) &__icon {
+    color: var(--affirm-color-chip-icon-hover);
+  }
+
+  &:hover:not(&--disabled) &__label {
+    color: var(--affirm-color-chip-text-hover);
+  }
+
+  &:hover:not(&--disabled) &__indicator {
+    color: var(--affirm-color-chip-indicator-hover);
+  }
+
+  &:active:not(&--disabled) &__container {
+    background: var(--affirm-color-chip-container-bg-pressed);
+    border-color: var(--affirm-color-chip-container-border-pressed);
+  }
+
+  &:active:not(&--disabled) &__icon {
+    color: var(--affirm-color-chip-icon-pressed);
+  }
+
+  &:active:not(&--disabled) &__label {
+    color: var(--affirm-color-chip-text-pressed);
+  }
+
+  &:active:not(&--disabled) &__indicator {
+    color: var(--affirm-color-chip-indicator-pressed);
+  }
+
+  &:focus-visible &__container {
+    background: var(--affirm-color-chip-container-bg-focus-visible);
+    border-color: var(--affirm-color-chip-container-border-focus-visible);
+    outline: var(--affirm-size-chip-outline-width-focus-visible) solid
+      var(--affirm-color-chip-outline-focus-visible);
+    outline-offset: var(--affirm-spacing-chip-outline-offset-focus-visible);
+  }
+
+  &:focus-visible &__icon {
+    color: var(--affirm-color-chip-icon-focus-visible);
+  }
+
+  &:focus-visible &__label {
+    color: var(--affirm-color-chip-text-focus-visible);
+  }
+
+  &:focus-visible &__indicator {
+    color: var(--affirm-color-chip-indicator-focus-visible);
+  }
+
+  // =========================================================================
+  // Disabled
+  // =========================================================================
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &--disabled &__container {
+    background: var(--affirm-color-chip-container-bg-disabled);
+    border-color: var(--affirm-color-chip-container-border-disabled);
+  }
+
+  &--disabled &__icon {
+    color: var(--affirm-color-chip-icon-disabled);
+  }
+
+  &--disabled &__label {
+    color: var(--affirm-color-chip-text-disabled);
+  }
+
+  &--disabled &__indicator {
+    color: var(--affirm-color-chip-indicator-disabled);
+  }
+
+  &--disabled:hover &__container,
+  &--disabled:active &__container {
+    background: var(--affirm-color-chip-container-bg-disabled);
+    border-color: var(--affirm-color-chip-container-border-disabled);
+  }
+
+  &--disabled:hover &__icon,
+  &--disabled:active &__icon {
+    color: var(--affirm-color-chip-icon-disabled);
+  }
+
+  &--disabled:hover &__label,
+  &--disabled:active &__label {
+    color: var(--affirm-color-chip-text-disabled);
+  }
+
+  &--disabled:hover &__indicator,
+  &--disabled:active &__indicator {
+    color: var(--affirm-color-chip-indicator-disabled);
+  }
+}

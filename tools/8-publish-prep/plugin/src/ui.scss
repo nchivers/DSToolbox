@@ -1,0 +1,75 @@
+@use 'design-system/tokens/index';
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: var(--affirm-color-bg-primary);
+  color: var(--affirm-text-default);
+  padding: var(--affirm-spacing-lg) var(--affirm-spacing-md) var(--affirm-spacing-xs);
+}
+
+#react-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+}
+
+.affirm-page-footer {
+  margin-top: auto;
+}
+
+section.affirm-publish-prep {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: var(--affirm-spacing-md);
+  justify-content: flex-start;
+  margin-bottom: var(--affirm-spacing-md);
+
+  > * + * {
+    margin-top: 0;
+  }
+}
+
+.affirm-publish-prep__header-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--affirm-spacing-xs);
+}
+
+.affirm-publish-prep__modes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--affirm-spacing-xxxs);
+}
+
+.affirm-publish-prep__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--affirm-spacing-md);
+  padding-left: var(--affirm-spacing-lg);
+}
+
+.affirm-publish-prep__actions {
+  display: flex;
+  flex-direction: row;
+  gap: var(--affirm-spacing-sm);
+
+  > * {
+    flex: 1;
+  }
+}
+
+.affirm-publish-prep__output textarea {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: pre;
+}

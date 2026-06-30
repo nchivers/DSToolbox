@@ -1,0 +1,60 @@
+.affirm-ds-components {
+  display: flex;
+  flex-direction: column;
+  gap: var(--affirm-spacing-md);
+}
+
+.affirm-ds-components__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--affirm-spacing-sm);
+  padding: var(--affirm-spacing-sm) 0;
+}
+
+.affirm-ds-components__demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--affirm-spacing-xs);
+  padding: var(--affirm-spacing-sm);
+  background: var(--affirm-color-bg-secondary);
+  border-radius: var(--affirm-radius-onsurface);
+  align-items: flex-start;
+}
+
+.affirm-ds-components__demo-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--affirm-spacing-xs);
+  align-items: center;
+}
+
+.affirm-ds-components__table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.affirm-ds-components__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.affirm-ds-components__th,
+.affirm-ds-components__td {
+  text-align: left;
+  padding: var(--affirm-spacing-xs) var(--affirm-spacing-sm);
+  border-bottom: 1px solid var(--affirm-color-border-primary);
+  vertical-align: top;
+}
+
+.affirm-ds-components__th {
+  border-bottom: 1px solid var(--affirm-color-border-primary);
+}
+
+.affirm-ds-components__type-pill {
+  display: inline-block;
+  padding: 0 var(--affirm-spacing-xxs);
+  border-radius: var(--affirm-radius-onsurface);
+  background: var(--affirm-color-bg-tertiary);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}

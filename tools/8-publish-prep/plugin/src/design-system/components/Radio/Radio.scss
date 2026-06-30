@@ -1,0 +1,348 @@
+@use '../../tokens/component-type' as typography;
+
+.affirm-radio {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--affirm-size-radio-container-min-height);
+  border-radius: var(--affirm-radius-radio-container-all-resting);
+  position: relative;
+  cursor: pointer;
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &__inner-container {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--affirm-spacing-radio-indicator-gap-x);
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  &__indicator {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--affirm-size-radio-indicator-all);
+    height: var(--affirm-size-radio-indicator-all);
+    border-radius: var(--affirm-radius-radio-indicator-all);
+    margin-top: var(--affirm-spacing-radio-indicator-margin-top);
+    background: var(--affirm-color-radio-indicator-bg-unselected-resting);
+    border: var(--affirm-size-radio-indicator-border-width-unselected-resting) solid
+      var(--affirm-color-radio-indicator-border-unselected-resting);
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  &__dot {
+    flex-shrink: 0;
+    width: var(--affirm-size-radio-indicator-dot-all);
+    height: var(--affirm-size-radio-indicator-dot-all);
+    border-radius: var(--affirm-radius-radio-indicator-dot-all);
+    background: var(--affirm-color-radio-indicator-dot-fill-unselected-resting);
+    transition: background 0.15s ease;
+  }
+
+  &__label {
+    @include typography.component-paragraph-large;
+    color: var(--affirm-color-radio-text-unselected-resting);
+    user-select: none;
+    text-align: left;
+  }
+
+  // ===================================================================
+  // UNSELECTED
+  // ===================================================================
+
+  &:hover &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-unselected-hover);
+    border-width: var(--affirm-size-radio-indicator-border-width-unselected-hover);
+    border-color: var(--affirm-color-radio-indicator-border-unselected-hover);
+  }
+
+  &:hover &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-unselected-hover);
+  }
+
+  &:hover &__label {
+    color: var(--affirm-color-radio-text-unselected-hover);
+  }
+
+  &:active &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-unselected-pressed);
+    border-width: var(--affirm-size-radio-indicator-border-width-unselected-pressed);
+    border-color: var(--affirm-color-radio-indicator-border-unselected-pressed);
+  }
+
+  &:active &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-unselected-pressed);
+  }
+
+  &:active &__label {
+    color: var(--affirm-color-radio-text-unselected-pressed);
+  }
+
+  &:has(&__input:focus-visible) {
+    border-radius: var(--affirm-radius-radio-container-all-focus-visible);
+    outline: var(--affirm-size-radio-container-outline-width-focus-visible) solid
+      var(--affirm-color-radio-container-outline-focus-visible);
+    outline-offset: var(--affirm-spacing-radio-container-outline-offset-focus-visible);
+  }
+
+  &:has(&__input:focus-visible) &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-unselected-focus-visible);
+    border-width: var(--affirm-size-radio-indicator-border-width-unselected-focus-visible);
+    border-color: var(--affirm-color-radio-indicator-border-unselected-focus-visible);
+  }
+
+  &:has(&__input:focus-visible) &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-unselected-focus-visible);
+  }
+
+  &:has(&__input:focus-visible) &__label {
+    color: var(--affirm-color-radio-text-unselected-focus-visible);
+  }
+
+  // ===================================================================
+  // SELECTED
+  // ===================================================================
+
+  &--selected &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-selected-resting);
+    border-width: var(--affirm-size-radio-indicator-border-width-selected-resting);
+    border-color: var(--affirm-color-radio-indicator-border-selected-resting);
+  }
+
+  &--selected &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-selected-resting);
+  }
+
+  &--selected &__label {
+    color: var(--affirm-color-radio-text-selected-resting);
+  }
+
+  &--selected:hover &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-selected-hover);
+    border-width: var(--affirm-size-radio-indicator-border-width-selected-hover);
+    border-color: var(--affirm-color-radio-indicator-border-selected-hover);
+  }
+
+  &--selected:hover &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-selected-hover);
+  }
+
+  &--selected:hover &__label {
+    color: var(--affirm-color-radio-text-selected-hover);
+  }
+
+  &--selected:active &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-selected-pressed);
+    border-width: var(--affirm-size-radio-indicator-border-width-selected-pressed);
+    border-color: var(--affirm-color-radio-indicator-border-selected-pressed);
+  }
+
+  &--selected:active &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-selected-pressed);
+  }
+
+  &--selected:active &__label {
+    color: var(--affirm-color-radio-text-selected-pressed);
+  }
+
+  &--selected:has(.affirm-radio__input:focus-visible) &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-selected-focus-visible);
+    border-width: var(--affirm-size-radio-indicator-border-width-selected-focus-visible);
+    border-color: var(--affirm-color-radio-indicator-border-selected-focus-visible);
+  }
+
+  &--selected:has(.affirm-radio__input:focus-visible) &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-selected-focus-visible);
+  }
+
+  &--selected:has(.affirm-radio__input:focus-visible) &__label {
+    color: var(--affirm-color-radio-text-selected-focus-visible);
+  }
+
+  // ===================================================================
+  // ERROR (unselected)
+  // ===================================================================
+
+  &--error &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-error-unselected-resting);
+    border-width: var(--affirm-size-radio-indicator-border-width-error-unselected-resting);
+    border-color: var(--affirm-color-radio-indicator-border-error-unselected-resting);
+  }
+
+  &--error &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-error-unselected-resting);
+  }
+
+  &--error &__label {
+    color: var(--affirm-color-radio-text-error-unselected-resting);
+  }
+
+  &--error:hover &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-error-unselected-hover);
+    border-width: var(--affirm-size-radio-indicator-border-width-error-unselected-hover);
+    border-color: var(--affirm-color-radio-indicator-border-error-unselected-hover);
+  }
+
+  &--error:hover &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-error-unselected-hover);
+  }
+
+  &--error:hover &__label {
+    color: var(--affirm-color-radio-text-error-unselected-hover);
+  }
+
+  &--error:active &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-error-unselected-pressed);
+    border-width: var(--affirm-size-radio-indicator-border-width-error-unselected-pressed);
+    border-color: var(--affirm-color-radio-indicator-border-error-unselected-pressed);
+  }
+
+  &--error:active &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-error-unselected-pressed);
+  }
+
+  &--error:active &__label {
+    color: var(--affirm-color-radio-text-error-unselected-pressed);
+  }
+
+  &--error:has(.affirm-radio__input:focus-visible) &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-error-unselected-focus-visible);
+    border-width: var(--affirm-size-radio-indicator-border-width-error-unselected-focus-visible);
+    border-color: var(--affirm-color-radio-indicator-border-error-unselected-focus-visible);
+  }
+
+  &--error:has(.affirm-radio__input:focus-visible) &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-error-unselected-focus-visible);
+  }
+
+  &--error:has(.affirm-radio__input:focus-visible) &__label {
+    color: var(--affirm-color-radio-text-error-unselected-focus-visible);
+  }
+
+  // ===================================================================
+  // ERROR + SELECTED
+  // ===================================================================
+
+  &--error#{&}--selected &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-error-selected-resting);
+    border-width: var(--affirm-size-radio-indicator-border-width-error-selected-resting);
+    border-color: var(--affirm-color-radio-indicator-border-error-selected-resting);
+  }
+
+  &--error#{&}--selected &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-error-selected-resting);
+  }
+
+  &--error#{&}--selected &__label {
+    color: var(--affirm-color-radio-text-error-selected-resting);
+  }
+
+  &--error#{&}--selected:hover &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-error-selected-hover);
+    border-width: var(--affirm-size-radio-indicator-border-width-error-selected-hover);
+    border-color: var(--affirm-color-radio-indicator-border-error-selected-hover);
+  }
+
+  &--error#{&}--selected:hover &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-error-selected-hover);
+  }
+
+  &--error#{&}--selected:hover &__label {
+    color: var(--affirm-color-radio-text-error-selected-hover);
+  }
+
+  &--error#{&}--selected:active &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-error-selected-pressed);
+    border-width: var(--affirm-size-radio-indicator-border-width-error-selected-pressed);
+    border-color: var(--affirm-color-radio-indicator-border-error-selected-pressed);
+  }
+
+  &--error#{&}--selected:active &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-error-selected-pressed);
+  }
+
+  &--error#{&}--selected:active &__label {
+    color: var(--affirm-color-radio-text-error-selected-pressed);
+  }
+
+  &--error#{&}--selected:has(.affirm-radio__input:focus-visible) &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-error-selected-focus-visible);
+    border-width: var(--affirm-size-radio-indicator-border-width-error-selected-focus-visible);
+    border-color: var(--affirm-color-radio-indicator-border-error-selected-focus-visible);
+  }
+
+  &--error#{&}--selected:has(.affirm-radio__input:focus-visible) &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-error-selected-focus-visible);
+  }
+
+  &--error#{&}--selected:has(.affirm-radio__input:focus-visible) &__label {
+    color: var(--affirm-color-radio-text-error-selected-focus-visible);
+  }
+
+  // ===================================================================
+  // DISABLED
+  // ===================================================================
+
+  &--disabled &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-unselected-disabled);
+    border-width: var(--affirm-size-radio-indicator-border-width-unselected-disabled);
+    border-color: var(--affirm-color-radio-indicator-border-unselected-disabled);
+  }
+
+  &--disabled &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-unselected-disabled);
+  }
+
+  &--disabled &__label {
+    color: var(--affirm-color-radio-text-unselected-disabled);
+  }
+
+  &--disabled#{&}--selected &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-selected-disabled);
+    border-width: var(--affirm-size-radio-indicator-border-width-selected-disabled);
+    border-color: var(--affirm-color-radio-indicator-border-selected-disabled);
+  }
+
+  &--disabled#{&}--selected &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-selected-disabled);
+  }
+
+  &--disabled:hover &__indicator,
+  &--disabled:active &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-unselected-disabled);
+    border-color: var(--affirm-color-radio-indicator-border-unselected-disabled);
+  }
+
+  &--disabled:hover &__dot,
+  &--disabled:active &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-unselected-disabled);
+  }
+
+  &--disabled:hover &__label,
+  &--disabled:active &__label {
+    color: var(--affirm-color-radio-text-unselected-disabled);
+  }
+
+  &--disabled#{&}--selected:hover &__indicator,
+  &--disabled#{&}--selected:active &__indicator {
+    background: var(--affirm-color-radio-indicator-bg-selected-disabled);
+    border-color: var(--affirm-color-radio-indicator-border-selected-disabled);
+  }
+
+  &--disabled#{&}--selected:hover &__dot,
+  &--disabled#{&}--selected:active &__dot {
+    background: var(--affirm-color-radio-indicator-dot-fill-selected-disabled);
+  }
+}

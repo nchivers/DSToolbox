@@ -1,0 +1,466 @@
+@use '../../tokens/component-type' as typography;
+
+.affirm-switch {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--affirm-size-switch-container-min-height);
+  border-radius: var(--affirm-radius-switch-container-all);
+  gap: var(--affirm-spacing-switch-gap-x);
+  position: relative;
+  cursor: pointer;
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &--inverted {
+    flex-direction: row-reverse;
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  &__track {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: var(--affirm-spacing-switch-track-gap-x);
+    width: var(--affirm-size-switch-track-width);
+    height: var(--affirm-size-switch-track-height);
+    border-radius: var(--affirm-radius-switch-track-all);
+    padding: var(--affirm-spacing-switch-track-padding);
+    border: var(--affirm-size-switch-track-border-width) solid
+      var(--affirm-color-switch-track-border-unselected-resting);
+    background: var(--affirm-color-switch-track-bg-unselected-resting);
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  &__handle {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: var(--affirm-size-switch-handle-all);
+    height: var(--affirm-size-switch-handle-all);
+    border-radius: var(--affirm-radius-switch-handle-all);
+    background: var(--affirm-color-switch-handle-bg-unselected-resting);
+    border: var(--affirm-size-switch-handle-border-width) solid
+      var(--affirm-color-switch-handle-border-unselected-resting);
+    order: -1;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: var(--affirm-size-switch-icon-all);
+    height: var(--affirm-size-switch-icon-all);
+    overflow: hidden;
+    color: var(--affirm-color-switch-icon-unselected-resting);
+    transition: color 0.15s ease;
+
+    > .affirm-icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__label {
+    @include typography.component-paragraph-large;
+    color: var(--affirm-color-switch-text-unselected-resting);
+    user-select: none;
+    text-align: left;
+    flex: 1 0 0;
+    min-width: 1px;
+
+    &--hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  }
+
+  // ===================================================================
+  // UNSELECTED
+  // ===================================================================
+
+  &:hover &__track {
+    background: var(--affirm-color-switch-track-bg-unselected-hover);
+    border-color: var(--affirm-color-switch-track-border-unselected-hover);
+  }
+
+  &:hover &__handle {
+    background: var(--affirm-color-switch-handle-bg-unselected-hover);
+    border-color: var(--affirm-color-switch-handle-border-unselected-hover);
+  }
+
+  &:hover &__icon {
+    color: var(--affirm-color-switch-icon-unselected-hover);
+  }
+
+  &:hover &__label {
+    color: var(--affirm-color-switch-text-unselected-hover);
+  }
+
+  &:active &__track {
+    background: var(--affirm-color-switch-track-bg-unselected-pressed);
+    border-color: var(--affirm-color-switch-track-border-unselected-pressed);
+  }
+
+  &:active &__handle {
+    background: var(--affirm-color-switch-handle-bg-unselected-pressed);
+    border-color: var(--affirm-color-switch-handle-border-unselected-pressed);
+  }
+
+  &:active &__icon {
+    color: var(--affirm-color-switch-icon-unselected-pressed);
+  }
+
+  &:active &__label {
+    color: var(--affirm-color-switch-text-unselected-pressed);
+  }
+
+  &:has(&__input:focus-visible) {
+    outline: var(--affirm-size-switch-container-outline-width-unselected-focus-visible) solid
+      var(--affirm-color-switch-container-outline-unselected-focus-visible);
+    outline-offset: var(--affirm-spacing-switch-container-outline-offset-unselected-focus-visible);
+  }
+
+  &:has(&__input:focus-visible) &__track {
+    background: var(--affirm-color-switch-track-bg-unselected-focus-visible);
+    border-color: var(--affirm-color-switch-track-border-unselected-focus-visible);
+  }
+
+  &:has(&__input:focus-visible) &__handle {
+    background: var(--affirm-color-switch-handle-bg-unselected-focus-visible);
+    border-color: var(--affirm-color-switch-handle-border-unselected-focus-visible);
+  }
+
+  &:has(&__input:focus-visible) &__icon {
+    color: var(--affirm-color-switch-icon-unselected-focus-visible);
+  }
+
+  &:has(&__input:focus-visible) &__label {
+    color: var(--affirm-color-switch-text-unselected-focus-visible);
+  }
+
+  // ===================================================================
+  // SELECTED
+  // ===================================================================
+
+  &--selected &__track {
+    background: var(--affirm-color-switch-track-bg-selected-resting);
+    border-color: var(--affirm-color-switch-track-border-selected-resting);
+  }
+
+  &--selected &__handle {
+    background: var(--affirm-color-switch-handle-bg-selected-resting);
+    border-color: var(--affirm-color-switch-handle-border-selected-resting);
+    order: 0;
+  }
+
+  &--selected &__icon {
+    color: var(--affirm-color-switch-icon-selected-resting);
+  }
+
+  &--selected &__label {
+    color: var(--affirm-color-switch-text-selected-resting);
+  }
+
+  &--selected:hover &__track {
+    background: var(--affirm-color-switch-track-bg-selected-hover);
+    border-color: var(--affirm-color-switch-track-border-selected-hover);
+  }
+
+  &--selected:hover &__handle {
+    background: var(--affirm-color-switch-handle-bg-selected-hover);
+    border-color: var(--affirm-color-switch-handle-border-selected-hover);
+  }
+
+  &--selected:hover &__icon {
+    color: var(--affirm-color-switch-icon-selected-hover);
+  }
+
+  &--selected:hover &__label {
+    color: var(--affirm-color-switch-text-selected-hover);
+  }
+
+  &--selected:active &__track {
+    background: var(--affirm-color-switch-track-bg-selected-pressed);
+    border-color: var(--affirm-color-switch-track-border-selected-pressed);
+  }
+
+  &--selected:active &__handle {
+    background: var(--affirm-color-switch-handle-bg-selected-pressed);
+    border-color: var(--affirm-color-switch-handle-border-selected-pressed);
+  }
+
+  &--selected:active &__icon {
+    color: var(--affirm-color-switch-icon-selected-pressed);
+  }
+
+  &--selected:active &__label {
+    color: var(--affirm-color-switch-text-selected-pressed);
+  }
+
+  &--selected:has(.affirm-switch__input:focus-visible) {
+    outline: var(--affirm-size-switch-container-outline-width-selected-focus-visible) solid
+      var(--affirm-color-switch-container-outline-selected-focus-visible);
+    outline-offset: var(--affirm-spacing-switch-container-outline-offset-selected-focus-visible);
+  }
+
+  &--selected:has(.affirm-switch__input:focus-visible) &__track {
+    background: var(--affirm-color-switch-track-bg-selected-focus-visible);
+    border-color: var(--affirm-color-switch-track-border-selected-focus-visible);
+  }
+
+  &--selected:has(.affirm-switch__input:focus-visible) &__handle {
+    background: var(--affirm-color-switch-handle-bg-selected-focus-visible);
+    border-color: var(--affirm-color-switch-handle-border-selected-focus-visible);
+  }
+
+  &--selected:has(.affirm-switch__input:focus-visible) &__icon {
+    color: var(--affirm-color-switch-icon-selected-focus-visible);
+  }
+
+  &--selected:has(.affirm-switch__input:focus-visible) &__label {
+    color: var(--affirm-color-switch-text-selected-focus-visible);
+  }
+
+  // ===================================================================
+  // ERROR (unselected)
+  // ===================================================================
+
+  &--error &__track {
+    background: var(--affirm-color-switch-track-bg-error-unselected-resting);
+    border-color: var(--affirm-color-switch-track-border-error-unselected-resting);
+  }
+
+  &--error &__handle {
+    background: var(--affirm-color-switch-handle-bg-error-unselected-resting);
+    border-color: var(--affirm-color-switch-handle-border-error-unselected-resting);
+  }
+
+  &--error &__icon {
+    color: var(--affirm-color-switch-icon-error-unselected-resting);
+  }
+
+  &--error &__label {
+    color: var(--affirm-color-switch-text-error-unselected-resting);
+  }
+
+  &--error:hover &__track {
+    background: var(--affirm-color-switch-track-bg-error-unselected-hover);
+    border-color: var(--affirm-color-switch-track-border-error-unselected-hover);
+  }
+
+  &--error:hover &__handle {
+    background: var(--affirm-color-switch-handle-bg-error-unselected-hover);
+    border-color: var(--affirm-color-switch-handle-border-error-unselected-hover);
+  }
+
+  &--error:hover &__icon {
+    color: var(--affirm-color-switch-icon-error-unselected-hover);
+  }
+
+  &--error:hover &__label {
+    color: var(--affirm-color-switch-text-error-unselected-hover);
+  }
+
+  &--error:active &__track {
+    background: var(--affirm-color-switch-track-bg-error-unselected-pressed);
+    border-color: var(--affirm-color-switch-track-border-error-unselected-pressed);
+  }
+
+  &--error:active &__handle {
+    background: var(--affirm-color-switch-handle-bg-error-unselected-pressed);
+    border-color: var(--affirm-color-switch-handle-border-error-unselected-pressed);
+  }
+
+  &--error:active &__icon {
+    color: var(--affirm-color-switch-icon-error-unselected-pressed);
+  }
+
+  &--error:active &__label {
+    color: var(--affirm-color-switch-text-error-unselected-pressed);
+  }
+
+  &--error:has(.affirm-switch__input:focus-visible) {
+    outline: var(--affirm-size-switch-container-outline-width-error-unselected-focus-visible) solid
+      var(--affirm-color-switch-container-outline-error-unselected-focus-visible);
+    outline-offset: var(--affirm-spacing-switch-container-outline-offset-error-unselected-focus-visible);
+  }
+
+  &--error:has(.affirm-switch__input:focus-visible) &__track {
+    background: var(--affirm-color-switch-track-bg-error-unselected-focus-visible);
+    border-color: var(--affirm-color-switch-track-border-error-unselected-focus-visible);
+  }
+
+  &--error:has(.affirm-switch__input:focus-visible) &__handle {
+    background: var(--affirm-color-switch-handle-bg-error-unselected-focus-visible);
+    border-color: var(--affirm-color-switch-handle-border-error-unselected-focus-visible);
+  }
+
+  &--error:has(.affirm-switch__input:focus-visible) &__icon {
+    color: var(--affirm-color-switch-icon-error-unselected-focus-visible);
+  }
+
+  &--error:has(.affirm-switch__input:focus-visible) &__label {
+    color: var(--affirm-color-switch-text-error-unselected-focus-visible);
+  }
+
+  // ===================================================================
+  // ERROR + SELECTED
+  // ===================================================================
+
+  &--error#{&}--selected &__track {
+    background: var(--affirm-color-switch-track-bg-error-selected-resting);
+    border-color: var(--affirm-color-switch-track-border-error-selected-resting);
+  }
+
+  &--error#{&}--selected &__handle {
+    background: var(--affirm-color-switch-handle-bg-error-selected-resting);
+    border-color: var(--affirm-color-switch-handle-border-error-selected-resting);
+  }
+
+  &--error#{&}--selected &__icon {
+    color: var(--affirm-color-switch-icon-error-selected-resting);
+  }
+
+  &--error#{&}--selected &__label {
+    color: var(--affirm-color-switch-text-error-selected-resting);
+  }
+
+  &--error#{&}--selected:hover &__track {
+    background: var(--affirm-color-switch-track-bg-error-selected-hover);
+    border-color: var(--affirm-color-switch-track-border-error-selected-hover);
+  }
+
+  &--error#{&}--selected:hover &__handle {
+    background: var(--affirm-color-switch-handle-bg-error-selected-hover);
+    border-color: var(--affirm-color-switch-handle-border-error-selected-hover);
+  }
+
+  &--error#{&}--selected:hover &__icon {
+    color: var(--affirm-color-switch-icon-error-selected-hover);
+  }
+
+  &--error#{&}--selected:hover &__label {
+    color: var(--affirm-color-switch-text-error-selected-hover);
+  }
+
+  &--error#{&}--selected:active &__track {
+    background: var(--affirm-color-switch-track-bg-error-selected-pressed);
+    border-color: var(--affirm-color-switch-track-border-error-selected-pressed);
+  }
+
+  &--error#{&}--selected:active &__handle {
+    background: var(--affirm-color-switch-handle-bg-error-selected-pressed);
+    border-color: var(--affirm-color-switch-handle-border-error-selected-pressed);
+  }
+
+  &--error#{&}--selected:active &__icon {
+    color: var(--affirm-color-switch-icon-error-selected-pressed);
+  }
+
+  &--error#{&}--selected:active &__label {
+    color: var(--affirm-color-switch-text-error-selected-pressed);
+  }
+
+  &--error#{&}--selected:has(.affirm-switch__input:focus-visible) {
+    outline: var(--affirm-size-switch-container-outline-width-error-selected-focus-visible) solid
+      var(--affirm-color-switch-container-outline-error-selected-focus-visible);
+    outline-offset: var(--affirm-spacing-switch-container-outline-offset-error-selected-focus-visible);
+  }
+
+  &--error#{&}--selected:has(.affirm-switch__input:focus-visible) &__track {
+    background: var(--affirm-color-switch-track-bg-error-selected-focus-visible);
+    border-color: var(--affirm-color-switch-track-border-error-selected-focus-visible);
+  }
+
+  &--error#{&}--selected:has(.affirm-switch__input:focus-visible) &__handle {
+    background: var(--affirm-color-switch-handle-bg-error-selected-focus-visible);
+    border-color: var(--affirm-color-switch-handle-border-error-selected-focus-visible);
+  }
+
+  &--error#{&}--selected:has(.affirm-switch__input:focus-visible) &__icon {
+    color: var(--affirm-color-switch-icon-error-selected-focus-visible);
+  }
+
+  &--error#{&}--selected:has(.affirm-switch__input:focus-visible) &__label {
+    color: var(--affirm-color-switch-text-error-selected-focus-visible);
+  }
+
+  // ===================================================================
+  // DISABLED
+  // ===================================================================
+
+  &--disabled &__track {
+    background: var(--affirm-color-switch-track-bg-unselected-disabled);
+    border-color: var(--affirm-color-switch-track-border-unselected-disabled);
+  }
+
+  &--disabled &__handle {
+    background: var(--affirm-color-switch-handle-bg-unselected-disabled);
+    border-color: var(--affirm-color-switch-handle-border-unselected-disabled);
+  }
+
+  &--disabled &__icon {
+    color: var(--affirm-color-switch-icon-unselected-disabled);
+  }
+
+  &--disabled &__label {
+    color: var(--affirm-color-switch-text-unselected-disabled);
+  }
+
+  &--disabled#{&}--selected &__track {
+    background: var(--affirm-color-switch-track-bg-selected-disabled);
+    border-color: var(--affirm-color-switch-track-border-selected-disabled);
+  }
+
+  &--disabled#{&}--selected &__handle {
+    background: var(--affirm-color-switch-handle-bg-selected-disabled);
+    border-color: var(--affirm-color-switch-handle-border-selected-disabled);
+  }
+
+  &--disabled#{&}--selected &__icon {
+    color: var(--affirm-color-switch-icon-selected-disabled);
+  }
+
+  &--disabled#{&}--selected &__label {
+    color: var(--affirm-color-switch-text-selected-disabled);
+  }
+
+  &--disabled:hover &__track,
+  &--disabled:active &__track {
+    background: var(--affirm-color-switch-track-bg-unselected-disabled);
+    border-color: var(--affirm-color-switch-track-border-unselected-disabled);
+  }
+
+  &--disabled:hover &__handle,
+  &--disabled:active &__handle {
+    background: var(--affirm-color-switch-handle-bg-unselected-disabled);
+    border-color: var(--affirm-color-switch-handle-border-unselected-disabled);
+  }
+
+  &--disabled#{&}--selected:hover &__track,
+  &--disabled#{&}--selected:active &__track {
+    background: var(--affirm-color-switch-track-bg-selected-disabled);
+    border-color: var(--affirm-color-switch-track-border-selected-disabled);
+  }
+
+  &--disabled#{&}--selected:hover &__handle,
+  &--disabled#{&}--selected:active &__handle {
+    background: var(--affirm-color-switch-handle-bg-selected-disabled);
+    border-color: var(--affirm-color-switch-handle-border-selected-disabled);
+  }
+}

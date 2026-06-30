@@ -1,0 +1,144 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent defaults (sizes, radius, spacing)
+// ---------------------------------------------------------------------------
+:root {
+  // Radius
+  --affirm-radius-chip-large-all: #{map.get($base-sizes, '200')};
+  --affirm-radius-chip-medium-all: #{map.get($base-sizes, '175')};
+  --affirm-radius-chip-small-all: #{map.get($base-sizes, '150')};
+
+  // Size — border
+  --affirm-size-chip-border-width: #{map.get($base-sizes, '013')};
+
+  // Size — icon (per size)
+  --affirm-size-chip-large-icon-all: #{map.get($base-sizes, '225')};
+  --affirm-size-chip-medium-icon-all: #{map.get($base-sizes, '200')};
+  --affirm-size-chip-small-icon-all: #{map.get($base-sizes, '175')};
+
+  // Size — indicator (per size)
+  --affirm-size-chip-large-indicator-all: #{map.get($base-sizes, '250')};
+  --affirm-size-chip-medium-indicator-all: #{map.get($base-sizes, '250')};
+  --affirm-size-chip-small-indicator-all: #{map.get($base-sizes, '225')};
+
+  // Size — outline
+  --affirm-size-chip-outline-width-focus-visible: #{map.get($base-sizes, '025')};
+
+  // Spacing — outline
+  --affirm-spacing-chip-outline-offset-focus-visible: #{map.get($base-sizes, '025')};
+
+  // Spacing — tap target (per size)
+  --affirm-spacing-chip-large-tap-target-padding-y: #{map.get($base-sizes, '100')};
+  --affirm-spacing-chip-medium-tap-target-padding-y: #{map.get($base-sizes, '125')};
+  --affirm-spacing-chip-small-tap-target-padding-y: #{map.get($base-sizes, '150')};
+
+  // Spacing — gap (per size)
+  --affirm-spacing-chip-large-gap-x: #{map.get($base-sizes, '050')};
+  --affirm-spacing-chip-medium-gap-x: #{map.get($base-sizes, '050')};
+  --affirm-spacing-chip-small-gap-x: #{map.get($base-sizes, '050')};
+
+  // Spacing — padding (per size)
+  --affirm-spacing-chip-large-padding-top: #{map.get($base-sizes, '050')};
+  --affirm-spacing-chip-large-padding-bottom: #{map.get($base-sizes, '050')};
+  --affirm-spacing-chip-large-padding-left: #{map.get($base-sizes, '175')};
+  --affirm-spacing-chip-large-padding-right: #{map.get($base-sizes, '100')};
+
+  --affirm-spacing-chip-medium-padding-top: #{map.get($base-sizes, '050')};
+  --affirm-spacing-chip-medium-padding-bottom: #{map.get($base-sizes, '050')};
+  --affirm-spacing-chip-medium-padding-left: #{map.get($base-sizes, '150')};
+  --affirm-spacing-chip-medium-padding-right: #{map.get($base-sizes, '075')};
+
+  --affirm-spacing-chip-small-padding-top: #{map.get($base-sizes, '038')};
+  --affirm-spacing-chip-small-padding-bottom: #{map.get($base-sizes, '038')};
+  --affirm-spacing-chip-small-padding-left: #{map.get($base-sizes, '125')};
+  --affirm-spacing-chip-small-padding-right: #{map.get($base-sizes, '050')};
+}
+
+// ---------------------------------------------------------------------------
+// Light mode colors
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // Container — bg
+  --affirm-color-chip-container-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-chip-container-bg-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-chip-container-bg-pressed: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-chip-container-bg-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-chip-container-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Container — border
+  --affirm-color-chip-container-border-resting: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-chip-container-border-hover: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-chip-container-border-pressed: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-chip-container-border-focus-visible: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-chip-container-border-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // Icon
+  --affirm-color-chip-icon-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-chip-icon-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-chip-icon-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-chip-icon-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-chip-icon-disabled: #{map.get($base-colors, 'gray-400')};
+
+  // Indicator
+  --affirm-color-chip-indicator-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-chip-indicator-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-chip-indicator-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-chip-indicator-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-chip-indicator-disabled: #{map.get($base-colors, 'gray-400')};
+
+  // Outline
+  --affirm-color-chip-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // Text
+  --affirm-color-chip-text-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-chip-text-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-chip-text-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-chip-text-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-chip-text-disabled: #{map.get($base-colors, 'gray-400')};
+}
+
+// ---------------------------------------------------------------------------
+// Dark mode colors
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // Container — bg
+  --affirm-color-chip-container-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-chip-container-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-chip-container-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-chip-container-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-chip-container-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Container — border
+  --affirm-color-chip-container-border-resting: #{map.get($base-colors, 'gray-700')};
+  --affirm-color-chip-container-border-hover: #{map.get($base-colors, 'gray-700')};
+  --affirm-color-chip-container-border-pressed: #{map.get($base-colors, 'gray-700')};
+  --affirm-color-chip-container-border-focus-visible: #{map.get($base-colors, 'gray-700')};
+  --affirm-color-chip-container-border-disabled: #{map.get($base-colors, 'gray-700')};
+
+  // Icon
+  --affirm-color-chip-icon-resting: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-chip-icon-hover: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-chip-icon-pressed: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-chip-icon-focus-visible: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-chip-icon-disabled: #{map.get($base-colors, 'gray-600')};
+
+  // Indicator
+  --affirm-color-chip-indicator-resting: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-chip-indicator-hover: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-chip-indicator-pressed: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-chip-indicator-focus-visible: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-chip-indicator-disabled: #{map.get($base-colors, 'gray-600')};
+
+  // Outline
+  --affirm-color-chip-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // Text
+  --affirm-color-chip-text-resting: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-chip-text-hover: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-chip-text-pressed: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-chip-text-focus-visible: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-chip-text-disabled: #{map.get($base-colors, 'gray-600')};
+}

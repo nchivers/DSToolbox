@@ -1,0 +1,172 @@
+.affirm-type {
+  color: var(--affirm-type-color, var(--affirm-color-text-primary));
+  margin: 0;
+
+  // ---------------------------------------------------------------------------
+  // Headline variants — Axiforma typeface
+  // ---------------------------------------------------------------------------
+
+  &--headline-xxlarge {
+    font-family: var(--affirm-semantic-font-family-headline);
+    font-weight: var(--affirm-semantic-weight-headline-xxlarge);
+    font-size: var(--affirm-semantic-size-headline-xxlarge);
+    line-height: var(--affirm-semantic-line-height-headline-xxlarge);
+    letter-spacing: var(--affirm-semantic-letter-spacing-headline-xxlarge);
+  }
+
+  &--headline-xlarge {
+    font-family: var(--affirm-semantic-font-family-headline);
+    font-weight: var(--affirm-semantic-weight-headline-xlarge);
+    font-size: var(--affirm-semantic-size-headline-xlarge);
+    line-height: var(--affirm-semantic-line-height-headline-xlarge);
+    letter-spacing: var(--affirm-semantic-letter-spacing-headline-xlarge);
+  }
+
+  &--headline-large {
+    font-family: var(--affirm-semantic-font-family-headline);
+    font-weight: var(--affirm-semantic-weight-headline-large);
+    font-size: var(--affirm-semantic-size-headline-large);
+    line-height: var(--affirm-semantic-line-height-headline-large);
+    letter-spacing: var(--affirm-semantic-letter-spacing-headline-large);
+  }
+
+  &--headline-medium {
+    font-family: var(--affirm-semantic-font-family-headline);
+    font-weight: var(--affirm-semantic-weight-headline-medium);
+    font-size: var(--affirm-semantic-size-headline-medium);
+    line-height: var(--affirm-semantic-line-height-headline-medium);
+    letter-spacing: var(--affirm-semantic-letter-spacing-headline-medium);
+  }
+
+  &--headline-small {
+    font-family: var(--affirm-semantic-font-family-headline);
+    font-weight: var(--affirm-semantic-weight-headline-small);
+    font-size: var(--affirm-semantic-size-headline-small);
+    line-height: var(--affirm-semantic-line-height-headline-small);
+    letter-spacing: var(--affirm-semantic-letter-spacing-headline-small);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Body variants — Calibre typeface, default weight
+  // ---------------------------------------------------------------------------
+
+  &--body-xlarge {
+    font-family: var(--affirm-semantic-font-family-body);
+    font-weight: var(--affirm-semantic-weight-body-default);
+    font-size: var(--affirm-semantic-size-body-xlarge);
+    line-height: var(--affirm-semantic-line-height-body-xlarge);
+    letter-spacing: var(--affirm-semantic-letter-spacing-body-xlarge);
+  }
+
+  &--body-large {
+    font-family: var(--affirm-semantic-font-family-body);
+    font-weight: var(--affirm-semantic-weight-body-default);
+    font-size: var(--affirm-semantic-size-body-large);
+    line-height: var(--affirm-semantic-line-height-body-large);
+    letter-spacing: var(--affirm-semantic-letter-spacing-body-large);
+  }
+
+  &--body-medium {
+    font-family: var(--affirm-semantic-font-family-body);
+    font-weight: var(--affirm-semantic-weight-body-default);
+    font-size: var(--affirm-semantic-size-body-medium);
+    line-height: var(--affirm-semantic-line-height-body-medium);
+    letter-spacing: var(--affirm-semantic-letter-spacing-body-medium);
+  }
+
+  &--body-small {
+    font-family: var(--affirm-semantic-font-family-body);
+    font-weight: var(--affirm-semantic-weight-body-default);
+    font-size: var(--affirm-semantic-size-body-small);
+    line-height: var(--affirm-semantic-line-height-body-small);
+    letter-spacing: var(--affirm-semantic-letter-spacing-body-small);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Body highImp variants — Calibre typeface, high emphasis weight
+  // ---------------------------------------------------------------------------
+
+  &--body-xlarge-high-imp {
+    font-family: var(--affirm-semantic-font-family-body);
+    font-weight: var(--affirm-semantic-weight-body-high-imp);
+    font-size: var(--affirm-semantic-size-body-xlarge);
+    line-height: var(--affirm-semantic-line-height-body-xlarge);
+    letter-spacing: var(--affirm-semantic-letter-spacing-body-xlarge);
+  }
+
+  &--body-large-high-imp {
+    font-family: var(--affirm-semantic-font-family-body);
+    font-weight: var(--affirm-semantic-weight-body-high-imp);
+    font-size: var(--affirm-semantic-size-body-large);
+    line-height: var(--affirm-semantic-line-height-body-large);
+    letter-spacing: var(--affirm-semantic-letter-spacing-body-large);
+  }
+
+  &--body-medium-high-imp {
+    font-family: var(--affirm-semantic-font-family-body);
+    font-weight: var(--affirm-semantic-weight-body-high-imp);
+    font-size: var(--affirm-semantic-size-body-medium);
+    line-height: var(--affirm-semantic-line-height-body-medium);
+    letter-spacing: var(--affirm-semantic-letter-spacing-body-medium);
+  }
+
+  &--body-small-high-imp {
+    font-family: var(--affirm-semantic-font-family-body);
+    font-weight: var(--affirm-semantic-weight-body-high-imp);
+    font-size: var(--affirm-semantic-size-body-small);
+    line-height: var(--affirm-semantic-line-height-body-small);
+    letter-spacing: var(--affirm-semantic-letter-spacing-body-small);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Body support strike variants — Calibre typeface, default weight + line-through
+  // ---------------------------------------------------------------------------
+
+  &--body-support-xlarge-strike {
+    font-family: var(--affirm-semantic-font-family-body);
+    font-weight: var(--affirm-semantic-weight-body-default);
+    font-size: var(--affirm-semantic-size-body-xlarge);
+    line-height: var(--affirm-semantic-line-height-body-xlarge);
+    letter-spacing: var(--affirm-semantic-letter-spacing-body-xlarge);
+    text-decoration: line-through;
+    text-decoration-skip-ink: none;
+  }
+
+  &--body-support-large-strike {
+    font-family: var(--affirm-semantic-font-family-body);
+    font-weight: var(--affirm-semantic-weight-body-default);
+    font-size: var(--affirm-semantic-size-body-large);
+    line-height: var(--affirm-semantic-line-height-body-large);
+    letter-spacing: var(--affirm-semantic-letter-spacing-body-large);
+    text-decoration: line-through;
+    text-decoration-skip-ink: none;
+  }
+
+  &--body-support-medium-strike {
+    font-family: var(--affirm-semantic-font-family-body);
+    font-weight: var(--affirm-semantic-weight-body-default);
+    font-size: var(--affirm-semantic-size-body-medium);
+    line-height: var(--affirm-semantic-line-height-body-medium);
+    letter-spacing: var(--affirm-semantic-letter-spacing-body-medium);
+    text-decoration: line-through;
+    text-decoration-skip-ink: none;
+  }
+
+  &--body-support-small-strike {
+    font-family: var(--affirm-semantic-font-family-body);
+    font-weight: var(--affirm-semantic-weight-body-default);
+    font-size: var(--affirm-semantic-size-body-small);
+    line-height: var(--affirm-semantic-line-height-body-small);
+    letter-spacing: var(--affirm-semantic-letter-spacing-body-small);
+    text-decoration: line-through;
+    text-decoration-skip-ink: none;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Modifiers (deprecated — prefer body.support.*.strike variants)
+  // ---------------------------------------------------------------------------
+
+  &--strikethrough {
+    text-decoration: line-through;
+  }
+}

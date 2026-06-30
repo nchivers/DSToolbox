@@ -1,0 +1,334 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent defaults (from "All Modes" column)
+// ---------------------------------------------------------------------------
+:root {
+  // Radius
+  --affirm-radius-badge-large-all: #{map.get($base-sizes, '175')};
+  --affirm-radius-badge-medium-all: #{map.get($base-sizes, '150')};
+  --affirm-radius-badge-small-all: #{map.get($base-sizes, '150')};
+
+  // Size
+  --affirm-size-badge-border-width: #{map.get($base-sizes, '000')};
+  --affirm-size-badge-large-icon-all: #{map.get($base-sizes, '225')};
+  --affirm-size-badge-medium-icon-all: #{map.get($base-sizes, '200')};
+  --affirm-size-badge-small-icon-all: #{map.get($base-sizes, '175')};
+
+  // Spacing — large
+  --affirm-spacing-badge-large-gap-x: #{map.get($base-sizes, '075')};
+  --affirm-spacing-badge-large-padding-bottom: #{map.get($base-sizes, '025')};
+  --affirm-spacing-badge-large-padding-left: #{map.get($base-sizes, '150')};
+  --affirm-spacing-badge-large-padding-right: #{map.get($base-sizes, '150')};
+  --affirm-spacing-badge-large-padding-top: #{map.get($base-sizes, '025')};
+
+  // Spacing — medium
+  --affirm-spacing-badge-medium-gap-x: #{map.get($base-sizes, '075')};
+  --affirm-spacing-badge-medium-padding-bottom: #{map.get($base-sizes, '025')};
+  --affirm-spacing-badge-medium-padding-left: #{map.get($base-sizes, '125')};
+  --affirm-spacing-badge-medium-padding-right: #{map.get($base-sizes, '125')};
+  --affirm-spacing-badge-medium-padding-top: #{map.get($base-sizes, '025')};
+
+  // Spacing — small
+  --affirm-spacing-badge-small-gap-x: #{map.get($base-sizes, '050')};
+  --affirm-spacing-badge-small-padding-bottom: #{map.get($base-sizes, '013')};
+  --affirm-spacing-badge-small-padding-left: #{map.get($base-sizes, '100')};
+  --affirm-spacing-badge-small-padding-right: #{map.get($base-sizes, '100')};
+  --affirm-spacing-badge-small-padding-top: #{map.get($base-sizes, '013')};
+}
+
+// ---------------------------------------------------------------------------
+// Light mode (from "Light Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // Brand Featured
+  --affirm-color-badge-brand-featured-bg: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-badge-brand-featured-static-bg: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-badge-brand-featured-inverse-bg: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-featured-inverse-static-bg: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-featured-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-featured-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-featured-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-featured-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-featured-icon: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-featured-static-icon: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-featured-inverse-icon: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-badge-brand-featured-inverse-static-icon: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-badge-brand-featured-text: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-featured-static-text: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-featured-inverse-text: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-badge-brand-featured-inverse-static-text: #{map.get($base-colors, 'indigo-800')};
+
+  // Brand Primary
+  --affirm-color-badge-brand-primary-static-bg: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-primary-inverse-bg: #{map.get($base-colors, 'indigo-600')};
+  --affirm-color-badge-brand-primary-inverse-static-bg: #{map.get($base-colors, 'indigo-600')};
+  --affirm-color-badge-brand-primary-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-primary-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-primary-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-primary-static-icon: #{map.get($base-colors, 'indigo-600')};
+  --affirm-color-badge-brand-primary-inverse-icon: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-primary-inverse-static-icon: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-primary-static-text: #{map.get($base-colors, 'indigo-600')};
+  --affirm-color-badge-brand-primary-inverse-text: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-primary-inverse-static-text: #{map.get($base-colors, 'indigo-100')};
+
+  // Brand Secondary
+  --affirm-color-badge-brand-secondary-static-bg: #{map.get($base-colors, 'spruce-100')};
+  --affirm-color-badge-brand-secondary-inverse-bg: #{map.get($base-colors, 'spruce-600')};
+  --affirm-color-badge-brand-secondary-inverse-static-bg: #{map.get($base-colors, 'spruce-600')};
+  --affirm-color-badge-brand-secondary-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-secondary-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-secondary-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-secondary-static-icon: #{map.get($base-colors, 'spruce-600')};
+  --affirm-color-badge-brand-secondary-inverse-icon: #{map.get($base-colors, 'spruce-100')};
+  --affirm-color-badge-brand-secondary-inverse-static-icon: #{map.get($base-colors, 'spruce-100')};
+  --affirm-color-badge-brand-secondary-static-text: #{map.get($base-colors, 'spruce-600')};
+  --affirm-color-badge-brand-secondary-inverse-text: #{map.get($base-colors, 'spruce-100')};
+  --affirm-color-badge-brand-secondary-inverse-static-text: #{map.get($base-colors, 'spruce-100')};
+
+  // Brand Tertiary
+  --affirm-color-badge-brand-tertiary-bg: #{map.get($base-colors, 'duskfall-100')};
+  --affirm-color-badge-brand-tertiary-static-bg: #{map.get($base-colors, 'duskfall-100')};
+  --affirm-color-badge-brand-tertiary-inverse-bg: #{map.get($base-colors, 'duskfall-600')};
+  --affirm-color-badge-brand-tertiary-inverse-static-bg: #{map.get($base-colors, 'duskfall-600')};
+  --affirm-color-badge-brand-tertiary-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-tertiary-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-tertiary-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-tertiary-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-tertiary-icon: #{map.get($base-colors, 'duskfall-600')};
+  --affirm-color-badge-brand-tertiary-static-icon: #{map.get($base-colors, 'duskfall-600')};
+  --affirm-color-badge-brand-tertiary-inverse-icon: #{map.get($base-colors, 'duskfall-100')};
+  --affirm-color-badge-brand-tertiary-inverse-static-icon: #{map.get($base-colors, 'duskfall-100')};
+  --affirm-color-badge-brand-tertiary-text: #{map.get($base-colors, 'duskfall-600')};
+  --affirm-color-badge-brand-tertiary-static-text: #{map.get($base-colors, 'duskfall-600')};
+  --affirm-color-badge-brand-tertiary-inverse-text: #{map.get($base-colors, 'duskfall-100')};
+  --affirm-color-badge-brand-tertiary-inverse-static-text: #{map.get($base-colors, 'duskfall-100')};
+
+  // Default
+  --affirm-color-badge-default-static-bg: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-badge-default-inverse-bg: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-badge-default-inverse-static-bg: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-badge-default-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-default-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-default-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-default-static-icon: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-badge-default-inverse-icon: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-badge-default-inverse-static-icon: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-badge-default-static-text: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-badge-default-inverse-text: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-badge-default-inverse-static-text: #{map.get($base-colors, 'gray-100')};
+
+  // Error
+  --affirm-color-badge-error-static-bg: #{map.get($base-colors, 'red-100')};
+  --affirm-color-badge-error-inverse-bg: #{map.get($base-colors, 'red-600')};
+  --affirm-color-badge-error-inverse-static-bg: #{map.get($base-colors, 'red-600')};
+  --affirm-color-badge-error-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-error-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-error-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-error-static-icon: #{map.get($base-colors, 'red-600')};
+  --affirm-color-badge-error-inverse-icon: #{map.get($base-colors, 'red-100')};
+  --affirm-color-badge-error-inverse-static-icon: #{map.get($base-colors, 'red-100')};
+  --affirm-color-badge-error-static-text: #{map.get($base-colors, 'red-600')};
+  --affirm-color-badge-error-inverse-text: #{map.get($base-colors, 'red-100')};
+  --affirm-color-badge-error-inverse-static-text: #{map.get($base-colors, 'red-100')};
+
+  // Info
+  --affirm-color-badge-info-bg: #{map.get($base-colors, 'blue-100')};
+  --affirm-color-badge-info-static-bg: #{map.get($base-colors, 'blue-100')};
+  --affirm-color-badge-info-inverse-bg: #{map.get($base-colors, 'blue-600')};
+  --affirm-color-badge-info-inverse-static-bg: #{map.get($base-colors, 'blue-600')};
+  --affirm-color-badge-info-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-info-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-info-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-info-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-info-icon: #{map.get($base-colors, 'blue-600')};
+  --affirm-color-badge-info-static-icon: #{map.get($base-colors, 'blue-600')};
+  --affirm-color-badge-info-inverse-icon: #{map.get($base-colors, 'blue-100')};
+  --affirm-color-badge-info-inverse-static-icon: #{map.get($base-colors, 'blue-100')};
+  --affirm-color-badge-info-text: #{map.get($base-colors, 'blue-600')};
+  --affirm-color-badge-info-static-text: #{map.get($base-colors, 'blue-600')};
+  --affirm-color-badge-info-inverse-text: #{map.get($base-colors, 'blue-100')};
+  --affirm-color-badge-info-inverse-static-text: #{map.get($base-colors, 'blue-100')};
+
+  // Success
+  --affirm-color-badge-success-static-bg: #{map.get($base-colors, 'green-100')};
+  --affirm-color-badge-success-inverse-bg: #{map.get($base-colors, 'green-600')};
+  --affirm-color-badge-success-inverse-static-bg: #{map.get($base-colors, 'green-600')};
+  --affirm-color-badge-success-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-success-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-success-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-success-static-icon: #{map.get($base-colors, 'green-600')};
+  --affirm-color-badge-success-inverse-icon: #{map.get($base-colors, 'green-100')};
+  --affirm-color-badge-success-inverse-static-icon: #{map.get($base-colors, 'green-100')};
+  --affirm-color-badge-success-static-text: #{map.get($base-colors, 'green-600')};
+  --affirm-color-badge-success-inverse-text: #{map.get($base-colors, 'green-100')};
+  --affirm-color-badge-success-inverse-static-text: #{map.get($base-colors, 'green-100')};
+
+  // Warning
+  --affirm-color-badge-warning-bg: #{map.get($base-colors, 'yellow-100')};
+  --affirm-color-badge-warning-static-bg: #{map.get($base-colors, 'yellow-100')};
+  --affirm-color-badge-warning-inverse-bg: #{map.get($base-colors, 'yellow-600')};
+  --affirm-color-badge-warning-inverse-static-bg: #{map.get($base-colors, 'yellow-600')};
+  --affirm-color-badge-warning-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-warning-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-warning-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-warning-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-warning-icon: #{map.get($base-colors, 'yellow-600')};
+  --affirm-color-badge-warning-static-icon: #{map.get($base-colors, 'yellow-600')};
+  --affirm-color-badge-warning-inverse-icon: #{map.get($base-colors, 'yellow-100')};
+  --affirm-color-badge-warning-inverse-static-icon: #{map.get($base-colors, 'yellow-100')};
+  --affirm-color-badge-warning-text: #{map.get($base-colors, 'yellow-600')};
+  --affirm-color-badge-warning-static-text: #{map.get($base-colors, 'yellow-600')};
+  --affirm-color-badge-warning-inverse-text: #{map.get($base-colors, 'yellow-100')};
+  --affirm-color-badge-warning-inverse-static-text: #{map.get($base-colors, 'yellow-100')};
+}
+
+// ---------------------------------------------------------------------------
+// Dark mode (from "Dark Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // Brand Featured
+  --affirm-color-badge-brand-featured-bg: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-featured-static-bg: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-badge-brand-featured-inverse-bg: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-badge-brand-featured-inverse-static-bg: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-featured-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-featured-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-featured-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-featured-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-featured-icon: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-badge-brand-featured-static-icon: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-featured-inverse-icon: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-featured-inverse-static-icon: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-badge-brand-featured-text: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-badge-brand-featured-static-text: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-featured-inverse-text: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-featured-inverse-static-text: #{map.get($base-colors, 'indigo-800')};
+
+  // Brand Primary
+  --affirm-color-badge-brand-primary-static-bg: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-primary-inverse-bg: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-primary-inverse-static-bg: #{map.get($base-colors, 'indigo-600')};
+  --affirm-color-badge-brand-primary-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-primary-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-primary-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-primary-static-icon: #{map.get($base-colors, 'indigo-600')};
+  --affirm-color-badge-brand-primary-inverse-icon: #{map.get($base-colors, 'indigo-600')};
+  --affirm-color-badge-brand-primary-inverse-static-icon: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-badge-brand-primary-static-text: #{map.get($base-colors, 'indigo-600')};
+  --affirm-color-badge-brand-primary-inverse-text: #{map.get($base-colors, 'indigo-600')};
+  --affirm-color-badge-brand-primary-inverse-static-text: #{map.get($base-colors, 'indigo-100')};
+
+  // Brand Secondary
+  --affirm-color-badge-brand-secondary-static-bg: #{map.get($base-colors, 'spruce-100')};
+  --affirm-color-badge-brand-secondary-inverse-bg: #{map.get($base-colors, 'spruce-100')};
+  --affirm-color-badge-brand-secondary-inverse-static-bg: #{map.get($base-colors, 'spruce-600')};
+  --affirm-color-badge-brand-secondary-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-secondary-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-secondary-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-secondary-static-icon: #{map.get($base-colors, 'spruce-600')};
+  --affirm-color-badge-brand-secondary-inverse-icon: #{map.get($base-colors, 'spruce-600')};
+  --affirm-color-badge-brand-secondary-inverse-static-icon: #{map.get($base-colors, 'spruce-100')};
+  --affirm-color-badge-brand-secondary-static-text: #{map.get($base-colors, 'spruce-600')};
+  --affirm-color-badge-brand-secondary-inverse-text: #{map.get($base-colors, 'spruce-600')};
+  --affirm-color-badge-brand-secondary-inverse-static-text: #{map.get($base-colors, 'spruce-100')};
+
+  // Brand Tertiary
+  --affirm-color-badge-brand-tertiary-bg: #{map.get($base-colors, 'duskfall-600')};
+  --affirm-color-badge-brand-tertiary-static-bg: #{map.get($base-colors, 'duskfall-100')};
+  --affirm-color-badge-brand-tertiary-inverse-bg: #{map.get($base-colors, 'duskfall-100')};
+  --affirm-color-badge-brand-tertiary-inverse-static-bg: #{map.get($base-colors, 'duskfall-600')};
+  --affirm-color-badge-brand-tertiary-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-tertiary-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-tertiary-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-tertiary-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-brand-tertiary-icon: #{map.get($base-colors, 'duskfall-100')};
+  --affirm-color-badge-brand-tertiary-static-icon: #{map.get($base-colors, 'duskfall-600')};
+  --affirm-color-badge-brand-tertiary-inverse-icon: #{map.get($base-colors, 'duskfall-600')};
+  --affirm-color-badge-brand-tertiary-inverse-static-icon: #{map.get($base-colors, 'duskfall-100')};
+  --affirm-color-badge-brand-tertiary-text: #{map.get($base-colors, 'duskfall-100')};
+  --affirm-color-badge-brand-tertiary-static-text: #{map.get($base-colors, 'duskfall-600')};
+  --affirm-color-badge-brand-tertiary-inverse-text: #{map.get($base-colors, 'duskfall-600')};
+  --affirm-color-badge-brand-tertiary-inverse-static-text: #{map.get($base-colors, 'duskfall-100')};
+
+  // Default
+  --affirm-color-badge-default-static-bg: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-badge-default-inverse-bg: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-badge-default-inverse-static-bg: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-badge-default-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-default-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-default-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-default-static-icon: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-badge-default-inverse-icon: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-badge-default-inverse-static-icon: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-badge-default-static-text: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-badge-default-inverse-text: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-badge-default-inverse-static-text: #{map.get($base-colors, 'gray-100')};
+
+  // Error
+  --affirm-color-badge-error-static-bg: #{map.get($base-colors, 'red-100')};
+  --affirm-color-badge-error-inverse-bg: #{map.get($base-colors, 'red-100')};
+  --affirm-color-badge-error-inverse-static-bg: #{map.get($base-colors, 'red-600')};
+  --affirm-color-badge-error-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-error-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-error-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-error-static-icon: #{map.get($base-colors, 'red-600')};
+  --affirm-color-badge-error-inverse-icon: #{map.get($base-colors, 'red-600')};
+  --affirm-color-badge-error-inverse-static-icon: #{map.get($base-colors, 'red-100')};
+  --affirm-color-badge-error-static-text: #{map.get($base-colors, 'red-600')};
+  --affirm-color-badge-error-inverse-text: #{map.get($base-colors, 'red-600')};
+  --affirm-color-badge-error-inverse-static-text: #{map.get($base-colors, 'red-100')};
+
+  // Info
+  --affirm-color-badge-info-bg: #{map.get($base-colors, 'blue-600')};
+  --affirm-color-badge-info-static-bg: #{map.get($base-colors, 'blue-100')};
+  --affirm-color-badge-info-inverse-bg: #{map.get($base-colors, 'blue-100')};
+  --affirm-color-badge-info-inverse-static-bg: #{map.get($base-colors, 'blue-600')};
+  --affirm-color-badge-info-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-info-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-info-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-info-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-info-icon: #{map.get($base-colors, 'blue-100')};
+  --affirm-color-badge-info-static-icon: #{map.get($base-colors, 'blue-600')};
+  --affirm-color-badge-info-inverse-icon: #{map.get($base-colors, 'blue-600')};
+  --affirm-color-badge-info-inverse-static-icon: #{map.get($base-colors, 'blue-100')};
+  --affirm-color-badge-info-text: #{map.get($base-colors, 'blue-100')};
+  --affirm-color-badge-info-static-text: #{map.get($base-colors, 'blue-600')};
+  --affirm-color-badge-info-inverse-text: #{map.get($base-colors, 'blue-600')};
+  --affirm-color-badge-info-inverse-static-text: #{map.get($base-colors, 'blue-100')};
+
+  // Success
+  --affirm-color-badge-success-static-bg: #{map.get($base-colors, 'green-100')};
+  --affirm-color-badge-success-inverse-bg: #{map.get($base-colors, 'green-100')};
+  --affirm-color-badge-success-inverse-static-bg: #{map.get($base-colors, 'green-600')};
+  --affirm-color-badge-success-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-success-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-success-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-success-static-icon: #{map.get($base-colors, 'green-600')};
+  --affirm-color-badge-success-inverse-icon: #{map.get($base-colors, 'green-600')};
+  --affirm-color-badge-success-inverse-static-icon: #{map.get($base-colors, 'green-100')};
+  --affirm-color-badge-success-static-text: #{map.get($base-colors, 'green-600')};
+  --affirm-color-badge-success-inverse-text: #{map.get($base-colors, 'green-600')};
+  --affirm-color-badge-success-inverse-static-text: #{map.get($base-colors, 'green-100')};
+
+  // Warning
+  --affirm-color-badge-warning-bg: #{map.get($base-colors, 'yellow-600')};
+  --affirm-color-badge-warning-static-bg: #{map.get($base-colors, 'yellow-100')};
+  --affirm-color-badge-warning-inverse-bg: #{map.get($base-colors, 'yellow-100')};
+  --affirm-color-badge-warning-inverse-static-bg: #{map.get($base-colors, 'yellow-600')};
+  --affirm-color-badge-warning-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-warning-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-warning-inverse-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-warning-inverse-static-border: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-badge-warning-icon: #{map.get($base-colors, 'yellow-100')};
+  --affirm-color-badge-warning-static-icon: #{map.get($base-colors, 'yellow-600')};
+  --affirm-color-badge-warning-inverse-icon: #{map.get($base-colors, 'yellow-600')};
+  --affirm-color-badge-warning-inverse-static-icon: #{map.get($base-colors, 'yellow-100')};
+  --affirm-color-badge-warning-text: #{map.get($base-colors, 'yellow-100')};
+  --affirm-color-badge-warning-static-text: #{map.get($base-colors, 'yellow-600')};
+  --affirm-color-badge-warning-inverse-text: #{map.get($base-colors, 'yellow-600')};
+  --affirm-color-badge-warning-inverse-static-text: #{map.get($base-colors, 'yellow-100')};
+}

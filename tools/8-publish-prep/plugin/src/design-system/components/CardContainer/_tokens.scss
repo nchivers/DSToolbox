@@ -1,0 +1,177 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent defaults (from "All Modes" column)
+// ---------------------------------------------------------------------------
+:root {
+  // Radius
+  --affirm-radius-card-container-inset-all: #{map.get($base-sizes, '025')};
+  --affirm-radius-card-container-on-page-all: #{map.get($base-sizes, '200')};
+  --affirm-radius-card-container-on-surface-all: #{map.get($base-sizes, '100')};
+
+  // Size — border width
+  --affirm-size-card-container-inset-border-width: #{map.get($base-sizes, '013')};
+  --affirm-size-card-container-on-page-border-width: #{map.get($base-sizes, '013')};
+  --affirm-size-card-container-on-surface-border-width: #{map.get($base-sizes, '013')};
+
+  // Spacing — padding
+  --affirm-spacing-card-container-inset-padding: #{map.get($base-sizes, '150')};
+  --affirm-spacing-card-container-on-page-padding: #{map.get($base-sizes, '200')};
+  --affirm-spacing-card-container-on-surface-padding: #{map.get($base-sizes, '200')};
+
+  // Shadow — inset primary
+  --affirm-shadow-card-container-inset-primary-shadow-blur: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-inset-primary-shadow-offset-x: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-inset-primary-shadow-offset-y: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-inset-primary-shadow-spread: #{map.get($base-sizes, '000')};
+
+  // Shadow — inset secondary
+  --affirm-shadow-card-container-inset-secondary-shadow-blur: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-inset-secondary-shadow-offset-x: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-inset-secondary-shadow-offset-y: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-inset-secondary-shadow-spread: #{map.get($base-sizes, '000')};
+
+  // Shadow — inset tertiary
+  --affirm-shadow-card-container-inset-tertiary-shadow-blur: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-inset-tertiary-shadow-offset-x: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-inset-tertiary-shadow-offset-y: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-inset-tertiary-shadow-spread: #{map.get($base-sizes, '000')};
+
+  // Shadow — on page primary
+  --affirm-shadow-card-container-on-page-primary-shadow-blur: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-page-primary-shadow-offset-x: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-page-primary-shadow-offset-y: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-page-primary-shadow-spread: #{map.get($base-sizes, '000')};
+
+  // Shadow — on page secondary
+  --affirm-shadow-card-container-on-page-secondary-shadow-blur: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-page-secondary-shadow-offset-x: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-page-secondary-shadow-offset-y: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-page-secondary-shadow-spread: #{map.get($base-sizes, '000')};
+
+  // Shadow — on page tertiary
+  --affirm-shadow-card-container-on-page-tertiary-shadow-blur: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-page-tertiary-shadow-offset-x: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-page-tertiary-shadow-offset-y: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-page-tertiary-shadow-spread: #{map.get($base-sizes, '000')};
+
+  // Shadow — on surface primary
+  --affirm-shadow-card-container-on-surface-primary-shadow-blur: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-surface-primary-shadow-offset-x: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-surface-primary-shadow-offset-y: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-surface-primary-shadow-spread: #{map.get($base-sizes, '000')};
+
+  // Shadow — on surface secondary
+  --affirm-shadow-card-container-on-surface-secondary-shadow-blur: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-surface-secondary-shadow-offset-x: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-surface-secondary-shadow-offset-y: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-surface-secondary-shadow-spread: #{map.get($base-sizes, '000')};
+
+  // Shadow — on surface tertiary
+  --affirm-shadow-card-container-on-surface-tertiary-shadow-blur: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-surface-tertiary-shadow-offset-x: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-surface-tertiary-shadow-offset-y: #{map.get($base-sizes, '000')};
+  --affirm-shadow-card-container-on-surface-tertiary-shadow-spread: #{map.get($base-sizes, '000')};
+}
+
+// ---------------------------------------------------------------------------
+// Light defaults (from "Light Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // Inset — primary
+  --affirm-color-card-container-inset-primary-bg: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-card-container-inset-primary-border: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-card-container-inset-primary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Inset — secondary
+  --affirm-color-card-container-inset-secondary-bg: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-card-container-inset-secondary-border: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-card-container-inset-secondary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Inset — tertiary
+  --affirm-color-card-container-inset-tertiary-bg: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-card-container-inset-tertiary-border: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-card-container-inset-tertiary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // On page — primary
+  --affirm-color-card-container-on-page-primary-bg: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-card-container-on-page-primary-border: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-card-container-on-page-primary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // On page — secondary
+  --affirm-color-card-container-on-page-secondary-bg: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-card-container-on-page-secondary-border: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-card-container-on-page-secondary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // On page — tertiary
+  --affirm-color-card-container-on-page-tertiary-bg: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-card-container-on-page-tertiary-border: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-card-container-on-page-tertiary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // On surface — primary
+  --affirm-color-card-container-on-surface-primary-bg: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-card-container-on-surface-primary-border: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-card-container-on-surface-primary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // On surface — secondary
+  --affirm-color-card-container-on-surface-secondary-bg: #{map.get($base-colors, 'gray-020')};
+  --affirm-color-card-container-on-surface-secondary-border: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-card-container-on-surface-secondary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // On surface — tertiary
+  --affirm-color-card-container-on-surface-tertiary-bg: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-card-container-on-surface-tertiary-border: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-card-container-on-surface-tertiary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+}
+
+// ---------------------------------------------------------------------------
+// Dark defaults (from "Dark Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // Inset — primary
+  --affirm-color-card-container-inset-primary-bg: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-card-container-inset-primary-border: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-card-container-inset-primary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Inset — secondary
+  --affirm-color-card-container-inset-secondary-bg: #{map.get($base-colors, 'gray-900')};
+  --affirm-color-card-container-inset-secondary-border: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-card-container-inset-secondary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Inset — tertiary
+  --affirm-color-card-container-inset-tertiary-bg: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-card-container-inset-tertiary-border: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-card-container-inset-tertiary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // On page — primary
+  --affirm-color-card-container-on-page-primary-bg: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-card-container-on-page-primary-border: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-card-container-on-page-primary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // On page — secondary
+  --affirm-color-card-container-on-page-secondary-bg: #{map.get($base-colors, 'gray-900')};
+  --affirm-color-card-container-on-page-secondary-border: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-card-container-on-page-secondary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // On page — tertiary
+  --affirm-color-card-container-on-page-tertiary-bg: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-card-container-on-page-tertiary-border: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-card-container-on-page-tertiary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // On surface — primary
+  --affirm-color-card-container-on-surface-primary-bg: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-card-container-on-surface-primary-border: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-card-container-on-surface-primary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // On surface — secondary
+  --affirm-color-card-container-on-surface-secondary-bg: #{map.get($base-colors, 'gray-900')};
+  --affirm-color-card-container-on-surface-secondary-border: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-card-container-on-surface-secondary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+
+  // On surface — tertiary
+  --affirm-color-card-container-on-surface-tertiary-bg: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-card-container-on-surface-tertiary-border: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-card-container-on-surface-tertiary-shadow: #{map.get($base-colors, 'opacity-transparent')};
+}

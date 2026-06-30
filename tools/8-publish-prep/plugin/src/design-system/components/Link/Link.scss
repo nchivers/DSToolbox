@@ -1,0 +1,172 @@
+@use '../../tokens/link' as typography;
+
+.affirm-link {
+  display: inline-flex;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0;
+  border: none;
+  background: none;
+  padding: 0;
+
+  &--disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Container
+  // ---------------------------------------------------------------------------
+
+  &__container {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--affirm-spacing-link-gap-x);
+    background: var(--affirm-color-link-container-bg-resting);
+    border-radius:
+      var(--affirm-radius-link-container-top-resting)
+      var(--affirm-radius-link-container-top-resting)
+      var(--affirm-radius-link-container-bottom-resting)
+      var(--affirm-radius-link-container-bottom-resting);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Text
+  // ---------------------------------------------------------------------------
+
+  &__text {
+    color: var(--affirm-color-link-text-resting);
+    text-decoration: underline;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Icon
+  // ---------------------------------------------------------------------------
+
+  &__icon {
+    flex-shrink: 0;
+    color: var(--affirm-color-link-icon-resting);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Size variants — typography via link mixins
+  // ---------------------------------------------------------------------------
+
+  &--large &__text  { @include typography.body-support-large-link; }
+  &--medium &__text { @include typography.body-support-medium-link; }
+  &--small &__text  { @include typography.body-support-small-link; }
+
+  &--large &__icon {
+    width: var(--affirm-size-link-icon-large);
+    height: var(--affirm-size-link-icon-large);
+  }
+
+  &--medium &__icon {
+    width: var(--affirm-size-link-icon-medium);
+    height: var(--affirm-size-link-icon-medium);
+  }
+
+  &--small &__icon {
+    width: var(--affirm-size-link-icon-small);
+    height: var(--affirm-size-link-icon-small);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Hover
+  // ---------------------------------------------------------------------------
+
+  &:hover &__container {
+    background: var(--affirm-color-link-container-bg-hover);
+    border-radius:
+      var(--affirm-radius-link-container-top-hover)
+      var(--affirm-radius-link-container-top-hover)
+      var(--affirm-radius-link-container-bottom-hover)
+      var(--affirm-radius-link-container-bottom-hover);
+  }
+
+  &:hover &__text {
+    color: var(--affirm-color-link-text-hover);
+  }
+
+  &:hover &__icon {
+    color: var(--affirm-color-link-icon-hover);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Pressed
+  // ---------------------------------------------------------------------------
+
+  &:active &__container {
+    background: var(--affirm-color-link-container-bg-pressed);
+    border-radius:
+      var(--affirm-radius-link-container-top-pressed)
+      var(--affirm-radius-link-container-top-pressed)
+      var(--affirm-radius-link-container-bottom-pressed)
+      var(--affirm-radius-link-container-bottom-pressed);
+  }
+
+  &:active &__text {
+    color: var(--affirm-color-link-text-pressed);
+  }
+
+  &:active &__icon {
+    color: var(--affirm-color-link-icon-pressed);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Focus visible
+  // ---------------------------------------------------------------------------
+
+  &:focus-visible {
+    outline: var(--affirm-size-link-outline-width-focus-visible) solid
+      var(--affirm-color-link-outline-focus-visible);
+    outline-offset: var(--affirm-spacing-link-outline-offset-focus-visible);
+    border-radius:
+      var(--affirm-radius-link-container-top-focus-visible)
+      var(--affirm-radius-link-container-top-focus-visible)
+      var(--affirm-radius-link-container-bottom-focus-visible)
+      var(--affirm-radius-link-container-bottom-focus-visible);
+  }
+
+  &:focus-visible &__container {
+    background: var(--affirm-color-link-container-bg-focus-visible);
+    border-radius:
+      var(--affirm-radius-link-container-top-focus-visible)
+      var(--affirm-radius-link-container-top-focus-visible)
+      var(--affirm-radius-link-container-bottom-focus-visible)
+      var(--affirm-radius-link-container-bottom-focus-visible);
+  }
+
+  &:focus-visible &__text {
+    color: var(--affirm-color-link-text-focus-visible);
+  }
+
+  &:focus-visible &__icon {
+    color: var(--affirm-color-link-icon-focus-visible);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Disabled
+  // ---------------------------------------------------------------------------
+
+  &--disabled &__container {
+    background: var(--affirm-color-link-container-bg-disabled);
+    border-radius:
+      var(--affirm-radius-link-container-top-disabled)
+      var(--affirm-radius-link-container-top-disabled)
+      var(--affirm-radius-link-container-bottom-disabled)
+      var(--affirm-radius-link-container-bottom-disabled);
+  }
+
+  &--disabled &__text {
+    color: var(--affirm-color-link-text-disabled);
+  }
+
+  &--disabled &__icon {
+    color: var(--affirm-color-link-icon-disabled);
+  }
+
+  &--disabled:hover &__container {
+    background: var(--affirm-color-link-container-bg-disabled);
+  }
+}

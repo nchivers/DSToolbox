@@ -820,7 +820,7 @@ interface ListLibrariesMessage {
 
 type IncomingMessage = ExportMessage | ListLibrariesMessage;
 
-figma.showUI(__html__, { themeColors: true, width: 440, height: 600 });
+figma.showUI(__html__, { themeColors: true, width: 440, height: 720 });
 
 figma.ui.onmessage = async (msg: IncomingMessage) => {
   try {

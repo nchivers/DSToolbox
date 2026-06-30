@@ -1,0 +1,92 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent defaults
+// ---------------------------------------------------------------------------
+:root {
+  // Radius — container top (top-left + top-right)
+  --affirm-radius-link-container-top-resting: #{map.get($base-sizes, '100')};
+  --affirm-radius-link-container-top-hover: #{map.get($base-sizes, '100')};
+  --affirm-radius-link-container-top-pressed: #{map.get($base-sizes, '100')};
+  --affirm-radius-link-container-top-focus-visible: #{map.get($base-sizes, '100')};
+  --affirm-radius-link-container-top-disabled: #{map.get($base-sizes, '100')};
+
+  // Radius — container bottom (bottom-left + bottom-right)
+  --affirm-radius-link-container-bottom-resting: #{map.get($base-sizes, '000')};
+  --affirm-radius-link-container-bottom-hover: #{map.get($base-sizes, '000')};
+  --affirm-radius-link-container-bottom-pressed: #{map.get($base-sizes, '000')};
+  --affirm-radius-link-container-bottom-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-radius-link-container-bottom-disabled: #{map.get($base-sizes, '000')};
+
+  // Outline
+  --affirm-size-link-outline-width-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-spacing-link-outline-offset-focus-visible: #{map.get($base-sizes, '025')};
+
+  // Spacing
+  --affirm-spacing-link-gap-x: #{map.get($base-sizes, '025')};
+
+  // Icon sizes per link size
+  --affirm-size-link-icon-large: #{map.get($base-sizes, '250')};
+  --affirm-size-link-icon-medium: #{map.get($base-sizes, '200')};
+  --affirm-size-link-icon-small: 14px;
+}
+
+// ---------------------------------------------------------------------------
+// Light mode
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // Container — bg
+  --affirm-color-link-container-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-link-container-bg-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-link-container-bg-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-link-container-bg-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-link-container-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Text
+  --affirm-color-link-text-resting: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-link-text-hover: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-link-text-pressed: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-link-text-focus-visible: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-link-text-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // Icon
+  --affirm-color-link-icon-resting: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-link-icon-hover: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-link-icon-pressed: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-link-icon-focus-visible: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-link-icon-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // Outline
+  --affirm-color-link-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+}
+
+// ---------------------------------------------------------------------------
+// Dark mode
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // Container — bg
+  --affirm-color-link-container-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-link-container-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-link-container-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-link-container-bg-focus-visible: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-link-container-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Text
+  --affirm-color-link-text-resting: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-link-text-hover: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-link-text-pressed: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-link-text-focus-visible: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-link-text-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // Icon
+  --affirm-color-link-icon-resting: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-link-icon-hover: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-link-icon-pressed: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-link-icon-focus-visible: #{map.get($base-colors, 'indigo-250')};
+  --affirm-color-link-icon-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // Outline
+  --affirm-color-link-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+}

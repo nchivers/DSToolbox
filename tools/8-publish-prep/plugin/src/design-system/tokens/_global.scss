@@ -1,0 +1,95 @@
+@use 'sass:map';
+@use 'base-colors' as *;
+@use 'base-sizes' as *;
+
+:root {
+  --affirm-radius-onsurface: #{map.get($base-sizes, '100')};
+  --affirm-radius-onpage: #{map.get($base-sizes, '200')};
+  --affirm-radius-elevated: #{map.get($base-sizes, '300')};
+
+  --affirm-spacing-xxxxs: #{map.get($base-sizes, '025')};
+  --affirm-spacing-xxxs: #{map.get($base-sizes, '050')};
+  --affirm-spacing-xxs: #{map.get($base-sizes, '075')};
+  --affirm-spacing-xs: #{map.get($base-sizes, '100')};
+  --affirm-spacing-sm: #{map.get($base-sizes, '150')};
+  --affirm-spacing-md: #{map.get($base-sizes, '200')};
+  --affirm-spacing-lg: #{map.get($base-sizes, '300')};
+  --affirm-spacing-xl: #{map.get($base-sizes, '400')};
+  --affirm-spacing-xxl: #{map.get($base-sizes, '500')};
+
+  --affirm-font-family-brand: 'Axiforma for Affirm', sans-serif;
+  --affirm-font-family-body: Calibre, sans-serif;
+  --affirm-font-family-component: Calibre, sans-serif;
+}
+
+[data-mode='light'] {
+  --affirm-bg-page-primary: #{map.get($base-colors, 'gray-050')};
+  --affirm-bg-surface-primary: #{map.get($base-colors, 'gray-white')};
+  --affirm-bg-surface-secondary: #{map.get($base-colors, 'gray-050')};
+  --affirm-bg-surface-tertiary: #{map.get($base-colors, 'gray-100')};
+  --affirm-bg-primary: #{map.get($base-colors, 'gray-white')};
+  --affirm-bg-primary-hover: #{map.get($base-colors, 'gray-050')};
+  --affirm-bg-primary-pressed: #{map.get($base-colors, 'gray-100')};
+  --affirm-bg-primary-disabled: #{map.get($base-colors, 'gray-200')};
+  --affirm-bg-interactive: #{map.get($base-colors, 'indigo-970')};
+  --affirm-bg-interactive-hover: #{map.get($base-colors, 'indigo-800')};
+  --affirm-bg-interactive-pressed: #{map.get($base-colors, 'indigo-900')};
+  --affirm-bg-interactive-disabled: #{map.get($base-colors, 'gray-200')};
+
+  --affirm-text-default: #{map.get($base-colors, 'gray-950')};
+  --affirm-text-default-inverse: #{map.get($base-colors, 'gray-030')};
+  --affirm-text-supplementary: #{map.get($base-colors, 'gray-700')};
+  --affirm-text-link: #{map.get($base-colors, 'indigo-950')};
+
+  --affirm-icon-default: #{map.get($base-colors, 'gray-950')};
+  --affirm-icon-supplementary: #{map.get($base-colors, 'gray-700')};
+
+  --affirm-border-default: #{map.get($base-colors, 'gray-500')};
+  --affirm-border-default-hover: #{map.get($base-colors, 'gray-400')};
+  --affirm-border-default-focus: #{map.get($base-colors, 'gray-500')};
+  --affirm-border-default-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-border-interactive: #{map.get($base-colors, 'indigo-970')};
+  --affirm-border-secondary: #{map.get($base-colors, 'gray-150')};
+
+  --affirm-content-default: #{map.get($base-colors, 'gray-950')};
+  --affirm-content-default-disabled: #{map.get($base-colors, 'gray-400')};
+  --affirm-content-interactive: #{map.get($base-colors, 'indigo-950')};
+
+  --affirm-divider-primary: #{map.get($base-colors, 'gray-100')};
+}
+
+[data-mode='dark'] {
+  --affirm-bg-page-primary: #{map.get($base-colors, 'gray-920')};
+  --affirm-bg-surface-primary: #{map.get($base-colors, 'gray-850')};
+  --affirm-bg-surface-secondary: #{map.get($base-colors, 'gray-920')};
+  --affirm-bg-surface-tertiary: #{map.get($base-colors, 'gray-970')};
+  --affirm-bg-primary: #{map.get($base-colors, 'gray-850')};
+  --affirm-bg-primary-hover: #{map.get($base-colors, 'gray-920')};
+  --affirm-bg-primary-pressed: #{map.get($base-colors, 'gray-970')};
+  --affirm-bg-primary-disabled: #{map.get($base-colors, 'gray-750')};
+  --affirm-bg-interactive: #{map.get($base-colors, 'indigo-300')};
+  --affirm-bg-interactive-hover: #{map.get($base-colors, 'indigo-200')};
+  --affirm-bg-interactive-pressed: #{map.get($base-colors, 'indigo-400')};
+  --affirm-bg-interactive-disabled: #{map.get($base-colors, 'gray-750')};
+
+  --affirm-text-default: #{map.get($base-colors, 'gray-030')};
+  --affirm-text-default-inverse: #{map.get($base-colors, 'gray-950')};
+  --affirm-text-supplementary: #{map.get($base-colors, 'gray-300')};
+  --affirm-text-link: #{map.get($base-colors, 'indigo-300')};
+
+  --affirm-icon-default: #{map.get($base-colors, 'gray-030')};
+  --affirm-icon-supplementary: #{map.get($base-colors, 'gray-300')};
+
+  --affirm-border-default: #{map.get($base-colors, 'gray-500')};
+  --affirm-border-default-hover: #{map.get($base-colors, 'gray-600')};
+  --affirm-border-default-focus: #{map.get($base-colors, 'gray-500')};
+  --affirm-border-default-disabled: #{map.get($base-colors, 'gray-700')};
+  --affirm-border-interactive: #{map.get($base-colors, 'indigo-300')};
+  --affirm-border-secondary: #{map.get($base-colors, 'gray-600')};
+
+  --affirm-content-default: #{map.get($base-colors, 'gray-030')};
+  --affirm-content-default-disabled: #{map.get($base-colors, 'gray-600')};
+  --affirm-content-interactive: #{map.get($base-colors, 'indigo-300')};
+
+  --affirm-divider-primary: #{map.get($base-colors, 'gray-750')};
+}

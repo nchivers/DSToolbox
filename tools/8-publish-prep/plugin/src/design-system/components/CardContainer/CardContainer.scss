@@ -1,0 +1,135 @@
+.affirm-card-container {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  box-sizing: border-box;
+
+  // ===================================================================
+  // PLACEMENT — on-page
+  // ===================================================================
+
+  &--on-page {
+    border-radius: var(--affirm-radius-card-container-on-page-all);
+    border-width: var(--affirm-size-card-container-on-page-border-width);
+    padding: var(--affirm-spacing-card-container-on-page-padding);
+  }
+
+  &--on-page#{&}--primary {
+    background: var(--affirm-color-card-container-on-page-primary-bg);
+    border-color: var(--affirm-color-card-container-on-page-primary-border);
+    box-shadow:
+      var(--affirm-shadow-card-container-on-page-primary-shadow-offset-x)
+      var(--affirm-shadow-card-container-on-page-primary-shadow-offset-y)
+      var(--affirm-shadow-card-container-on-page-primary-shadow-blur)
+      var(--affirm-shadow-card-container-on-page-primary-shadow-spread)
+      var(--affirm-color-card-container-on-page-primary-shadow);
+  }
+
+  &--on-page#{&}--secondary {
+    background: var(--affirm-color-card-container-on-page-secondary-bg);
+    border-color: var(--affirm-color-card-container-on-page-secondary-border);
+    box-shadow:
+      var(--affirm-shadow-card-container-on-page-secondary-shadow-offset-x)
+      var(--affirm-shadow-card-container-on-page-secondary-shadow-offset-y)
+      var(--affirm-shadow-card-container-on-page-secondary-shadow-blur)
+      var(--affirm-shadow-card-container-on-page-secondary-shadow-spread)
+      var(--affirm-color-card-container-on-page-secondary-shadow);
+  }
+
+  &--on-page#{&}--tertiary {
+    background: var(--affirm-color-card-container-on-page-tertiary-bg);
+    border-color: var(--affirm-color-card-container-on-page-tertiary-border);
+    box-shadow:
+      var(--affirm-shadow-card-container-on-page-tertiary-shadow-offset-x)
+      var(--affirm-shadow-card-container-on-page-tertiary-shadow-offset-y)
+      var(--affirm-shadow-card-container-on-page-tertiary-shadow-blur)
+      var(--affirm-shadow-card-container-on-page-tertiary-shadow-spread)
+      var(--affirm-color-card-container-on-page-tertiary-shadow);
+  }
+
+  // ===================================================================
+  // PLACEMENT — on-surface
+  // ===================================================================
+
+  &--on-surface {
+    border-radius: var(--affirm-radius-card-container-on-surface-all);
+    border-width: var(--affirm-size-card-container-on-surface-border-width);
+    padding: var(--affirm-spacing-card-container-on-surface-padding);
+  }
+
+  &--on-surface#{&}--primary {
+    background: var(--affirm-color-card-container-on-surface-primary-bg);
+    border-color: var(--affirm-color-card-container-on-surface-primary-border);
+    box-shadow:
+      var(--affirm-shadow-card-container-on-surface-primary-shadow-offset-x)
+      var(--affirm-shadow-card-container-on-surface-primary-shadow-offset-y)
+      var(--affirm-shadow-card-container-on-surface-primary-shadow-blur)
+      var(--affirm-shadow-card-container-on-surface-primary-shadow-spread)
+      var(--affirm-color-card-container-on-surface-primary-shadow);
+  }
+
+  &--on-surface#{&}--secondary {
+    background: var(--affirm-color-card-container-on-surface-secondary-bg);
+    border-color: var(--affirm-color-card-container-on-surface-secondary-border);
+    box-shadow:
+      var(--affirm-shadow-card-container-on-surface-secondary-shadow-offset-x)
+      var(--affirm-shadow-card-container-on-surface-secondary-shadow-offset-y)
+      var(--affirm-shadow-card-container-on-surface-secondary-shadow-blur)
+      var(--affirm-shadow-card-container-on-surface-secondary-shadow-spread)
+      var(--affirm-color-card-container-on-surface-secondary-shadow);
+  }
+
+  &--on-surface#{&}--tertiary {
+    background: var(--affirm-color-card-container-on-surface-tertiary-bg);
+    border-color: var(--affirm-color-card-container-on-surface-tertiary-border);
+    box-shadow:
+      var(--affirm-shadow-card-container-on-surface-tertiary-shadow-offset-x)
+      var(--affirm-shadow-card-container-on-surface-tertiary-shadow-offset-y)
+      var(--affirm-shadow-card-container-on-surface-tertiary-shadow-blur)
+      var(--affirm-shadow-card-container-on-surface-tertiary-shadow-spread)
+      var(--affirm-color-card-container-on-surface-tertiary-shadow);
+  }
+
+  // ===================================================================
+  // PLACEMENT — inset
+  // ===================================================================
+
+  &--inset {
+    border-radius: var(--affirm-radius-card-container-inset-all);
+    border-width: var(--affirm-size-card-container-inset-border-width);
+    padding: var(--affirm-spacing-card-container-inset-padding);
+  }
+
+  &--inset#{&}--primary {
+    background: var(--affirm-color-card-container-inset-primary-bg);
+    border-color: var(--affirm-color-card-container-inset-primary-border);
+    box-shadow:
+      var(--affirm-shadow-card-container-inset-primary-shadow-offset-x)
+      var(--affirm-shadow-card-container-inset-primary-shadow-offset-y)
+      var(--affirm-shadow-card-container-inset-primary-shadow-blur)
+      var(--affirm-shadow-card-container-inset-primary-shadow-spread)
+      var(--affirm-color-card-container-inset-primary-shadow);
+  }
+
+  &--inset#{&}--secondary {
+    background: var(--affirm-color-card-container-inset-secondary-bg);
+    border-color: var(--affirm-color-card-container-inset-secondary-border);
+    box-shadow:
+      var(--affirm-shadow-card-container-inset-secondary-shadow-offset-x)
+      var(--affirm-shadow-card-container-inset-secondary-shadow-offset-y)
+      var(--affirm-shadow-card-container-inset-secondary-shadow-blur)
+      var(--affirm-shadow-card-container-inset-secondary-shadow-spread)
+      var(--affirm-color-card-container-inset-secondary-shadow);
+  }
+
+  &--inset#{&}--tertiary {
+    background: var(--affirm-color-card-container-inset-tertiary-bg);
+    border-color: var(--affirm-color-card-container-inset-tertiary-border);
+    box-shadow:
+      var(--affirm-shadow-card-container-inset-tertiary-shadow-offset-x)
+      var(--affirm-shadow-card-container-inset-tertiary-shadow-offset-y)
+      var(--affirm-shadow-card-container-inset-tertiary-shadow-blur)
+      var(--affirm-shadow-card-container-inset-tertiary-shadow-spread)
+      var(--affirm-color-card-container-inset-tertiary-shadow);
+  }
+}

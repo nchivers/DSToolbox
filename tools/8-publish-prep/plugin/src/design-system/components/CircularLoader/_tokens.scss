@@ -1,0 +1,31 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent defaults (from "All Modes" column)
+// ---------------------------------------------------------------------------
+:root {
+  // Size
+  --affirm-size-circular-loader-border-width: #{map.get($base-sizes, '025')};
+  --affirm-size-circular-loader-large-all: #{map.get($base-sizes, '700')};
+  --affirm-size-circular-loader-small-all: #{map.get($base-sizes, '300')};
+}
+
+// ---------------------------------------------------------------------------
+// Light defaults (from "Light Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // Border
+  --affirm-color-circular-loader-border: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-circular-loader-inverse-border: #{map.get($base-colors, 'gray-white')};
+}
+
+// ---------------------------------------------------------------------------
+// Dark defaults (from "Dark Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // Border
+  --affirm-color-circular-loader-border: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-circular-loader-inverse-border: #{map.get($base-colors, 'gray-950')};
+}

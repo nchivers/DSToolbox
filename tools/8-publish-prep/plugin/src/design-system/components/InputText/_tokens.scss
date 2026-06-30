@@ -1,0 +1,381 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent defaults (from "All Modes" column)
+// ---------------------------------------------------------------------------
+:root {
+  // Radius
+  --affirm-radius-input-text-input-all: #{map.get($base-sizes, '100')};
+
+  // Size
+  --affirm-size-input-text-input-icon-all: #{map.get($base-sizes, '300')};
+  --affirm-size-input-text-input-min-height: #{map.get($base-sizes, '700')};
+  --affirm-size-input-text-input-border-width-empty-resting: 1px;
+  --affirm-size-input-text-input-border-width-empty-hover: 1px;
+  --affirm-size-input-text-input-border-width-empty-focus: 1px;
+  --affirm-size-input-text-input-border-width-empty-focus-visible: 1px;
+  --affirm-size-input-text-input-border-width-empty-pressed: 1px;
+  --affirm-size-input-text-input-border-width-empty-disabled: 1px;
+  --affirm-size-input-text-input-border-width-error-empty-resting: 1px;
+  --affirm-size-input-text-input-border-width-error-empty-hover: 1px;
+  --affirm-size-input-text-input-border-width-error-empty-focus: 1px;
+  --affirm-size-input-text-input-border-width-error-empty-focus-visible: 1px;
+  --affirm-size-input-text-input-border-width-error-empty-pressed: 1px;
+  --affirm-size-input-text-input-border-width-filled-resting: 1px;
+  --affirm-size-input-text-input-border-width-filled-hover: 1px;
+  --affirm-size-input-text-input-border-width-filled-focus: 1px;
+  --affirm-size-input-text-input-border-width-filled-focus-visible: 1px;
+  --affirm-size-input-text-input-border-width-filled-pressed: 1px;
+  --affirm-size-input-text-input-border-width-filled-disabled: 1px;
+  --affirm-size-input-text-input-border-width-error-filled-resting: 1px;
+  --affirm-size-input-text-input-border-width-error-filled-hover: 1px;
+  --affirm-size-input-text-input-border-width-error-filled-focus: 1px;
+  --affirm-size-input-text-input-border-width-error-filled-focus-visible: 1px;
+  --affirm-size-input-text-input-border-width-error-filled-pressed: 1px;
+  --affirm-size-input-text-input-outline-width-focus-visible: #{map.get($base-sizes, '025')};
+
+  // Spacing
+  --affirm-spacing-input-text-input-gap-x: #{map.get($base-sizes, '150')};
+  --affirm-spacing-input-text-input-label-value-gap-y: #{map.get($base-sizes, '025')};
+  --affirm-spacing-input-text-input-outline-offset-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-spacing-input-text-input-padding-x: #{map.get($base-sizes, '200')};
+  --affirm-spacing-input-text-input-padding-y-empty: #{map.get($base-sizes, '200')};
+  --affirm-spacing-input-text-input-padding-y-filled: #{map.get($base-sizes, '100')};
+  --affirm-spacing-input-text-gap-y: #{map.get($base-sizes, '100')};
+}
+
+// ---------------------------------------------------------------------------
+// Light defaults (from "Light Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // Error message — text
+  --affirm-color-input-text-error-message-text-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-error-message-text-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-error-message-text-focus: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-error-message-text-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-error-message-text-pressed: #{map.get($base-colors, 'red-600')};
+
+  // Input — bg (empty)
+  --affirm-color-input-text-input-bg-empty-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-bg-empty-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-input-text-input-bg-empty-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-input-text-input-bg-empty-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-input-text-input-bg-empty-focus: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-bg-empty-disabled: #{map.get($base-colors, 'gray-100')};
+
+  // Input — bg (error_empty)
+  --affirm-color-input-text-input-bg-error-empty-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-bg-error-empty-hover: #{map.get($base-colors, 'red-050')};
+  --affirm-color-input-text-input-bg-error-empty-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-input-text-input-bg-error-empty-focus-visible: #{map.get($base-colors, 'red-050')};
+  --affirm-color-input-text-input-bg-error-empty-focus: #{map.get($base-colors, 'gray-white')};
+
+  // Input — bg (filled)
+  --affirm-color-input-text-input-bg-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-bg-filled-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-input-text-input-bg-filled-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-input-text-input-bg-filled-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-input-text-input-bg-filled-focus: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-bg-filled-disabled: #{map.get($base-colors, 'gray-100')};
+
+  // Input — bg (error_filled)
+  --affirm-color-input-text-input-bg-error-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-bg-error-filled-hover: #{map.get($base-colors, 'red-050')};
+  --affirm-color-input-text-input-bg-error-filled-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-input-text-input-bg-error-filled-focus-visible: #{map.get($base-colors, 'red-050')};
+  --affirm-color-input-text-input-bg-error-filled-focus: #{map.get($base-colors, 'gray-white')};
+
+  // Input — border (empty)
+  --affirm-color-input-text-input-border-empty-resting: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-input-text-input-border-empty-hover: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-input-text-input-border-empty-pressed: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-input-text-input-border-empty-focus-visible: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-input-text-input-border-empty-focus: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-input-text-input-border-empty-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // Input — border (error_empty)
+  --affirm-color-input-text-input-border-error-empty-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-border-error-empty-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-border-error-empty-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-border-error-empty-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-border-error-empty-focus: #{map.get($base-colors, 'red-600')};
+
+  // Input — border (filled)
+  --affirm-color-input-text-input-border-filled-resting: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-input-text-input-border-filled-hover: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-input-text-input-border-filled-pressed: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-input-text-input-border-filled-focus-visible: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-input-text-input-border-filled-focus: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-input-text-input-border-filled-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // Input — border (error_filled)
+  --affirm-color-input-text-input-border-error-filled-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-border-error-filled-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-border-error-filled-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-border-error-filled-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-border-error-filled-focus: #{map.get($base-colors, 'red-600')};
+
+  // Input — cursor fill
+  --affirm-color-input-text-input-cursor-fill-empty-focus: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-input-text-input-cursor-fill-filled-focus: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-input-text-input-cursor-fill-error-empty-focus: #{map.get($base-colors, 'red-500')};
+  --affirm-color-input-text-input-cursor-fill-error-filled-focus: #{map.get($base-colors, 'red-500')};
+
+  // Input — icon (empty)
+  --affirm-color-input-text-input-icon-empty-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-input-icon-empty-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-input-icon-empty-focus: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-input-text-input-icon-empty-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-input-icon-empty-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-input-icon-empty-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // Input — icon (error_empty)
+  --affirm-color-input-text-input-icon-error-empty-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-icon-error-empty-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-icon-error-empty-focus: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-icon-error-empty-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-icon-error-empty-pressed: #{map.get($base-colors, 'red-600')};
+
+  // Input — icon (filled)
+  --affirm-color-input-text-input-icon-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-icon-filled-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-icon-filled-focus: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-input-text-input-icon-filled-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-icon-filled-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-icon-filled-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // Input — icon (error_filled)
+  --affirm-color-input-text-input-icon-error-filled-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-icon-error-filled-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-icon-error-filled-focus: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-icon-error-filled-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-icon-error-filled-pressed: #{map.get($base-colors, 'red-600')};
+
+  // Input — outline
+  --affirm-color-input-text-input-outline-empty-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-input-text-input-outline-filled-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-input-text-input-outline-error-empty-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-input-text-input-outline-error-filled-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // Input — label text (empty)
+  --affirm-color-input-text-input-label-text-empty-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-input-label-text-empty-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-input-label-text-empty-focus: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-input-text-input-label-text-empty-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-input-label-text-empty-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-input-label-text-empty-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // Input — label text (error_empty)
+  --affirm-color-input-text-input-label-text-error-empty-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-label-text-error-empty-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-label-text-error-empty-focus: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-label-text-error-empty-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-label-text-error-empty-pressed: #{map.get($base-colors, 'red-600')};
+
+  // Input — label text (filled)
+  --affirm-color-input-text-input-label-text-filled-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-input-label-text-filled-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-input-label-text-filled-focus: #{map.get($base-colors, 'indigo-900')};
+  --affirm-color-input-text-input-label-text-filled-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-input-label-text-filled-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-input-label-text-filled-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // Input — label text (error_filled)
+  --affirm-color-input-text-input-label-text-error-filled-resting: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-label-text-error-filled-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-label-text-error-filled-focus: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-label-text-error-filled-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-input-text-input-label-text-error-filled-pressed: #{map.get($base-colors, 'red-600')};
+
+  // Input — value text (filled)
+  --affirm-color-input-text-input-value-text-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-value-text-filled-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-value-text-filled-focus: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-value-text-filled-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-value-text-filled-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-value-text-filled-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // Input — value text (error_filled)
+  --affirm-color-input-text-input-value-text-error-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-value-text-error-filled-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-value-text-error-filled-focus: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-value-text-error-filled-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-value-text-error-filled-pressed: #{map.get($base-colors, 'gray-950')};
+
+  // Message — text
+  --affirm-color-input-text-message-text-resting: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-message-text-hover: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-message-text-focus: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-message-text-focus-visible: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-message-text-pressed: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-input-text-message-text-disabled: #{map.get($base-colors, 'gray-300')};
+}
+
+// ---------------------------------------------------------------------------
+// Dark defaults (from "Dark Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // Error message — text
+  --affirm-color-input-text-error-message-text-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-error-message-text-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-error-message-text-focus: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-error-message-text-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-error-message-text-pressed: #{map.get($base-colors, 'red-300')};
+
+  // Input — bg (empty)
+  --affirm-color-input-text-input-bg-empty-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-bg-empty-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-input-text-input-bg-empty-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-input-text-input-bg-empty-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-input-text-input-bg-empty-focus: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-bg-empty-disabled: #{map.get($base-colors, 'gray-750')};
+
+  // Input — bg (error_empty)
+  --affirm-color-input-text-input-bg-error-empty-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-bg-error-empty-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-input-text-input-bg-error-empty-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-input-text-input-bg-error-empty-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-input-text-input-bg-error-empty-focus: #{map.get($base-colors, 'gray-950')};
+
+  // Input — bg (filled)
+  --affirm-color-input-text-input-bg-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-bg-filled-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-input-text-input-bg-filled-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-input-text-input-bg-filled-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-input-text-input-bg-filled-focus: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-bg-filled-disabled: #{map.get($base-colors, 'gray-750')};
+
+  // Input — bg (error_filled)
+  --affirm-color-input-text-input-bg-error-filled-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-input-text-input-bg-error-filled-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-input-text-input-bg-error-filled-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-input-text-input-bg-error-filled-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-input-text-input-bg-error-filled-focus: #{map.get($base-colors, 'gray-950')};
+
+  // Input — border (empty)
+  --affirm-color-input-text-input-border-empty-resting: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-input-text-input-border-empty-hover: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-input-text-input-border-empty-pressed: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-input-text-input-border-empty-focus-visible: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-input-text-input-border-empty-focus: #{map.get($base-colors, 'indigo-200')};
+  --affirm-color-input-text-input-border-empty-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // Input — border (error_empty)
+  --affirm-color-input-text-input-border-error-empty-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-border-error-empty-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-border-error-empty-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-border-error-empty-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-border-error-empty-focus: #{map.get($base-colors, 'red-300')};
+
+  // Input — border (filled)
+  --affirm-color-input-text-input-border-filled-resting: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-input-text-input-border-filled-hover: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-input-text-input-border-filled-pressed: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-input-text-input-border-filled-focus-visible: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-input-text-input-border-filled-focus: #{map.get($base-colors, 'indigo-200')};
+  --affirm-color-input-text-input-border-filled-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // Input — border (error_filled)
+  --affirm-color-input-text-input-border-error-filled-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-border-error-filled-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-border-error-filled-pressed: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-border-error-filled-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-border-error-filled-focus: #{map.get($base-colors, 'red-300')};
+
+  // Input — cursor fill
+  --affirm-color-input-text-input-cursor-fill-empty-focus: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-input-text-input-cursor-fill-filled-focus: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-input-text-input-cursor-fill-error-empty-focus: #{map.get($base-colors, 'red-500')};
+  --affirm-color-input-text-input-cursor-fill-error-filled-focus: #{map.get($base-colors, 'red-500')};
+
+  // Input — icon (empty)
+  --affirm-color-input-text-input-icon-empty-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-input-icon-empty-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-input-icon-empty-focus: #{map.get($base-colors, 'indigo-200')};
+  --affirm-color-input-text-input-icon-empty-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-input-icon-empty-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-input-icon-empty-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // Input — icon (error_empty)
+  --affirm-color-input-text-input-icon-error-empty-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-icon-error-empty-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-icon-error-empty-focus: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-icon-error-empty-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-icon-error-empty-pressed: #{map.get($base-colors, 'red-300')};
+
+  // Input — icon (filled)
+  --affirm-color-input-text-input-icon-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-icon-filled-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-icon-filled-focus: #{map.get($base-colors, 'indigo-200')};
+  --affirm-color-input-text-input-icon-filled-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-icon-filled-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-icon-filled-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // Input — icon (error_filled)
+  --affirm-color-input-text-input-icon-error-filled-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-icon-error-filled-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-icon-error-filled-focus: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-icon-error-filled-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-icon-error-filled-pressed: #{map.get($base-colors, 'red-300')};
+
+  // Input — outline
+  --affirm-color-input-text-input-outline-empty-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-input-text-input-outline-filled-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-input-text-input-outline-error-empty-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-input-text-input-outline-error-filled-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // Input — label text (empty)
+  --affirm-color-input-text-input-label-text-empty-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-input-label-text-empty-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-input-label-text-empty-focus: #{map.get($base-colors, 'indigo-200')};
+  --affirm-color-input-text-input-label-text-empty-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-input-label-text-empty-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-input-label-text-empty-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // Input — label text (error_empty)
+  --affirm-color-input-text-input-label-text-error-empty-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-label-text-error-empty-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-label-text-error-empty-focus: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-label-text-error-empty-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-label-text-error-empty-pressed: #{map.get($base-colors, 'red-300')};
+
+  // Input — label text (filled)
+  --affirm-color-input-text-input-label-text-filled-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-input-label-text-filled-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-input-label-text-filled-focus: #{map.get($base-colors, 'indigo-200')};
+  --affirm-color-input-text-input-label-text-filled-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-input-label-text-filled-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-input-label-text-filled-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // Input — label text (error_filled)
+  --affirm-color-input-text-input-label-text-error-filled-resting: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-label-text-error-filled-hover: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-label-text-error-filled-focus: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-label-text-error-filled-focus-visible: #{map.get($base-colors, 'red-300')};
+  --affirm-color-input-text-input-label-text-error-filled-pressed: #{map.get($base-colors, 'red-300')};
+
+  // Input — value text (filled)
+  --affirm-color-input-text-input-value-text-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-value-text-filled-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-value-text-filled-focus: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-value-text-filled-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-value-text-filled-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-value-text-filled-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // Input — value text (error_filled)
+  --affirm-color-input-text-input-value-text-error-filled-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-value-text-error-filled-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-value-text-error-filled-focus: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-value-text-error-filled-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-input-text-input-value-text-error-filled-pressed: #{map.get($base-colors, 'gray-white')};
+
+  // Message — text
+  --affirm-color-input-text-message-text-resting: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-message-text-hover: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-message-text-focus: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-message-text-focus-visible: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-message-text-pressed: #{map.get($base-colors, 'gray-350')};
+  --affirm-color-input-text-message-text-disabled: #{map.get($base-colors, 'gray-500')};
+}

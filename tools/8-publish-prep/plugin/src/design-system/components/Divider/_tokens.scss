@@ -1,0 +1,45 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent (from "All Modes" column)
+// ---------------------------------------------------------------------------
+:root {
+  // Size
+  --affirm-size-divider-thickness: #{map.get($base-sizes, '013')};
+}
+
+// ---------------------------------------------------------------------------
+// Light mode (from "Light Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // Primary
+  --affirm-color-divider-primary-fill: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-divider-primary-inverse-fill: #{map.get($base-colors, 'gray-700')};
+
+  // Secondary
+  --affirm-color-divider-secondary-fill: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-divider-secondary-inverse-fill: #{map.get($base-colors, 'gray-650')};
+
+  // Tertiary
+  --affirm-color-divider-tertiary-fill: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-divider-tertiary-inverse-fill: #{map.get($base-colors, 'gray-650')};
+}
+
+// ---------------------------------------------------------------------------
+// Dark mode (from "Dark Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // Primary
+  --affirm-color-divider-primary-fill: #{map.get($base-colors, 'gray-700')};
+  --affirm-color-divider-primary-inverse-fill: #{map.get($base-colors, 'gray-100')};
+
+  // Secondary
+  --affirm-color-divider-secondary-fill: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-divider-secondary-inverse-fill: #{map.get($base-colors, 'gray-150')};
+
+  // Tertiary
+  --affirm-color-divider-tertiary-fill: #{map.get($base-colors, 'gray-650')};
+  --affirm-color-divider-tertiary-inverse-fill: #{map.get($base-colors, 'gray-150')};
+}

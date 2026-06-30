@@ -1,0 +1,26 @@
+@mixin body-support-large-link {
+  font-family: var(--affirm-semantic-font-family-body);
+  font-weight: var(--affirm-semantic-weight-mid-imp);
+  font-size: var(--affirm-semantic-size-body-large);
+  line-height: var(--affirm-semantic-line-height-body-large);
+  letter-spacing: var(--affirm-semantic-letter-spacing-body-large);
+  text-decoration: underline;
+}
+
+@mixin body-support-medium-link {
+  font-family: var(--affirm-semantic-font-family-body);
+  font-weight: var(--affirm-semantic-weight-mid-imp);
+  font-size: var(--affirm-semantic-size-body-medium);
+  line-height: var(--affirm-semantic-line-height-body-medium);
+  letter-spacing: var(--affirm-semantic-letter-spacing-body-medium);
+  text-decoration: underline;
+}
+
+@mixin body-support-small-link {
+  font-family: var(--affirm-semantic-font-family-body);
+  font-weight: var(--affirm-semantic-weight-mid-imp);
+  font-size: var(--affirm-semantic-size-body-small);
+  line-height: var(--affirm-semantic-line-height-body-small);
+  letter-spacing: var(--affirm-semantic-letter-spacing-body-small);
+  text-decoration: underline;
+}

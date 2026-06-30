@@ -1,0 +1,2196 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent tokens
+// ---------------------------------------------------------------------------
+:root {
+  // Radius
+  --affirm-radius-button-icon-only-tooltip-all: #{map.get($base-sizes, '100')};
+  --affirm-radius-button-large-all: #{map.get($base-sizes, '400')};
+  --affirm-radius-button-medium-all: #{map.get($base-sizes, '300')};
+  --affirm-radius-button-small-all: #{map.get($base-sizes, '225')};
+
+  // Size
+  --affirm-size-button-primary-border-width: #{map.get($base-sizes, '000')};
+  --affirm-size-button-secondary-border-width: #{map.get($base-sizes, '013')};
+  --affirm-size-button-tertiary-border-width: #{map.get($base-sizes, '000')};
+  --affirm-size-button-large-icon-all: #{map.get($base-sizes, '300')};
+  --affirm-size-button-medium-icon-all: #{map.get($base-sizes, '250')};
+  --affirm-size-button-small-icon-all: #{map.get($base-sizes, '200')};
+  --affirm-size-button-large-loading-icon-all: #{map.get($base-sizes, '300')};
+  --affirm-size-button-medium-loading-icon-all: #{map.get($base-sizes, '250')};
+  --affirm-size-button-small-loading-icon-all: #{map.get($base-sizes, '200')};
+  --affirm-size-button-outline-width-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-size-button-large-min-width: #{map.get($base-sizes, '800')};
+  --affirm-size-button-medium-min-width: #{map.get($base-sizes, '600')};
+  --affirm-size-button-small-min-width: #{map.get($base-sizes, '450')};
+
+  // Spacing
+  --affirm-spacing-button-icon-only-large-loading-icon-padding-y: #{map.get($base-sizes, '000')};
+  --affirm-spacing-button-icon-only-medium-loading-icon-padding-y: #{map.get($base-sizes, '000')};
+  --affirm-spacing-button-icon-only-small-loading-icon-padding-y: #{map.get($base-sizes, '000')};
+  --affirm-spacing-button-icon-only-tooltip-padding-x: #{map.get($base-sizes, '100')};
+  --affirm-spacing-button-icon-only-tooltip-padding-y: #{map.get($base-sizes, '050')};
+  --affirm-spacing-button-primary-large-gap-x: #{map.get($base-sizes, '100')};
+  --affirm-spacing-button-primary-medium-gap-x: #{map.get($base-sizes, '050')};
+  --affirm-spacing-button-primary-small-gap-x: #{map.get($base-sizes, '050')};
+  --affirm-spacing-button-primary-large-padding-x: #{map.get($base-sizes, '350')};
+  --affirm-spacing-button-primary-medium-padding-x: #{map.get($base-sizes, '300')};
+  --affirm-spacing-button-primary-small-padding-x: #{map.get($base-sizes, '200')};
+  --affirm-spacing-button-primary-large-padding-y: #{map.get($base-sizes, '225')};
+  --affirm-spacing-button-primary-medium-padding-y: #{map.get($base-sizes, '150')};
+  --affirm-spacing-button-primary-small-padding-y: #{map.get($base-sizes, '100')};
+  --affirm-spacing-button-primary-icon-only-large-padding-x: #{map.get($base-sizes, '250')};
+  --affirm-spacing-button-primary-icon-only-medium-padding-x: #{map.get($base-sizes, '175')};
+  --affirm-spacing-button-primary-icon-only-small-padding-x: #{map.get($base-sizes, '125')};
+  --affirm-spacing-button-primary-icon-only-large-padding-y: #{map.get($base-sizes, '250')};
+  --affirm-spacing-button-primary-icon-only-medium-padding-y: #{map.get($base-sizes, '175')};
+  --affirm-spacing-button-primary-icon-only-small-padding-y: #{map.get($base-sizes, '125')};
+  --affirm-spacing-button-secondary-large-gap-x: #{map.get($base-sizes, '100')};
+  --affirm-spacing-button-secondary-medium-gap-x: #{map.get($base-sizes, '050')};
+  --affirm-spacing-button-secondary-small-gap-x: #{map.get($base-sizes, '050')};
+  --affirm-spacing-button-secondary-large-padding-x: #{map.get($base-sizes, '350')};
+  --affirm-spacing-button-secondary-medium-padding-x: #{map.get($base-sizes, '300')};
+  --affirm-spacing-button-secondary-small-padding-x: #{map.get($base-sizes, '200')};
+  --affirm-spacing-button-secondary-large-padding-y: #{map.get($base-sizes, '225')};
+  --affirm-spacing-button-secondary-medium-padding-y: #{map.get($base-sizes, '150')};
+  --affirm-spacing-button-secondary-small-padding-y: #{map.get($base-sizes, '100')};
+  --affirm-spacing-button-secondary-icon-only-large-padding-x: #{map.get($base-sizes, '250')};
+  --affirm-spacing-button-secondary-icon-only-medium-padding-x: #{map.get($base-sizes, '175')};
+  --affirm-spacing-button-secondary-icon-only-small-padding-x: #{map.get($base-sizes, '125')};
+  --affirm-spacing-button-secondary-icon-only-large-padding-y: #{map.get($base-sizes, '250')};
+  --affirm-spacing-button-secondary-icon-only-medium-padding-y: #{map.get($base-sizes, '175')};
+  --affirm-spacing-button-secondary-icon-only-small-padding-y: #{map.get($base-sizes, '125')};
+  --affirm-spacing-button-tertiary-large-gap-x: #{map.get($base-sizes, '100')};
+  --affirm-spacing-button-tertiary-medium-gap-x: #{map.get($base-sizes, '050')};
+  --affirm-spacing-button-tertiary-small-gap-x: #{map.get($base-sizes, '050')};
+  --affirm-spacing-button-tertiary-large-padding-x: #{map.get($base-sizes, '000')};
+  --affirm-spacing-button-tertiary-medium-padding-x: #{map.get($base-sizes, '000')};
+  --affirm-spacing-button-tertiary-small-padding-x: #{map.get($base-sizes, '000')};
+  --affirm-spacing-button-tertiary-large-padding-y: #{map.get($base-sizes, '225')};
+  --affirm-spacing-button-tertiary-medium-padding-y: #{map.get($base-sizes, '150')};
+  --affirm-spacing-button-tertiary-small-padding-y: #{map.get($base-sizes, '100')};
+  --affirm-spacing-button-tertiary-icon-only-large-padding-x: #{map.get($base-sizes, '250')};
+  --affirm-spacing-button-tertiary-icon-only-medium-padding-x: #{map.get($base-sizes, '175')};
+  --affirm-spacing-button-tertiary-icon-only-small-padding-x: #{map.get($base-sizes, '125')};
+  --affirm-spacing-button-tertiary-icon-only-large-padding-y: #{map.get($base-sizes, '250')};
+  --affirm-spacing-button-tertiary-icon-only-medium-padding-y: #{map.get($base-sizes, '175')};
+  --affirm-spacing-button-tertiary-icon-only-small-padding-y: #{map.get($base-sizes, '125')};
+  --affirm-spacing-button-large-loading-icon-padding-y: #{map.get($base-sizes, '025')};
+  --affirm-spacing-button-medium-loading-icon-padding-y: #{map.get($base-sizes, '025')};
+  --affirm-spacing-button-small-loading-icon-padding-y: #{map.get($base-sizes, '025')};
+  --affirm-spacing-button-outline-offset-focus-visible: #{map.get($base-sizes, '025')};
+
+  // Opacity
+  --affirm-opacity-button-icon-only-tooltip-container-resting: 0;
+  --affirm-opacity-button-icon-only-tooltip-container-hover: 1;
+  --affirm-opacity-button-icon-only-tooltip-container-focus-visible: 1;
+  --affirm-opacity-button-icon-only-tooltip-container-pressed: 0;
+  --affirm-opacity-button-icon-only-tooltip-container-disabled: 0;
+
+  // Position
+  --affirm-position-button-icon-only-tooltip-top-resting: #{map.get($base-sizes, '000')};
+  --affirm-position-button-icon-only-tooltip-top-hover: #{map.get($base-sizes, '200')};
+  --affirm-position-button-icon-only-tooltip-top-focus-visible: #{map.get($base-sizes, '200')};
+  --affirm-position-button-icon-only-tooltip-top-pressed: #{map.get($base-sizes, '000')};
+  --affirm-position-button-icon-only-tooltip-top-disabled: #{map.get($base-sizes, '000')};
+
+}
+
+// ---------------------------------------------------------------------------
+// Light mode
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // icon_only.tooltip
+  --affirm-color-button-icon-only-tooltip-bg: #{map.get($base-colors, 'gray-900')};
+  --affirm-color-button-icon-only-tooltip-text: #{map.get($base-colors, 'gray-white')};
+
+  // primary
+  --affirm-color-button-primary-container-shadow-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-container-shadow-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-container-shadow-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-container-shadow-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-container-shadow-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-container-shadow-loading: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-bg-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-bg-hover: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-primary-bg-focus-visible: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-primary-bg-pressed: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-button-primary-bg-disabled: #{map.get($base-colors, 'gray-100')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-bg-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-primary-inverse-bg-hover: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-primary-inverse-bg-focus-visible: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-primary-inverse-bg-pressed: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-button-primary-inverse-bg-disabled: #{map.get($base-colors, 'gray-750')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-bg-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-bg-hover: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-button-primary-neutral-bg-focus-visible: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-button-primary-neutral-bg-pressed: #{map.get($base-colors, 'gray-750')};
+  --affirm-color-button-primary-neutral-bg-disabled: #{map.get($base-colors, 'gray-100')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-bg-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-inverse-bg-hover: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-primary-neutral-inverse-bg-focus-visible: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-primary-neutral-inverse-bg-pressed: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-button-primary-neutral-inverse-bg-disabled: #{map.get($base-colors, 'gray-750')};
+
+  // primary.static
+  --affirm-color-button-primary-static-bg-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-static-bg-hover: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-primary-static-bg-focus-visible: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-primary-static-bg-pressed: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-button-primary-static-bg-disabled: #{map.get($base-colors, 'gray-100')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-bg-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-primary-inverse-static-bg-hover: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-primary-inverse-static-bg-focus-visible: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-primary-inverse-static-bg-pressed: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-button-primary-inverse-static-bg-disabled: #{map.get($base-colors, 'gray-750')};
+
+  // primary
+  --affirm-color-button-primary-bg-loading: #{map.get($base-colors, 'gray-100')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-bg-loading: #{map.get($base-colors, 'gray-750')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-bg-loading: #{map.get($base-colors, 'gray-100')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-bg-loading: #{map.get($base-colors, 'gray-750')};
+
+  // primary.static
+  --affirm-color-button-primary-static-bg-loading: #{map.get($base-colors, 'gray-100')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-bg-loading: #{map.get($base-colors, 'gray-750')};
+
+  // primary
+  --affirm-color-button-primary-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-inverse-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-inverse-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-inverse-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-inverse-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.static
+  --affirm-color-button-primary-static-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-static-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-static-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-static-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-static-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-static-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-static-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-static-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-static-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary
+  --affirm-color-button-primary-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.static
+  --affirm-color-button-primary-static-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary
+  --affirm-color-button-primary-icon-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-icon-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-icon-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-icon-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-icon-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-icon-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-icon-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-icon-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-icon-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-icon-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-icon-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-icon-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-icon-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-icon-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-icon-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-icon-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-inverse-icon-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-inverse-icon-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-inverse-icon-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-inverse-icon-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary.static
+  --affirm-color-button-primary-static-icon-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-icon-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-icon-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-icon-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-icon-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-icon-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-icon-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-icon-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-icon-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-icon-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary.small
+  --affirm-color-button-primary-small-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // primary.medium
+  --affirm-color-button-primary-medium-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // primary.large
+  --affirm-color-button-primary-large-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // primary
+  --affirm-color-button-primary-text-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-text-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-text-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-text-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-text-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-text-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-text-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-text-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-text-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-text-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-text-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-text-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-text-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-text-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-text-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-text-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-inverse-text-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-inverse-text-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-inverse-text-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-inverse-text-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary.static
+  --affirm-color-button-primary-static-text-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-text-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-text-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-text-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-text-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-text-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-text-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-text-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-text-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-text-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary
+  --affirm-color-button-primary-text-loading: #{map.get($base-colors, 'gray-300')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-text-loading: #{map.get($base-colors, 'gray-500')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-text-loading: #{map.get($base-colors, 'gray-300')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-text-loading: #{map.get($base-colors, 'gray-500')};
+
+  // primary.static
+  --affirm-color-button-primary-static-text-loading: #{map.get($base-colors, 'gray-300')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-text-loading: #{map.get($base-colors, 'gray-500')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-bg-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-bg-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-button-primary-destructive-bg-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-button-primary-destructive-bg-pressed: #{map.get($base-colors, 'red-700')};
+  --affirm-color-button-primary-destructive-bg-disabled: #{map.get($base-colors, 'gray-100')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-bg-resting: #{map.get($base-colors, 'red-050')};
+  --affirm-color-button-primary-destructive-inverse-bg-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-primary-destructive-inverse-bg-focus-visible: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-primary-destructive-inverse-bg-pressed: #{map.get($base-colors, 'red-200')};
+  --affirm-color-button-primary-destructive-inverse-bg-disabled: #{map.get($base-colors, 'gray-750')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-bg-loading: #{map.get($base-colors, 'gray-100')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-bg-loading: #{map.get($base-colors, 'gray-750')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-inverse-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-inverse-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-inverse-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-inverse-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-icon-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-icon-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-icon-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-icon-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-icon-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-icon-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-inverse-icon-hover: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-inverse-icon-focus-visible: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-inverse-icon-pressed: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-inverse-icon-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary_destructive.small
+  --affirm-color-button-primary-destructive-small-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // primary_destructive.medium
+  --affirm-color-button-primary-destructive-medium-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // primary_destructive.large
+  --affirm-color-button-primary-destructive-large-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-text-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-text-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-text-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-text-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-text-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-text-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-inverse-text-hover: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-inverse-text-focus-visible: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-inverse-text-pressed: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-inverse-text-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-text-loading: #{map.get($base-colors, 'gray-300')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-text-loading: #{map.get($base-colors, 'gray-500')};
+
+  // secondary
+  --affirm-color-button-secondary-container-shadow-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-container-shadow-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-container-shadow-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-container-shadow-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-container-shadow-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-container-shadow-loading: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-bg-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-bg-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-bg-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-secondary-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-inverse-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-inverse-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-inverse-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-secondary-inverse-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-neutral-bg-hover: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-secondary-neutral-bg-focus-visible: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-secondary-neutral-bg-pressed: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-button-secondary-neutral-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-neutral-inverse-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-neutral-inverse-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-neutral-inverse-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-secondary-neutral-inverse-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-static-bg-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-static-bg-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-static-bg-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-secondary-static-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-inverse-static-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-inverse-static-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-inverse-static-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-secondary-inverse-static-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary
+  --affirm-color-button-secondary-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary
+  --affirm-color-button-secondary-border-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-border-hover: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-secondary-border-focus-visible: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-secondary-border-pressed: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-button-secondary-border-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-border-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-border-hover: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-secondary-inverse-border-focus-visible: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-secondary-inverse-border-pressed: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-button-secondary-inverse-border-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-border-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-border-hover: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-button-secondary-neutral-border-focus-visible: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-button-secondary-neutral-border-pressed: #{map.get($base-colors, 'gray-750')};
+  --affirm-color-button-secondary-neutral-border-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-border-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-inverse-border-hover: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-secondary-neutral-inverse-border-focus-visible: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-secondary-neutral-inverse-border-pressed: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-button-secondary-neutral-inverse-border-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-border-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-border-hover: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-secondary-static-border-focus-visible: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-secondary-static-border-pressed: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-button-secondary-static-border-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-border-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-border-hover: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-secondary-inverse-static-border-focus-visible: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-secondary-inverse-static-border-pressed: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-button-secondary-inverse-static-border-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary
+  --affirm-color-button-secondary-border-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-border-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-border-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-border-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-border-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-border-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary
+  --affirm-color-button-secondary-icon-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-icon-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-icon-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-icon-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-icon-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-icon-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-icon-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-icon-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-icon-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-icon-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-icon-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-icon-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-icon-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-inverse-icon-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-inverse-icon-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-inverse-icon-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-inverse-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-icon-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-icon-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-icon-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-icon-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-icon-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-icon-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-icon-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-icon-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.small
+  --affirm-color-button-secondary-small-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // secondary.medium
+  --affirm-color-button-secondary-medium-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // secondary.large
+  --affirm-color-button-secondary-large-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // secondary
+  --affirm-color-button-secondary-text-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-text-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-text-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-text-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-text-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-text-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-text-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-text-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-text-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-text-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-text-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-text-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-text-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-inverse-text-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-inverse-text-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-inverse-text-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-inverse-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-text-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-text-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-text-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-text-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-text-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-text-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-text-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-text-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary
+  --affirm-color-button-secondary-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-destructive-bg-hover: #{map.get($base-colors, 'red-050')};
+  --affirm-color-button-secondary-destructive-bg-focus-visible: #{map.get($base-colors, 'red-050')};
+  --affirm-color-button-secondary-destructive-bg-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-destructive-inverse-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-destructive-inverse-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-destructive-inverse-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-secondary-destructive-inverse-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-border-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-border-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-button-secondary-destructive-border-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-button-secondary-destructive-border-pressed: #{map.get($base-colors, 'red-700')};
+  --affirm-color-button-secondary-destructive-border-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-border-resting: #{map.get($base-colors, 'red-050')};
+  --affirm-color-button-secondary-destructive-inverse-border-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-inverse-border-focus-visible: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-inverse-border-pressed: #{map.get($base-colors, 'red-200')};
+  --affirm-color-button-secondary-destructive-inverse-border-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-border-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-border-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-icon-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-icon-hover: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-icon-focus-visible: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-icon-pressed: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-icon-resting: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-inverse-icon-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-inverse-icon-focus-visible: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-inverse-icon-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-inverse-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary_destructive.small
+  --affirm-color-button-secondary-destructive-small-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // secondary_destructive.medium
+  --affirm-color-button-secondary-destructive-medium-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // secondary_destructive.large
+  --affirm-color-button-secondary-destructive-large-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-text-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-text-hover: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-text-focus-visible: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-text-pressed: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-text-resting: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-inverse-text-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-inverse-text-focus-visible: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-inverse-text-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-inverse-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary
+  --affirm-color-button-tertiary-container-shadow-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-container-shadow-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-container-shadow-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-container-shadow-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-container-shadow-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-container-shadow-loading: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-bg-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-bg-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-bg-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-tertiary-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-inverse-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-inverse-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-tertiary-inverse-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-bg-hover: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-tertiary-neutral-bg-focus-visible: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-tertiary-neutral-bg-pressed: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-button-tertiary-neutral-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-inverse-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-neutral-inverse-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-neutral-inverse-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-tertiary-neutral-inverse-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-static-bg-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-static-bg-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-static-bg-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-tertiary-static-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-static-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-inverse-static-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-inverse-static-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-tertiary-inverse-static-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary
+  --affirm-color-button-tertiary-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary
+  --affirm-color-button-tertiary-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-inverse-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-inverse-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-inverse-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-inverse-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-static-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-static-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-static-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-static-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-static-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-static-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-static-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-static-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary
+  --affirm-color-button-tertiary-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary
+  --affirm-color-button-tertiary-icon-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-icon-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-icon-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-icon-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-icon-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-icon-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-icon-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-icon-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-icon-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-icon-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-icon-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-icon-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-icon-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-inverse-icon-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-inverse-icon-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-inverse-icon-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-inverse-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-icon-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-icon-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-icon-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-icon-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-icon-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-icon-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-icon-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-icon-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.small
+  --affirm-color-button-tertiary-small-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // tertiary.medium
+  --affirm-color-button-tertiary-medium-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // tertiary.large
+  --affirm-color-button-tertiary-large-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // tertiary
+  --affirm-color-button-tertiary-text-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-text-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-text-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-text-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-text-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-text-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-text-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-text-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-text-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-text-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-text-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-text-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-text-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-inverse-text-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-inverse-text-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-inverse-text-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-inverse-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-text-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-text-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-text-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-text-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-text-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-text-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-text-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-text-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary
+  --affirm-color-button-tertiary-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-bg-hover: #{map.get($base-colors, 'red-050')};
+  --affirm-color-button-tertiary-destructive-bg-focus-visible: #{map.get($base-colors, 'red-050')};
+  --affirm-color-button-tertiary-destructive-bg-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-inverse-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-destructive-inverse-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-destructive-inverse-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-tertiary-destructive-inverse-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-inverse-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-inverse-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-inverse-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-inverse-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-icon-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-icon-hover: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-icon-focus-visible: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-icon-pressed: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-icon-resting: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-inverse-icon-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-inverse-icon-focus-visible: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-inverse-icon-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-inverse-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary_destructive.small
+  --affirm-color-button-tertiary-destructive-small-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // tertiary_destructive.medium
+  --affirm-color-button-tertiary-destructive-medium-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // tertiary_destructive.large
+  --affirm-color-button-tertiary-destructive-large-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-text-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-text-hover: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-text-focus-visible: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-text-pressed: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-text-resting: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-inverse-text-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-inverse-text-focus-visible: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-inverse-text-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-inverse-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // primary
+  --affirm-shadow-button-primary-container-shadow-blur-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-blur-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-blur-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-blur-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-blur-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-blur-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-x-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-x-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-x-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-x-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-x-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-x-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-y-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-y-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-y-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-y-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-y-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-y-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-spread-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-spread-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-spread-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-spread-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-spread-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-spread-loading: #{map.get($base-sizes, '000')};
+
+  // secondary
+  --affirm-shadow-button-secondary-container-shadow-blur-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-blur-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-blur-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-blur-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-blur-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-blur-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-x-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-x-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-x-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-x-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-x-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-x-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-y-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-y-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-y-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-y-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-y-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-y-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-spread-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-spread-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-spread-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-spread-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-spread-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-spread-loading: #{map.get($base-sizes, '000')};
+
+  // tertiary
+  --affirm-shadow-button-tertiary-container-shadow-blur-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-blur-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-blur-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-blur-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-blur-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-blur-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-x-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-x-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-x-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-x-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-x-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-x-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-y-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-y-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-y-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-y-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-y-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-y-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-spread-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-spread-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-spread-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-spread-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-spread-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-spread-loading: #{map.get($base-sizes, '000')};
+
+}
+
+// ---------------------------------------------------------------------------
+// Dark mode
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // icon_only.tooltip
+  --affirm-color-button-icon-only-tooltip-bg: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-icon-only-tooltip-text: #{map.get($base-colors, 'gray-950')};
+
+  // primary
+  --affirm-color-button-primary-container-shadow-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-container-shadow-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-container-shadow-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-container-shadow-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-container-shadow-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-container-shadow-loading: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-bg-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-primary-bg-hover: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-primary-bg-focus-visible: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-primary-bg-pressed: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-button-primary-bg-disabled: #{map.get($base-colors, 'gray-750')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-bg-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-bg-hover: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-primary-inverse-bg-focus-visible: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-primary-inverse-bg-pressed: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-button-primary-inverse-bg-disabled: #{map.get($base-colors, 'gray-100')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-bg-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-bg-hover: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-primary-neutral-bg-focus-visible: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-primary-neutral-bg-pressed: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-button-primary-neutral-bg-disabled: #{map.get($base-colors, 'gray-750')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-bg-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-inverse-bg-hover: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-button-primary-neutral-inverse-bg-focus-visible: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-button-primary-neutral-inverse-bg-pressed: #{map.get($base-colors, 'gray-750')};
+  --affirm-color-button-primary-neutral-inverse-bg-disabled: #{map.get($base-colors, 'gray-100')};
+
+  // primary.static
+  --affirm-color-button-primary-static-bg-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-static-bg-hover: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-primary-static-bg-focus-visible: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-primary-static-bg-pressed: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-button-primary-static-bg-disabled: #{map.get($base-colors, 'gray-100')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-bg-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-primary-inverse-static-bg-hover: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-primary-inverse-static-bg-focus-visible: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-primary-inverse-static-bg-pressed: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-button-primary-inverse-static-bg-disabled: #{map.get($base-colors, 'gray-750')};
+
+  // primary
+  --affirm-color-button-primary-bg-loading: #{map.get($base-colors, 'gray-750')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-bg-loading: #{map.get($base-colors, 'gray-100')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-bg-loading: #{map.get($base-colors, 'gray-750')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-bg-loading: #{map.get($base-colors, 'gray-100')};
+
+  // primary.static
+  --affirm-color-button-primary-static-bg-loading: #{map.get($base-colors, 'gray-100')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-bg-loading: #{map.get($base-colors, 'gray-750')};
+
+  // primary
+  --affirm-color-button-primary-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-inverse-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-inverse-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-inverse-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-neutral-inverse-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.static
+  --affirm-color-button-primary-static-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-static-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-static-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-static-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-static-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-static-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-static-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-static-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-inverse-static-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary
+  --affirm-color-button-primary-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.static
+  --affirm-color-button-primary-static-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary
+  --affirm-color-button-primary-icon-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-icon-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-icon-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-icon-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-icon-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-icon-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-inverse-icon-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-inverse-icon-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-inverse-icon-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-inverse-icon-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-icon-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-icon-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-icon-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-icon-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-icon-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-icon-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-inverse-icon-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-inverse-icon-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-inverse-icon-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-inverse-icon-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary.static
+  --affirm-color-button-primary-static-icon-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-icon-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-icon-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-icon-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-icon-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-icon-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-icon-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-icon-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-icon-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-icon-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary.small
+  --affirm-color-button-primary-small-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // primary.medium
+  --affirm-color-button-primary-medium-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // primary.large
+  --affirm-color-button-primary-large-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // primary
+  --affirm-color-button-primary-text-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-text-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-text-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-text-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-text-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-text-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-inverse-text-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-inverse-text-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-inverse-text-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-inverse-text-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-text-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-text-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-text-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-text-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-primary-neutral-text-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-text-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-inverse-text-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-inverse-text-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-inverse-text-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-neutral-inverse-text-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary.static
+  --affirm-color-button-primary-static-text-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-text-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-text-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-text-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-static-text-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-text-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-text-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-text-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-text-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-primary-inverse-static-text-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary
+  --affirm-color-button-primary-text-loading: #{map.get($base-colors, 'gray-500')};
+
+  // primary.inverse
+  --affirm-color-button-primary-inverse-text-loading: #{map.get($base-colors, 'gray-300')};
+
+  // primary.neutral
+  --affirm-color-button-primary-neutral-text-loading: #{map.get($base-colors, 'gray-500')};
+
+  // primary.neutral.inverse
+  --affirm-color-button-primary-neutral-inverse-text-loading: #{map.get($base-colors, 'gray-300')};
+
+  // primary.static
+  --affirm-color-button-primary-static-text-loading: #{map.get($base-colors, 'gray-300')};
+
+  // primary.inverse.static
+  --affirm-color-button-primary-inverse-static-text-loading: #{map.get($base-colors, 'gray-500')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-bg-resting: #{map.get($base-colors, 'red-050')};
+  --affirm-color-button-primary-destructive-bg-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-primary-destructive-bg-focus-visible: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-primary-destructive-bg-pressed: #{map.get($base-colors, 'red-200')};
+  --affirm-color-button-primary-destructive-bg-disabled: #{map.get($base-colors, 'gray-750')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-bg-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-inverse-bg-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-button-primary-destructive-inverse-bg-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-button-primary-destructive-inverse-bg-pressed: #{map.get($base-colors, 'red-700')};
+  --affirm-color-button-primary-destructive-inverse-bg-disabled: #{map.get($base-colors, 'gray-100')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-bg-loading: #{map.get($base-colors, 'gray-750')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-bg-loading: #{map.get($base-colors, 'gray-100')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-inverse-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-inverse-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-inverse-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-primary-destructive-inverse-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-icon-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-icon-hover: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-icon-focus-visible: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-icon-pressed: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-icon-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-icon-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-inverse-icon-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-inverse-icon-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-inverse-icon-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-inverse-icon-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary_destructive.small
+  --affirm-color-button-primary-destructive-small-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // primary_destructive.medium
+  --affirm-color-button-primary-destructive-medium-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // primary_destructive.large
+  --affirm-color-button-primary-destructive-large-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-text-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-text-hover: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-text-focus-visible: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-text-pressed: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-primary-destructive-text-disabled: #{map.get($base-colors, 'gray-500')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-text-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-inverse-text-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-inverse-text-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-inverse-text-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-primary-destructive-inverse-text-disabled: #{map.get($base-colors, 'gray-300')};
+
+  // primary_destructive
+  --affirm-color-button-primary-destructive-text-loading: #{map.get($base-colors, 'gray-500')};
+
+  // primary_destructive.inverse
+  --affirm-color-button-primary-destructive-inverse-text-loading: #{map.get($base-colors, 'gray-300')};
+
+  // secondary
+  --affirm-color-button-secondary-container-shadow-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-container-shadow-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-container-shadow-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-container-shadow-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-container-shadow-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-container-shadow-loading: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-secondary-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-inverse-bg-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-bg-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-bg-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-secondary-inverse-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-neutral-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-neutral-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-neutral-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-secondary-neutral-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-neutral-inverse-bg-hover: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-secondary-neutral-inverse-bg-focus-visible: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-secondary-neutral-inverse-bg-pressed: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-button-secondary-neutral-inverse-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-static-bg-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-static-bg-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-static-bg-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-secondary-static-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-inverse-static-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-inverse-static-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-inverse-static-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-secondary-inverse-static-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary
+  --affirm-color-button-secondary-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary
+  --affirm-color-button-secondary-border-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-border-hover: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-secondary-border-focus-visible: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-secondary-border-pressed: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-button-secondary-border-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-border-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-inverse-border-hover: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-secondary-inverse-border-focus-visible: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-secondary-inverse-border-pressed: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-button-secondary-inverse-border-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-border-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-border-hover: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-secondary-neutral-border-focus-visible: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-secondary-neutral-border-pressed: #{map.get($base-colors, 'gray-150')};
+  --affirm-color-button-secondary-neutral-border-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-border-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-inverse-border-hover: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-button-secondary-neutral-inverse-border-focus-visible: #{map.get($base-colors, 'gray-600')};
+  --affirm-color-button-secondary-neutral-inverse-border-pressed: #{map.get($base-colors, 'gray-750')};
+  --affirm-color-button-secondary-neutral-inverse-border-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-border-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-border-hover: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-secondary-static-border-focus-visible: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-button-secondary-static-border-pressed: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-button-secondary-static-border-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-border-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-border-hover: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-secondary-inverse-static-border-focus-visible: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-secondary-inverse-static-border-pressed: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-button-secondary-inverse-static-border-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary
+  --affirm-color-button-secondary-border-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-border-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-border-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-border-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-border-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-border-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary
+  --affirm-color-button-secondary-icon-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-icon-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-icon-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-icon-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-icon-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-inverse-icon-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-inverse-icon-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-inverse-icon-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-inverse-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-icon-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-icon-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-icon-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-icon-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-icon-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-inverse-icon-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-inverse-icon-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-inverse-icon-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-inverse-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-icon-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-icon-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-icon-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-icon-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-icon-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-icon-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-icon-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-icon-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.small
+  --affirm-color-button-secondary-small-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // secondary.medium
+  --affirm-color-button-secondary-medium-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // secondary.large
+  --affirm-color-button-secondary-large-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // secondary
+  --affirm-color-button-secondary-text-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-text-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-text-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-text-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-text-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-inverse-text-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-inverse-text-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-inverse-text-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-inverse-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-text-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-text-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-text-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-text-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-secondary-neutral-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-text-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-inverse-text-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-inverse-text-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-inverse-text-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-secondary-neutral-inverse-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-text-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-text-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-text-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-text-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-secondary-static-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-text-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-text-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-text-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-text-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-secondary-inverse-static-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary
+  --affirm-color-button-secondary-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.inverse
+  --affirm-color-button-secondary-inverse-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.neutral
+  --affirm-color-button-secondary-neutral-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary.neutral.inverse
+  --affirm-color-button-secondary-neutral-inverse-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.static
+  --affirm-color-button-secondary-static-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary.inverse.static
+  --affirm-color-button-secondary-inverse-static-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-destructive-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-destructive-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-secondary-destructive-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-secondary-destructive-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-secondary-destructive-inverse-bg-hover: #{map.get($base-colors, 'red-050')};
+  --affirm-color-button-secondary-destructive-inverse-bg-focus-visible: #{map.get($base-colors, 'red-050')};
+  --affirm-color-button-secondary-destructive-inverse-bg-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-inverse-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-border-resting: #{map.get($base-colors, 'red-050')};
+  --affirm-color-button-secondary-destructive-border-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-border-focus-visible: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-border-pressed: #{map.get($base-colors, 'red-200')};
+  --affirm-color-button-secondary-destructive-border-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-border-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-inverse-border-hover: #{map.get($base-colors, 'red-600')};
+  --affirm-color-button-secondary-destructive-inverse-border-focus-visible: #{map.get($base-colors, 'red-600')};
+  --affirm-color-button-secondary-destructive-inverse-border-pressed: #{map.get($base-colors, 'red-700')};
+  --affirm-color-button-secondary-destructive-inverse-border-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-border-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-border-loading: #{map.get($base-colors, 'gray-150')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-icon-resting: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-icon-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-icon-focus-visible: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-icon-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-icon-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-inverse-icon-hover: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-inverse-icon-focus-visible: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-inverse-icon-pressed: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-inverse-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary_destructive.small
+  --affirm-color-button-secondary-destructive-small-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // secondary_destructive.medium
+  --affirm-color-button-secondary-destructive-medium-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // secondary_destructive.large
+  --affirm-color-button-secondary-destructive-large-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-text-resting: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-text-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-text-focus-visible: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-text-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-secondary-destructive-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-text-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-inverse-text-hover: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-inverse-text-focus-visible: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-inverse-text-pressed: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-secondary-destructive-inverse-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // secondary_destructive
+  --affirm-color-button-secondary-destructive-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // secondary_destructive.inverse
+  --affirm-color-button-secondary-destructive-inverse-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary
+  --affirm-color-button-tertiary-container-shadow-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-container-shadow-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-container-shadow-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-container-shadow-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-container-shadow-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-container-shadow-loading: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-tertiary-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-bg-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-bg-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-bg-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-tertiary-inverse-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-neutral-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-neutral-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-tertiary-neutral-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-inverse-bg-hover: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-tertiary-neutral-inverse-bg-focus-visible: #{map.get($base-colors, 'gray-050')};
+  --affirm-color-button-tertiary-neutral-inverse-bg-pressed: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-button-tertiary-neutral-inverse-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-static-bg-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-static-bg-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-static-bg-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-button-tertiary-static-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-static-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-inverse-static-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-inverse-static-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-tertiary-inverse-static-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary
+  --affirm-color-button-tertiary-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary
+  --affirm-color-button-tertiary-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-inverse-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-inverse-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-inverse-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-neutral-inverse-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-static-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-static-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-static-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-static-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-static-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-static-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-static-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-inverse-static-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary
+  --affirm-color-button-tertiary-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary
+  --affirm-color-button-tertiary-icon-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-icon-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-icon-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-icon-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-icon-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-inverse-icon-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-inverse-icon-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-inverse-icon-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-inverse-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-icon-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-icon-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-icon-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-icon-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-icon-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-inverse-icon-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-inverse-icon-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-inverse-icon-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-inverse-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-icon-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-icon-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-icon-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-icon-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-icon-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-icon-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-icon-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-icon-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.small
+  --affirm-color-button-tertiary-small-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // tertiary.medium
+  --affirm-color-button-tertiary-medium-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // tertiary.large
+  --affirm-color-button-tertiary-large-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // tertiary
+  --affirm-color-button-tertiary-text-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-text-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-text-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-text-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-text-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-inverse-text-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-inverse-text-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-inverse-text-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-inverse-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-text-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-text-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-text-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-text-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-button-tertiary-neutral-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-text-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-inverse-text-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-inverse-text-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-inverse-text-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-button-tertiary-neutral-inverse-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-text-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-text-hover: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-text-focus-visible: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-text-pressed: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-button-tertiary-static-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-text-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-text-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-text-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-text-pressed: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-button-tertiary-inverse-static-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary
+  --affirm-color-button-tertiary-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.inverse
+  --affirm-color-button-tertiary-inverse-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.neutral
+  --affirm-color-button-tertiary-neutral-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary.neutral.inverse
+  --affirm-color-button-tertiary-neutral-inverse-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.static
+  --affirm-color-button-tertiary-static-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary.inverse.static
+  --affirm-color-button-tertiary-inverse-static-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-destructive-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-button-tertiary-destructive-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-button-tertiary-destructive-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-inverse-bg-hover: #{map.get($base-colors, 'red-050')};
+  --affirm-color-button-tertiary-destructive-inverse-bg-focus-visible: #{map.get($base-colors, 'red-050')};
+  --affirm-color-button-tertiary-destructive-inverse-bg-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-inverse-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-bg-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-inverse-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-inverse-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-inverse-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-button-tertiary-destructive-inverse-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-border-loading: #{map.get($base-colors, 'opacity-transparent')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-icon-resting: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-icon-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-icon-focus-visible: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-icon-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-icon-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-icon-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-inverse-icon-hover: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-inverse-icon-focus-visible: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-inverse-icon-pressed: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-inverse-icon-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary_destructive.small
+  --affirm-color-button-tertiary-destructive-small-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // tertiary_destructive.medium
+  --affirm-color-button-tertiary-destructive-medium-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // tertiary_destructive.large
+  --affirm-color-button-tertiary-destructive-large-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-text-resting: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-text-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-text-focus-visible: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-text-pressed: #{map.get($base-colors, 'red-100')};
+  --affirm-color-button-tertiary-destructive-text-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-text-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-inverse-text-hover: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-inverse-text-focus-visible: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-inverse-text-pressed: #{map.get($base-colors, 'red-800')};
+  --affirm-color-button-tertiary-destructive-inverse-text-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // tertiary_destructive
+  --affirm-color-button-tertiary-destructive-text-loading: #{map.get($base-colors, 'gray-650')};
+
+  // tertiary_destructive.inverse
+  --affirm-color-button-tertiary-destructive-inverse-text-loading: #{map.get($base-colors, 'gray-150')};
+
+  // primary
+  --affirm-shadow-button-primary-container-shadow-blur-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-blur-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-blur-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-blur-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-blur-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-blur-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-x-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-x-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-x-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-x-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-x-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-x-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-y-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-y-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-y-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-y-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-y-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-offset-y-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-spread-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-spread-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-spread-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-spread-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-spread-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-primary-container-shadow-spread-loading: #{map.get($base-sizes, '000')};
+
+  // secondary
+  --affirm-shadow-button-secondary-container-shadow-blur-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-blur-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-blur-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-blur-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-blur-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-blur-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-x-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-x-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-x-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-x-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-x-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-x-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-y-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-y-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-y-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-y-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-y-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-offset-y-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-spread-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-spread-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-spread-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-spread-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-spread-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-secondary-container-shadow-spread-loading: #{map.get($base-sizes, '000')};
+
+  // tertiary
+  --affirm-shadow-button-tertiary-container-shadow-blur-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-blur-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-blur-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-blur-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-blur-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-blur-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-x-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-x-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-x-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-x-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-x-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-x-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-y-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-y-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-y-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-y-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-y-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-offset-y-loading: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-spread-resting: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-spread-hover: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-spread-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-spread-pressed: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-spread-disabled: #{map.get($base-sizes, '000')};
+  --affirm-shadow-button-tertiary-container-shadow-spread-loading: #{map.get($base-sizes, '000')};
+
+}

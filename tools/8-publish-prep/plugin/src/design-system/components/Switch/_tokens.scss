@@ -1,0 +1,331 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent defaults (from "All Modes" column)
+// ---------------------------------------------------------------------------
+:root {
+  // Radius
+  --affirm-radius-switch-container-all: #{map.get($base-sizes, '100')};
+  --affirm-radius-switch-handle-all: #{map.get($base-sizes, '150')};
+  --affirm-radius-switch-track-all: #{map.get($base-sizes, '175')};
+
+  // Size
+  --affirm-size-switch-container-min-height: #{map.get($base-sizes, '600')};
+  --affirm-size-switch-container-outline-width-unselected-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-size-switch-container-outline-width-selected-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-size-switch-container-outline-width-error-unselected-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-size-switch-container-outline-width-error-selected-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-size-switch-handle-all: #{map.get($base-sizes, '300')};
+  --affirm-size-switch-handle-border-width: #{map.get($base-sizes, '013')};
+  --affirm-size-switch-icon-all: #{map.get($base-sizes, '250')};
+  --affirm-size-switch-track-height: #{map.get($base-sizes, '350')};
+  --affirm-size-switch-track-border-width: #{map.get($base-sizes, '000')};
+  --affirm-size-switch-track-width: #{map.get($base-sizes, '600')};
+
+  // Spacing
+  --affirm-spacing-switch-container-outline-offset-unselected-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-spacing-switch-container-outline-offset-selected-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-spacing-switch-container-outline-offset-error-unselected-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-spacing-switch-container-outline-offset-error-selected-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-spacing-switch-track-gap-x: #{map.get($base-sizes, '000')};
+  --affirm-spacing-switch-track-padding: #{map.get($base-sizes, '025')};
+  --affirm-spacing-switch-gap-x: #{map.get($base-sizes, '100')};
+
+  // Position
+  --affirm-position-switch-handle-left-unselected: #{map.get($base-sizes, '025')};
+  --affirm-position-switch-handle-right-selected: #{map.get($base-sizes, '025')};
+
+  // Shadow (all zero / transparent)
+  --affirm-shadow-switch-handle-blur-selected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-blur-unselected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-blur-error-selected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-blur-error-unselected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-offset-x-selected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-offset-x-unselected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-offset-x-error-selected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-offset-x-error-unselected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-offset-y-selected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-offset-y-unselected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-offset-y-error-selected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-offset-y-error-unselected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-spread-selected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-spread-unselected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-spread-error-selected: #{map.get($base-sizes, '000')};
+  --affirm-shadow-switch-handle-spread-error-unselected: #{map.get($base-sizes, '000')};
+}
+
+// ---------------------------------------------------------------------------
+// Light defaults (from "Light Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // Container — outline (focus-visible)
+  --affirm-color-switch-container-outline-unselected-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-switch-container-outline-selected-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-switch-container-outline-error-unselected-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-switch-container-outline-error-selected-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // Handle — bg
+  --affirm-color-switch-handle-bg-selected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-selected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-selected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-selected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-selected-disabled: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-unselected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-unselected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-unselected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-unselected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-unselected-disabled: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-error-selected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-error-selected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-error-selected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-error-selected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-error-unselected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-error-unselected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-error-unselected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-handle-bg-error-unselected-focus-visible: #{map.get($base-colors, 'gray-white')};
+
+  // Handle — border
+  --affirm-color-switch-handle-border-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-selected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Handle — shadow
+  --affirm-color-switch-handle-shadow-selected: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-shadow-unselected: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-shadow-error-selected: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-shadow-error-unselected: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Track — bg
+  --affirm-color-switch-track-bg-selected-resting: #{map.get($base-colors, 'indigo-950')};
+  --affirm-color-switch-track-bg-selected-hover: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-switch-track-bg-selected-pressed: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-switch-track-bg-selected-focus-visible: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-switch-track-bg-selected-disabled: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-switch-track-bg-unselected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-track-bg-unselected-hover: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-switch-track-bg-unselected-pressed: #{map.get($base-colors, 'indigo-800')};
+  --affirm-color-switch-track-bg-unselected-focus-visible: #{map.get($base-colors, 'indigo-700')};
+  --affirm-color-switch-track-bg-unselected-disabled: #{map.get($base-colors, 'gray-100')};
+  --affirm-color-switch-track-bg-error-selected-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-switch-track-bg-error-selected-hover: #{map.get($base-colors, 'red-700')};
+  --affirm-color-switch-track-bg-error-selected-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-switch-track-bg-error-selected-focus-visible: #{map.get($base-colors, 'red-700')};
+  --affirm-color-switch-track-bg-error-unselected-resting: #{map.get($base-colors, 'red-800')};
+  --affirm-color-switch-track-bg-error-unselected-hover: #{map.get($base-colors, 'red-700')};
+  --affirm-color-switch-track-bg-error-unselected-pressed: #{map.get($base-colors, 'red-600')};
+  --affirm-color-switch-track-bg-error-unselected-focus-visible: #{map.get($base-colors, 'red-700')};
+
+  // Track — border
+  --affirm-color-switch-track-border-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-selected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Icon
+  --affirm-color-switch-icon-selected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-selected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-selected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-selected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-selected-disabled: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-unselected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-unselected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-unselected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-unselected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-unselected-disabled: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-error-selected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-error-selected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-error-selected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-error-selected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-error-unselected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-error-unselected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-error-unselected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-icon-error-unselected-focus-visible: #{map.get($base-colors, 'gray-white')};
+
+  // Text
+  --affirm-color-switch-text-selected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-selected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-selected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-selected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-selected-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-switch-text-unselected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-unselected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-unselected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-unselected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-unselected-disabled: #{map.get($base-colors, 'gray-300')};
+  --affirm-color-switch-text-error-selected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-error-selected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-error-selected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-error-selected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-error-unselected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-error-unselected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-error-unselected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-text-error-unselected-focus-visible: #{map.get($base-colors, 'gray-950')};
+}
+
+// ---------------------------------------------------------------------------
+// Dark defaults (from "Dark Mode" column)
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // Container — outline (focus-visible)
+  --affirm-color-switch-container-outline-unselected-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-switch-container-outline-selected-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-switch-container-outline-error-unselected-focus-visible: #{map.get($base-colors, 'indigo-500')};
+  --affirm-color-switch-container-outline-error-selected-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // Handle — bg
+  --affirm-color-switch-handle-bg-selected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-selected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-selected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-selected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-selected-disabled: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-unselected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-unselected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-unselected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-unselected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-unselected-disabled: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-error-selected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-error-selected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-error-selected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-error-selected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-error-unselected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-error-unselected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-error-unselected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-handle-bg-error-unselected-focus-visible: #{map.get($base-colors, 'gray-950')};
+
+  // Handle — border
+  --affirm-color-switch-handle-border-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-selected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-border-error-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Handle — shadow
+  --affirm-color-switch-handle-shadow-selected: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-shadow-unselected: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-shadow-error-selected: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-handle-shadow-error-unselected: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Track — bg
+  --affirm-color-switch-track-bg-selected-resting: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-switch-track-bg-selected-hover: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-switch-track-bg-selected-pressed: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-switch-track-bg-selected-focus-visible: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-switch-track-bg-selected-disabled: #{map.get($base-colors, 'gray-750')};
+  --affirm-color-switch-track-bg-unselected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-track-bg-unselected-hover: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-switch-track-bg-unselected-pressed: #{map.get($base-colors, 'indigo-100')};
+  --affirm-color-switch-track-bg-unselected-focus-visible: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-switch-track-bg-unselected-disabled: #{map.get($base-colors, 'gray-750')};
+  --affirm-color-switch-track-bg-error-selected-resting: #{map.get($base-colors, 'red-050')};
+  --affirm-color-switch-track-bg-error-selected-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-switch-track-bg-error-selected-pressed: #{map.get($base-colors, 'red-200')};
+  --affirm-color-switch-track-bg-error-selected-focus-visible: #{map.get($base-colors, 'red-100')};
+  --affirm-color-switch-track-bg-error-unselected-resting: #{map.get($base-colors, 'red-050')};
+  --affirm-color-switch-track-bg-error-unselected-hover: #{map.get($base-colors, 'red-100')};
+  --affirm-color-switch-track-bg-error-unselected-pressed: #{map.get($base-colors, 'red-200')};
+  --affirm-color-switch-track-bg-error-unselected-focus-visible: #{map.get($base-colors, 'red-100')};
+
+  // Track — border
+  --affirm-color-switch-track-border-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-selected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-unselected-disabled: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-selected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-selected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-selected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-selected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-unselected-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-unselected-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-unselected-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-switch-track-border-error-unselected-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Icon
+  --affirm-color-switch-icon-selected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-selected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-selected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-selected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-selected-disabled: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-unselected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-unselected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-unselected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-unselected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-unselected-disabled: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-error-selected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-error-selected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-error-selected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-error-selected-focus-visible: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-error-unselected-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-error-unselected-hover: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-error-unselected-pressed: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-switch-icon-error-unselected-focus-visible: #{map.get($base-colors, 'gray-950')};
+
+  // Text
+  --affirm-color-switch-text-selected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-selected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-selected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-selected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-selected-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-switch-text-unselected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-unselected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-unselected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-unselected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-unselected-disabled: #{map.get($base-colors, 'gray-500')};
+  --affirm-color-switch-text-error-selected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-error-selected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-error-selected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-error-selected-focus-visible: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-error-unselected-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-error-unselected-hover: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-error-unselected-pressed: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-switch-text-error-unselected-focus-visible: #{map.get($base-colors, 'gray-white')};
+}

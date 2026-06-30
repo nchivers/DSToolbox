@@ -1,0 +1,143 @@
+@use 'sass:map';
+@use '../../tokens/base-colors' as *;
+@use '../../tokens/base-sizes' as *;
+
+// ---------------------------------------------------------------------------
+// Mode-independent (sizes, radius, spacing)
+// ---------------------------------------------------------------------------
+:root {
+  // Radius
+  --affirm-radius-row-stand-alone-container-all: #{map.get($base-sizes, '150')};
+  --affirm-radius-row-container-all: #{map.get($base-sizes, '150')};
+
+  // Size — border widths (stand-alone)
+  --affirm-size-row-stand-alone-container-border-width-resting: #{map.get($base-sizes, '013')};
+  --affirm-size-row-stand-alone-container-border-width-hover: #{map.get($base-sizes, '013')};
+  --affirm-size-row-stand-alone-container-border-width-pressed: #{map.get($base-sizes, '013')};
+  --affirm-size-row-stand-alone-container-border-width-focus-visible: #{map.get($base-sizes, '013')};
+  --affirm-size-row-stand-alone-container-border-width-disabled: #{map.get($base-sizes, '013')};
+
+  // Size — border widths (default)
+  --affirm-size-row-container-border-width-resting: #{map.get($base-sizes, '000')};
+  --affirm-size-row-container-border-width-hover: #{map.get($base-sizes, '000')};
+  --affirm-size-row-container-border-width-pressed: #{map.get($base-sizes, '000')};
+  --affirm-size-row-container-border-width-focus-visible: #{map.get($base-sizes, '000')};
+  --affirm-size-row-container-border-width-disabled: #{map.get($base-sizes, '000')};
+
+  // Size — outline
+  --affirm-size-row-stand-alone-outline-width-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-size-row-outline-width-focus-visible: #{map.get($base-sizes, '025')};
+
+  // Size — leading graphic
+  --affirm-size-row-leading-graphic-medium-all: #{map.get($base-sizes, '300')};
+  --affirm-size-row-leading-graphic-large-all: #{map.get($base-sizes, '450')};
+
+  // Size — subtext segment icon
+  --affirm-size-row-subtext-segment-icon-all: #{map.get($base-sizes, '175')};
+
+  // Size — min height
+  --affirm-size-row-min-height: #{map.get($base-sizes, '600')};
+
+  // Spacing — stand-alone container
+  --affirm-spacing-row-stand-alone-container-padding-x: #{map.get($base-sizes, '200')};
+  --affirm-spacing-row-stand-alone-container-padding-y: #{map.get($base-sizes, '200')};
+
+  // Spacing — default container
+  --affirm-spacing-row-container-padding-x: #{map.get($base-sizes, '000')};
+  --affirm-spacing-row-container-padding-y: #{map.get($base-sizes, '000')};
+
+  // Spacing — outline offset
+  --affirm-spacing-row-stand-alone-outline-offset-focus-visible: #{map.get($base-sizes, '025')};
+  --affirm-spacing-row-outline-offset-focus-visible: #{map.get($base-sizes, '025')};
+
+  // Spacing — content
+  --affirm-spacing-row-gap-x: #{map.get($base-sizes, '200')};
+  --affirm-spacing-row-content-left-gap-x: #{map.get($base-sizes, '150')};
+  --affirm-spacing-row-content-right-gap-x: #{map.get($base-sizes, '100')};
+
+  // Spacing — text container
+  --affirm-spacing-row-text-container-gap-y: #{map.get($base-sizes, '025')};
+
+  // Spacing — subtext
+  --affirm-spacing-row-subtext-gap-x: #{map.get($base-sizes, '050')};
+  --affirm-spacing-row-subtext-gap-y: #{map.get($base-sizes, '000')};
+  --affirm-spacing-row-subtext-segment-gap-x: #{map.get($base-sizes, '050')};
+}
+
+// ---------------------------------------------------------------------------
+// Light mode colors
+// ---------------------------------------------------------------------------
+[data-mode='light'] {
+  // Stand-alone — container bg
+  --affirm-color-row-stand-alone-container-bg-resting: #{map.get($base-colors, 'gray-white')};
+  --affirm-color-row-stand-alone-container-bg-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-row-stand-alone-container-bg-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-row-stand-alone-container-bg-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-row-stand-alone-container-bg-disabled: #{map.get($base-colors, 'gray-100')};
+
+  // Stand-alone — container border
+  --affirm-color-row-stand-alone-container-border-resting: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-row-stand-alone-container-border-hover: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-row-stand-alone-container-border-pressed: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-row-stand-alone-container-border-focus-visible: #{map.get($base-colors, 'gray-400')};
+  --affirm-color-row-stand-alone-container-border-disabled: #{map.get($base-colors, 'gray-150')};
+
+  // Stand-alone — outline
+  --affirm-color-row-stand-alone-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // Default — container bg
+  --affirm-color-row-container-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-row-container-bg-hover: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-row-container-bg-pressed: #{map.get($base-colors, 'indigo-075')};
+  --affirm-color-row-container-bg-focus-visible: #{map.get($base-colors, 'indigo-050')};
+  --affirm-color-row-container-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Default — container border
+  --affirm-color-row-container-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-row-container-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-row-container-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-row-container-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-row-container-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Default — outline
+  --affirm-color-row-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+}
+
+// ---------------------------------------------------------------------------
+// Dark mode colors
+// ---------------------------------------------------------------------------
+[data-mode='dark'] {
+  // Stand-alone — container bg
+  --affirm-color-row-stand-alone-container-bg-resting: #{map.get($base-colors, 'gray-950')};
+  --affirm-color-row-stand-alone-container-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-row-stand-alone-container-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-row-stand-alone-container-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-row-stand-alone-container-bg-disabled: #{map.get($base-colors, 'gray-750')};
+
+  // Stand-alone — container border
+  --affirm-color-row-stand-alone-container-border-resting: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-row-stand-alone-container-border-hover: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-row-stand-alone-container-border-pressed: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-row-stand-alone-container-border-focus-visible: #{map.get($base-colors, 'gray-450')};
+  --affirm-color-row-stand-alone-container-border-disabled: #{map.get($base-colors, 'gray-650')};
+
+  // Stand-alone — outline
+  --affirm-color-row-stand-alone-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+
+  // Default — container bg
+  --affirm-color-row-container-bg-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-row-container-bg-hover: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-row-container-bg-pressed: #{map.get($base-colors, 'gray-800')};
+  --affirm-color-row-container-bg-focus-visible: #{map.get($base-colors, 'gray-850')};
+  --affirm-color-row-container-bg-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Default — container border
+  --affirm-color-row-container-border-resting: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-row-container-border-hover: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-row-container-border-pressed: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-row-container-border-focus-visible: #{map.get($base-colors, 'opacity-transparent')};
+  --affirm-color-row-container-border-disabled: #{map.get($base-colors, 'opacity-transparent')};
+
+  // Default — outline
+  --affirm-color-row-outline-focus-visible: #{map.get($base-colors, 'indigo-500')};
+}

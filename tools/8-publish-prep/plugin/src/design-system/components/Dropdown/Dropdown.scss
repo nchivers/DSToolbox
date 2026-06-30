@@ -1,0 +1,618 @@
+@use '../../tokens/component-type' as typography;
+
+// ===========================================================================
+// DROPDOWN ROOT
+// ===========================================================================
+.affirm-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--affirm-spacing-dropdown-gap-y);
+  position: relative;
+  width: 100%;
+
+  // ===========================================================================
+  // INPUT (trigger button)
+  // ===========================================================================
+  &__input {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: var(--affirm-spacing-dropdown-input-gap-x);
+    min-height: var(--affirm-size-dropdown-input-min-height);
+    padding: var(--affirm-spacing-dropdown-input-padding-y-empty) var(--affirm-spacing-dropdown-input-padding-x);
+    border-radius: var(--affirm-radius-dropdown-input-all);
+    border: var(--affirm-size-dropdown-input-border-width-empty-resting) solid
+      var(--affirm-color-dropdown-input-border-empty-resting);
+    background: var(--affirm-color-dropdown-input-bg-empty-resting);
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  &__icon-start {
+    flex-shrink: 0;
+    width: var(--affirm-size-dropdown-input-icon-all);
+    height: var(--affirm-size-dropdown-input-icon-all);
+    color: var(--affirm-color-dropdown-input-icon-empty-resting);
+
+    > .affirm-icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__field-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+    min-width: 1px;
+    justify-content: center;
+  }
+
+  &__label {
+    @include typography.component-singleline-large;
+    color: var(--affirm-color-dropdown-input-label-text-empty-resting);
+    user-select: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__value {
+    @include typography.component-singleline-medium;
+    color: var(--affirm-color-dropdown-input-value-text-filled-resting);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  &__indicator {
+    flex-shrink: 0;
+    width: var(--affirm-size-dropdown-input-icon-all);
+    height: var(--affirm-size-dropdown-input-icon-all);
+    color: var(--affirm-color-dropdown-input-indicator-empty-resting);
+    transition: transform 0.2s ease;
+
+    > .affirm-icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__message {
+    @include typography.component-singleline-medium;
+    color: var(--affirm-color-dropdown-message-text-resting);
+  }
+
+  &__error-message {
+    @include typography.component-singleline-medium;
+    color: var(--affirm-color-dropdown-error-message-text-resting);
+  }
+
+  // ===========================================================================
+  // EMPTY (base — closed, no value, no error)
+  // ===========================================================================
+
+  &:hover &__input {
+    background: var(--affirm-color-dropdown-input-bg-empty-hover);
+    border-color: var(--affirm-color-dropdown-input-border-empty-hover);
+  }
+
+  &:hover &__icon-start { color: var(--affirm-color-dropdown-input-icon-empty-hover); }
+  &:hover &__label { color: var(--affirm-color-dropdown-input-label-text-empty-hover); }
+  &:hover &__indicator { color: var(--affirm-color-dropdown-input-indicator-empty-hover); }
+
+  &:active &__input {
+    background: var(--affirm-color-dropdown-input-bg-empty-pressed);
+    border-color: var(--affirm-color-dropdown-input-border-empty-pressed);
+  }
+
+  &:active &__icon-start { color: var(--affirm-color-dropdown-input-icon-empty-pressed); }
+  &:active &__label { color: var(--affirm-color-dropdown-input-label-text-empty-pressed); }
+  &:active &__indicator { color: var(--affirm-color-dropdown-input-indicator-empty-pressed); }
+
+  &__input[data-focus-visible] {
+    outline: var(--affirm-size-dropdown-input-outline-width-focus-visible) solid
+      var(--affirm-color-dropdown-input-outline-empty-focus-visible);
+    outline-offset: var(--affirm-spacing-dropdown-input-outline-offset-focus-visible);
+    background: var(--affirm-color-dropdown-input-bg-empty-focus-visible);
+    border-color: var(--affirm-color-dropdown-input-border-empty-focus-visible);
+  }
+
+  // ===========================================================================
+  // FILLED (closed, has value, no error)
+  // ===========================================================================
+
+  &--filled &__input {
+    padding-top: var(--affirm-spacing-dropdown-input-padding-y-filled);
+    padding-bottom: var(--affirm-spacing-dropdown-input-padding-y-filled);
+    background: var(--affirm-color-dropdown-input-bg-filled-resting);
+    border-color: var(--affirm-color-dropdown-input-border-filled-resting);
+    border-width: var(--affirm-size-dropdown-input-border-width-filled-resting);
+  }
+
+  &--filled &__field-wrapper {
+    gap: var(--affirm-spacing-dropdown-input-label-value-gap-y);
+  }
+
+  &--filled &__label {
+    @include typography.component-singleline-small-mid-imp;
+    color: var(--affirm-color-dropdown-input-label-text-filled-resting);
+  }
+
+  &--filled &__value {
+    color: var(--affirm-color-dropdown-input-value-text-filled-resting);
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+  }
+
+  &--filled &__icon-start { color: var(--affirm-color-dropdown-input-icon-filled-resting); }
+  &--filled &__indicator { color: var(--affirm-color-dropdown-input-indicator-filled-resting); }
+
+  &--filled:hover &__input {
+    background: var(--affirm-color-dropdown-input-bg-filled-hover);
+    border-color: var(--affirm-color-dropdown-input-border-filled-hover);
+  }
+
+  &--filled:hover &__icon-start { color: var(--affirm-color-dropdown-input-icon-filled-hover); }
+  &--filled:hover &__label { color: var(--affirm-color-dropdown-input-label-text-filled-hover); }
+  &--filled:hover &__value { color: var(--affirm-color-dropdown-input-value-text-filled-hover); }
+  &--filled:hover &__indicator { color: var(--affirm-color-dropdown-input-indicator-filled-hover); }
+
+  &--filled:active &__input {
+    background: var(--affirm-color-dropdown-input-bg-filled-pressed);
+    border-color: var(--affirm-color-dropdown-input-border-filled-pressed);
+  }
+
+  &--filled:active &__icon-start { color: var(--affirm-color-dropdown-input-icon-filled-pressed); }
+  &--filled:active &__label { color: var(--affirm-color-dropdown-input-label-text-filled-pressed); }
+  &--filled:active &__value { color: var(--affirm-color-dropdown-input-value-text-filled-pressed); }
+  &--filled:active &__indicator { color: var(--affirm-color-dropdown-input-indicator-filled-pressed); }
+
+  &--filled &__input[data-focus-visible] {
+    outline-color: var(--affirm-color-dropdown-input-outline-filled-focus-visible);
+    background: var(--affirm-color-dropdown-input-bg-filled-focus-visible);
+    border-color: var(--affirm-color-dropdown-input-border-filled-focus-visible);
+  }
+
+  &--filled &__input[data-focus-visible] ~ .affirm-dropdown__value {
+    color: var(--affirm-color-dropdown-input-value-text-filled-focus-visible);
+  }
+
+  // ===========================================================================
+  // OPEN (empty, no error)
+  // ===========================================================================
+
+  &--open &__input {
+    background: var(--affirm-color-dropdown-input-bg-open-empty-resting);
+    border-color: var(--affirm-color-dropdown-input-border-open-empty-resting);
+  }
+
+  &--open &__indicator { transform: rotate(180deg); }
+  &--open &__icon-start { color: var(--affirm-color-dropdown-input-icon-open-empty-resting); }
+  &--open &__label { color: var(--affirm-color-dropdown-input-label-text-open-empty-resting); }
+  &--open &__indicator { color: var(--affirm-color-dropdown-input-indicator-open-empty-resting); }
+
+  &--open:hover &__input {
+    background: var(--affirm-color-dropdown-input-bg-open-empty-hover);
+    border-color: var(--affirm-color-dropdown-input-border-open-empty-hover);
+  }
+
+  &--open:active &__input {
+    background: var(--affirm-color-dropdown-input-bg-open-empty-pressed);
+    border-color: var(--affirm-color-dropdown-input-border-open-empty-pressed);
+  }
+
+  &--open &__input[data-focus-visible] {
+    outline-color: var(--affirm-color-dropdown-input-outline-open-empty-focus-visible);
+    background: var(--affirm-color-dropdown-input-bg-open-empty-focus-visible);
+    border-color: var(--affirm-color-dropdown-input-border-open-empty-focus-visible);
+  }
+
+  // ===========================================================================
+  // OPEN + FILLED
+  // ===========================================================================
+
+  &--open#{&}--filled &__input {
+    background: var(--affirm-color-dropdown-input-bg-open-filled-resting);
+    border-color: var(--affirm-color-dropdown-input-border-open-filled-resting);
+  }
+
+  &--open#{&}--filled &__icon-start { color: var(--affirm-color-dropdown-input-icon-open-filled-resting); }
+  &--open#{&}--filled &__label { color: var(--affirm-color-dropdown-input-label-text-open-filled-resting); }
+  &--open#{&}--filled &__value { color: var(--affirm-color-dropdown-input-value-text-open-filled-resting); }
+  &--open#{&}--filled &__indicator { color: var(--affirm-color-dropdown-input-indicator-open-filled-resting); }
+
+  &--open#{&}--filled:hover &__input {
+    background: var(--affirm-color-dropdown-input-bg-open-filled-hover);
+    border-color: var(--affirm-color-dropdown-input-border-open-filled-hover);
+  }
+
+  &--open#{&}--filled:active &__input {
+    background: var(--affirm-color-dropdown-input-bg-open-filled-pressed);
+    border-color: var(--affirm-color-dropdown-input-border-open-filled-pressed);
+  }
+
+  &--open#{&}--filled &__input[data-focus-visible] {
+    outline-color: var(--affirm-color-dropdown-input-outline-open-filled-focus-visible);
+    background: var(--affirm-color-dropdown-input-bg-open-filled-focus-visible);
+    border-color: var(--affirm-color-dropdown-input-border-open-filled-focus-visible);
+  }
+
+  // ===========================================================================
+  // ERROR (empty, closed)
+  // ===========================================================================
+
+  &--error &__input {
+    background: var(--affirm-color-dropdown-input-bg-error-empty-resting);
+    border-color: var(--affirm-color-dropdown-input-border-error-empty-resting);
+  }
+
+  &--error &__icon-start { color: var(--affirm-color-dropdown-input-icon-error-empty-resting); }
+  &--error &__label { color: var(--affirm-color-dropdown-input-label-text-error-empty-resting); }
+  &--error &__indicator { color: var(--affirm-color-dropdown-input-indicator-error-empty-resting); }
+
+  &--error:hover &__input {
+    background: var(--affirm-color-dropdown-input-bg-error-empty-hover);
+    border-color: var(--affirm-color-dropdown-input-border-error-empty-hover);
+  }
+
+  &--error:active &__input {
+    background: var(--affirm-color-dropdown-input-bg-error-empty-pressed);
+    border-color: var(--affirm-color-dropdown-input-border-error-empty-pressed);
+  }
+
+  &--error &__input[data-focus-visible] {
+    outline-color: var(--affirm-color-dropdown-input-outline-error-empty-focus-visible);
+    background: var(--affirm-color-dropdown-input-bg-error-empty-focus-visible);
+    border-color: var(--affirm-color-dropdown-input-border-error-empty-focus-visible);
+  }
+
+  // ===========================================================================
+  // ERROR + FILLED
+  // ===========================================================================
+
+  &--error#{&}--filled &__input {
+    background: var(--affirm-color-dropdown-input-bg-error-filled-resting);
+    border-color: var(--affirm-color-dropdown-input-border-error-filled-resting);
+  }
+
+  &--error#{&}--filled &__icon-start { color: var(--affirm-color-dropdown-input-icon-error-filled-resting); }
+  &--error#{&}--filled &__label { color: var(--affirm-color-dropdown-input-label-text-error-filled-resting); }
+  &--error#{&}--filled &__value { color: var(--affirm-color-dropdown-input-value-text-error-filled-resting); }
+  &--error#{&}--filled &__indicator { color: var(--affirm-color-dropdown-input-indicator-error-filled-resting); }
+
+  &--error#{&}--filled:hover &__input {
+    background: var(--affirm-color-dropdown-input-bg-error-filled-hover);
+    border-color: var(--affirm-color-dropdown-input-border-error-filled-hover);
+  }
+
+  &--error#{&}--filled:active &__input {
+    background: var(--affirm-color-dropdown-input-bg-error-filled-pressed);
+    border-color: var(--affirm-color-dropdown-input-border-error-filled-pressed);
+  }
+
+  &--error#{&}--filled &__input[data-focus-visible] {
+    outline-color: var(--affirm-color-dropdown-input-outline-error-filled-focus-visible);
+    background: var(--affirm-color-dropdown-input-bg-error-filled-focus-visible);
+    border-color: var(--affirm-color-dropdown-input-border-error-filled-focus-visible);
+  }
+
+  // ===========================================================================
+  // ERROR + OPEN (empty)
+  // ===========================================================================
+
+  &--error#{&}--open &__input {
+    background: var(--affirm-color-dropdown-input-bg-error-open-empty-resting);
+    border-color: var(--affirm-color-dropdown-input-border-error-open-empty-resting);
+  }
+
+  &--error#{&}--open &__icon-start { color: var(--affirm-color-dropdown-input-icon-error-open-empty-resting); }
+  &--error#{&}--open &__label { color: var(--affirm-color-dropdown-input-label-text-error-open-empty-resting); }
+  &--error#{&}--open &__indicator { color: var(--affirm-color-dropdown-input-indicator-error-open-empty-resting); }
+
+  &--error#{&}--open:hover &__input {
+    background: var(--affirm-color-dropdown-input-bg-error-open-empty-hover);
+    border-color: var(--affirm-color-dropdown-input-border-error-open-empty-hover);
+  }
+
+  &--error#{&}--open:active &__input {
+    background: var(--affirm-color-dropdown-input-bg-error-open-empty-pressed);
+    border-color: var(--affirm-color-dropdown-input-border-error-open-empty-pressed);
+  }
+
+  &--error#{&}--open &__input[data-focus-visible] {
+    outline-color: var(--affirm-color-dropdown-input-outline-error-open-empty-focus-visible);
+    background: var(--affirm-color-dropdown-input-bg-error-open-empty-focus-visible);
+    border-color: var(--affirm-color-dropdown-input-border-error-open-empty-focus-visible);
+  }
+
+  // ===========================================================================
+  // ERROR + OPEN + FILLED
+  // ===========================================================================
+
+  &--error#{&}--open#{&}--filled &__input {
+    background: var(--affirm-color-dropdown-input-bg-error-open-filled-resting);
+    border-color: var(--affirm-color-dropdown-input-border-error-open-filled-resting);
+  }
+
+  &--error#{&}--open#{&}--filled &__icon-start { color: var(--affirm-color-dropdown-input-icon-error-open-filled-resting); }
+  &--error#{&}--open#{&}--filled &__label { color: var(--affirm-color-dropdown-input-label-text-error-open-filled-resting); }
+  &--error#{&}--open#{&}--filled &__value { color: var(--affirm-color-dropdown-input-value-text-error-open-filled-resting); }
+  &--error#{&}--open#{&}--filled &__indicator { color: var(--affirm-color-dropdown-input-indicator-error-open-filled-resting); }
+
+  &--error#{&}--open#{&}--filled:hover &__input {
+    background: var(--affirm-color-dropdown-input-bg-error-open-filled-hover);
+    border-color: var(--affirm-color-dropdown-input-border-error-open-filled-hover);
+  }
+
+  &--error#{&}--open#{&}--filled:active &__input {
+    background: var(--affirm-color-dropdown-input-bg-error-open-filled-pressed);
+    border-color: var(--affirm-color-dropdown-input-border-error-open-filled-pressed);
+  }
+
+  &--error#{&}--open#{&}--filled &__input[data-focus-visible] {
+    outline-color: var(--affirm-color-dropdown-input-outline-error-open-filled-focus-visible);
+    background: var(--affirm-color-dropdown-input-bg-error-open-filled-focus-visible);
+    border-color: var(--affirm-color-dropdown-input-border-error-open-filled-focus-visible);
+  }
+
+  // ===========================================================================
+  // DISABLED
+  // ===========================================================================
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &--disabled &__input {
+    cursor: not-allowed;
+    background: var(--affirm-color-dropdown-input-bg-empty-disabled);
+    border-color: var(--affirm-color-dropdown-input-border-empty-disabled);
+  }
+
+  &--disabled &__icon-start { color: var(--affirm-color-dropdown-input-icon-empty-disabled); }
+  &--disabled &__label { color: var(--affirm-color-dropdown-input-label-text-empty-disabled); }
+  &--disabled &__indicator { color: var(--affirm-color-dropdown-input-indicator-empty-disabled); }
+  &--disabled &__message { color: var(--affirm-color-dropdown-message-text-disabled); }
+
+  &--disabled#{&}--filled &__input {
+    background: var(--affirm-color-dropdown-input-bg-filled-disabled);
+    border-color: var(--affirm-color-dropdown-input-border-filled-disabled);
+  }
+
+  &--disabled#{&}--filled &__icon-start { color: var(--affirm-color-dropdown-input-icon-filled-disabled); }
+  &--disabled#{&}--filled &__label { color: var(--affirm-color-dropdown-input-label-text-filled-disabled); }
+  &--disabled#{&}--filled &__value { color: var(--affirm-color-dropdown-input-value-text-filled-disabled); }
+  &--disabled#{&}--filled &__indicator { color: var(--affirm-color-dropdown-input-indicator-filled-disabled); }
+
+  &--disabled:hover &__input,
+  &--disabled:active &__input {
+    background: var(--affirm-color-dropdown-input-bg-empty-disabled);
+    border-color: var(--affirm-color-dropdown-input-border-empty-disabled);
+  }
+
+  &--disabled#{&}--filled:hover &__input,
+  &--disabled#{&}--filled:active &__input {
+    background: var(--affirm-color-dropdown-input-bg-filled-disabled);
+    border-color: var(--affirm-color-dropdown-input-border-filled-disabled);
+  }
+}
+
+// ===========================================================================
+// LISTBOX
+// ===========================================================================
+.affirm-listbox {
+  box-sizing: border-box;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin-top: 4px;
+  max-height: 240px;
+  overflow-y: auto;
+  background: var(--affirm-color-listbox-container-bg);
+  border: var(--affirm-size-listbox-container-border-width) solid
+    var(--affirm-color-listbox-container-border);
+  border-radius: var(--affirm-radius-listbox-container-all);
+  padding: 0;
+  list-style: none;
+
+  &--above {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+
+  // Custom scrollbar (Chromium / Figma plugin environment)
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--affirm-color-listbox-scroll-bar-track-bg);
+    border-left: var(--affirm-size-listbox-scroll-bar-border-width) solid
+      var(--affirm-color-listbox-scroll-bar-track-border);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--affirm-color-listbox-scroll-bar-handle-fill);
+    border-radius: var(--affirm-radius-listbox-scroll-bar-handle-all);
+    border: var(--affirm-spacing-listbox-scroll-bar-padding-x) solid transparent;
+    background-clip: padding-box;
+  }
+
+  // ===========================================================================
+  // LIST ITEM
+  // ===========================================================================
+  &__item {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: var(--affirm-spacing-listbox-list-item-gap-x);
+    min-height: var(--affirm-size-listbox-list-item-min-height);
+    padding: var(--affirm-spacing-listbox-list-item-padding-y) var(--affirm-spacing-listbox-list-item-padding-x);
+    background: var(--affirm-color-listbox-list-item-bg-unselected-resting);
+    border: var(--affirm-size-listbox-list-item-border-width-resting) solid
+      var(--affirm-color-listbox-list-item-border-unselected-resting);
+    cursor: pointer;
+    user-select: none;
+
+    &:first-child {
+      border-top-left-radius: var(--affirm-radius-listbox-list-item-start-top);
+      border-top-right-radius: var(--affirm-radius-listbox-list-item-start-top);
+    }
+
+    &:last-child {
+      border-bottom-left-radius: var(--affirm-radius-listbox-list-item-end-bottom);
+      border-bottom-right-radius: var(--affirm-radius-listbox-list-item-end-bottom);
+    }
+
+    // Unselected states
+    &:hover {
+      background: var(--affirm-color-listbox-list-item-bg-unselected-hover);
+    }
+
+    &:active {
+      background: var(--affirm-color-listbox-list-item-bg-unselected-pressed);
+    }
+
+    &[data-active='true'] {
+      background: var(--affirm-color-listbox-list-item-bg-unselected-focus-visible);
+      outline: var(--affirm-size-listbox-list-item-outline-width-focus-visible) solid
+        var(--affirm-color-listbox-list-item-outline-focus-visible);
+      outline-offset: var(--affirm-spacing-listbox-list-item-outline-offset-focus-visible);
+    }
+
+    &:hover .affirm-listbox__item-label {
+      color: var(--affirm-color-listbox-list-item-label-text-unselected-hover);
+    }
+
+    &:active .affirm-listbox__item-label {
+      color: var(--affirm-color-listbox-list-item-label-text-unselected-pressed);
+    }
+
+    &:hover .affirm-listbox__item-icon {
+      color: var(--affirm-color-listbox-list-item-icon-unselected-hover);
+    }
+
+    &:active .affirm-listbox__item-icon {
+      color: var(--affirm-color-listbox-list-item-icon-unselected-pressed);
+    }
+
+    // Selected states
+    &--selected {
+      background: var(--affirm-color-listbox-list-item-bg-selected-resting);
+    }
+
+    &--selected .affirm-listbox__item-label {
+      color: var(--affirm-color-listbox-list-item-label-text-selected-resting);
+    }
+
+    &--selected .affirm-listbox__item-icon {
+      color: var(--affirm-color-listbox-list-item-icon-selected-resting);
+    }
+
+    &--selected:hover {
+      background: var(--affirm-color-listbox-list-item-bg-selected-hover);
+    }
+
+    &--selected:hover .affirm-listbox__item-label {
+      color: var(--affirm-color-listbox-list-item-label-text-selected-hover);
+    }
+
+    &--selected:active {
+      background: var(--affirm-color-listbox-list-item-bg-selected-pressed);
+    }
+
+    &--selected:active .affirm-listbox__item-label {
+      color: var(--affirm-color-listbox-list-item-label-text-selected-pressed);
+    }
+
+    &--selected[data-active='true'] {
+      background: var(--affirm-color-listbox-list-item-bg-selected-focus-visible);
+    }
+
+    // Disabled states
+    &--disabled {
+      cursor: not-allowed;
+      background: var(--affirm-color-listbox-list-item-bg-unselected-disabled);
+    }
+
+    &--disabled .affirm-listbox__item-label {
+      color: var(--affirm-color-listbox-list-item-label-text-unselected-disabled);
+    }
+
+    &--disabled .affirm-listbox__item-icon {
+      color: var(--affirm-color-listbox-list-item-icon-unselected-disabled);
+    }
+
+    &--disabled:hover,
+    &--disabled:active {
+      background: var(--affirm-color-listbox-list-item-bg-unselected-disabled);
+    }
+
+    &--disabled#{&}--selected .affirm-listbox__item-label {
+      color: var(--affirm-color-listbox-list-item-label-text-selected-disabled);
+    }
+
+    &--disabled#{&}--selected .affirm-listbox__item-icon {
+      color: var(--affirm-color-listbox-list-item-icon-selected-disabled);
+    }
+
+    &--disabled#{&}--selected .affirm-listbox__item-selected-icon {
+      color: var(--affirm-color-listbox-list-item-selected-icon-icon-disabled);
+    }
+  }
+
+  &__item-icon {
+    flex-shrink: 0;
+    width: var(--affirm-size-listbox-list-item-icon-all);
+    height: var(--affirm-size-listbox-list-item-icon-all);
+    color: var(--affirm-color-listbox-list-item-icon-unselected-resting);
+
+    > .affirm-icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__item-label {
+    @include typography.component-paragraph-medium;
+    color: var(--affirm-color-listbox-list-item-label-text-unselected-resting);
+    flex: 1 0 0;
+    min-width: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__item-selected-icon {
+    flex-shrink: 0;
+    width: var(--affirm-size-listbox-list-item-selected-icon-all);
+    height: var(--affirm-size-listbox-list-item-selected-icon-all);
+    color: var(--affirm-color-listbox-list-item-selected-icon-icon-resting);
+
+    > .affirm-icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__divider {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+  }
+}

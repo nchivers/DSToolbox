@@ -1,0 +1,67 @@
+.affirm-list-of-rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: clip;
+
+  // Default: contained-aio
+  background: var(--affirm-color-list-of-rows-contained-aio-bg);
+  border: var(--affirm-size-list-of-rows-contained-aio-border-width) solid
+    var(--affirm-color-list-of-rows-contained-aio-border);
+  border-radius: var(--affirm-radius-list-of-rows-contained-aio-all);
+  padding: var(--affirm-spacing-list-of-rows-contained-aio-padding-y)
+    var(--affirm-spacing-list-of-rows-contained-aio-padding-x);
+  gap: var(--affirm-spacing-list-of-rows-contained-aio-gap-y);
+
+  // ===================================================================
+  // TREATMENT: Contained Individual
+  // ===================================================================
+
+  &--contained-individual {
+    background: var(--affirm-color-list-of-rows-contained-individual-bg);
+    border: var(--affirm-size-list-of-rows-contained-individual-border-width) solid
+      var(--affirm-color-list-of-rows-contained-individual-border);
+    border-radius: var(--affirm-radius-list-of-rows-contained-individual-all);
+    padding: var(--affirm-spacing-list-of-rows-contained-individual-padding-y)
+      var(--affirm-spacing-list-of-rows-contained-individual-padding-x);
+    gap: var(--affirm-spacing-list-of-rows-contained-individual-gap-y);
+  }
+
+  // ===================================================================
+  // TREATMENT: Uncontained & Divided
+  // ===================================================================
+
+  &--uncontained-divided {
+    background: var(--affirm-color-list-of-rows-uncontained-divided-bg);
+    border: var(--affirm-size-list-of-rows-uncontained-divided-border-width) solid
+      var(--affirm-color-list-of-rows-uncontained-divided-border);
+    border-radius: var(--affirm-radius-list-of-rows-uncontained-divided-all);
+    padding: var(--affirm-spacing-list-of-rows-uncontained-divided-padding-y)
+      var(--affirm-spacing-list-of-rows-uncontained-divided-padding-x);
+    gap: var(--affirm-spacing-list-of-rows-uncontained-divided-gap-y);
+  }
+
+  // ===================================================================
+  // TREATMENT: Uncontained & Undivided
+  // ===================================================================
+
+  &--uncontained-undivided {
+    background: var(--affirm-color-list-of-rows-uncontained-undivided-bg);
+    border: var(--affirm-size-list-of-rows-uncontained-undivided-border-width) solid
+      var(--affirm-color-list-of-rows-uncontained-undivided-border);
+    border-radius: var(--affirm-radius-list-of-rows-uncontained-undivided-all);
+    padding: var(--affirm-spacing-list-of-rows-uncontained-undivided-padding-y)
+      var(--affirm-spacing-list-of-rows-uncontained-undivided-padding-x);
+    gap: var(--affirm-spacing-list-of-rows-uncontained-undivided-gap-y);
+  }
+
+  // ===================================================================
+  // ELEMENTS
+  // ===================================================================
+
+  &__item {
+    width: 100%;
+  }
+}

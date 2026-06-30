@@ -1,0 +1,28 @@
+.affirm-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--affirm-spacing-section-header-gap-y);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: var(--affirm-spacing-section-header-gap-x);
+    max-height: var(--affirm-size-section-header-max-height);
+  }
+
+  &__title {
+    flex: 1 0 0;
+    min-width: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__title.affirm-type {
+    color: var(--affirm-color-section-header-headline-text);
+  }
+
+  &__action {
+    flex-shrink: 0;
+  }
+}
